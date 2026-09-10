@@ -52,13 +52,13 @@ function displayProducts(products) {
 
             <p class="price">₹${product.price}</p>
 
-            <button onclick='addToCart(${JSON.stringify(product)})'>
-    🛒 Add to Cart
-</button>
+            <button onclick="addToCartById(${product.id})">
+            🛒 Add to Cart
+            </button>
 
-<button onclick="orderOnWhatsApp('${product.name}')">
-    WhatsApp Order
-</button>
+            <button onclick="orderOnWhatsApp('${product.name}')">
+             WhatsApp Order
+            </button>
 
         </div>
         `;
@@ -170,6 +170,15 @@ categoryButtons.forEach(button => {
 
 });
 
+function addToCartById(id){
+
+    const product = allProducts.find(p => p.id === id);
+
+    if(product){
+        addToCart(product);
+    }
+
+}
 function addToCart(product){
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
