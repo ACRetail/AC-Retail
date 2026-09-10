@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AC Retail Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<h1>AC Retail Admin</h1>
+</div>
+</header>
+
+<section class="contact-box">
+
+<h2>Add New Product</h2>
+
+<form id="productForm">
+
+<input type="text" id="name" placeholder="Product Name" required>
+
+<br><br>
+
+<input type="text" id="category" placeholder="Category" required>
+
+<br><br>
+
+<input type="number" id="price" placeholder="Price" required>
+
+<br><br>
+
+<button class="btn" type="submit">
+Add Product
+</button>
+
+</form>
+
+</section>
+
+<section class="services">
+
+<h2>Saved Products</h2>
+
+<div id="adminProducts" class="cards"></div>
+
+</section>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>

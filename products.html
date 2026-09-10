@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - AC Retail</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <h2>🛒 AC Retail</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<section class="container">
+
+<h1>Our Products</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search Products..."
+>
+
+<div class="filters">
+
+<button class="filter-btn active" data-brand="">All Brands</button>
+<button class="filter-btn" data-brand="Suhana">Suhana</button>
+<button class="filter-btn" data-brand="Everest">Everest</button>
+<button class="filter-btn" data-brand="Parle">Parle</button>
+<button class="filter-btn" data-brand="Tata">Tata</button>
+<button class="filter-btn" data-brand="HUL">HUL</button>
+
+</div>
+
+<div class="filters">
+
+<button class="cat-btn active" data-category="">All Categories</button>
+<button class="cat-btn" data-category="Masala">Masala</button>
+<button class="cat-btn" data-category="Soap">Soap</button>
+<button class="cat-btn" data-category="Shampoo">Shampoo</button>
+<button class="cat-btn" data-category="Oil">Oil</button>
+<button class="cat-btn" data-category="Biscuit">Biscuit</button>
+<button class="cat-btn" data-category="Rice">Rice</button>
+<button class="cat-btn" data-category="Atta">Atta</button>
+
+</div>
+
+<div id="productList" class="product-grid">
+
+</div>
+
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 AC Retail | Police Line, Phaltan</p>
+    <p>📞 8830300826</p>
+</footer>
+
+<script src="js/products.js"></script>
+
+</body>
+</html>
