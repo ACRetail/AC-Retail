@@ -14,7 +14,7 @@ const brandButtons = document.querySelectorAll(".filter-btn");
 const categoryButtons = document.querySelectorAll(".cat-btn");
 
 // Load Products
-fetch("data/products.json")
+fetch("products.json")
   .then(response => response.json())
   .then(data => {
     allProducts = data;
