@@ -165,3 +165,29 @@ categoryButtons.forEach(button => {
     });
 
 });
+
+function addToCart(product){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(item => item.id === product.id);
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            qty: 1
+        });
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(product.name + " added to cart");
+}
