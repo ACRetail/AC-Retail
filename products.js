@@ -1,13 +1,22 @@
 // =============================
-// AC Retail Products.js
-// Part 1 - Load & Display Products
+// AC Retail - products.js
 // =============================
 
 let allProducts = [];
 
-const productList = document.getElementById("productList");
+let selectedBrand = "";
+let selectedCategory = "";
 
-// Load products.json
+const productList = document.getElementById("productList");
+const search = document.getElementById("search");
+
+const brandButtons = document.querySelectorAll(".filter-btn");
+const categoryButtons = document.querySelectorAll(".cat-btn");
+
+// =============================
+// Load Products
+// =============================
+
 fetch("products.json")
     .then(response => {
         if (!response.ok) {
@@ -21,69 +30,58 @@ fetch("products.json")
     })
     .catch(error => {
         console.error(error);
-        productList.innerHTML = `
-            <h2 style="text-align:center;color:red;">
-                Products could not be loaded.
-            </h2>
-        `;
+        productList.innerHTML =
+            "<h2 style='text-align:center;color:red;'>Products could not be loaded.</h2>";
     });
 
+// =============================
 // Display Products
+// =============================
+
 function displayProducts(products) {
 
     productList.innerHTML = "";
 
     if (products.length === 0) {
-        productList.innerHTML = `
-            <h2 style="text-align:center;">
-                No products found
-            </h2>
-        `;
+        productList.innerHTML =
+            "<h2 style='text-align:center;'>No products found</h2>";
         return;
     }
 
     products.forEach(product => {
 
         productList.innerHTML += `
-            <div class="product-card">
+        <div class="product-card">
 
-                <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}">
 
-                <h3>${product.name}</h3>
+            <h3>${product.name}</h3>
 
-                <p><b>Brand:</b> ${product.brand}</p>
+            <p><strong>Brand:</strong> ${product.brand}</p>
 
-                <p><b>Category:</b> ${product.category}</p>
+            <p><strong>Category:</strong> ${product.category}</p>
 
-                <h2>₹${product.price}</h2>
+            <p class="price">₹${product.price}</p>
 
-                <button onclick="addToCart(${product.id})">
-                    🛒 Add to Cart
-                </button>
+            <button onclick="addToCart(${product.id})">
+                🛒 Add to Cart
+            </button>
 
-                <button onclick="orderOnWhatsApp('${product.name}')">
-                    WhatsApp Order
-                </button>
+            <button onclick="orderOnWhatsApp('${product.name}')">
+                WhatsApp Order
+            </button>
 
-            </div>
+        </div>
         `;
 
     });
 
 }
+
 // =============================
-// Part 2 - Search & Filters
+// Search & Filter
 // =============================
 
-let selectedBrand = "";
-let selectedCategory = "";
-
-const search = document.getElementById("search");
-
-const brandButtons = document.querySelectorAll(".filter-btn");
-const categoryButtons = document.querySelectorAll(".cat-btn");
-
-// Search + Filter Function
 function filterProducts() {
 
     const keyword = search.value.toLowerCase();
@@ -109,10 +107,10 @@ function filterProducts() {
 
 }
 
-// Search
-search.addEventListener("input", filterProducts);
+if (search) {
+    search.addEventListener("input", filterProducts);
+}
 
-// Brand Filter
 brandButtons.forEach(button => {
 
     button.addEventListener("click", () => {
@@ -130,7 +128,6 @@ brandButtons.forEach(button => {
 
 });
 
-// Category Filter
 categoryButtons.forEach(button => {
 
     button.addEventListener("click", () => {
@@ -147,11 +144,11 @@ categoryButtons.forEach(button => {
     });
 
 });
+
 // =============================
-// Part 3 - Cart & WhatsApp
+// Cart
 // =============================
 
-// Add Product to Cart
 function addToCart(id) {
 
     const product = allProducts.find(item => item.id === id);
@@ -163,8 +160,11 @@ function addToCart(id) {
     const existing = cart.find(item => item.id === id);
 
     if (existing) {
-        existing.qty += 1;
+
+        existing.qty++;
+
     } else {
+
         cart.push({
             id: product.id,
             name: product.name,
@@ -172,6 +172,7 @@ function addToCart(id) {
             image: product.image,
             qty: 1
         });
+
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -180,13 +181,15 @@ function addToCart(id) {
 
 }
 
+// =============================
 // WhatsApp Order
+// =============================
+
 function orderOnWhatsApp(productName) {
 
     const phone = "918830300826";
 
-    const message =
-`Hello AC Retail,
+    const message = `Hello AC Retail,
 
 I want to order:
 
