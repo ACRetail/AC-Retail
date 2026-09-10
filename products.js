@@ -52,9 +52,13 @@ function displayProducts(products) {
 
             <p class="price">₹${product.price}</p>
 
-            <button onclick="orderOnWhatsApp('${product.name}')">
-                Order on WhatsApp
-            </button>
+            <button onclick='addToCart(${JSON.stringify(product)})'>
+    🛒 Add to Cart
+</button>
+
+<button onclick="orderOnWhatsApp('${product.name}')">
+    WhatsApp Order
+</button>
 
         </div>
         `;
