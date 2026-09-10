@@ -1,106 +1,90 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function displayCart() {
+const cartItems = document.getElementById("cartItems");
+const totalPrice = document.getElementById("totalPrice");
 
-    const cartDiv = document.getElementById("cartItems");
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-    cartDiv.innerHTML = "";
+function renderCart() {
 
-    let total = 0;
+    cartItems.innerHTML = "";
 
-    if(cart.length===0){
-
-        cartDiv.innerHTML="<p>Your cart is empty.</p>";
-
-        document.getElementById("total").innerHTML="Total : ₹0";
-
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<h2>Your cart is empty.</h2>";
+        totalPrice.innerHTML = "₹0";
         return;
     }
 
-    cart.forEach((item,index)=>{
+    let total = 0;
+
+    cart.forEach(item => {
 
         total += item.price * item.qty;
 
-        cartDiv.innerHTML += `
-        <div class="cart-item">
+        cartItems.innerHTML += `
+        <div class="cart-card">
 
             <h3>${item.name}</h3>
 
             <p>₹${item.price}</p>
 
-            <button onclick="decreaseQty(${index})">-</button>
+            <div class="qty-box">
 
-            ${item.qty}
+                <button onclick="decreaseQty(${item.id})">➖</button>
 
-            <button onclick="increaseQty(${index})">+</button>
+                <span>${item.qty}</span>
 
-            <button onclick="removeItem(${index})">
-            Remove
+                <button onclick="increaseQty(${item.id})">➕</button>
+
+            </div>
+
+            <p><strong>Total:</strong> ₹${item.price * item.qty}</p>
+
+            <button onclick="removeItem(${item.id})">
+                🗑 Remove
             </button>
 
         </div>
         `;
     });
 
-    document.getElementById("total").innerHTML="Total : ₹"+total;
-
-    localStorage.setItem("cart",JSON.stringify(cart));
+    totalPrice.innerHTML = "₹" + total;
 }
 
-function increaseQty(index){
+function increaseQty(id){
 
-    cart[index].qty++;
+    const item = cart.find(p => p.id === id);
 
-    displayCart();
-}
-
-function decreaseQty(index){
-
-    if(cart[index].qty>1){
-
-        cart[index].qty--;
-
-    }else{
-
-        cart.splice(index,1);
+    if(item){
+        item.qty++;
+        saveCart();
+        renderCart();
     }
 
-    displayCart();
 }
 
-function removeItem(index){
+function decreaseQty(id){
 
-    cart.splice(index,1);
+    const item = cart.find(p => p.id === id);
 
-    displayCart();
-}
-
-function sendWhatsAppOrder(){
-
-    if(cart.length===0){
-
-        alert("Cart is empty");
-
-        return;
+    if(item && item.qty > 1){
+        item.qty--;
+        saveCart();
+        renderCart();
     }
 
-    let message="Hello AC Retail,%0A%0AI want to order:%0A%0A";
+}
 
-    cart.forEach(item=>{
+function removeItem(id){
 
-        message += `${item.name} x ${item.qty} = ₹${item.price*item.qty}%0A`;
+    cart = cart.filter(item => item.id !== id);
 
-    });
+    saveCart();
 
-    let total=cart.reduce((sum,item)=>sum+(item.price*item.qty),0);
-
-    message += `%0ATotal : ₹${total}`;
-
-    window.open(
-    `https://wa.me/918830300826?text=${message}`,
-    "_blank"
-    );
+    renderCart();
 
 }
 
-displayCart();
+renderCart();
