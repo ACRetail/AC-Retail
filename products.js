@@ -1,5 +1,5 @@
 // =============================
-// AC Retail - FAST products.js
+// AC Retail - SMART products.js
 // =============================
 
 let allProducts = [];
@@ -9,9 +9,16 @@ let selectedBrand = "";
 let selectedCategory = "";
 let visibleCount = 40;
 
-// Read category from Home Page URL
-// Example:
-// products.html?category=Masala%20%26%20Spices
+const PAGE_SIZE = 40;
+
+const productList = document.getElementById("productList");
+const search = document.getElementById("search");
+const brandFilters = document.getElementById("brandFilters");
+const categoryFilters = document.getElementById("categoryFilters");
+
+// =============================
+// URL Category
+// =============================
 
 const urlParams = new URLSearchParams(window.location.search);
 const urlCategory = urlParams.get("category");
@@ -20,16 +27,8 @@ if (urlCategory) {
     selectedCategory = urlCategory.trim();
 }
 
-const PAGE_SIZE = 40;
-
-const productList = document.getElementById("productList");
-const search = document.getElementById("search");
-const brandFilters = document.getElementById("brandFilters");
-const categoryFilters = document.getElementById("categoryFilters");
-
-
 // =============================
-// Create Product Count
+// Product Count
 // =============================
 
 const productCount = document.createElement("div");
@@ -44,9 +43,8 @@ if (productList) {
     );
 }
 
-
 // =============================
-// Create Load More Button
+// Load More Button
 // =============================
 
 const loadMoreWrap = document.createElement("div");
@@ -70,12 +68,11 @@ if (productList) {
     );
 }
 
-
 // =============================
 // Load Products
 // =============================
 
-fetch("products.json?v=4", {
+fetch("products.json?v=5", {
     cache: "force-cache"
 })
 .then(response => {
@@ -89,12 +86,9 @@ fetch("products.json?v=4", {
 })
 .then(data => {
 
-    allProducts = Array.isArray(data)
-        ? data
-        : [];
+    allProducts = Array.isArray(data) ? data : [];
 
     createBrandFilters();
-
     createCategoryFilters();
 
     applyFilters();
@@ -105,10 +99,8 @@ fetch("products.json?v=4", {
     console.error(error);
 
     if (productList) {
-
         productList.innerHTML =
             "<h2 style='text-align:center;color:red;'>Products could not be loaded.</h2>";
-
     }
 
     productCount.textContent = "";
@@ -116,7 +108,6 @@ fetch("products.json?v=4", {
     loadMoreWrap.style.display = "none";
 
 });
-
 
 // =============================
 // Brand Filters
@@ -134,59 +125,43 @@ function createBrandFilters() {
         )
     ].sort();
 
-
     brandFilters.innerHTML =
-
-        `<button
-            class="filter-btn active"
-            data-brand="">
+        `<button class="filter-btn active" data-brand="">
             All Brands
         </button>` +
 
         brands.map(brand => `
-
             <button
                 class="filter-btn"
                 data-brand="${escapeHtml(brand)}">
-
                 ${escapeHtml(brand)}
-
             </button>
-
         `).join("");
-
 
     brandFilters
         .querySelectorAll(".filter-btn")
         .forEach(button => {
 
-            button.addEventListener(
-                "click",
-                () => {
+            button.addEventListener("click", () => {
 
-                    brandFilters
-                        .querySelectorAll(".filter-btn")
-                        .forEach(btn =>
-                            btn.classList.remove("active")
-                        );
+                brandFilters
+                    .querySelectorAll(".filter-btn")
+                    .forEach(btn =>
+                        btn.classList.remove("active")
+                    );
 
+                button.classList.add("active");
 
-                    button.classList.add("active");
+                selectedBrand =
+                    button.dataset.brand || "";
 
+                applyFilters();
 
-                    selectedBrand =
-                        button.dataset.brand || "";
-
-
-                    applyFilters();
-
-                }
-            );
+            });
 
         });
 
 }
-
 
 // =============================
 // Category Filters
@@ -196,66 +171,38 @@ function createCategoryFilters() {
 
     if (!categoryFilters) return;
 
-
     const preferredOrder = [
 
         "Fruits & Vegetables",
-
         "Atta & Flour",
-
         "Rice & Grains",
-
         "Pulses & Dals",
-
         "Masala & Spices",
-
         "Oil & Ghee",
-
         "Dairy & Chilled",
-
         "Biscuits & Bakery",
-
         "Snacks & Namkeen",
-
         "Tea & Coffee",
-
         "Sugar, Salt & Sweeteners",
-
         "Dry Fruits & Nuts",
-
         "Pickles, Sauces & Spreads",
-
         "Instant & Packaged Foods",
-
         "Chocolates & Confectionery",
-
         "Beverages",
-
         "Personal Care",
-
         "Home Care",
-
         "Puja & Household",
-
         "General Items"
 
     ];
 
-
     const existingCategories = [
-
         ...new Set(
-
             allProducts
-
                 .map(product => product.category)
-
                 .filter(Boolean)
-
         )
-
     ];
-
 
     const categories = [
 
@@ -264,7 +211,6 @@ function createCategoryFilters() {
                 existingCategories.includes(category)
         ),
 
-
         ...existingCategories.filter(
             category =>
                 !preferredOrder.includes(category)
@@ -272,43 +218,32 @@ function createCategoryFilters() {
 
     ];
 
-
     categoryFilters.innerHTML =
-
-        `<button
-            class="cat-btn active"
-            data-category="">
-
+        `<button class="cat-btn" data-category="">
             All Categories
-
         </button>` +
 
-
         categories.map(category => `
-
             <button
                 class="cat-btn"
                 data-category="${escapeHtml(category)}">
-
                 ${escapeHtml(category)}
-
             </button>
-
         `).join("");
 
-
+    // Activate selected URL category
     categoryFilters
         .querySelectorAll(".cat-btn")
         .forEach(button => {
 
-
-            // Automatically activate category
-            // passed from Home Page URL
-
             if (
-                selectedCategory &&
-                button.dataset.category === selectedCategory
+                (button.dataset.category || "") ===
+                selectedCategory
             ) {
+                button.classList.add("active");
+            }
+
+            button.addEventListener("click", () => {
 
                 categoryFilters
                     .querySelectorAll(".cat-btn")
@@ -316,107 +251,223 @@ function createCategoryFilters() {
                         btn.classList.remove("active")
                     );
 
-
                 button.classList.add("active");
 
-            }
+                selectedCategory =
+                    button.dataset.category || "";
 
+                applyFilters();
 
-            button.addEventListener(
-                "click",
-                () => {
-
-
-                    categoryFilters
-                        .querySelectorAll(".cat-btn")
-                        .forEach(btn =>
-                            btn.classList.remove("active")
-                        );
-
-
-                    button.classList.add("active");
-
-
-                    selectedCategory =
-                        button.dataset.category || "";
-
-
-                    applyFilters();
-
-                }
-            );
+            });
 
         });
 
+    // If no category selected, activate All Categories
+    if (!selectedCategory) {
+
+        const allButton =
+            categoryFilters.querySelector(
+                '[data-category=""]'
+            );
+
+        if (allButton) {
+            allButton.classList.add("active");
+        }
+
+    }
+
 }
 
+// =============================
+// SMART SEARCH
+// =============================
+
+// Convert text into clean searchable words
+function normalizeText(value) {
+
+    return String(value ?? "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+
+}
 
 // =============================
-// Search + Filter
+// Levenshtein Distance
+// =============================
+
+function levenshtein(a, b) {
+
+    if (a === b) return 0;
+
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+
+    let previous = [];
+
+    for (let j = 0; j <= b.length; j++) {
+        previous[j] = j;
+    }
+
+    for (let i = 1; i <= a.length; i++) {
+
+        let current = [i];
+
+        for (let j = 1; j <= b.length; j++) {
+
+            const insertCost =
+                current[j - 1] + 1;
+
+            const deleteCost =
+                previous[j] + 1;
+
+            const replaceCost =
+                previous[j - 1] +
+                (a[i - 1] === b[j - 1] ? 0 : 1);
+
+            current[j] =
+                Math.min(
+                    insertCost,
+                    deleteCost,
+                    replaceCost
+                );
+
+        }
+
+        previous = current;
+    }
+
+    return previous[b.length];
+
+}
+
+// =============================
+// Fuzzy Word Match
+// =============================
+
+function fuzzyWordMatch(queryWord, productWords) {
+
+    // Exact / partial match first
+    if (
+        productWords.some(word =>
+            word.includes(queryWord) ||
+            queryWord.includes(word)
+        )
+    ) {
+        return true;
+    }
+
+    // Very short words should not become too fuzzy
+    if (queryWord.length < 4) {
+        return false;
+    }
+
+    // Allow small spelling mistakes
+    const maxDistance =
+        queryWord.length <= 5 ? 2 : 2;
+
+    return productWords.some(word => {
+
+        if (
+            Math.abs(word.length - queryWord.length) >
+            maxDistance
+        ) {
+            return false;
+        }
+
+        return (
+            levenshtein(queryWord, word) <=
+            maxDistance
+        );
+
+    });
+
+}
+
+// =============================
+// Smart Search Match
+// =============================
+
+function smartSearchMatch(keyword, product) {
+
+    const query =
+        normalizeText(keyword);
+
+    if (!query) {
+        return true;
+    }
+
+    const productText =
+        normalizeText(
+            `${product.name || ""} ` +
+            `${product.brand || ""} ` +
+            `${product.category || ""}`
+        );
+
+    // Full phrase exact match
+    if (productText.includes(query)) {
+        return true;
+    }
+
+    const queryWords =
+        query.split(/\s+/).filter(Boolean);
+
+    const productWords =
+        productText.split(/\s+/).filter(Boolean);
+
+    // Every search word must match something
+    return queryWords.every(queryWord =>
+        fuzzyWordMatch(
+            queryWord,
+            productWords
+        )
+    );
+
+}
+
+// =============================
+// Search + Filters
 // =============================
 
 function applyFilters() {
 
-    const keyword = search
-        ? search.value.trim().toLowerCase()
-        : "";
-
+    const keyword =
+        search
+            ? search.value.trim()
+            : "";
 
     filteredProducts =
         allProducts.filter(product => {
 
-
-            const searchText =
-
-                `${product.name || ""} ` +
-
-                `${product.brand || ""} ` +
-
-                `${product.category || ""}`
-
-                .toLowerCase();
-
-
             const searchMatch =
-
-                !keyword ||
-
-                searchText.includes(keyword);
-
+                smartSearchMatch(
+                    keyword,
+                    product
+                );
 
             const brandMatch =
-
                 !selectedBrand ||
-
                 product.brand === selectedBrand;
 
-
             const categoryMatch =
-
                 !selectedCategory ||
-
                 product.category === selectedCategory;
 
-
             return (
-
                 searchMatch &&
-
                 brandMatch &&
-
                 categoryMatch
-
             );
 
         });
-
 
     visibleCount = PAGE_SIZE;
 
     renderProducts();
 
 }
-
 
 // =============================
 // Display Products
@@ -426,73 +477,55 @@ function renderProducts() {
 
     if (!productList) return;
 
-
     if (filteredProducts.length === 0) {
 
         productList.innerHTML =
-
             `<h2 style="text-align:center;width:100%;">
                 No products found
             </h2>`;
 
-
         productCount.textContent =
             "0 products";
 
-
         loadMoreWrap.style.display =
             "none";
-
 
         return;
 
     }
 
-
     const productsToShow =
-
         filteredProducts.slice(
             0,
             visibleCount
         );
 
-
     productList.innerHTML =
-
         productsToShow
             .map(productCard)
             .join("");
 
-
     const shown =
         productsToShow.length;
-
 
     const total =
         filteredProducts.length;
 
-
     productCount.textContent =
-
         `Showing ${shown} of ${total} products`;
-
 
     if (shown < total) {
 
         loadMoreWrap.style.display =
             "block";
 
-
         loadMoreBtn.textContent =
-
             `Load More (${Math.min(
                 PAGE_SIZE,
                 total - shown
             )})`;
 
-    }
-
-    else {
+    } else {
 
         loadMoreWrap.style.display =
             "none";
@@ -501,45 +534,26 @@ function renderProducts() {
 
 }
 
-
 // =============================
 // Product Card
 // =============================
 
 function productCard(product) {
 
-    /*
-      default.png file abhi available nahi hai.
-
-      Isliye uske liye broken image request
-      nahi bhejenge.
-
-      Direct "No Image" show hoga.
-    */
-
-
     const hasRealImage =
-
         product.image &&
-
-        !product.image
+        !String(product.image)
             .toLowerCase()
             .endsWith("default.png");
-
 
     const imageHtml = hasRealImage
 
         ? `
-
             <img
                 class="product-image"
-
                 src="${escapeHtml(product.image)}"
-
                 alt="${escapeHtml(product.name)}"
-
                 loading="lazy"
-
                 decoding="async"
 
                 onerror="
@@ -548,37 +562,24 @@ function productCard(product) {
                 "
             >
 
-
             <div
                 class="no-image"
                 style="display:none;">
-
                 🖼️<br>
-
                 No Image
-
             </div>
-
         `
 
-
         : `
-
             <div class="no-image">
-
                 🖼️<br>
-
                 No Image
-
             </div>
-
         `;
-
 
     return `
 
         <div class="product-card">
-
 
             <div class="product-image-wrap">
 
@@ -586,70 +587,48 @@ function productCard(product) {
 
             </div>
 
-
             <h3>
-
                 ${escapeHtml(product.name)}
-
             </h3>
 
-
             <p>
-
                 <strong>Brand:</strong>
-
                 ${escapeHtml(
                     product.brand || "General"
                 )}
-
             </p>
 
-
             <p>
-
                 <strong>Category:</strong>
-
                 ${escapeHtml(
                     product.category ||
                     "General Items"
                 )}
-
             </p>
 
-
             <p class="price">
-
                 ₹${Number(
                     product.price || 0
                 ).toFixed(2)}
-
             </p>
-
 
             <button
                 class="add-cart-btn"
                 data-id="${product.id}">
-
                 🛒 Add to Cart
-
             </button>
-
 
             <button
                 class="wa-btn"
                 data-id="${product.id}">
-
                 WhatsApp Order
-
             </button>
-
 
         </div>
 
     `;
 
 }
-
 
 // =============================
 // Load More
@@ -666,7 +645,6 @@ loadMoreBtn.addEventListener(
     }
 );
 
-
 // =============================
 // Search
 // =============================
@@ -680,7 +658,6 @@ if (search) {
 
 }
 
-
 // =============================
 // Product Button Events
 // =============================
@@ -691,16 +668,11 @@ if (productList) {
         "click",
         event => {
 
-
-            // =====================
             // Add to Cart
-            // =====================
-
             const addButton =
                 event.target.closest(
                     ".add-cart-btn"
                 );
-
 
             if (addButton) {
 
@@ -714,21 +686,15 @@ if (productList) {
 
             }
 
-
-            // =====================
             // WhatsApp
-            // =====================
-
             const whatsappButton =
                 event.target.closest(
                     ".wa-btn"
                 );
 
-
             if (whatsappButton) {
 
                 const product =
-
                     allProducts.find(
                         item =>
                             item.id ===
@@ -736,7 +702,6 @@ if (productList) {
                                 whatsappButton.dataset.id
                             )
                     );
-
 
                 if (product) {
 
@@ -753,7 +718,6 @@ if (productList) {
 
 }
 
-
 // =============================
 // Cart
 // =============================
@@ -761,36 +725,27 @@ if (productList) {
 function addToCart(id) {
 
     const product =
-
         allProducts.find(
             item => item.id === id
         );
 
-
     if (!product) return;
 
-
     let cart =
-
         JSON.parse(
             localStorage.getItem("cart")
         ) || [];
 
-
     const existing =
-
         cart.find(
             item => item.id === id
         );
-
 
     if (existing) {
 
         existing.qty++;
 
-    }
-
-    else {
+    } else {
 
         cart.push({
 
@@ -808,12 +763,10 @@ function addToCart(id) {
 
     }
 
-
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
-
 
     alert(
         product.name +
@@ -822,21 +775,16 @@ function addToCart(id) {
 
 }
 
-
 // =============================
 // WhatsApp Order
 // =============================
 
-function orderOnWhatsApp(
-    productName
-) {
+function orderOnWhatsApp(productName) {
 
     const phone =
         "918830300826";
 
-
     const message =
-
 `Hello AC Retail,
 
 I want to order:
@@ -847,19 +795,14 @@ Please share payment details.
 
 Thank you.`;
 
-
     window.open(
-
         `https://wa.me/${phone}?text=${encodeURIComponent(
             message
         )}`,
-
         "_blank"
-
     );
 
 }
-
 
 // =============================
 // HTML Escape
