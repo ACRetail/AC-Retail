@@ -1,131 +1,249 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AC Retail Admin</title>
+  <title>AC Retail Admin</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-.order-card {
-    background: #fff;
-    padding: 18px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+  <style>
+    body {
+      background: #f5f8f6;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.order-card h3 {
-    margin-top: 0;
-}
+    .admin-header {
+      background: linear-gradient(135deg, #087f46, #12a05a);
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
 
-.order-status {
-    font-weight: bold;
-    margin: 10px 0;
-}
+    .admin-header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
 
-.order-buttons button {
-    margin: 5px;
-    padding: 8px 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
+    .admin-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 15px;
+    }
 
-.empty-orders {
-    padding: 20px;
-    text-align: center;
-    background: #f5f5f5;
-    border-radius: 10px;
-}
-</style>
+    .admin-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
 
+    .stat-card {
+      background: white;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.07);
+      text-align: center;
+    }
+
+    .stat-card h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #087f46;
+    }
+
+    .stat-card p {
+      margin: 8px 0 0;
+      color: #666;
+    }
+
+    .admin-section {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    }
+
+    .admin-section h2 {
+      margin-top: 0;
+    }
+
+    .order-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .orders-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .order-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 16px;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .order-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .order-id {
+      font-weight: bold;
+      color: #087f46;
+      font-size: 18px;
+    }
+
+    .status {
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #fff3cd;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .customer-info {
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .order-items {
+      margin: 15px 0;
+      padding: 15px;
+      background: #f7faf8;
+      border-radius: 12px;
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .order-item:last-child {
+      border-bottom: 0;
+    }
+
+    .order-total {
+      font-size: 20px;
+      font-weight: bold;
+      color: #087f46;
+      margin: 15px 0;
+    }
+
+    .order-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .order-actions button {
+      border: 0;
+      padding: 10px 14px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .confirm-btn {
+      background: #087f46;
+      color: white;
+    }
+
+    .delivered-btn {
+      background: #198754;
+      color: white;
+    }
+
+    .cancel-btn {
+      background: #dc3545;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #333;
+      color: white;
+    }
+
+    .empty-orders {
+      text-align: center;
+      padding: 35px;
+      color: #777;
+    }
+
+    @media (max-width: 700px) {
+      .admin-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-section {
+        padding: 18px;
+      }
+
+      .order-item {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header class="admin-header">
+    <h1>AC Retail Admin</h1>
+    <p>Order Management Dashboard</p>
+  </header>
 
-<div class="logo">
-<h1>AC Retail Admin</h1>
-</div>
+  <main class="admin-container">
 
-</header>
+    <div class="admin-stats">
+      <div class="stat-card">
+        <h2 id="totalOrders">0</h2>
+        <p>Total Orders</p>
+      </div>
 
+      <div class="stat-card">
+        <h2 id="pendingOrders">0</h2>
+        <p>Pending Orders</p>
+      </div>
 
-<!-- ADD PRODUCT -->
+      <div class="stat-card">
+        <h2 id="deliveredOrders">0</h2>
+        <p>Delivered</p>
+      </div>
+    </div>
 
-<section class="contact-box">
+    <section class="admin-section">
+      <h2>📦 Customer Orders</h2>
 
-<h2>Add New Product</h2>
+      <input
+        type="text"
+        id="orderSearch"
+        class="order-search"
+        placeholder="Search Order ID, customer name or mobile..."
+      >
 
-<form id="productForm">
+      <div id="ordersList" class="orders-grid"></div>
+    </section>
 
-<input
-type="text"
-id="name"
-placeholder="Product Name"
-required
->
+  </main>
 
-<br><br>
-
-<input
-type="text"
-id="category"
-placeholder="Category"
-required
->
-
-<br><br>
-
-<input
-type="number"
-id="price"
-placeholder="Price"
-required
->
-
-<br><br>
-
-<button class="btn" type="submit">
-Add Product
-</button>
-
-</form>
-
-</section>
-
-
-<!-- SAVED PRODUCTS -->
-
-<section class="services">
-
-<h2>Saved Products</h2>
-
-<div id="adminProducts" class="cards"></div>
-
-</section>
-
-
-<!-- ORDERS -->
-
-<section class="services">
-
-<h2>🛒 Customer Orders</h2>
-
-<div id="adminOrders"></div>
-
-</section>
-
-
-<script src="admin.js"></script>
+  <script src="admin.js"></script>
 
 </body>
-
 </html>
-```
