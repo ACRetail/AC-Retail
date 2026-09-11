@@ -1,119 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Offers - AC Retail</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+  <title>Offers | AC Retail</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7faf8;
+      color: #222;
+    }
+
+    header {
+      background: #08752d;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #08752d, #0baa45);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 25px 15px 50px;
+    }
+
+    .offer-info {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+      text-align: center;
+    }
+
+    .offer-info strong {
+      color: #08752d;
+    }
+
+    #offerCount {
+      margin-top: 6px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .offer-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      position: relative;
+      transition: transform .2s;
+    }
+
+    .offer-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #e53935;
+      color: white;
+      padding: 6px 9px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 190px;
+      background: #f3f5f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .no-image {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .product-info {
+      padding: 14px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      line-height: 1.35;
+      min-height: 42px;
+      margin-bottom: 8px;
+    }
+
+    .category {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sale-price {
+      color: #08752d;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .mrp {
+      color: #888;
+      font-size: 14px;
+      text-decoration: line-through;
+    }
+
+    .saving {
+      color: #e53935;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .card-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .cart-btn,
+    .wa-btn {
+      border: 0;
+      padding: 10px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .cart-btn {
+      background: #08752d;
+      color: white;
+    }
+
+    .wa-btn {
+      background: #25d366;
+      color: white;
+    }
+
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    #loadMoreOffers {
+      border: 0;
+      background: #08752d;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #loadMoreOffers:hover {
+      background: #065f24;
+    }
+
+    .empty {
+      background: white;
+      padding: 45px 20px;
+      text-align: center;
+      border-radius: 14px;
+      color: #666;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+
+    footer {
+      background: #075522;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .offers-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 35px 15px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .offers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 150px;
+      }
+
+      .product-info {
+        padding: 10px;
+      }
+
+      .product-name {
+        font-size: 14px;
+      }
+
+      .sale-price {
+        font-size: 17px;
+      }
+
+      .cart-btn,
+      .wa-btn {
+        font-size: 11px;
+        padding: 9px 5px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .offers-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-image {
+        height: 130px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="nav">
+    <div class="logo">🛒 AC Retail</div>
 
-<div class="logo">
-<h1>AC Retail</h1>
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="offers.html">Offers</a>
-<a href="contact.html">Contact</a>
-
-</nav>
-
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="offers.html">Offers</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-
-<h2>Today's Special Offers</h2>
-
-<p>Save More Every Day at AC Retail</p>
-
+  <h1>🔥 Today's Special Offers</h1>
+  <p>Save more on your favourite grocery products</p>
 </section>
 
-<section class="services">
+<main class="container">
 
-<h2>Current Offers</h2>
+  <div class="offer-info">
+    <strong>Best Deals at AC Retail</strong>
+    <div id="offerCount">Loading offers...</div>
+  </div>
 
-<div class="cards">
+  <div id="offersList" class="offers-grid"></div>
 
-<div class="card">
+  <div id="emptyOffers" class="empty" style="display:none;">
+    <h2>😔 No Offers Available</h2>
+    <p>Abhi koi discounted product available nahi hai.</p>
+  </div>
 
-<i class="fa-solid fa-percent"></i>
+  <div class="load-more-wrap">
+    <button id="loadMoreOffers" style="display:none;">
+      Load More Offers
+    </button>
+  </div>
 
-<h3>Daily Grocery Offers</h3>
-
-<p>
-Best prices on daily grocery essentials.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-gift"></i>
-
-<h3>Festival Discounts</h3>
-
-<p>
-Special discounts during festivals and special occasions.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-tags"></i>
-
-<h3>Combo Deals</h3>
-
-<p>
-Buy more and save more with our combo packs.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="contact-box">
-
-<h2>Visit AC Retail Today</h2>
-
-<p>📍 Police Line, Phaltan</p>
-
-<p>🕖 Open Every Day</p>
-
-<p>7:00 AM – 9:00 PM</p>
-
-<a href="https://wa.me/918830300826" class="btn">
-
-Order on WhatsApp
-
-</a>
-
-</section>
+</main>
 
 <footer>
-
-<p>
-
-© 2026 AC Retail | All Rights Reserved
-
-</p>
-
+  <p><strong>AC Retail</strong></p>
+  <p>Police Line, Phaltan</p>
+  <p>WhatsApp: 8830300826</p>
+  <p>© 2026 AC Retail. All Rights Reserved.</p>
 </footer>
 
-<script src="js/script.js"></script>
+<script src="offers.js?v=1"></script>
 
 </body>
 </html>
