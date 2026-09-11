@@ -306,6 +306,12 @@ document.addEventListener("DOMContentLoaded", function () {
 const checkoutForm = document.getElementById("checkoutForm");
 const confirmWhatsApp = document.getElementById("confirmWhatsApp");
 
+  
+const orderId =
+    "AC-" +
+    new Date().toISOString().slice(0,10).replace(/-/g,"") +
+    "-" +
+    Math.floor(1000 + Math.random() * 9000);
 
 whatsappButton.addEventListener("click", function () {
 
@@ -362,8 +368,8 @@ confirmWhatsApp.addEventListener("click", function () {
 
 
   let message =
-    "🛒 *AC Retail - Grocery Order*%0A%0A";
-
+    `🛒 *AC Retail Order*\n\n` +
+    `🆔 *Order ID:* ${orderId}\n\n`;
 
   message +=
     "👤 *Customer:* " +
