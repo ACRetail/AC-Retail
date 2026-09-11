@@ -1625,3 +1625,133 @@ textarea:focus-visible {
     padding: 22px 16px;
   }
 }
+/* =========================================
+   AC RETAIL - PREMIUM ABOUT PAGE
+   ========================================= */
+
+.about-page .hero,
+body:has(.services) .hero {
+  padding: 75px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f9d58, #087f46);
+  color: #fff;
+  border-radius: 0 0 35px 35px;
+}
+
+body:has(.services) .hero h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+body:has(.services) .hero p {
+  font-size: 18px;
+  opacity: .9;
+}
+
+/* Services */
+body:has(.services) .services {
+  padding: 70px 20px;
+}
+
+body:has(.services) .services > h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+body:has(.services) .cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+body:has(.services) .card {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 22px;
+  text-align: center;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 35px rgba(0,0,0,.08);
+  transition: .3s ease;
+}
+
+body:has(.services) .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.13);
+}
+
+body:has(.services) .card i {
+  font-size: 42px;
+  color: #0f9d58;
+  margin-bottom: 18px;
+}
+
+body:has(.services) .card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+body:has(.services) .card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Why Choose Us */
+body:has(.services) .contact-box {
+  max-width: 900px;
+  margin: 10px auto 70px;
+  padding: 40px 25px;
+  background: #f7faf8;
+  border-radius: 25px;
+  text-align: center;
+}
+
+body:has(.services) .contact-box h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+body:has(.services) .contact-box p {
+  display: inline-block;
+  margin: 7px;
+  padding: 10px 16px;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  body:has(.services) .hero {
+    padding: 55px 18px;
+  }
+
+  body:has(.services) .hero h2 {
+    font-size: 31px;
+  }
+
+  body:has(.services) .services {
+    padding: 50px 15px;
+  }
+
+  body:has(.services) .services > h2 {
+    font-size: 28px;
+  }
+
+  body:has(.services) .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  body:has(.services) .card {
+    padding: 28px 20px;
+  }
+
+  body:has(.services) .contact-box {
+    margin: 10px 15px 50px;
+    padding: 30px 15px;
+  }
+}
