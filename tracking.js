@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const orderInput = document.getElementById("orderId");
-  const trackButton = document.getElementById("trackOrder");
+  const trackButton = document.getElementById("trackBtn");
   const resultBox = document.getElementById("trackingResult");
 
   function getOrders() {
