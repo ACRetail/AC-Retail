@@ -1,20 +1,63 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AC Retail Admin</title>
 
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+.order-card {
+    background: #fff;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-card h3 {
+    margin-top: 0;
+}
+
+.order-status {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.order-buttons button {
+    margin: 5px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.empty-orders {
+    padding: 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">
 <h1>AC Retail Admin</h1>
 </div>
+
 </header>
+
+
+<!-- ADD PRODUCT -->
 
 <section class="contact-box">
 
@@ -22,15 +65,30 @@
 
 <form id="productForm">
 
-<input type="text" id="name" placeholder="Product Name" required>
+<input
+type="text"
+id="name"
+placeholder="Product Name"
+required
+>
 
 <br><br>
 
-<input type="text" id="category" placeholder="Category" required>
+<input
+type="text"
+id="category"
+placeholder="Category"
+required
+>
 
 <br><br>
 
-<input type="number" id="price" placeholder="Price" required>
+<input
+type="number"
+id="price"
+placeholder="Price"
+required
+>
 
 <br><br>
 
@@ -42,6 +100,9 @@ Add Product
 
 </section>
 
+
+<!-- SAVED PRODUCTS -->
+
 <section class="services">
 
 <h2>Saved Products</h2>
@@ -50,16 +111,21 @@ Add Product
 
 </section>
 
+
+<!-- ORDERS -->
+
 <section class="services">
 
-  <h2>📦 Customer Orders</h2>
+<h2>🛒 Customer Orders</h2>
 
-  <div id="adminOrders"></div>
+<div id="adminOrders"></div>
 
 </section>
 
-<script src="orders-admin.js"></script>
+
 <script src="admin.js"></script>
 
 </body>
+
 </html>
+```
