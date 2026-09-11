@@ -573,7 +573,85 @@
 .confirm-btn:hover {
   background: #078a38;
 }
-    
+  /* =========================
+   AC RETAIL CART FINAL POLISH
+   ========================= */
+
+.checkout-form {
+  animation: checkoutOpen .25s ease;
+}
+
+@keyframes checkoutOpen {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  min-height: 46px;
+}
+
+.checkout-form textarea {
+  resize: vertical;
+}
+
+.confirm-btn {
+  min-height: 50px;
+  box-shadow: 0 4px 12px rgba(0, 150, 60, .18);
+}
+
+.whatsapp-btn {
+  min-height: 52px;
+}
+
+.clear-btn {
+  min-height: 44px;
+}
+
+@media (max-width: 600px) {
+
+  .summary-box {
+    margin-top: 4px;
+  }
+
+  .summary-content {
+    padding: 15px;
+  }
+
+  .summary-title {
+    padding: 16px;
+    font-size: 20px;
+  }
+
+  .whatsapp-btn {
+    font-size: 15px;
+    min-height: 52px;
+  }
+
+  .checkout-form {
+    padding: 14px;
+  }
+
+  .checkout-form input,
+  .checkout-form textarea {
+    font-size: 16px;
+  }
+
+  .confirm-btn {
+    font-size: 15px;
+    min-height: 50px;
+  }
+
+  .whatsapp-note {
+    font-size: 12px;
+  }
+}  
   </style>
 </head>
 
