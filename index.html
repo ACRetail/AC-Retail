@@ -1,439 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>AC Retail - Grocery Store</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7faf8;
-            color: #222;
-        }
+        /* =========================
+           CATEGORY SECTION
+        ========================= */
 
-        header {
-            background: #08752d;
-            color: white;
-            padding: 16px 20px;
-            text-align: center;
-        }
+        .category-section {
 
-        header h1 {
-            margin: 0 0 5px;
-            font-size: 30px;
-        }
-
-        header p {
-            margin: 0 0 15px;
-            opacity: 0.9;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 9px 12px;
-            border-radius: 7px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #e8f8ed, #ffffff);
-            text-align: center;
-            padding: 55px 20px;
-        }
-
-        .hero h2 {
-            margin: 0 0 12px;
-            color: #08752d;
-            font-size: 34px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            background: #0baa45;
-            color: white;
-            padding: 13px 22px;
-            border-radius: 9px;
-            font-weight: bold;
-            margin: 5px;
-        }
-
-        .btn:hover {
-            background: #08752d;
-        }
-
-        .whatsapp-btn {
-            background: #25d366;
-        }
-
-        .section {
-            max-width: 1100px;
-            margin: auto;
             padding: 40px 20px;
+
+            text-align: center;
+
         }
 
-        .section-title {
-            text-align: center;
-            color: #08752d;
+        .category-section h2 {
+
             margin-bottom: 25px;
+
+            color: #08752d;
+
         }
 
-        .categories {
+        .category-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(160px, 1fr));
+
             gap: 15px;
+
         }
 
-        .category {
+        .category-card {
+
+            display: block;
+
+            padding: 22px 12px;
+
             background: white;
-            padding: 22px 10px;
-            text-align: center;
-            border-radius: 12px;
-            border: 1px solid #e0e8e2;
+
+            border: 1px solid #e0e0e0;
+
+            border-radius: 14px;
+
             text-decoration: none;
+
             color: #222;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+            font-weight: 600;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.07);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+
         }
 
-        .category:hover {
-            transform: translateY(-3px);
-            border-color: #0baa45;
+        .category-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,0.12);
+
         }
 
         .category-icon {
-            font-size: 32px;
+
             display: block;
+
+            font-size: 32px;
+
             margin-bottom: 8px;
+
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
+
+        /* =========================
+           HERO BUTTONS
+        ========================= */
+
+        .hero-buttons {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
         }
 
-        .feature {
-            background: white;
-            padding: 25px;
-            text-align: center;
-            border-radius: 12px;
-            border: 1px solid #e0e8e2;
+        .hero-btn {
+
+            display: inline-block;
+
+            padding: 13px 22px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
         }
 
-        .feature-icon {
-            font-size: 38px;
+        .shop-btn {
+
+            background: #08752d;
+
+            color: white;
+
         }
 
-        .feature h3 {
-            color: #08752d;
+        .wa-btn-home {
+
+            background: #0baa45;
+
+            color: white;
+
         }
+
+
+        /* =========================
+           LOCATION
+        ========================= */
 
         .location-box {
-            background: #e8f8ed;
+
+            max-width: 700px;
+
+            margin: 35px auto;
+
+            padding: 22px;
+
             text-align: center;
-            padding: 28px 20px;
+
+            background: #f5faf6;
+
+            border: 1px solid #d5e8db;
+
             border-radius: 14px;
+
         }
 
-        .location-box h2 {
+        .location-box h3 {
+
             color: #08752d;
+
             margin-top: 0;
+
         }
 
-        footer {
-            background: #075b24;
-            color: white;
-            text-align: center;
-            padding: 28px 15px;
-            margin-top: 20px;
-        }
 
-        footer h3 {
-            margin-top: 0;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: #25d366;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            z-index: 1000;
-        }
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 600px) {
 
-            header h1 {
-                font-size: 25px;
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
             }
 
-            nav {
-                gap: 3px;
+            .category-card {
+
+                padding: 18px 8px;
+
+                font-size: 14px;
+
             }
 
-            nav a {
-                font-size: 13px;
-                padding: 8px 9px;
+            .category-icon {
+
+                font-size: 28px;
+
             }
 
-            .hero {
-                padding: 40px 15px;
-            }
-
-            .hero h2 {
-                font-size: 27px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section {
-                padding: 30px 15px;
-            }
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-    <h1>🏪 AC Retail</h1>
-    <p>Your Trusted Grocery Store</p>
+    <h1>AC Retail</h1>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">🛒 Cart</a>
-        <a href="about.html">About</a>
-        <a href="offers.html">Offers</a>
-        <a href="contact.html">Contact</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="offers.html">
+            Offers
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
     </nav>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <h2>Fresh Grocery at Best Prices</h2>
+    <h2>
+        Your Trusted Grocery Store
+    </h2>
 
     <p>
-        Quality products for your everyday needs.
+        Quality Grocery Products at Affordable Prices
     </p>
 
-    <a href="products.html" class="btn">
-        🛒 Shop Now
-    </a>
 
-    <a
-        href="https://wa.me/918830300826"
-        class="btn whatsapp-btn"
-        target="_blank">
-        📱 Order on WhatsApp
-    </a>
+    <div class="hero-buttons">
+
+        <a
+            href="products.html"
+            class="hero-btn shop-btn">
+
+            🛒 Shop Now
+
+        </a>
+
+
+        <a
+            href="https://wa.me/918830300826"
+            class="hero-btn wa-btn-home"
+            target="_blank">
+
+            📱 Order on WhatsApp
+
+        </a>
+
+    </div>
 
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- =========================
+     CATEGORIES
+========================= -->
 
-<section class="section">
+<section class="category-section">
 
-    <h2 class="section-title">
+    <h2>
         🛍️ Shop by Category
     </h2>
 
-    <div class="categories">
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🥦</span>
+    <div class="category-grid">
+
+
+        <!-- Fruits & Vegetables -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Fruits%20%26%20Vegetables">
+
+            <span class="category-icon">
+                🥬
+            </span>
+
             Fruits & Vegetables
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🌾</span>
+
+        <!-- Atta & Flour -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Atta%20%26%20Flour">
+
+            <span class="category-icon">
+                🌾
+            </span>
+
             Atta & Flour
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🍚</span>
+
+        <!-- Rice & Grains -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Rice%20%26%20Grains">
+
+            <span class="category-icon">
+                🍚
+            </span>
+
             Rice & Grains
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🫘</span>
+
+        <!-- Pulses & Dals -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Pulses%20%26%20Dals">
+
+            <span class="category-icon">
+                🫘
+            </span>
+
             Pulses & Dals
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🌶️</span>
+
+        <!-- Masala & Spices -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Masala%20%26%20Spices">
+
+            <span class="category-icon">
+                🌶️
+            </span>
+
             Masala & Spices
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🛢️</span>
+
+        <!-- Oil & Ghee -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Oil%20%26%20Ghee">
+
+            <span class="category-icon">
+                🫗
+            </span>
+
             Oil & Ghee
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🥛</span>
+
+        <!-- Dairy & Chilled -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Dairy%20%26%20Chilled">
+
+            <span class="category-icon">
+                🥛
+            </span>
+
             Dairy & Chilled
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🍪</span>
+
+        <!-- Biscuits & Bakery -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Biscuits%20%26%20Bakery">
+
+            <span class="category-icon">
+                🍪
+            </span>
+
             Biscuits & Bakery
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🍿</span>
+
+        <!-- Snacks & Namkeen -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Snacks%20%26%20Namkeen">
+
+            <span class="category-icon">
+                🍿
+            </span>
+
             Snacks & Namkeen
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🧴</span>
+
+        <!-- Tea & Coffee -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Tea%20%26%20Coffee">
+
+            <span class="category-icon">
+                ☕
+            </span>
+
+            Tea & Coffee
+
+        </a>
+
+
+        <!-- Sugar Salt Sweeteners -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Sugar%2C%20Salt%20%26%20Sweeteners">
+
+            <span class="category-icon">
+                🧂
+            </span>
+
+            Sugar, Salt & Sweeteners
+
+        </a>
+
+
+        <!-- Dry Fruits -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Dry%20Fruits%20%26%20Nuts">
+
+            <span class="category-icon">
+                🥜
+            </span>
+
+            Dry Fruits & Nuts
+
+        </a>
+
+
+        <!-- Pickles Sauces -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Pickles%2C%20Sauces%20%26%20Spreads">
+
+            <span class="category-icon">
+                🫙
+            </span>
+
+            Pickles, Sauces & Spreads
+
+        </a>
+
+
+        <!-- Instant Foods -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Instant%20%26%20Packaged%20Foods">
+
+            <span class="category-icon">
+                🍜
+            </span>
+
+            Instant & Packaged Foods
+
+        </a>
+
+
+        <!-- Chocolates -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Chocolates%20%26%20Confectionery">
+
+            <span class="category-icon">
+                🍫
+            </span>
+
+            Chocolates & Confectionery
+
+        </a>
+
+
+        <!-- Beverages -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Beverages">
+
+            <span class="category-icon">
+                🥤
+            </span>
+
+            Beverages
+
+        </a>
+
+
+        <!-- Personal Care -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Personal%20Care">
+
+            <span class="category-icon">
+                🧴
+            </span>
+
             Personal Care
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">🧹</span>
+
+        <!-- Home Care -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Home%20Care">
+
+            <span class="category-icon">
+                🧹
+            </span>
+
             Home Care
+
         </a>
 
-        <a href="products.html" class="category">
-            <span class="category-icon">📦</span>
-            General Items
+
+        <!-- Puja & Household -->
+
+        <a
+            class="category-card"
+            href="products.html?category=Puja%20%26%20Household">
+
+            <span class="category-icon">
+                🪔
+            </span>
+
+            Puja & Household
+
         </a>
+
+
+        <!-- General Items -->
+
+        <a
+            class="category-card"
+            href="products.html?category=General%20Items">
+
+            <span class="category-icon">
+                🛍️
+            </span>
+
+            General Items
+
+        </a>
+
 
     </div>
 
 </section>
 
 
-<!-- WHY CHOOSE US -->
+<!-- =========================
+     WHY CHOOSE AC RETAIL
+========================= -->
 
-<section class="section">
+<section class="services">
 
-    <h2 class="section-title">
-        ⭐ Why Choose AC Retail?
+    <h2>
+        Why Choose AC Retail?
     </h2>
 
-    <div class="features">
 
-        <div class="feature">
-            <div class="feature-icon">🥬</div>
-            <h3>Quality Products</h3>
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                🥬 Fresh Grocery
+            </h3>
+
             <p>
-                Everyday grocery products for your family.
+                Fresh and Quality Products
             </p>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">💰</div>
-            <h3>Best Prices</h3>
+
+        <div class="card">
+
+            <h3>
+                💰 Best Prices
+            </h3>
+
             <p>
-                Affordable prices for your daily shopping.
+                Affordable Daily Prices
             </p>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">📱</div>
-            <h3>Easy WhatsApp Order</h3>
+
+        <div class="card">
+
+            <h3>
+                🚚 Fast Service
+            </h3>
+
             <p>
-                Add products to cart and order easily on WhatsApp.
+                Customer Satisfaction First
             </p>
+
         </div>
 
-        <div class="feature">
-            <div class="feature-icon">🚚</div>
-            <h3>Fast Service</h3>
-            <p>
-                Customer satisfaction is our priority.
-            </p>
-        </div>
 
     </div>
 
 </section>
 
 
-<!-- LOCATION -->
+<!-- =========================
+     VIEW PRODUCTS
+========================= -->
 
-<section class="section">
+<section
+    style="
+        text-align:center;
+        margin:40px 20px;
+    ">
 
-    <div class="location-box">
+    <a
+        href="products.html"
+        class="btn">
 
-        <h2>📍 Visit AC Retail</h2>
+        🛒 View All Products
 
-        <p>
-            <strong>Police Line, Phaltan</strong>
-        </p>
-
-        <p>
-            📞 <strong>8830300826</strong>
-        </p>
-
-        <p>
-            🕒 Open: 7:00 AM – 9:00 PM
-        </p>
-
-    </div>
+    </a>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     LOCATION
+========================= -->
 
-<footer>
+<section class="location-box">
 
-    <h3>🏪 AC Retail</h3>
-
-    <p>
-        Your Trusted Grocery Store
-    </p>
+    <h3>
+        📍 Visit AC Retail
+    </h3>
 
     <p>
         Police Line, Phaltan
@@ -444,21 +714,56 @@
     </p>
 
     <p>
-        &copy; 2026 AC Retail. All Rights Reserved.
+        🕒 Open: 7:00 AM – 9:00 PM
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <h3>
+        AC Retail
+    </h3>
+
+    <p>
+        Police Line, Phaltan
+    </p>
+
+    <p>
+        📞 8830300826
+    </p>
+
+    <p>
+        🕒 Open: 7:00 AM – 9:00 PM
+    </p>
+
+    <p>
+        &copy; 2026 AC Retail.
+        All Rights Reserved.
     </p>
 
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
 
 <a
     href="https://wa.me/918830300826"
     class="whatsapp-float"
-    target="_blank"
-    aria-label="Order on WhatsApp">
+    target="_blank">
+
     💬
+
 </a>
 
+
 </body>
+
 </html>
