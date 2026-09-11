@@ -1755,3 +1755,236 @@ body:has(.services) .contact-box p {
     padding: 30px 15px;
   }
 }
+/* =========================================
+   AC RETAIL - PREMIUM OFFERS PAGE
+   ========================================= */
+
+body:has(.offers-grid) {
+  background: #f6faf7;
+}
+
+body:has(.offers-grid) .hero {
+  padding: 75px 20px;
+  background: linear-gradient(135deg, #08752d, #16a05a);
+  border-radius: 0 0 35px 35px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+body:has(.offers-grid) .hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+body:has(.offers-grid) .hero p {
+  font-size: 18px;
+  opacity: .92;
+}
+
+/* Main container */
+body:has(.offers-grid) .container {
+  max-width: 1200px;
+  padding: 45px 20px 70px;
+}
+
+/* Offer info */
+body:has(.offers-grid) .offer-info {
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid #e4eee7;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+body:has(.offers-grid) .offer-info strong {
+  font-size: 21px;
+}
+
+/* Offer cards */
+body:has(.offers-grid) .offers-grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+body:has(.offers-grid) .offer-card {
+  border-radius: 20px;
+  border: 1px solid #e8eee9;
+  box-shadow: 0 8px 28px rgba(0,0,0,.07);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+body:has(.offers-grid) .offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.13);
+}
+
+/* Discount badge */
+body:has(.offers-grid) .discount-badge {
+  top: 12px;
+  left: 12px;
+  padding: 8px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
+}
+
+/* Product image */
+body:has(.offers-grid) .product-image {
+  height: 210px;
+  background: linear-gradient(145deg, #f8fbf9, #eef6f0);
+}
+
+body:has(.offers-grid) .product-image img {
+  transition: transform .3s ease;
+}
+
+body:has(.offers-grid) .offer-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+/* Product details */
+body:has(.offers-grid) .product-info {
+  padding: 18px;
+}
+
+body:has(.offers-grid) .product-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+body:has(.offers-grid) .category {
+  color: #7a857e;
+}
+
+body:has(.offers-grid) .sale-price {
+  font-size: 22px;
+  color: #08752d;
+}
+
+body:has(.offers-grid) .mrp {
+  color: #999;
+}
+
+body:has(.offers-grid) .saving {
+  display: inline-block;
+  background: #fff0f0;
+  padding: 5px 9px;
+  border-radius: 8px;
+  margin-top: 7px;
+}
+
+/* Buttons */
+body:has(.offers-grid) .card-buttons {
+  gap: 9px;
+  margin-top: 16px;
+}
+
+body:has(.offers-grid) .cart-btn,
+body:has(.offers-grid) .wa-btn {
+  padding: 11px 8px;
+  border-radius: 11px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+body:has(.offers-grid) .cart-btn:hover,
+body:has(.offers-grid) .wa-btn:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
+/* Load More */
+body:has(.offers-grid) #loadMoreOffers {
+  padding: 14px 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(8,117,45,.20);
+  transition: .25s ease;
+}
+
+body:has(.offers-grid) #loadMoreOffers:hover {
+  transform: translateY(-2px);
+}
+
+/* Empty state */
+body:has(.offers-grid) .empty {
+  border-radius: 22px;
+  padding: 60px 20px;
+  border: 1px solid #e5eee8;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  body:has(.offers-grid) .offers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+
+  body:has(.offers-grid) .hero {
+    padding: 55px 18px;
+    border-radius: 0 0 25px 25px;
+  }
+
+  body:has(.offers-grid) .hero h1 {
+    font-size: 31px;
+    line-height: 1.2;
+  }
+
+  body:has(.offers-grid) .hero p {
+    font-size: 15px;
+  }
+
+  body:has(.offers-grid) .container {
+    padding: 30px 12px 55px;
+  }
+
+  body:has(.offers-grid) .offer-info {
+    padding: 20px 15px;
+  }
+
+  body:has(.offers-grid) .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+  }
+
+  body:has(.offers-grid) .product-image {
+    height: 155px;
+  }
+
+  body:has(.offers-grid) .product-info {
+    padding: 12px;
+  }
+
+  body:has(.offers-grid) .product-name {
+    font-size: 14px;
+  }
+
+  body:has(.offers-grid) .sale-price {
+    font-size: 18px;
+  }
+
+  body:has(.offers-grid) .card-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  body:has(.offers-grid) .cart-btn,
+  body:has(.offers-grid) .wa-btn {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  body:has(.offers-grid) .offers-grid {
+    gap: 9px;
+  }
+
+  body:has(.offers-grid) .product-image {
+    height: 135px;
+  }
+
+  body:has(.offers-grid) .product-info {
+    padding: 10px;
+  }
+}
