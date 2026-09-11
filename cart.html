@@ -594,6 +594,45 @@
           🟢 Order Entire Cart on WhatsApp
         </button>
 
+        
+<div id="checkoutForm" class="checkout-form" style="display:none;">
+
+  <h3>📋 Customer Details</h3>
+
+  <label>Customer Name</label>
+  <input
+    type="text"
+    id="customerName"
+    placeholder="Enter your name"
+  >
+
+  <label>Mobile Number</label>
+  <input
+    type="tel"
+    id="customerMobile"
+    placeholder="Enter mobile number"
+    maxlength="10"
+  >
+
+  <label>Delivery Address</label>
+  <textarea
+    id="customerAddress"
+    placeholder="Enter complete delivery address"
+    rows="3"
+  ></textarea>
+
+  <label>Order Note <span>(Optional)</span></label>
+  <textarea
+    id="customerNote"
+    placeholder="Any special instruction?"
+    rows="2"
+  ></textarea>
+
+  <button id="confirmWhatsApp" class="confirm-btn">
+    🟢 Confirm Order on WhatsApp
+  </button>
+
+</div>
         <div class="whatsapp-note">
           📱 Your selected products, quantities and total amount will be shared on WhatsApp.
         </div>
