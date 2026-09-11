@@ -1,90 +1,357 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.addEventListener("DOMContentLoaded", function () {
 
-const cartItems = document.getElementById("cartItems");
-const totalPrice = document.getElementById("totalPrice");
+  const CART_KEY = "cart";
 
-function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
+  const cartItemsBox = document.getElementById("cartItems");
+  const cartTotalBox = document.getElementById("cartTotal");
+  const itemCountBox = document.getElementById("itemCount");
+  const summaryItemsBox = document.getElementById("summaryItems");
 
-function renderCart() {
+  const whatsappButton = document.getElementById("whatsappOrder");
+  const clearButton = document.getElementById("clearCart");
 
-    cartItems.innerHTML = "";
+
+  function getCart() {
+    try {
+      return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+
+  function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+
+
+  function formatPrice(price) {
+    return "₹" + Number(price || 0).toLocaleString("en-IN");
+  }
+
+
+  function escapeHTML(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+
+  function getTotal(cart) {
+    return cart.reduce(function (total, item) {
+      return total + (Number(item.price) * Number(item.qty || 1));
+    }, 0);
+  }
+
+
+  function getItemCount(cart) {
+    return cart.reduce(function (total, item) {
+      return total + Number(item.qty || 1);
+    }, 0);
+  }
+
+
+  function renderCart() {
+
+    const cart = getCart();
+
+    const total = getTotal(cart);
+    const itemCount = getItemCount(cart);
+
+
+    itemCountBox.textContent =
+      itemCount + (itemCount === 1 ? " item" : " items");
+
+    summaryItemsBox.textContent = itemCount;
+
+    cartTotalBox.textContent = formatPrice(total);
+
 
     if (cart.length === 0) {
-        cartItems.innerHTML = "<h2>Your cart is empty.</h2>";
-        totalPrice.innerHTML = "₹0";
-        return;
+
+      cartItemsBox.innerHTML = `
+        <div class="empty-cart">
+
+          <div class="empty-icon">🛒</div>
+
+          <h2>Your cart is empty</h2>
+
+          <p>
+            Add some grocery products to your cart and order on WhatsApp.
+          </p>
+
+          <a href="products.html" class="shop-btn">
+            🛍️ Start Shopping
+          </a>
+
+        </div>
+      `;
+
+      whatsappButton.disabled = true;
+      whatsappButton.style.opacity = "0.5";
+      clearButton.disabled = true;
+      clearButton.style.opacity = "0.5";
+
+      return;
     }
 
-    let total = 0;
 
-    cart.forEach(item => {
+    whatsappButton.disabled = false;
+    whatsappButton.style.opacity = "1";
 
-        total += item.price * item.qty;
+    clearButton.disabled = false;
+    clearButton.style.opacity = "1";
 
-        cartItems.innerHTML += `
-        <div class="cart-card">
 
-            <h3>${item.name}</h3>
+    cartItemsBox.innerHTML = cart.map(function (item, index) {
 
-            <p>₹${item.price}</p>
+      const qty = Number(item.qty || 1);
+      const price = Number(item.price || 0);
+      const itemTotal = price * qty;
 
-            <div class="qty-box">
+      let imageHTML = "";
 
-                <button onclick="decreaseQty(${item.id})">➖</button>
+      if (
+        item.image &&
+        !item.image.endsWith("default.png")
+      ) {
 
-                <span>${item.qty}</span>
+        imageHTML = `
+          <img
+            src="${escapeHTML(item.image)}"
+            class="product-image"
+            alt="${escapeHTML(item.name)}"
+            onerror="this.outerHTML='<div class=&quot;no-image&quot;>🖼️<br>No Image</div>'"
+          >
+        `;
 
-                <button onclick="increaseQty(${item.id})">➕</button>
+      } else {
+
+        imageHTML = `
+          <div class="no-image">
+            🖼️<br>
+            No Image
+          </div>
+        `;
+
+      }
+
+
+      return `
+
+        <div class="cart-item">
+
+          ${imageHTML}
+
+          <div>
+
+            <div class="product-name">
+              ${escapeHTML(item.name)}
+            </div>
+
+            <div class="product-price">
+              ${formatPrice(price)} each
+            </div>
+
+            <div class="quantity-control">
+
+              <button
+                class="qty-minus"
+                data-index="${index}">
+                −
+              </button>
+
+              <span class="quantity">
+                ${qty}
+              </span>
+
+              <button
+                class="qty-plus"
+                data-index="${index}">
+                +
+              </button>
 
             </div>
 
-            <p><strong>Total:</strong> ₹${item.price * item.qty}</p>
+          </div>
 
-            <button onclick="removeItem(${item.id})">
-                🗑 Remove
+
+          <div class="cart-item-right">
+
+            <div class="item-total">
+              ${formatPrice(itemTotal)}
+            </div>
+
+            <button
+              class="remove-btn"
+              data-index="${index}">
+              🗑️ Remove
             </button>
 
+          </div>
+
         </div>
-        `;
-    });
 
-    totalPrice.innerHTML = "₹" + total;
-}
+      `;
 
-function increaseQty(id){
+    }).join("");
 
-    const item = cart.find(p => p.id === id);
+  }
 
-    if(item){
-        item.qty++;
-        saveCart();
-        renderCart();
+
+  /* PLUS */
+  cartItemsBox.addEventListener("click", function (event) {
+
+    const plusButton = event.target.closest(".qty-plus");
+
+    if (!plusButton) return;
+
+    const index = Number(plusButton.dataset.index);
+
+    const cart = getCart();
+
+    if (cart[index]) {
+
+      cart[index].qty =
+        Number(cart[index].qty || 1) + 1;
+
+      saveCart(cart);
+
+      renderCart();
     }
 
-}
+  });
 
-function decreaseQty(id){
 
-    const item = cart.find(p => p.id === id);
+  /* MINUS */
+  cartItemsBox.addEventListener("click", function (event) {
 
-    if(item && item.qty > 1){
-        item.qty--;
-        saveCart();
-        renderCart();
+    const minusButton = event.target.closest(".qty-minus");
+
+    if (!minusButton) return;
+
+    const index = Number(minusButton.dataset.index);
+
+    const cart = getCart();
+
+    if (cart[index]) {
+
+      cart[index].qty =
+        Number(cart[index].qty || 1) - 1;
+
+
+      if (cart[index].qty <= 0) {
+
+        cart.splice(index, 1);
+
+      }
+
+      saveCart(cart);
+
+      renderCart();
     }
 
-}
+  });
 
-function removeItem(id){
 
-    cart = cart.filter(item => item.id !== id);
+  /* REMOVE */
+  cartItemsBox.addEventListener("click", function (event) {
 
-    saveCart();
+    const removeButton =
+      event.target.closest(".remove-btn");
+
+    if (!removeButton) return;
+
+    const index =
+      Number(removeButton.dataset.index);
+
+    const cart = getCart();
+
+    if (cart[index]) {
+
+      cart.splice(index, 1);
+
+      saveCart(cart);
+
+      renderCart();
+    }
+
+  });
+
+
+  /* CLEAR CART */
+  clearButton.addEventListener("click", function () {
+
+    const cart = getCart();
+
+    if (!cart.length) return;
+
+    const confirmClear =
+      confirm("Are you sure you want to clear your cart?");
+
+    if (!confirmClear) return;
+
+    localStorage.removeItem(CART_KEY);
 
     renderCart();
 
-}
+  });
 
-renderCart();
+
+  /* WHATSAPP ORDER */
+  whatsappButton.addEventListener("click", function () {
+
+    const cart = getCart();
+
+    if (!cart.length) return;
+
+
+    let message =
+      "🛒 *AC Retail - Grocery Order*%0A%0A";
+
+
+    cart.forEach(function (item, index) {
+
+      const qty = Number(item.qty || 1);
+      const price = Number(item.price || 0);
+      const total = price * qty;
+
+      message +=
+        `${index + 1}. ${item.name}%0A` +
+        `   Qty: ${qty}%0A` +
+        `   Price: ${formatPrice(price)}%0A` +
+        `   Total: ${formatPrice(total)}%0A%0A`;
+
+    });
+
+
+    const grandTotal = getTotal(cart);
+
+
+    message +=
+      "━━━━━━━━━━━━━━%0A" +
+      `💰 *Grand Total: ${formatPrice(grandTotal)}*%0A%0A` +
+      "📍 AC Retail%0A" +
+      "Police Line, Phaltan";
+
+
+    const whatsappNumber =
+      "918830300826";
+
+
+    const url =
+      `https://wa.me/${whatsappNumber}?text=${message}`;
+
+
+    window.open(url, "_blank");
+
+  });
+
+
+  /* FIRST LOAD */
+  renderCart();
+
+});
