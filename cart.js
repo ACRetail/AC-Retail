@@ -301,55 +301,138 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  /* WHATSAPP ORDER */
-  whatsappButton.addEventListener("click", function () {
+/* CHECKOUT + WHATSAPP ORDER */
 
-    const cart = getCart();
-
-    if (!cart.length) return;
+const checkoutForm = document.getElementById("checkoutForm");
+const confirmWhatsApp = document.getElementById("confirmWhatsApp");
 
 
-    let message =
-      "🛒 *AC Retail - Grocery Order*%0A%0A";
+whatsappButton.addEventListener("click", function () {
+
+  const cart = getCart();
+
+  if (!cart.length) return;
+
+  checkoutForm.style.display = "block";
+
+  checkoutForm.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+});
 
 
-    cart.forEach(function (item, index) {
+confirmWhatsApp.addEventListener("click", function () {
 
-      const qty = Number(item.qty || 1);
-      const price = Number(item.price || 0);
-      const total = price * qty;
+  const cart = getCart();
 
-      message +=
-        `${index + 1}. ${item.name}%0A` +
-        `   Qty: ${qty}%0A` +
-        `   Price: ${formatPrice(price)}%0A` +
-        `   Total: ${formatPrice(total)}%0A%0A`;
-
-    });
+  if (!cart.length) return;
 
 
-    const grandTotal = getTotal(cart);
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const mobile =
+    document.getElementById("customerMobile").value.trim();
+
+  const address =
+    document.getElementById("customerAddress").value.trim();
+
+  const note =
+    document.getElementById("customerNote").value.trim();
+
+
+  if (!name) {
+    alert("Please enter your name.");
+    return;
+  }
+
+
+  if (!/^[0-9]{10}$/.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+
+  if (!address) {
+    alert("Please enter your delivery address.");
+    return;
+  }
+
+
+  let message =
+    "🛒 *AC Retail - Grocery Order*%0A%0A";
+
+
+  message +=
+    "👤 *Customer:* " +
+    encodeURIComponent(name) +
+    "%0A";
+
+
+  message +=
+    "📱 *Mobile:* " +
+    encodeURIComponent(mobile) +
+    "%0A";
+
+
+  message +=
+    "📍 *Address:* " +
+    encodeURIComponent(address) +
+    "%0A";
+
+
+  if (note) {
+    message +=
+      "📝 *Note:* " +
+      encodeURIComponent(note) +
+      "%0A";
+  }
+
+
+  message += "%0A━━━━━━━━━━━━━━%0A";
+
+
+  cart.forEach(function (item, index) {
+
+    const qty = Number(item.qty || 1);
+    const price = Number(item.price || 0);
+    const total = price * qty;
 
 
     message +=
-      "━━━━━━━━━━━━━━%0A" +
-      `💰 *Grand Total: ${formatPrice(grandTotal)}*%0A%0A` +
-      "📍 AC Retail%0A" +
-      "Police Line, Phaltan";
-
-
-    const whatsappNumber =
-      "918830300826";
-
-
-    const url =
-      `https://wa.me/${whatsappNumber}?text=${message}`;
-
-
-    window.open(url, "_blank");
+      `${index + 1}. ` +
+      encodeURIComponent(item.name) +
+      "%0A" +
+      `   Qty: ${qty}%0A` +
+      `   Price: ${formatPrice(price)}%0A` +
+      `   Total: ${formatPrice(total)}%0A%0A`;
 
   });
 
+
+  const grandTotal = getTotal(cart);
+
+
+  message +=
+    "━━━━━━━━━━━━━━%0A" +
+    `💰 *Grand Total: ${formatPrice(grandTotal)}*%0A%0A` +
+    "🏪 AC Retail%0A" +
+    "Police Line, Phaltan";
+
+
+  const whatsappNumber =
+    "918830300826";
+
+
+  const url =
+    `https://wa.me/${whatsappNumber}?text=${message}`;
+
+
+  window.open(url, "_blank");
+
+});
 
   /* FIRST LOAD */
   renderCart();
