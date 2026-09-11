@@ -1,304 +1,200 @@
-```javascript
 const form = document.getElementById("productForm");
 const list = document.getElementById("adminProducts");
 const ordersList = document.getElementById("adminOrders");
 
-
-// =========================
-// PRODUCTS
-// =========================
-
-let products =
-JSON.parse(localStorage.getItem("products")) || [];
-
+let products = JSON.parse(localStorage.getItem("products")) || [];
 
 function showProducts() {
+  list.innerHTML = "";
 
-    list.innerHTML = "";
+  products.forEach((p, index) => {
+    list.innerHTML += `
+      <div class="card">
+        <h3>${p.name}</h3>
+        <p>${p.category}</p>
+        <p><b>₹${p.price}</b></p>
 
-    products.forEach((p, index) => {
-
-        list.innerHTML += `
-
-        <div class="card">
-
-            <h3>${p.name}</h3>
-
-            <p>${p.category}</p>
-
-            <p>
-                <b>₹${p.price}</b>
-            </p>
-
-            <button
-                onclick="deleteProduct(${index})"
-                class="btn"
-            >
-                Delete
-            </button>
-
-        </div>
-
-        `;
-
-    });
-
+        <button onclick="deleteProduct(${index})" class="btn">
+          Delete
+        </button>
+      </div>
+    `;
+  });
 }
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-form.addEventListener("submit", function(e) {
+  products.push({
+    name: name.value,
+    category: category.value,
+    price: price.value
+  });
 
-    e.preventDefault();
+  localStorage.setItem("products", JSON.stringify(products));
 
-    products.push({
-
-        name: document.getElementById("name").value,
-
-        category: document.getElementById("category").value,
-
-        price: document.getElementById("price").value
-
-    });
-
-
-    localStorage.setItem(
-        "products",
-        JSON.stringify(products)
-    );
-
-
-    form.reset();
-
-    showProducts();
-
+  form.reset();
+  showProducts();
 });
 
 
 function deleteProduct(index) {
+  products.splice(index, 1);
 
-    products.splice(index, 1);
+  localStorage.setItem(
+    "products",
+    JSON.stringify(products)
+  );
 
-    localStorage.setItem(
-        "products",
-        JSON.stringify(products)
-    );
-
-    showProducts();
-
+  showProducts();
 }
 
 
-// =========================
-// ORDERS
-// =========================
+/* =========================
+   CUSTOMER ORDERS
+========================= */
 
 function showOrders() {
 
-    if (!ordersList) return;
+  if (!ordersList) return;
 
-    let orders =
-    JSON.parse(localStorage.getItem("orders")) || [];
+  let orders =
+    JSON.parse(localStorage.getItem("acOrders")) || [];
 
+  ordersList.innerHTML = "";
 
-    ordersList.innerHTML = "";
+  if (orders.length === 0) {
+    ordersList.innerHTML = `
+      <div class="empty-orders">
+        <h3>📭 No Orders Yet</h3>
+        <p>Customer orders will appear here.</p>
+      </div>
+    `;
+    return;
+  }
 
+  orders.slice().reverse().forEach((order, index) => {
 
-    if (orders.length === 0) {
+    let itemsHTML = "";
 
-        ordersList.innerHTML = `
+    (order.items || []).forEach(item => {
 
-        <div class="empty-orders">
+      const qty = Number(item.qty || 1);
+      const price = Number(item.price || 0);
 
-            <h3>No Orders Yet</h3>
-
-            <p>Customer orders will appear here.</p>
-
-        </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    orders.forEach((order, index) => {
-
-        let itemsHTML = "";
-
-
-        if (order.items && Array.isArray(order.items)) {
-
-            order.items.forEach(item => {
-
-                itemsHTML += `
-
-                <li>
-                    ${item.name}
-                    × ${item.quantity || 1}
-                </li>
-
-                `;
-
-            });
-
-        }
-
-
-        ordersList.innerHTML += `
-
-        <div class="order-card">
-
-            <h3>
-                Order ID:
-                ${order.orderId || "N/A"}
-            </h3>
-
-
-            <p>
-                <b>Customer:</b>
-                ${order.name || order.customerName || "N/A"}
-            </p>
-
-
-            <p>
-                <b>Phone:</b>
-                ${order.phone || "N/A"}
-            </p>
-
-
-            <p>
-                <b>Address:</b>
-                ${order.address || "N/A"}
-            </p>
-
-
-            <p>
-                <b>Products:</b>
-            </p>
-
-            <ul>
-                ${itemsHTML}
-            </ul>
-
-
-            <p>
-                <b>Total:</b>
-                ₹${order.total || 0}
-            </p>
-
-
-            <p class="order-status">
-
-                Status:
-                ${order.status || "Pending"}
-
-            </p>
-
-
-            <div class="order-buttons">
-
-                <button
-                    onclick="updateOrderStatus(${index}, 'Accepted')"
-                >
-                    Accept
-                </button>
-
-
-                <button
-                    onclick="updateOrderStatus(${index}, 'Delivered')"
-                >
-                    Delivered
-                </button>
-
-
-                <button
-                    onclick="updateOrderStatus(${index}, 'Cancelled')"
-                >
-                    Cancel
-                </button>
-
-
-                <button
-                    onclick="deleteOrder(${index})"
-                >
-                    Delete
-                </button>
-
-            </div>
-
-        </div>
-
-        `;
-
+      itemsHTML += `
+        <li>
+          ${item.name}
+          × ${qty}
+          — ₹${price * qty}
+        </li>
+      `;
     });
 
+    ordersList.innerHTML += `
+      <div class="order-card">
+
+        <h3>🛒 Order ${order.orderId}</h3>
+
+        <p>
+          <b>👤 Customer:</b>
+          ${order.customerName || ""}
+        </p>
+
+        <p>
+          <b>📱 Mobile:</b>
+          ${order.customerMobile || ""}
+        </p>
+
+        <p>
+          <b>📍 Address:</b>
+          ${order.customerAddress || ""}
+        </p>
+
+        ${
+          order.customerNote
+            ? `<p><b>📝 Note:</b> ${order.customerNote}</p>`
+            : ""
+        }
+
+        <p>
+          <b>📅 Date:</b>
+          ${order.date || ""}
+        </p>
+
+        <hr>
+
+        <h4>🛍️ Items</h4>
+
+        <ul>
+          ${itemsHTML}
+        </ul>
+
+        <h3>
+          💰 Total: ₹${order.total || 0}
+        </h3>
+
+        <p class="order-status">
+          <b>Status:</b>
+          ${order.status || "Order Placed"}
+        </p>
+
+        <div class="order-buttons">
+
+          <button
+            class="btn"
+            onclick="updateOrderStatus('${order.orderId}', 'Confirmed')">
+            ✅ Confirm
+          </button>
+
+          <button
+            class="btn"
+            onclick="updateOrderStatus('${order.orderId}', 'Delivered')">
+            🚚 Delivered
+          </button>
+
+          <button
+            class="btn"
+            onclick="updateOrderStatus('${order.orderId}', 'Cancelled')">
+            ❌ Cancel
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  });
 }
 
 
-// =========================
-// UPDATE ORDER STATUS
-// =========================
+/* =========================
+   UPDATE ORDER STATUS
+========================= */
 
-function updateOrderStatus(index, status) {
+function updateOrderStatus(orderId, newStatus) {
 
-    let orders =
-    JSON.parse(localStorage.getItem("orders")) || [];
+  let orders =
+    JSON.parse(localStorage.getItem("acOrders")) || [];
 
+  orders = orders.map(order => {
 
-    if (!orders[index]) return;
+    if (order.orderId === orderId) {
+      order.status = newStatus;
+    }
 
+    return order;
+  });
 
-    orders[index].status = status;
+  localStorage.setItem(
+    "acOrders",
+    JSON.stringify(orders)
+  );
 
-
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
-
-
-    showOrders();
-
+  showOrders();
 }
 
 
-// =========================
-// DELETE ORDER
-// =========================
-
-function deleteOrder(index) {
-
-    let orders =
-    JSON.parse(localStorage.getItem("orders")) || [];
-
-
-    orders.splice(index, 1);
-
-
-    localStorage.setItem(
-        "orders",
-        JSON.stringify(orders)
-    );
-
-
-    showOrders();
-
-}
-
-
-// =========================
-// INITIAL LOAD
-// =========================
+/* FIRST LOAD */
 
 showProducts();
-
 showOrders();
-
-
-// Refresh orders every 3 seconds
-// so new orders appear automatically.
-
-setInterval(showOrders, 3000);
-```
-
