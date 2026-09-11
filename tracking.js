@@ -1,78 +1,176 @@
-const trackBtn = document.getElementById("trackBtn");
-const orderIdInput = document.getElementById("orderId");
-const trackingResult = document.getElementById("trackingResult");
+document.addEventListener("DOMContentLoaded", () => {
 
-trackBtn.addEventListener("click", () => {
+  const orderInput = document.getElementById("orderId");
+  const trackButton = document.getElementById("trackOrder");
+  const resultBox = document.getElementById("trackingResult");
 
-    const orderId = orderIdInput.value.trim();
+  function getOrders() {
+    return JSON.parse(localStorage.getItem("acOrders")) || [];
+  }
 
-    if (!orderId) {
-        trackingResult.innerHTML = `
-            <p style="color:red;margin-top:20px;">
-                Please enter your Order ID.
-            </p>
-        `;
-        return;
+  function showMessage(message, type = "info") {
+    resultBox.innerHTML = `
+      <div class="tracking-message ${type}">
+        ${message}
+      </div>
+    `;
+  }
+
+  function trackOrder() {
+    const enteredId = orderInput.value.trim().toUpperCase();
+
+    if (!enteredId) {
+      showMessage("Please enter your Order ID.", "error");
+      return;
     }
 
-    /*
-      Temporary free/static tracking.
-      Current status will show as Order Received.
-      Live merchant status will be connected later.
-    */
+    const orders = getOrders();
 
-    trackingResult.innerHTML = `
+    const order = orders.find(
+      item => String(item.orderId).toUpperCase() === enteredId
+    );
 
-        <div class="order-info">
+    if (!order) {
+      showMessage(
+        "❌ Order not found.<br>Please check your Order ID.",
+        "error"
+      );
+      return;
+    }
 
-            <strong>Order ID:</strong>
-            ${escapeHtml(orderId)}
+    const status = order.status || "Order Placed";
 
-            <br><br>
+    const steps = [
+      {
+        name: "Order Placed",
+        icon: "📝"
+      },
+      {
+        name: "Order Confirmed",
+        icon: "✅"
+      },
+      {
+        name: "Preparing Order",
+        icon: "📦"
+      },
+      {
+        name: "Out for Delivery",
+        icon: "🛵"
+      },
+      {
+        name: "Delivered",
+        icon: "🎉"
+      }
+    ];
 
-            <strong>Current Status:</strong>
-            Order Received
+    const currentIndex = steps.findIndex(
+      step => step.name === status
+    );
 
+    const activeIndex = currentIndex >= 0 ? currentIndex : 0;
+
+    let timelineHTML = "";
+
+    steps.forEach((step, index) => {
+      let className = "";
+
+      if (index < activeIndex) {
+        className = "completed";
+      } else if (index === activeIndex) {
+        className = "active";
+      }
+
+      timelineHTML += `
+        <div class="timeline-step ${className}">
+          <div class="timeline-icon">
+            ${step.icon}
+          </div>
+
+          <div class="timeline-text">
+            <strong>${step.name}</strong>
+            ${
+              index === activeIndex
+                ? `<span>Current Status</span>`
+                : ""
+            }
+          </div>
+        </div>
+      `;
+    });
+
+    const customerName = order.customerName || "Customer";
+    const orderDate = order.date || "";
+    const total = Number(order.total || 0);
+
+    resultBox.innerHTML = `
+      <div class="order-result">
+
+        <div class="order-header">
+          <div>
+            <small>Order ID</small>
+            <h2>${order.orderId}</h2>
+          </div>
+
+          <div class="order-status">
+            ${status}
+          </div>
         </div>
 
-        <div class="status-box">
+        <div class="customer-info">
+          <p>
+            <strong>Customer:</strong>
+            ${customerName}
+          </p>
 
-            <div class="status-step active">
-                <span class="status-icon">🛒</span>
-                <span>Order Placed</span>
-            </div>
-
-            <div class="status-step">
-                <span class="status-icon">✅</span>
-                <span>Order Confirmed</span>
-            </div>
-
-            <div class="status-step">
-                <span class="status-icon">📦</span>
-                <span>Preparing</span>
-            </div>
-
-            <div class="status-step">
-                <span class="status-icon">🚚</span>
-                <span>Out for Delivery</span>
-            </div>
-
-            <div class="status-step">
-                <span class="status-icon">🎉</span>
-                <span>Delivered</span>
-            </div>
-
+          <p>
+            <strong>Order Date:</strong>
+            ${orderDate}
+          </p>
         </div>
+
+        <div class="timeline">
+          ${timelineHTML}
+        </div>
+
+        <div class="order-items">
+          <h3>🛒 Order Items</h3>
+
+          ${
+            order.items && order.items.length
+              ? order.items.map(item => `
+                <div class="tracking-item">
+                  <span>
+                    ${item.name}
+                    × ${item.qty}
+                  </span>
+
+                  <strong>
+                    ₹${(
+                      Number(item.price || 0) *
+                      Number(item.qty || 0)
+                    ).toFixed(2)}
+                  </strong>
+                </div>
+              `).join("")
+              : "<p>No item information available.</p>"
+          }
+
+          <div class="tracking-total">
+            <span>Total</span>
+            <strong>₹${total.toFixed(2)}</strong>
+          </div>
+        </div>
+
+      </div>
     `;
+  }
+
+  trackButton.addEventListener("click", trackOrder);
+
+  orderInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      trackOrder();
+    }
+  });
+
 });
-
-
-function escapeHtml(text) {
-
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
