@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Track Order - AC Retail</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.tracking-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.tracking-box h2 {
+    color: #08752d;
+    margin-bottom: 10px;
+}
+
+.tracking-input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd8cf;
+    border-radius: 9px;
+    font-size: 16px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+
+.track-btn {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 9px;
+    background: #0baa45;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.track-btn:hover {
+    background: #078a38;
+}
+
+.status-box {
+    margin-top: 25px;
+}
+
+.status-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: #f1f6f2;
+    font-weight: 600;
+}
+
+.status-step.active {
+    background: #dff5e6;
+    color: #08752d;
+}
+
+.status-icon {
+    font-size: 24px;
+}
+
+.order-info {
+    background: #f7faf8;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h1>AC Retail</h1>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="tracking-box">
+
+    <h2>📦 Track Your Order</h2>
+
+    <p>Enter your Order ID to check your order status.</p>
+
+    <input
+        type="text"
+        id="orderId"
+        class="tracking-input"
+        placeholder="Example: AC123456"
+    >
+
+    <button class="track-btn" id="trackBtn">
+        🔍 Track Order
+    </button>
+
+    <div id="trackingResult"></div>
+
+</section>
+
+<footer>
+    <p>© 2026 AC Retail | All Rights Reserved</p>
+</footer>
+
+<script src="tracking.js"></script>
+
+</body>
+</html>
