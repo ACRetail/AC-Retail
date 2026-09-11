@@ -1,42 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - AC Retail</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shopping Cart - AC Retail</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8f6;
+      color: #173b2b;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #00852b, #006b24);
+      color: white;
+      padding: 18px 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tagline {
+      font-size: 14px;
+      margin-top: 3px;
+      opacity: .9;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: rgba(255,255,255,.16);
+    }
+
+    /* MAIN */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 18px;
+    }
+
+    .page-title {
+      margin-bottom: 22px;
+    }
+
+    .page-title h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    .page-title p {
+      margin: 7px 0 0;
+      color: #6b7d74;
+    }
+
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* CART ITEMS */
+    .cart-box,
+    .summary-box {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid #dfeae4;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .cart-box {
+      padding: 20px;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .cart-header h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .item-count {
+      background: #e8f7ed;
+      color: #08752d;
+      padding: 9px 14px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .cart-item {
+      border: 1px solid #e0e8e3;
+      border-radius: 15px;
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 105px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 15px;
+      transition: .2s;
+    }
+
+    .cart-item:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,.07);
+    }
+
+    .product-image {
+      width: 105px;
+      height: 105px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #f5f7f5;
+      padding: 8px;
+    }
+
+    .no-image {
+      width: 105px;
+      height: 105px;
+      border-radius: 12px;
+      background: #f0f3f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #89968f;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #173b2b;
+      margin-bottom: 7px;
+    }
+
+    .product-price {
+      color: #087d32;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .item-total {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    /* QUANTITY */
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      border: 1px solid #b9dfc5;
+      border-radius: 30px;
+      overflow: hidden;
+      width: fit-content;
+      margin-left: auto;
+    }
+
+    .quantity-control button {
+      width: 40px;
+      height: 38px;
+      border: 0;
+      background: #eaf8ee;
+      color: #08752d;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quantity-control button:hover {
+      background: #d5f0dd;
+    }
+
+    .quantity {
+      width: 38px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .remove-btn {
+      border: 0;
+      background: none;
+      color: #e53935;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 9px;
+      display: block;
+      margin-left: auto;
+    }
+
+    /* CONTINUE */
+    .continue-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 13px 20px;
+      border: 2px solid #00852b;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #08752d;
+      font-weight: bold;
+      background: white;
+    }
+
+    .continue-btn:hover {
+      background: #eaf8ee;
+    }
+
+    /* SUMMARY */
+    .summary-box {
+      overflow: hidden;
+      position: sticky;
+      top: 20px;
+    }
+
+    .summary-title {
+      padding: 20px;
+      background: #effaf2;
+      border-bottom: 1px solid #d9eadf;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .summary-content {
+      padding: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 17px;
+      font-size: 16px;
+    }
+
+    .summary-total {
+      border-top: 1px solid #ddd;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .summary-total span:last-child {
+      color: #087d32;
+    }
+
+    .whatsapp-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      background: #0baa45;
+      color: white;
+      padding: 17px 15px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,150,60,.2);
+    }
+
+    .whatsapp-btn:hover {
+      background: #078a38;
+    }
+
+    .clear-btn {
+      width: 100%;
+      margin-top: 12px;
+      border: 1px solid #ffb8b8;
+      background: white;
+      color: #e53935;
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .whatsapp-note {
+      background: #effaf3;
+      border-radius: 10px;
+      padding: 13px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: #217342;
+      line-height: 1.5;
+    }
+
+    /* FEATURES */
+    .features {
+      margin-top: 25px;
+      background: #eefaf2;
+      border-radius: 15px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+
+    .feature {
+      padding: 8px;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      color: #08752d;
+    }
+
+    .feature-text {
+      font-size: 12px;
+      color: #6a7d72;
+      margin-top: 5px;
+    }
+
+    /* EMPTY CART */
+    .empty-cart {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .empty-icon {
+      font-size: 65px;
+      margin-bottom: 15px;
+    }
+
+    .empty-cart h2 {
+      margin-bottom: 8px;
+    }
+
+    .empty-cart p {
+      color: #718078;
+    }
+
+    .shop-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #00852b;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      background: #004d25;
+      color: white;
+      padding: 25px 18px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav a {
+        padding: 9px 10px;
+        font-size: 14px;
+      }
+
+      .cart-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-box {
+        position: static;
+      }
+
+      .cart-item {
+        grid-template-columns: 80px 1fr;
+        gap: 12px;
+      }
+
+      .product-image,
+      .no-image {
+        width: 80px;
+        height: 80px;
+      }
+
+      .cart-item-right {
+        grid-column: 2;
+      }
+
+      .item-total {
+        text-align: left;
+      }
+
+      .quantity-control {
+        margin-left: 0;
+      }
+
+      .remove-btn {
+        margin-left: 0;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .container {
+        padding: 0 10px;
+        margin-top: 20px;
+      }
+
+      .page-title h1 {
+        font-size: 28px;
+      }
+
+      .cart-box {
+        padding: 12px;
+      }
+
+      .cart-header h2 {
+        font-size: 20px;
+      }
+
+      .cart-item {
+        padding: 10px;
+      }
+
+      .product-name {
+        font-size: 15px;
+      }
+
+      .features {
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
+      }
+
+      .feature-title {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-    <h1>AC Retail</h1>
+  <div class="header-inner">
+
+    <div>
+      <div class="logo">🛒 AC Retail</div>
+      <div class="tagline">Fresh Groceries • Better Living</div>
+    </div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="cart.html">Cart</a>
-        <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html" class="active">🛒 Cart</a>
+      <a href="about.html">About</a>
     </nav>
+
+  </div>
 </header>
 
-<main>
-    
-<h1>Shopping Cart</h1>
 
-<div id="cartItems"></div>
+<main class="container">
 
-<h2>Total: <span id="totalPrice">₹0</span></h2>
-<h2>Your Cart</h2>
+  <div class="page-title">
+    <h1>Shopping Cart</h1>
+    <p>Review your items and proceed to order</p>
+  </div>
 
-<div id="cartItems"></div>
 
-<h3 id="total">Total : ₹0</h3>
+  <div class="cart-layout">
 
-<button onclick="sendWhatsAppOrder()">
-Order on WhatsApp
-</button>
+    <!-- LEFT -->
+    <section class="cart-box">
+
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <div class="item-count" id="itemCount">0 items</div>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <a href="products.html" class="continue-btn">
+        ← Continue Shopping
+      </a>
+
+    </section>
+
+
+    <!-- RIGHT -->
+    <aside class="summary-box">
+
+      <div class="summary-title">
+        💰 Order Summary
+      </div>
+
+      <div class="summary-content">
+
+        <div class="summary-row">
+          <span>Items</span>
+          <strong id="summaryItems">0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery Charges</span>
+          <strong>₹0</strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Total Amount</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+
+        <button
+          class="whatsapp-btn"
+          id="whatsappOrder">
+          🟢 Order Entire Cart on WhatsApp
+        </button>
+
+        <div class="whatsapp-note">
+          📱 Your selected products, quantities and total amount will be shared on WhatsApp.
+        </div>
+
+        <button
+          class="clear-btn"
+          id="clearCart">
+          🗑️ Clear Cart
+        </button>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- FEATURES -->
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-icon">🌿</div>
+      <div class="feature-title">Fresh Products</div>
+      <div class="feature-text">Quality you can trust</div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">Safe & Secure</div>
+      <div class="feature-text">Easy & safe ordering</div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-title">Fast Service</div>
+      <div class="feature-text">Local delivery support</div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">📱</div>
+      <div class="feature-title">Order on WhatsApp</div>
+      <div class="feature-text">Quick & simple</div>
+    </div>
+
+  </div>
 
 </main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <strong>AC Retail</strong><br>
+      Grocery Store<br>
+      📍 Police Line, Phaltan
+    </div>
+
+    <div>
+      📱
+      <a href="https://wa.me/918830300826">
+        8830300826
+      </a>
+      <br><br>
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+    </div>
+
+  </div>
+
+</footer>
+
 
 <script src="cart.js"></script>
 
