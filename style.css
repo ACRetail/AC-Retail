@@ -2156,3 +2156,71 @@ body:has(.services) .contact-box form .btn {
     height: 280px;
   }
 }
+/* =========================
+   AC RETAIL FINAL MOBILE POLISH
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 18px 12px !important;
+  }
+
+  #search {
+    width: 100% !important;
+    box-sizing: border-box;
+    min-height: 48px;
+    font-size: 16px !important;
+    border-radius: 14px !important;
+    margin-bottom: 16px;
+  }
+
+  .filters {
+    gap: 8px !important;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .filters button {
+    white-space: nowrap;
+    min-height: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .product-card {
+    border-radius: 14px !important;
+    padding: 10px !important;
+  }
+
+  .product-card button,
+  .add-cart,
+  .add-to-cart {
+    width: 100%;
+    min-height: 42px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .whatsapp-float {
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 25px !important;
+    right: 15px !important;
+    bottom: 18px !important;
+  }
+}
