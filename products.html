@@ -58,20 +58,40 @@
 
 </header>
 
-<section class="container">
+<section class="products-page container">
 
-    <div style="text-align:center; margin-bottom:25px;">
+  <div class="products-heading">
+    <span class="section-badge">🛒 AC RETAIL</span>
 
-    <h1>🛍️ Shop Our Products</h1>
+    <h1>Shop Our Products</h1>
 
-    <p style="
-        color:#68766d;
-        margin-top:6px;
-    ">
-        Find your daily grocery essentials at great prices
+    <p>
+      Fresh groceries & daily essentials at great prices
     </p>
+  </div>
 
-</div>
+  <div class="product-search-box">
+    <span>🔎</span>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search products, brands..."
+    >
+  </div>
+
+  <div class="filter-section">
+    <h3>🏷️ Brands</h3>
+    <div class="filters" id="brandFilters"></div>
+  </div>
+
+  <div class="filter-section">
+    <h3>📦 Categories</h3>
+    <div class="filters" id="categoryFilters"></div>
+  </div>
+
+  <div id="productList" class="product-grid"></div>
+
+</section>
 
 <input
     type="text"
