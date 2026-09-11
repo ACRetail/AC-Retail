@@ -1232,3 +1232,138 @@ textarea:focus-visible {
     height: 125px;
   }
 }
+/* =========================================
+   AC RETAIL - PREMIUM CART
+   ========================================= */
+
+.cart-container {
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.cart-item {
+  background: #fff;
+  border: 1px solid #e8eee9;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.05);
+  transition: .2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.cart-summary {
+  background: linear-gradient(145deg, #168a45, #106c35);
+  color: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+.cart-summary h2 {
+  margin-top: 0;
+}
+
+.cart-summary button {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+  color: #168a45;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.cart-summary button:hover {
+  transform: translateY(-2px);
+}
+
+/* Quantity controls */
+.quantity-control,
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-control button,
+.qty-control button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #dce6df;
+  border-radius: 9px;
+  background: #f7faf8;
+  color: #168a45;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quantity-control button:hover,
+.qty-control button:hover {
+  background: #168a45;
+  color: #fff;
+}
+
+/* Checkout form */
+.checkout-form,
+#checkoutForm {
+  background: #fff;
+  border: 1px solid #e8eee9;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.checkout-form input,
+.checkout-form textarea,
+#checkoutForm input,
+#checkoutForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  margin-top: 7px;
+  margin-bottom: 14px;
+  border: 1px solid #dce6df;
+  border-radius: 11px;
+  outline: none;
+  font-size: 14px;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+#checkoutForm input:focus,
+#checkoutForm textarea:focus {
+  border-color: #168a45;
+  box-shadow: 0 0 0 3px rgba(22,138,69,.10);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .cart-container {
+    margin: 18px 12px;
+  }
+
+  .cart-item {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .cart-summary {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .checkout-form,
+  #checkoutForm {
+    padding: 17px;
+    border-radius: 16px;
+  }
+}
