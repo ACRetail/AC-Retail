@@ -1988,3 +1988,171 @@ body:has(.offers-grid) .empty {
     padding: 10px;
   }
 }
+/* =========================================
+   AC RETAIL - PREMIUM CONTACT PAGE
+   ========================================= */
+
+body:has(.services) .services {
+  padding: 70px 20px;
+}
+
+body:has(.services) .services > h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+body:has(.services) .cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+body:has(.services) .card {
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 22px;
+  text-align: center;
+  border: 1px solid #e8eee9;
+  box-shadow: 0 10px 35px rgba(0,0,0,.08);
+  transition: .3s ease;
+}
+
+body:has(.services) .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.13);
+}
+
+body:has(.services) .card i {
+  font-size: 42px;
+  color: #0f9d58;
+  margin-bottom: 18px;
+}
+
+body:has(.services) .card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+body:has(.services) .card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+body:has(.services) .card .btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 11px 22px;
+  border-radius: 25px;
+  background: #0f9d58;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .25s ease;
+}
+
+body:has(.services) .card .btn:hover {
+  transform: translateY(-2px);
+  opacity: .9;
+}
+
+/* Contact sections */
+body:has(.services) .contact-box {
+  display: block;
+  max-width: 900px;
+  margin: 20px auto 50px;
+  padding: 35px 25px;
+  background: #f7faf8;
+  border-radius: 25px;
+  text-align: center;
+}
+
+body:has(.services) .contact-box h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+body:has(.services) .contact-box p {
+  margin: 8px;
+  color: #555;
+}
+
+/* Map */
+body:has(.services) .contact-box iframe {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  margin: 20px auto 0;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+/* Form */
+body:has(.services) .contact-box form {
+  max-width: 650px;
+  margin: auto;
+}
+
+body:has(.services) .contact-box input,
+body:has(.services) .contact-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #dfe7e2;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  background: #fff;
+}
+
+body:has(.services) .contact-box input:focus,
+body:has(.services) .contact-box textarea:focus {
+  border-color: #0f9d58;
+  box-shadow: 0 0 0 3px rgba(15,157,88,.10);
+}
+
+body:has(.services) .contact-box form .btn {
+  border: 0;
+  padding: 13px 30px;
+  border-radius: 25px;
+  background: #0f9d58;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  body:has(.services) .services {
+    padding: 50px 15px;
+  }
+
+  body:has(.services) .services > h2 {
+    font-size: 28px;
+  }
+
+  body:has(.services) .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  body:has(.services) .card {
+    padding: 28px 20px;
+  }
+
+  body:has(.services) .contact-box {
+    margin: 15px 12px 35px;
+    padding: 28px 16px;
+  }
+
+  body:has(.services) .contact-box h2 {
+    font-size: 25px;
+  }
+
+  body:has(.services) .contact-box iframe {
+    height: 280px;
+  }
+}
