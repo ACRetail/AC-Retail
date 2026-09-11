@@ -1,63 +1,109 @@
 // =============================
-// AC Retail - products.js
+// AC Retail - FAST products.js
 // =============================
 
 let allProducts = [];
+let filteredProducts = [];
 
 let selectedBrand = "";
 let selectedCategory = "";
+let visibleCount = 40;
+
+const PAGE_SIZE = 40;
 
 const productList = document.getElementById("productList");
 const search = document.getElementById("search");
-
 const brandFilters = document.getElementById("brandFilters");
 const categoryFilters = document.getElementById("categoryFilters");
 
+// =============================
+// Create Product Count
+// =============================
+
+const productCount = document.createElement("div");
+
+productCount.style.cssText =
+    "text-align:center;margin:15px 0;font-weight:600;color:#555;";
+
+if (productList) {
+    productList.parentNode.insertBefore(productCount, productList);
+}
 
 // =============================
-// LOAD PRODUCTS
+// Create Load More Button
 // =============================
 
-fetch("products.json?v=3")
+const loadMoreWrap = document.createElement("div");
 
-    .then(response => {
+loadMoreWrap.style.cssText =
+    "text-align:center;margin:25px 0;";
 
-        if (!response.ok) {
-            throw new Error("products.json not found");
-        }
+const loadMoreBtn = document.createElement("button");
 
-        return response.json();
+loadMoreBtn.textContent = "Load More";
 
-    })
+loadMoreBtn.style.cssText =
+    "padding:12px 28px;border:0;border-radius:8px;background:#198754;color:white;font-size:16px;font-weight:600;cursor:pointer;";
 
-    .then(data => {
+loadMoreWrap.appendChild(loadMoreBtn);
 
-        allProducts = data;
+if (productList) {
+    productList.parentNode.insertBefore(
+        loadMoreWrap,
+        productList.nextSibling
+    );
+}
 
-        createBrandButtons();
-        createCategoryButtons();
+// =============================
+// Load Products
+// =============================
 
-        displayProducts(allProducts);
+fetch("products.json?v=4", {
+    cache: "force-cache"
+})
+.then(response => {
 
-    })
+    if (!response.ok) {
+        throw new Error("products.json not found");
+    }
 
-    .catch(error => {
+    return response.json();
 
-        console.error(error);
+})
+.then(data => {
+
+    allProducts = Array.isArray(data) ? data : [];
+
+    createBrandFilters();
+    createCategoryFilters();
+
+    applyFilters();
+
+})
+.catch(error => {
+
+    console.error(error);
+
+    if (productList) {
 
         productList.innerHTML =
             "<h2 style='text-align:center;color:red;'>Products could not be loaded.</h2>";
 
-    });
+    }
 
+    productCount.textContent = "";
+
+    loadMoreWrap.style.display = "none";
+
+});
 
 // =============================
-// CREATE BRAND BUTTONS
+// Brand Filters
 // =============================
 
-function createBrandButtons() {
+function createBrandFilters() {
 
-    brandFilters.innerHTML = "";
+    if (!brandFilters) return;
 
     const brands = [
         ...new Set(
@@ -67,281 +113,460 @@ function createBrandButtons() {
         )
     ].sort();
 
-    // All Brands
-    const allButton = document.createElement("button");
+    brandFilters.innerHTML =
+        `<button class="filter-btn active" data-brand="">
+            All Brands
+        </button>` +
 
-    allButton.className = "filter-btn active";
-    allButton.textContent = "All Brands";
+        brands.map(brand => `
+            <button
+                class="filter-btn"
+                data-brand="${escapeHtml(brand)}">
+                ${escapeHtml(brand)}
+            </button>
+        `).join("");
 
-    allButton.onclick = () => {
+    brandFilters
+        .querySelectorAll(".filter-btn")
+        .forEach(button => {
 
-        selectedBrand = "";
+            button.addEventListener("click", () => {
 
-        document
-            .querySelectorAll(".filter-btn")
-            .forEach(btn => btn.classList.remove("active"));
+                brandFilters
+                    .querySelectorAll(".filter-btn")
+                    .forEach(btn =>
+                        btn.classList.remove("active")
+                    );
 
-        allButton.classList.add("active");
+                button.classList.add("active");
 
-        filterProducts();
+                selectedBrand =
+                    button.dataset.brand || "";
 
-    };
+                applyFilters();
 
-    brandFilters.appendChild(allButton);
+            });
 
-
-    // Other brands
-    brands.forEach(brand => {
-
-        const button = document.createElement("button");
-
-        button.className = "filter-btn";
-        button.textContent = brand;
-
-        button.onclick = () => {
-
-            document
-                .querySelectorAll(".filter-btn")
-                .forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            selectedBrand = brand;
-
-            filterProducts();
-
-        };
-
-        brandFilters.appendChild(button);
-
-    });
+        });
 
 }
 
-
 // =============================
-// CREATE CATEGORY BUTTONS
+// Category Filters
 // =============================
 
-function createCategoryButtons() {
+function createCategoryFilters() {
 
-    categoryFilters.innerHTML = "";
+    if (!categoryFilters) return;
 
-    const categories = [
+    const preferredOrder = [
+
+        "Fruits & Vegetables",
+        "Atta & Flour",
+        "Rice & Grains",
+        "Pulses & Dals",
+        "Masala & Spices",
+        "Oil & Ghee",
+        "Dairy & Chilled",
+        "Biscuits & Bakery",
+        "Snacks & Namkeen",
+        "Tea & Coffee",
+        "Sugar, Salt & Sweeteners",
+        "Dry Fruits & Nuts",
+        "Pickles, Sauces & Spreads",
+        "Instant & Packaged Foods",
+        "Chocolates & Confectionery",
+        "Beverages",
+        "Personal Care",
+        "Home Care",
+        "Puja & Household",
+        "General Items"
+
+    ];
+
+    const existingCategories = [
         ...new Set(
             allProducts
                 .map(product => product.category)
                 .filter(Boolean)
         )
-    ].sort();
+    ];
 
+    const categories = [
 
-    // All Categories
-    const allButton = document.createElement("button");
+        ...preferredOrder.filter(
+            category =>
+                existingCategories.includes(category)
+        ),
 
-    allButton.className = "cat-btn active";
-    allButton.textContent = "All Categories";
+        ...existingCategories.filter(
+            category =>
+                !preferredOrder.includes(category)
+        ).sort()
 
-    allButton.onclick = () => {
+    ];
 
-        selectedCategory = "";
+    categoryFilters.innerHTML =
+        `<button class="cat-btn active" data-category="">
+            All Categories
+        </button>` +
 
-        document
-            .querySelectorAll(".cat-btn")
-            .forEach(btn => btn.classList.remove("active"));
+        categories.map(category => `
+            <button
+                class="cat-btn"
+                data-category="${escapeHtml(category)}">
+                ${escapeHtml(category)}
+            </button>
+        `).join("");
 
-        allButton.classList.add("active");
+    categoryFilters
+        .querySelectorAll(".cat-btn")
+        .forEach(button => {
 
-        filterProducts();
+            button.addEventListener("click", () => {
 
-    };
+                categoryFilters
+                    .querySelectorAll(".cat-btn")
+                    .forEach(btn =>
+                        btn.classList.remove("active")
+                    );
 
-    categoryFilters.appendChild(allButton);
+                button.classList.add("active");
 
+                selectedCategory =
+                    button.dataset.category || "";
 
-    // New categories from JSON
-    categories.forEach(category => {
+                applyFilters();
 
-        const button = document.createElement("button");
+            });
 
-        button.className = "cat-btn";
-        button.textContent = category;
-
-        button.onclick = () => {
-
-            document
-                .querySelectorAll(".cat-btn")
-                .forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            selectedCategory = category;
-
-            filterProducts();
-
-        };
-
-        categoryFilters.appendChild(button);
-
-    });
+        });
 
 }
 
+// =============================
+// Search + Filter
+// =============================
+
+function applyFilters() {
+
+    const keyword = search
+        ? search.value.trim().toLowerCase()
+        : "";
+
+    filteredProducts = allProducts.filter(product => {
+
+        const searchText =
+
+            `${product.name || ""} ` +
+            `${product.brand || ""} ` +
+            `${product.category || ""}`
+
+            .toLowerCase();
+
+        const searchMatch =
+            !keyword ||
+            searchText.includes(keyword);
+
+        const brandMatch =
+            !selectedBrand ||
+            product.brand === selectedBrand;
+
+        const categoryMatch =
+            !selectedCategory ||
+            product.category === selectedCategory;
+
+        return (
+            searchMatch &&
+            brandMatch &&
+            categoryMatch
+        );
+
+    });
+
+    visibleCount = PAGE_SIZE;
+
+    renderProducts();
+
+}
 
 // =============================
-// DISPLAY PRODUCTS
+// Display Products
 // =============================
 
-function displayProducts(products) {
+function renderProducts() {
 
-    productList.innerHTML = "";
+    if (!productList) return;
 
-    if (products.length === 0) {
+    if (filteredProducts.length === 0) {
 
         productList.innerHTML =
-            "<h2 style='text-align:center;'>No products found</h2>";
+            `<h2 style="text-align:center;width:100%;">
+                No products found
+            </h2>`;
+
+        productCount.textContent =
+            "0 products";
+
+        loadMoreWrap.style.display =
+            "none";
 
         return;
+
     }
 
+    const productsToShow =
+        filteredProducts.slice(
+            0,
+            visibleCount
+        );
 
-    products.forEach(product => {
+    productList.innerHTML =
+        productsToShow
+            .map(productCard)
+            .join("");
 
-        const image = product.image || "";
+    const shown =
+        productsToShow.length;
 
-        productList.innerHTML += `
+    const total =
+        filteredProducts.length;
+
+    productCount.textContent =
+        `Showing ${shown} of ${total} products`;
+
+    if (shown < total) {
+
+        loadMoreWrap.style.display =
+            "block";
+
+        loadMoreBtn.textContent =
+            `Load More (${Math.min(
+                PAGE_SIZE,
+                total - shown
+            )})`;
+
+    } else {
+
+        loadMoreWrap.style.display =
+            "none";
+
+    }
+
+}
+
+// =============================
+// Product Card
+// =============================
+
+function productCard(product) {
+
+    /*
+      default.png file abhi available nahi hai.
+      Isliye uske liye broken image request nahi bhejenge.
+      Direct "No Image" show hoga.
+    */
+
+    const hasRealImage =
+        product.image &&
+        !product.image
+            .toLowerCase()
+            .endsWith("default.png");
+
+    const imageHtml = hasRealImage
+
+        ? `
+            <img
+                class="product-image"
+                src="${escapeHtml(product.image)}"
+                alt="${escapeHtml(product.name)}"
+                loading="lazy"
+                decoding="async"
+
+                onerror="
+                    this.style.display='none';
+                    this.nextElementSibling.style.display='flex';
+                "
+            >
+
+            <div
+                class="no-image"
+                style="display:none;">
+                🖼️<br>
+                No Image
+            </div>
+        `
+
+        : `
+            <div class="no-image">
+                🖼️<br>
+                No Image
+            </div>
+        `;
+
+    return `
 
         <div class="product-card">
 
-            <div class="product-image">
+            <div class="product-image-wrap">
 
-                <img
-                    src="${image}"
-                    alt="${product.name}"
-                    onerror="
-                        this.style.display='none';
-                        this.nextElementSibling.style.display='flex';
-                    "
-                >
-
-                <div
-                    class="no-image"
-                    style="display:${image ? "none" : "flex"};"
-                >
-                    🖼️
-                    <br>
-                    No Image
-                </div>
+                ${imageHtml}
 
             </div>
 
-
-            <h3>${product.name}</h3>
+            <h3>
+                ${escapeHtml(product.name)}
+            </h3>
 
             <p>
                 <strong>Brand:</strong>
-                ${product.brand || "General"}
+                ${escapeHtml(
+                    product.brand || "General"
+                )}
             </p>
 
             <p>
                 <strong>Category:</strong>
-                ${product.category || "General Items"}
+                ${escapeHtml(
+                    product.category ||
+                    "General Items"
+                )}
             </p>
 
             <p class="price">
-                ₹${product.price}
+                ₹${Number(
+                    product.price || 0
+                ).toFixed(2)}
             </p>
 
-
-            <button onclick="addToCart(${product.id})">
+            <button
+                class="add-cart-btn"
+                data-id="${product.id}">
                 🛒 Add to Cart
             </button>
 
-
             <button
-                onclick='orderOnWhatsApp(${JSON.stringify(product.name)})'
-            >
+                class="wa-btn"
+                data-id="${product.id}">
                 WhatsApp Order
             </button>
 
         </div>
 
-        `;
-
-    });
+    `;
 
 }
 
+// =============================
+// Load More
+// =============================
+
+loadMoreBtn.addEventListener(
+    "click",
+    () => {
+
+        visibleCount += PAGE_SIZE;
+
+        renderProducts();
+
+    }
+);
 
 // =============================
-// SEARCH + FILTER
+// Search
 // =============================
-
-function filterProducts() {
-
-    const keyword =
-        search.value.toLowerCase().trim();
-
-
-    const filtered = allProducts.filter(product => {
-
-        const searchMatch =
-            product.name
-                .toLowerCase()
-                .includes(keyword);
-
-
-        const brandMatch =
-            selectedBrand === "" ||
-            product.brand === selectedBrand;
-
-
-        const categoryMatch =
-            selectedCategory === "" ||
-            product.category === selectedCategory;
-
-
-        return searchMatch &&
-               brandMatch &&
-               categoryMatch;
-
-    });
-
-
-    displayProducts(filtered);
-
-}
-
 
 if (search) {
 
     search.addEventListener(
         "input",
-        filterProducts
+        applyFilters
     );
 
 }
 
+// =============================
+// Product Button Events
+// =============================
+
+if (productList) {
+
+    productList.addEventListener(
+        "click",
+        event => {
+
+            // Add to Cart
+            const addButton =
+                event.target.closest(
+                    ".add-cart-btn"
+                );
+
+            if (addButton) {
+
+                addToCart(
+                    Number(
+                        addButton.dataset.id
+                    )
+                );
+
+                return;
+
+            }
+
+            // WhatsApp
+            const whatsappButton =
+                event.target.closest(
+                    ".wa-btn"
+                );
+
+            if (whatsappButton) {
+
+                const product =
+                    allProducts.find(
+                        item =>
+                            item.id ===
+                            Number(
+                                whatsappButton.dataset.id
+                            )
+                    );
+
+                if (product) {
+
+                    orderOnWhatsApp(
+                        product.name
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+}
 
 // =============================
-// CART
+// Cart
 // =============================
 
 function addToCart(id) {
 
     const product =
-        allProducts.find(item => item.id === id);
+        allProducts.find(
+            item => item.id === id
+        );
 
     if (!product) return;
 
-
     let cart =
-        JSON.parse(localStorage.getItem("cart")) || [];
-
+        JSON.parse(
+            localStorage.getItem("cart")
+        ) || [];
 
     const existing =
-        cart.find(item => item.id === id);
-
+        cart.find(
+            item => item.id === id
+        );
 
     if (existing) {
 
@@ -365,12 +590,10 @@ function addToCart(id) {
 
     }
 
-
     localStorage.setItem(
         "cart",
         JSON.stringify(cart)
     );
-
 
     alert(
         product.name +
@@ -379,16 +602,16 @@ function addToCart(id) {
 
 }
 
-
 // =============================
-// WHATSAPP ORDER
+// WhatsApp Order
 // =============================
 
-function orderOnWhatsApp(productName) {
+function orderOnWhatsApp(
+    productName
+) {
 
     const phone =
         "918830300826";
-
 
     const message =
 `Hello AC Retail,
@@ -401,13 +624,49 @@ Please share payment details.
 
 Thank you.`;
 
-
     window.open(
 
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+        `https://wa.me/${phone}?text=${encodeURIComponent(
+            message
+        )}`,
 
         "_blank"
 
     );
+
+}
+
+// =============================
+// HTML Escape
+// =============================
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
