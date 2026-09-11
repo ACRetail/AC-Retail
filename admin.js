@@ -1,162 +1,160 @@
-const form = document.getElementById("productForm");
-const list = document.getElementById("adminProducts");
-const ordersList = document.getElementById("adminOrders");
+const ordersList = document.getElementById("ordersList");
+const searchInput = document.getElementById("orderSearch");
 
-let products = JSON.parse(localStorage.getItem("products")) || [];
+const totalOrdersEl = document.getElementById("totalOrders");
+const pendingOrdersEl = document.getElementById("pendingOrders");
+const deliveredOrdersEl = document.getElementById("deliveredOrders");
 
-function showProducts() {
-  list.innerHTML = "";
+let orders = JSON.parse(localStorage.getItem("acOrders")) || [];
 
-  products.forEach((p, index) => {
-    list.innerHTML += `
-      <div class="card">
-        <h3>${p.name}</h3>
-        <p>${p.category}</p>
-        <p><b>₹${p.price}</b></p>
-
-        <button onclick="deleteProduct(${index})" class="btn">
-          Delete
-        </button>
-      </div>
-    `;
-  });
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  products.push({
-    name: name.value,
-    category: category.value,
-    price: price.value
-  });
-
-  localStorage.setItem("products", JSON.stringify(products));
-
-  form.reset();
-  showProducts();
-});
-
-
-function deleteProduct(index) {
-  products.splice(index, 1);
-
-  localStorage.setItem(
-    "products",
-    JSON.stringify(products)
-  );
-
-  showProducts();
+function saveOrders() {
+  localStorage.setItem("acOrders", JSON.stringify(orders));
 }
 
+function updateStats() {
+  totalOrdersEl.textContent = orders.length;
 
-/* =========================
-   CUSTOMER ORDERS
-========================= */
+  pendingOrdersEl.textContent = orders.filter(order =>
+    order.status !== "Delivered" &&
+    order.status !== "Cancelled"
+  ).length;
 
-function showOrders() {
+  deliveredOrdersEl.textContent = orders.filter(order =>
+    order.status === "Delivered"
+  ).length;
+}
 
-  if (!ordersList) return;
+function renderOrders() {
+  const search = searchInput.value.toLowerCase().trim();
 
-  let orders =
-    JSON.parse(localStorage.getItem("acOrders")) || [];
+  const filteredOrders = orders
+    .map((order, index) => ({ order, index }))
+    .filter(({ order }) => {
+      return (
+        String(order.orderId || "").toLowerCase().includes(search) ||
+        String(order.customerName || "").toLowerCase().includes(search) ||
+        String(order.customerMobile || "").toLowerCase().includes(search)
+      );
+    })
+    .sort((a, b) => b.index - a.index);
 
   ordersList.innerHTML = "";
 
-  if (orders.length === 0) {
+  if (filteredOrders.length === 0) {
     ordersList.innerHTML = `
       <div class="empty-orders">
-        <h3>📭 No Orders Yet</h3>
+        <h3>📦 No Orders Found</h3>
         <p>Customer orders will appear here.</p>
       </div>
     `;
+
+    updateStats();
     return;
   }
 
-  orders.slice().reverse().forEach((order, index) => {
+  filteredOrders.forEach(({ order, index }) => {
+    const items = Array.isArray(order.items) ? order.items : [];
 
-    let itemsHTML = "";
-
-    (order.items || []).forEach(item => {
-
+    const itemsHtml = items.map(item => {
       const qty = Number(item.qty || 1);
       const price = Number(item.price || 0);
+      const itemTotal = qty * price;
 
-      itemsHTML += `
-        <li>
-          ${item.name}
-          × ${qty}
-          — ₹${price * qty}
-        </li>
+      return `
+        <div class="order-item">
+          <span>
+            ${escapeHtml(item.name || "Product")}
+            × ${qty}
+          </span>
+
+          <strong>₹${itemTotal.toFixed(2)}</strong>
+        </div>
       `;
-    });
+    }).join("");
+
+    const status = order.status || "Order Placed";
 
     ordersList.innerHTML += `
       <div class="order-card">
 
-        <h3>🛒 Order ${order.orderId}</h3>
+        <div class="order-top">
+          <div class="order-id">
+            ${escapeHtml(order.orderId || "No Order ID")}
+          </div>
 
-        <p>
-          <b>👤 Customer:</b>
-          ${order.customerName || ""}
-        </p>
+          <div class="status">
+            ${escapeHtml(status)}
+          </div>
+        </div>
 
-        <p>
-          <b>📱 Mobile:</b>
-          ${order.customerMobile || ""}
-        </p>
+        <div class="customer-info">
+          <strong>Customer:</strong>
+          ${escapeHtml(order.customerName || "-")}
+          <br>
 
-        <p>
-          <b>📍 Address:</b>
-          ${order.customerAddress || ""}
-        </p>
+          <strong>Mobile:</strong>
+          ${escapeHtml(order.customerMobile || "-")}
+          <br>
 
-        ${
-          order.customerNote
-            ? `<p><b>📝 Note:</b> ${order.customerNote}</p>`
-            : ""
-        }
+          <strong>Address:</strong>
+          ${escapeHtml(order.customerAddress || "-")}
+          <br>
 
-        <p>
-          <b>📅 Date:</b>
-          ${order.date || ""}
-        </p>
+          <strong>Date:</strong>
+          ${escapeHtml(order.date || "-")}
 
-        <hr>
+          ${
+            order.customerNote
+              ? `<br><strong>Note:</strong> ${escapeHtml(order.customerNote)}`
+              : ""
+          }
+        </div>
 
-        <h4>🛍️ Items</h4>
+        <div class="order-items">
+          ${itemsHtml || "<p>No items found.</p>"}
+        </div>
 
-        <ul>
-          ${itemsHTML}
-        </ul>
+        <div class="order-total">
+          Total: ₹${Number(order.total || 0).toFixed(2)}
+        </div>
 
-        <h3>
-          💰 Total: ₹${order.total || 0}
-        </h3>
-
-        <p class="order-status">
-          <b>Status:</b>
-          ${order.status || "Order Placed"}
-        </p>
-
-        <div class="order-buttons">
+        <div class="order-actions">
 
           <button
-            class="btn"
-            onclick="updateOrderStatus('${order.orderId}', 'Confirmed')">
-            ✅ Confirm
+            class="confirm-btn"
+            data-action="confirm"
+            data-index="${index}">
+            Confirm
           </button>
 
           <button
-            class="btn"
-            onclick="updateOrderStatus('${order.orderId}', 'Delivered')">
-            🚚 Delivered
+            class="delivered-btn"
+            data-action="delivered"
+            data-index="${index}">
+            Delivered
           </button>
 
           <button
-            class="btn"
-            onclick="updateOrderStatus('${order.orderId}', 'Cancelled')">
-            ❌ Cancel
+            class="cancel-btn"
+            data-action="cancel"
+            data-index="${index}">
+            Cancel
+          </button>
+
+          <button
+            class="delete-btn"
+            data-action="delete"
+            data-index="${index}">
+            Delete
           </button>
 
         </div>
@@ -164,37 +162,55 @@ function showOrders() {
       </div>
     `;
   });
+
+  updateStats();
 }
 
+ordersList.addEventListener("click", function(e) {
 
-/* =========================
-   UPDATE ORDER STATUS
-========================= */
+  const button = e.target.closest("button");
 
-function updateOrderStatus(orderId, newStatus) {
+  if (!button) return;
 
-  let orders =
-    JSON.parse(localStorage.getItem("acOrders")) || [];
+  const index = Number(button.dataset.index);
+  const action = button.dataset.action;
 
-  orders = orders.map(order => {
+  if (!orders[index]) return;
 
-    if (order.orderId === orderId) {
-      order.status = newStatus;
-    }
+  if (action === "confirm") {
+    orders[index].status = "Confirmed";
+    saveOrders();
+    renderOrders();
+  }
 
-    return order;
-  });
+  if (action === "delivered") {
+    orders[index].status = "Delivered";
+    saveOrders();
+    renderOrders();
+  }
 
-  localStorage.setItem(
-    "acOrders",
-    JSON.stringify(orders)
-  );
+  if (action === "cancel") {
+    orders[index].status = "Cancelled";
+    saveOrders();
+    renderOrders();
+  }
 
-  showOrders();
-}
+  if (action === "delete") {
 
+    const ok = confirm(
+      `Delete order ${orders[index].orderId || ""}?`
+    );
 
-/* FIRST LOAD */
+    if (!ok) return;
 
-showProducts();
-showOrders();
+    orders.splice(index, 1);
+
+    saveOrders();
+    renderOrders();
+  }
+
+});
+
+searchInput.addEventListener("input", renderOrders);
+
+renderOrders();
