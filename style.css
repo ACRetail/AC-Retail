@@ -1480,3 +1480,148 @@ textarea:focus-visible {
     gap: 8px !important;
   }
 }
+/* =========================================
+   AC RETAIL - ABOUT / OFFERS / CONTACT
+   ========================================= */
+
+/* ABOUT */
+.about-section {
+  padding: 70px 20px;
+}
+
+.about-section h2 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+  color: #666;
+  font-size: 16px;
+}
+
+/* OFFERS */
+.offers-section {
+  padding: 70px 20px;
+}
+
+.offers-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.offers-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.offer-card {
+  background: #fff;
+  padding: 28px 22px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+  transition: .3s ease;
+  border: 1px solid #eee;
+}
+
+.offer-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.offer-card h3 {
+  font-size: 21px;
+  margin: 12px 0;
+}
+
+.offer-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.offer-icon {
+  font-size: 42px;
+}
+
+/* CONTACT */
+.contact-section {
+  padding: 70px 20px;
+}
+
+.contact-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.contact-box {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px 18px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(0,0,0,.08);
+  border: 1px solid #eee;
+}
+
+.contact-card .icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  margin: 8px 0;
+}
+
+.contact-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+  .about-section,
+  .offers-section,
+  .contact-section {
+    padding: 50px 15px;
+  }
+
+  .about-section h2,
+  .offers-section h2,
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .offers-grid,
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .offer-card,
+  .contact-card {
+    padding: 22px 16px;
+  }
+}
