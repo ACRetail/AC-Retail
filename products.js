@@ -17,7 +17,7 @@ const categoryButtons = document.querySelectorAll(".cat-btn");
 // Load Products
 // =============================
 
-fetch("products.json")
+fetch("products.json?v=2")
     .then(response => {
         if (!response.ok) {
             throw new Error("products.json not found");
