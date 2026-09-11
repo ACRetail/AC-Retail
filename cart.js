@@ -307,11 +307,7 @@ const checkoutForm = document.getElementById("checkoutForm");
 const confirmWhatsApp = document.getElementById("confirmWhatsApp");
 
   
-const orderId =
-    "AC-" +
-    new Date().toISOString().slice(0,10).replace(/-/g,"") +
-    "-" +
-    Math.floor(1000 + Math.random() * 9000);
+
 
 whatsappButton.addEventListener("click", function () {
 
@@ -365,7 +361,11 @@ confirmWhatsApp.addEventListener("click", function () {
     alert("Please enter your delivery address.");
     return;
   }
-
+const orderId =
+  "AC-" +
+  new Date().toISOString().slice(0, 10).replace(/-/g, "") +
+  "-" +
+  Math.floor(1000 + Math.random() * 9000);
 
   let message =
     `🛒 *AC Retail Order*\n\n` +
@@ -435,7 +435,27 @@ confirmWhatsApp.addEventListener("click", function () {
   const url =
     `https://wa.me/${whatsappNumber}?text=${message}`;
 
+const orderData = {
+  orderId: orderId,
+  customerName: name,
+  customerMobile: mobile,
+  customerAddress: address,
+  customerNote: note,
+  status: "Order Placed",
+  date: new Date().toLocaleString("en-IN"),
+  items: cart,
+  total: grandTotal
+};
 
+let savedOrders =
+  JSON.parse(localStorage.getItem("acOrders")) || [];
+
+savedOrders.push(orderData);
+
+localStorage.setItem(
+  "acOrders",
+  JSON.stringify(savedOrders)
+);
   window.open(url, "_blank");
 
 });
