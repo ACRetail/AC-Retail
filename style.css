@@ -2369,3 +2369,62 @@ body:has(.services) .contact-box form .btn {
     min-height: 67px;
   }
 }
+/* =========================================================
+   AC RETAIL - SEARCH & FILTER POLISH
+   ========================================================= */
+
+#search {
+  transition: all .2s ease;
+}
+
+#search:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+}
+
+.filters {
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filters button {
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  transform: translateY(-1px);
+}
+
+.filters button:active {
+  transform: scale(.97);
+}
+
+/* Product card polish */
+.product-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .08);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #search:focus {
+    transform: none;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .filters {
+    -webkit-overflow-scrolling: touch;
+  }
+}
