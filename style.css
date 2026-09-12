@@ -2286,3 +2286,86 @@ body:has(.services) .contact-box form .btn {
     font-size: 11px;
   }
 }
+/* =========================================================
+   AC RETAIL - FINAL PRODUCT PRICE POLISH
+   ========================================================= */
+
+.price-box {
+  margin: 10px 0 14px;
+  padding: 9px 11px;
+  background: #f8faf9;
+  border: 1px solid #e2e9e4;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+
+.price-box .mrp {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+.price-box .mrp span {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  color: #888;
+  margin-left: 3px;
+}
+
+.price-box .online-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #08752d;
+}
+
+.price-box .online-price strong {
+  font-size: 21px;
+  font-weight: 800;
+  margin-left: 3px;
+}
+
+.price-box .saving {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 3px 7px;
+  background: #e8f7ed;
+  color: #08752d;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Keep price area consistent */
+.product-card .price-box {
+  min-height: 70px;
+  box-sizing: border-box;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .price-box {
+    margin: 8px 0 11px;
+    padding: 8px 9px;
+  }
+
+  .price-box .mrp {
+    font-size: 11px;
+  }
+
+  .price-box .online-price {
+    font-size: 13px;
+  }
+
+  .price-box .online-price strong {
+    font-size: 19px;
+  }
+
+  .price-box .saving {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .product-card .price-box {
+    min-height: 67px;
+  }
+}
