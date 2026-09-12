@@ -109,8 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cartItemsBox.innerHTML = cart.map(function (item, index) {
 
       const qty = Number(item.qty || 1);
-      const price = Number(item.price || 0);
-      const itemTotal = price * qty;
+const price = Number(item.price || 0);
+const mrp = Number(item.mrp || price);
+const itemTotal = price * qty;
+const itemSaving = Math.max(0, (mrp - price) * qty);
 
       let imageHTML = "";
 
@@ -152,9 +154,27 @@ document.addEventListener("DOMContentLoaded", function () {
               ${escapeHTML(item.name)}
             </div>
 
-            <div class="product-price">
-              ${formatPrice(price)} each
-            </div>
+            <div class="cart-price-box">
+
+  <div class="cart-mrp">
+    MRP:
+    <span>${formatPrice(mrp)}</span>
+  </div>
+
+  <div class="cart-online-price">
+    Online Price:
+    <strong>${formatPrice(price)}</strong>
+  </div>
+
+  ${
+    itemSaving > 0
+      ? `<div class="cart-saving">
+          You Save ${formatPrice(itemSaving)}
+        </div>`
+      : ""
+  }
+
+</div>
 
             <div class="quantity-control">
 
