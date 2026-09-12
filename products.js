@@ -606,11 +606,34 @@ function productCard(product) {
                 )}
             </p>
 
-            <p class="price">
-                ₹${Number(
-                    product.price || 0
+            <div class="price-box">
+
+    <div class="mrp">
+        MRP:
+        <span>₹${Number(
+            product.mrp || product.price || 0
+        ).toFixed(2)}</span>
+    </div>
+
+    <div class="online-price">
+        Online Price:
+        <strong>₹${Number(
+            product.price || 0
+        ).toFixed(2)}</strong>
+    </div>
+
+    ${
+        Number(product.mrp || 0) > Number(product.price || 0)
+            ? `<div class="saving">
+                You Save ₹${(
+                    Number(product.mrp) -
+                    Number(product.price)
                 ).toFixed(2)}
-            </p>
+              </div>`
+            : ""
+    }
+
+</div>
 
             <button
                 class="add-cart-btn"
