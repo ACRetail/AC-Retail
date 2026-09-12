@@ -677,10 +677,8 @@ if (productList) {
             if (addButton) {
 
                 addToCart(
-                    Number(
-                        addButton.dataset.id
-                    )
-                );
+    addButton.dataset.id
+);
 
                 return;
 
@@ -695,13 +693,11 @@ if (productList) {
             if (whatsappButton) {
 
                 const product =
-                    allProducts.find(
-                        item =>
-                            item.id ===
-                            Number(
-                                whatsappButton.dataset.id
-                            )
-                    );
+    allProducts.find(
+        item =>
+            item.id ===
+            whatsappButton.dataset.id
+    );
 
                 if (product) {
 
