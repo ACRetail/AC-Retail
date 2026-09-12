@@ -767,18 +767,14 @@ function addToCart(id) {
     } else {
 
         cart.push({
+  id: product.id,
+  name: product.name,
+  price: product.price,
+  mrp: product.mrp,
+  image: product.image,
 
-            id: product.id,
-
-            name: product.name,
-
-            price: product.price,
-
-            image: product.image,
-
-            qty: 1
-
-        });
+  qty: 1
+});
 
     }
 
