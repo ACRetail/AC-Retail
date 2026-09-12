@@ -2224,3 +2224,65 @@ body:has(.services) .contact-box form .btn {
     bottom: 18px !important;
   }
 }
+/* =========================================================
+   PRODUCT PRICE POLISH
+   ========================================================= */
+
+.price-box {
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  background: #f8fbf9;
+  border: 1px solid #e1ece5;
+  border-radius: 10px;
+}
+
+.price-box .mrp {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 3px;
+}
+
+.price-box .mrp span {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 3px;
+}
+
+.price-box .online-price {
+  font-size: 15px;
+  color: #08752d;
+  font-weight: 700;
+}
+
+.price-box .online-price strong {
+  font-size: 21px;
+  font-weight: 800;
+  margin-left: 3px;
+}
+
+.price-box .saving {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: #e8f7ed;
+  color: #08752d;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Mobile price */
+@media (max-width: 600px) {
+  .price-box {
+    padding: 9px 10px;
+    margin: 8px 0 12px;
+  }
+
+  .price-box .online-price strong {
+    font-size: 19px;
+  }
+
+  .price-box .saving {
+    font-size: 11px;
+  }
+}
