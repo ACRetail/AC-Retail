@@ -73,7 +73,7 @@ if (productList) {
 // =============================
 
 fetch("products.json?v=6", {
-    cache: "force-cache"
+    cache: "no-store"
 })
 .then(response => {
 
