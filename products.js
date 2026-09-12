@@ -72,7 +72,7 @@ if (productList) {
 // Load Products
 // =============================
 
-fetch("products.json?v=5", {
+fetch("products.json?v=6", {
     cache: "force-cache"
 })
 .then(response => {
