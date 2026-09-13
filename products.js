@@ -72,9 +72,10 @@ if (productList) {
 // Load Products
 // =============================
 
-fetch("products.json?v=6", {
+fetch("products.json?v=7", {
     cache: "no-store"
 })
+
 .then(response => {
 
     if (!response.ok) {
@@ -84,6 +85,7 @@ fetch("products.json?v=6", {
     return response.json();
 
 })
+
 .then(data => {
 
     allProducts = Array.isArray(data) ? data : [];
@@ -94,6 +96,7 @@ fetch("products.json?v=6", {
     applyFilters();
 
 })
+
 .catch(error => {
 
     console.error(error);
@@ -104,7 +107,6 @@ fetch("products.json?v=6", {
     }
 
     productCount.textContent = "";
-
     loadMoreWrap.style.display = "none";
 
 });
@@ -167,12 +169,11 @@ function createBrandFilters() {
 // Category Filters
 // =============================
 
-
-                function createCategoryFilters() {
+function createCategoryFilters() {
 
     if (!categoryFilters) return;
 
-    // Categories directly from products.json
+    // Get categories directly from products.json
     const existingCategories = [
         ...new Set(
             allProducts
@@ -183,34 +184,42 @@ function createBrandFilters() {
         )
     ];
 
-    // Sort categories alphabetically
-    const categories = existingCategories.sort(
-        (a, b) => a.localeCompare(b)
-    );
+    // Sort actual categories from JSON
+    const categories =
+        existingCategories.sort((a, b) =>
+            a.localeCompare(b)
+        );
 
     categoryFilters.innerHTML =
         `<button
-            class="cat-btn ${!selectedCategory ? "active" : ""}"
+            class="cat-btn"
             data-category="">
             All Categories
         </button>` +
 
         categories.map(category => `
             <button
-                class="cat-btn ${
-                    normalizeCategory(category) ===
-                    normalizeCategory(selectedCategory)
-                        ? "active"
-                        : ""
-                }"
+                class="cat-btn"
                 data-category="${escapeHtml(category)}">
                 ${escapeHtml(category)}
             </button>
         `).join("");
 
+    // Activate selected category
     categoryFilters
         .querySelectorAll(".cat-btn")
         .forEach(button => {
+
+            if (
+                normalizeCategory(
+                    button.dataset.category || ""
+                ) ===
+                normalizeCategory(
+                    selectedCategory
+                )
+            ) {
+                button.classList.add("active");
+            }
 
             button.addEventListener("click", () => {
 
@@ -231,8 +240,7 @@ function createBrandFilters() {
 
         });
 
-
-    // If no category selected, activate All Categories
+    // If no category selected
     if (!selectedCategory) {
 
         const allButton =
@@ -265,6 +273,20 @@ function normalizeText(value) {
 }
 
 // =============================
+// CATEGORY NORMALIZER
+// =============================
+
+function normalizeCategory(value) {
+
+    return String(value ?? "")
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+// =============================
 // Levenshtein Distance
 // =============================
 
@@ -273,6 +295,7 @@ function levenshtein(a, b) {
     if (a === b) return 0;
 
     if (!a.length) return b.length;
+
     if (!b.length) return a.length;
 
     let previous = [];
@@ -295,7 +318,11 @@ function levenshtein(a, b) {
 
             const replaceCost =
                 previous[j - 1] +
-                (a[i - 1] === b[j - 1] ? 0 : 1);
+                (
+                    a[i - 1] === b[j - 1]
+                        ? 0
+                        : 1
+                );
 
             current[j] =
                 Math.min(
@@ -307,6 +334,7 @@ function levenshtein(a, b) {
         }
 
         previous = current;
+
     }
 
     return previous[b.length];
@@ -335,21 +363,24 @@ function fuzzyWordMatch(queryWord, productWords) {
     }
 
     // Allow small spelling mistakes
-    const maxDistance =
-        queryWord.length <= 5 ? 2 : 2;
+    const maxDistance = 2;
 
     return productWords.some(word => {
 
         if (
-            Math.abs(word.length - queryWord.length) >
-            maxDistance
+            Math.abs(
+                word.length -
+                queryWord.length
+            ) > maxDistance
         ) {
             return false;
         }
 
         return (
-            levenshtein(queryWord, word) <=
-            maxDistance
+            levenshtein(
+                queryWord,
+                word
+            ) <= maxDistance
         );
 
     });
@@ -368,19 +399,7 @@ function smartSearchMatch(keyword, product) {
     if (!query) {
         return true;
     }
-// =============================
-// Category Normalizer
-// =============================
 
-function normalizeCategory(value) {
-
-    return String(value ?? "")
-        .toLowerCase()
-        .replace(/&/g, "and")
-        .replace(/\s+/g, " ")
-        .trim();
-
-}
     const productText =
         normalizeText(
             `${product.name || ""} ` +
@@ -394,10 +413,14 @@ function normalizeCategory(value) {
     }
 
     const queryWords =
-        query.split(/\s+/).filter(Boolean);
+        query
+            .split(/\s+/)
+            .filter(Boolean);
 
     const productWords =
-        productText.split(/\s+/).filter(Boolean);
+        productText
+            .split(/\s+/)
+            .filter(Boolean);
 
     // Every search word must match something
     return queryWords.every(queryWord =>
@@ -433,10 +456,15 @@ function applyFilters() {
                 !selectedBrand ||
                 product.brand === selectedBrand;
 
+            // FIXED CATEGORY MATCH
             const categoryMatch =
-    !selectedCategory ||
-    normalizeCategory(product.category) ===
-    normalizeCategory(selectedCategory);
+                !selectedCategory ||
+                normalizeCategory(
+                    product.category
+                ) ===
+                normalizeCategory(
+                    selectedCategory
+                );
 
             return (
                 searchMatch &&
@@ -474,7 +502,6 @@ function renderProducts() {
             "none";
 
         return;
-
     }
 
     const productsToShow =
@@ -591,32 +618,43 @@ function productCard(product) {
 
             <div class="price-box">
 
-    <div class="mrp">
-        MRP:
-        <span>₹${Number(
-            product.mrp || product.price || 0
-        ).toFixed(2)}</span>
-    </div>
+                <div class="mrp">
+                    MRP:
+                    <span>
+                        ₹${Number(
+                            product.mrp ||
+                            product.price ||
+                            0
+                        ).toFixed(2)}
+                    </span>
+                </div>
 
-    <div class="online-price">
-        Online Price:
-        <strong>₹${Number(
-            product.price || 0
-        ).toFixed(2)}</strong>
-    </div>
+                <div class="online-price">
+                    Online Price:
+                    <strong>
+                        ₹${Number(
+                            product.price || 0
+                        ).toFixed(2)}
+                    </strong>
+                </div>
 
-    ${
-        Number(product.mrp || 0) > Number(product.price || 0)
-            ? `<div class="saving">
-                You Save ₹${(
-                    Number(product.mrp) -
-                    Number(product.price)
-                ).toFixed(2)}
-              </div>`
-            : ""
-    }
+                ${
+                    Number(product.mrp || 0) >
+                    Number(product.price || 0)
 
-</div>
+                    ? `
+                        <div class="saving">
+                            You Save ₹${(
+                                Number(product.mrp) -
+                                Number(product.price)
+                            ).toFixed(2)}
+                        </div>
+                      `
+
+                    : ""
+                }
+
+            </div>
 
             <button
                 class="add-cart-btn"
@@ -683,11 +721,10 @@ if (productList) {
             if (addButton) {
 
                 addToCart(
-    addButton.dataset.id
-);
+                    addButton.dataset.id
+                );
 
                 return;
-
             }
 
             // WhatsApp
@@ -699,11 +736,11 @@ if (productList) {
             if (whatsappButton) {
 
                 const product =
-    allProducts.find(
-        item =>
-            item.id ===
-            whatsappButton.dataset.id
-    );
+                    allProducts.find(
+                        item =>
+                            item.id ===
+                            whatsappButton.dataset.id
+                    );
 
                 if (product) {
 
@@ -750,14 +787,20 @@ function addToCart(id) {
     } else {
 
         cart.push({
-  id: product.id,
-  name: product.name,
-  price: product.price,
-  mrp: product.mrp,
-  image: product.image,
 
-  qty: 1
-});
+            id: product.id,
+
+            name: product.name,
+
+            price: product.price,
+
+            mrp: product.mrp,
+
+            image: product.image,
+
+            qty: 1
+
+        });
 
     }
 
@@ -784,7 +827,6 @@ function orderOnWhatsApp(productName) {
 
     const message =
 `Hello AC Retail,
-
 I want to order:
 
 🛒 ${productName}
