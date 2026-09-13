@@ -2504,3 +2504,87 @@ body:has(.services) .contact-box form .btn {
   font-size: 11px;
   font-weight: 700;
 }
+/* =========================================================
+   AC RETAIL - CART PRICE & SAVINGS
+   ========================================================= */
+
+.cart-price-box {
+  margin: 6px 0 10px;
+  line-height: 1.45;
+}
+
+.cart-mrp {
+  font-size: 12px;
+  color: #777;
+}
+
+.cart-mrp span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.cart-online-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #08752d;
+}
+
+.cart-online-price strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.cart-saving {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: #e8f7ed;
+  color: #08752d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Cart item total */
+.item-total {
+  font-size: 17px;
+  font-weight: 800;
+  color: #08752d;
+}
+
+/* Total saving box */
+#cartSavings {
+  animation: savingPop .35s ease;
+}
+
+@keyframes savingPop {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile cart */
+@media (max-width: 600px) {
+
+  .cart-price-box {
+    margin-top: 5px;
+  }
+
+  .cart-online-price strong {
+    font-size: 16px;
+  }
+
+  .cart-saving {
+    font-size: 10px;
+  }
+
+  .item-total {
+    font-size: 15px;
+  }
+}
