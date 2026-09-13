@@ -167,81 +167,50 @@ function createBrandFilters() {
 // Category Filters
 // =============================
 
-function createCategoryFilters() {
+
+                function createCategoryFilters() {
 
     if (!categoryFilters) return;
 
-    const preferredOrder = [
-
-        "Fruits & Vegetables",
-        "Atta & Flour",
-        "Rice & Grains",
-        "Pulses & Dals",
-        "Masala & Spices",
-        "Oil & Ghee",
-        "Dairy & Chilled",
-        "Biscuits & Bakery",
-        "Snacks & Namkeen",
-        "Tea & Coffee",
-        "Sugar, Salt & Sweeteners",
-        "Dry Fruits & Nuts",
-        "Pickles, Sauces & Spreads",
-        "Instant & Packaged Foods",
-        "Chocolates & Confectionery",
-        "Beverages",
-        "Personal Care",
-        "Home Care",
-        "Puja & Household",
-        "General Items"
-
-    ];
-
+    // Categories directly from products.json
     const existingCategories = [
         ...new Set(
             allProducts
-                .map(product => product.category)
+                .map(product =>
+                    String(product.category || "").trim()
+                )
                 .filter(Boolean)
         )
     ];
 
-    const categories = [
-
-        ...preferredOrder.filter(
-            category =>
-                existingCategories.includes(category)
-        ),
-
-        ...existingCategories.filter(
-            category =>
-                !preferredOrder.includes(category)
-        ).sort()
-
-    ];
+    // Sort categories alphabetically
+    const categories = existingCategories.sort(
+        (a, b) => a.localeCompare(b)
+    );
 
     categoryFilters.innerHTML =
-        `<button class="cat-btn" data-category="">
+        `<button
+            class="cat-btn ${!selectedCategory ? "active" : ""}"
+            data-category="">
             All Categories
         </button>` +
 
         categories.map(category => `
             <button
-                class="cat-btn"
+                class="cat-btn ${
+                    normalizeCategory(category) ===
+                    normalizeCategory(selectedCategory)
+                        ? "active"
+                        : ""
+                }"
                 data-category="${escapeHtml(category)}">
                 ${escapeHtml(category)}
             </button>
         `).join("");
 
-    // Activate selected URL category
     categoryFilters
         .querySelectorAll(".cat-btn")
         .forEach(button => {
-
-            if (
-                (button.dataset.category || "") ===
-                selectedCategory
-            ) {
-                button.classList.add("active");
-            }
 
             button.addEventListener("click", () => {
 
@@ -261,6 +230,7 @@ function createCategoryFilters() {
             });
 
         });
+
 
     // If no category selected, activate All Categories
     if (!selectedCategory) {
