@@ -368,7 +368,19 @@ function smartSearchMatch(keyword, product) {
     if (!query) {
         return true;
     }
+// =============================
+// Category Normalizer
+// =============================
 
+function normalizeCategory(value) {
+
+    return String(value ?? "")
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
     const productText =
         normalizeText(
             `${product.name || ""} ` +
@@ -422,8 +434,9 @@ function applyFilters() {
                 product.brand === selectedBrand;
 
             const categoryMatch =
-                !selectedCategory ||
-                product.category === selectedCategory;
+    !selectedCategory ||
+    normalizeCategory(product.category) ===
+    normalizeCategory(selectedCategory);
 
             return (
                 searchMatch &&
