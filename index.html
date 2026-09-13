@@ -94,310 +94,9 @@
     </h2>
 
 
-    <div class="category-grid">
+    <div class="category-grid" id="homeCategories"></div>            
+        
 
-
-        <!-- Fruits & Vegetables -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Fruits%20%26%20Vegetables">
-
-            <span class="category-icon">
-                🥬
-            </span>
-
-            Fruits & Vegetables
-
-        </a>
-
-
-        <!-- Atta & Flour -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Atta%20%26%20Flour">
-
-            <span class="category-icon">
-                🌾
-            </span>
-
-            Atta & Flour
-
-        </a>
-
-
-        <!-- Rice & Grains -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Rice%20%26%20Grains">
-
-            <span class="category-icon">
-                🍚
-            </span>
-
-            Rice & Grains
-
-        </a>
-
-
-        <!-- Pulses & Dals -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Pulses%20%26%20Dals">
-
-            <span class="category-icon">
-                🫘
-            </span>
-
-            Pulses & Dals
-
-        </a>
-
-
-        <!-- Masala & Spices -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Masala%20%26%20Spices">
-
-            <span class="category-icon">
-                🌶️
-            </span>
-
-            Masala & Spices
-
-        </a>
-
-
-        <!-- Oil & Ghee -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Oil%20%26%20Ghee">
-
-            <span class="category-icon">
-                🫗
-            </span>
-
-            Oil & Ghee
-
-        </a>
-
-
-        <!-- Dairy & Chilled -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Dairy%20%26%20Chilled">
-
-            <span class="category-icon">
-                🥛
-            </span>
-
-            Dairy & Chilled
-
-        </a>
-
-
-        <!-- Biscuits & Bakery -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Biscuits%20%26%20Bakery">
-
-            <span class="category-icon">
-                🍪
-            </span>
-
-            Biscuits & Bakery
-
-        </a>
-
-
-        <!-- Snacks & Namkeen -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Snacks%20%26%20Namkeen">
-
-            <span class="category-icon">
-                🍿
-            </span>
-
-            Snacks & Namkeen
-
-        </a>
-
-
-        <!-- Tea & Coffee -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Tea%20%26%20Coffee">
-
-            <span class="category-icon">
-                ☕
-            </span>
-
-            Tea & Coffee
-
-        </a>
-
-
-        <!-- Sugar Salt Sweeteners -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Sugar%2C%20Salt%20%26%20Sweeteners">
-
-            <span class="category-icon">
-                🧂
-            </span>
-
-            Sugar, Salt & Sweeteners
-
-        </a>
-
-
-        <!-- Dry Fruits -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Dry%20Fruits%20%26%20Nuts">
-
-            <span class="category-icon">
-                🥜
-            </span>
-
-            Dry Fruits & Nuts
-
-        </a>
-
-
-        <!-- Pickles Sauces -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Pickles%2C%20Sauces%20%26%20Spreads">
-
-            <span class="category-icon">
-                🫙
-            </span>
-
-            Pickles, Sauces & Spreads
-
-        </a>
-
-
-        <!-- Instant Foods -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Instant%20%26%20Packaged%20Foods">
-
-            <span class="category-icon">
-                🍜
-            </span>
-
-            Instant & Packaged Foods
-
-        </a>
-
-
-        <!-- Chocolates -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Chocolates%20%26%20Confectionery">
-
-            <span class="category-icon">
-                🍫
-            </span>
-
-            Chocolates & Confectionery
-
-        </a>
-
-
-        <!-- Beverages -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Beverages">
-
-            <span class="category-icon">
-                🥤
-            </span>
-
-            Beverages
-
-        </a>
-
-
-        <!-- Personal Care -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Personal%20Care">
-
-            <span class="category-icon">
-                🧴
-            </span>
-
-            Personal Care
-
-        </a>
-
-
-        <!-- Home Care -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Home%20Care">
-
-            <span class="category-icon">
-                🧹
-            </span>
-
-            Home Care
-
-        </a>
-
-
-        <!-- Puja & Household -->
-
-        <a
-            class="category-card"
-            href="products.html?category=Puja%20%26%20Household">
-
-            <span class="category-icon">
-                🪔
-            </span>
-
-            Puja & Household
-
-        </a>
-
-
-        <!-- General Items -->
-
-        <a
-            class="category-card"
-            href="products.html?category=General%20Items">
-
-            <span class="category-icon">
-                🛍️
-            </span>
-
-            General Items
-
-        </a>
-
-
-    </div>
 
 </section>
 
@@ -549,7 +248,63 @@
 
 </a>
 
+<script>
+fetch("products.json?v=1", { cache: "no-store" })
+    .then(response => response.json())
+    .then(products => {
 
+        const categoryBox = document.getElementById("homeCategories");
+
+        const categories = [
+            ...new Set(
+                products
+                    .map(product => product.category)
+                    .filter(category => category && category.trim())
+            )
+        ];
+
+        const icons = {
+            "Grocery & Daily Use": "🛒",
+            "Atta, Flour & Grains": "🌾",
+            "Home Cleaning": "🧹",
+            "Dal & Pulses": "🫘",
+            "Spices & Masala": "🌶️",
+            "Personal Care": "🧴",
+            "Oil & Ghee": "🫗",
+            "Noodles & Packaged Food": "🍜",
+            "Biscuits & Snacks": "🍪",
+            "Sugar & Salt": "🧂",
+            "Dairy & Breakfast": "🥛"
+        };
+
+        categoryBox.innerHTML = "";
+
+        categories.forEach(category => {
+
+            const card = document.createElement("a");
+
+            card.className = "category-card";
+
+            card.href =
+                "products.html?category=" +
+                encodeURIComponent(category);
+
+            const icon = document.createElement("span");
+            icon.className = "category-icon";
+            icon.textContent = icons[category] || "🛍️";
+
+            card.appendChild(icon);
+            card.appendChild(
+                document.createTextNode(category)
+            );
+
+            categoryBox.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error("Category loading error:", error);
+    });
+</script>
 </body>
 
 </html>
