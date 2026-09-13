@@ -677,7 +677,28 @@ document.addEventListener("DOMContentLoaded", function () {
         "acOrders",
         JSON.stringify(savedOrders)
       );
+const AWS_ORDER_URL =
+  "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
 
+fetch(AWS_ORDER_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(orderData)
+})
+  .then(function (response) {
+    if (!response.ok) {
+      throw new Error("AWS order save failed");
+    }
+    return response.json();
+  })
+  .then(function (result) {
+    console.log("AWS Order Saved:", result);
+  })
+  .catch(function (error) {
+    console.error("AWS Order Error:", error);
+  });
       window.open(
         url,
         "_blank"
