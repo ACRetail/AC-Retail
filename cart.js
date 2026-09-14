@@ -424,67 +424,170 @@ document.addEventListener("DOMContentLoaded", function () {
       renderCart();
     }
   );
+const checkoutForm =
+document.getElementById("checkoutForm");
 
-  const checkoutForm =
-    document.getElementById("checkoutForm");
+const paymentSection =
+document.getElementById("paymentSection");
 
-  const confirmWhatsApp =
-    document.getElementById("confirmWhatsApp");
+const paymentAmount =
+document.getElementById("paymentAmount");
 
-  whatsappButton.addEventListener(
+const payNowBtn =
+document.getElementById("payNowBtn");
+
+const paymentDoneBtn =
+document.getElementById("paymentDoneBtn");
+
+
+/* ================================
+   OPEN CHECKOUT
+================================ */
+
+whatsappButton.addEventListener(
+  "click",
+  function () {
+
+    const cart = getCart();
+
+    if (!cart.length) return;
+
+    checkoutForm.style.display = "block";
+
+    if (paymentSection) {
+      paymentSection.style.display = "block";
+    }
+
+    const total = getTotal(cart);
+
+    if (paymentAmount) {
+      paymentAmount.textContent = formatPrice(total);
+    }
+
+    checkoutForm.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }
+);
+
+
+/* ================================
+   PAY VIA UPI
+================================ */
+
+if (payNowBtn) {
+
+  payNowBtn.addEventListener(
     "click",
     function () {
 
       const cart = getCart();
 
-      if (!cart.length) return;
+      if (!cart.length) {
+        alert("Your cart is empty.");
+        return;
+      }
 
-      checkoutForm.style.display =
-        "block";
+      const total = getTotal(cart);
 
-      checkoutForm.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
+      if (total <= 0) {
+        alert("Invalid order amount.");
+        return;
+      }
+
+      const upiId =
+        "8087069719@okbizaxis";
+
+      const merchantName =
+        "AC Retail";
+
+      const transactionNote =
+        "AC Retail Order";
+
+      const upiUrl =
+        "upi://pay" +
+        "?pa=" + encodeURIComponent(upiId) +
+        "&pn=" + encodeURIComponent(merchantName) +
+        "&am=" + encodeURIComponent(total.toFixed(2)) +
+        "&cu=INR" +
+        "&tn=" + encodeURIComponent(transactionNote);
+
+      window.location.href = upiUrl;
+
+      setTimeout(function () {
+
+        if (paymentDoneBtn) {
+          paymentDoneBtn.style.display = "block";
+        }
+
+      }, 1000);
+
     }
   );
 
-  confirmWhatsApp.addEventListener(
+}
+
+
+/* ================================
+   PAYMENT COMPLETED
+================================ */
+
+if (paymentDoneBtn) {
+
+  paymentDoneBtn.addEventListener(
     "click",
     function () {
 
       const cart = getCart();
 
-      if (!cart.length) return;
+      if (!cart.length) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+
+      /* CUSTOMER DETAILS */
 
       const name =
         document
-          .getElementById("customerName")
-          .value
-          .trim();
+        .getElementById("customerName")
+        .value
+        .trim();
 
       const mobile =
         document
-          .getElementById("customerMobile")
-          .value
-          .trim();
+        .getElementById("customerMobile")
+        .value
+        .trim();
 
       const address =
         document
-          .getElementById("customerAddress")
-          .value
-          .trim();
+        .getElementById("customerAddress")
+        .value
+        .trim();
 
       const note =
         document
-          .getElementById("customerNote")
-          .value
-          .trim();
+        .getElementById("customerNote")
+        .value
+        .trim();
+
+
+      /* VALIDATION */
 
       if (!name) {
+
         alert("Please enter your name.");
+
+        document
+        .getElementById("customerName")
+        .focus();
+
         return;
       }
+
 
       if (!/^[0-9]{10}$/.test(mobile)) {
 
@@ -492,8 +595,13 @@ document.addEventListener("DOMContentLoaded", function () {
           "Please enter a valid 10-digit mobile number."
         );
 
+        document
+        .getElementById("customerMobile")
+        .focus();
+
         return;
       }
+
 
       if (!address) {
 
@@ -501,19 +609,29 @@ document.addEventListener("DOMContentLoaded", function () {
           "Please enter your delivery address."
         );
 
+        document
+        .getElementById("customerAddress")
+        .focus();
+
         return;
       }
+
+
+      /* ORDER ID */
 
       const orderId =
         "AC-" +
         new Date()
-          .toISOString()
-          .slice(0, 10)
-          .replace(/-/g, "") +
+        .toISOString()
+        .slice(0, 10)
+        .replace(/-/g, "") +
         "-" +
         Math.floor(
           1000 + Math.random() * 9000
         );
+
+
+      /* TOTAL */
 
       const grandTotal =
         getTotal(cart);
@@ -521,28 +639,44 @@ document.addEventListener("DOMContentLoaded", function () {
       const totalSavings =
         getTotalSavings(cart);
 
+
+      /* WHATSAPP MESSAGE */
+
       let message =
         "🛒 *AC Retail Order*%0A%0A";
+
 
       message +=
         "🆔 *Order ID:* " +
         encodeURIComponent(orderId) +
-        "%0A%0A";
+        "%0A";
+
+
+      message +=
+        "💳 *Payment:* UPI%0A";
+
+
+      message +=
+        "🟢 *Payment Status:* Customer Confirmed%0A%0A";
+
 
       message +=
         "👤 *Customer:* " +
         encodeURIComponent(name) +
         "%0A";
 
+
       message +=
         "📱 *Mobile:* " +
         encodeURIComponent(mobile) +
         "%0A";
 
+
       message +=
         "📍 *Address:* " +
         encodeURIComponent(address) +
         "%0A";
+
 
       if (note) {
 
@@ -550,10 +684,15 @@ document.addEventListener("DOMContentLoaded", function () {
           "📝 *Note:* " +
           encodeURIComponent(note) +
           "%0A";
+
       }
+
 
       message +=
         "%0A━━━━━━━━━━━━━━%0A";
+
+
+      /* ITEMS */
 
       cart.forEach(
         function (item, index) {
@@ -576,43 +715,53 @@ document.addEventListener("DOMContentLoaded", function () {
               (mrp - price) * qty
             );
 
+
           message +=
             `${index + 1}. ` +
             encodeURIComponent(item.name) +
             "%0A";
 
+
           message +=
-            "   Qty: " +
+            " Qty: " +
             qty +
             "%0A";
 
+
           message +=
-            "   MRP: " +
+            " MRP: " +
             formatPrice(mrp) +
             "%0A";
 
+
           message +=
-            "   Online Price: " +
+            " Online Price: " +
             formatPrice(price) +
             "%0A";
+
 
           if (itemSaving > 0) {
 
             message +=
-              "   You Save: " +
+              " You Save: " +
               formatPrice(itemSaving) +
               "%0A";
+
           }
 
+
           message +=
-            "   Total: " +
+            " Total: " +
             formatPrice(itemTotal) +
             "%0A%0A";
+
         }
       );
 
+
       message +=
         "━━━━━━━━━━━━━━%0A";
+
 
       if (totalSavings > 0) {
 
@@ -620,27 +769,38 @@ document.addEventListener("DOMContentLoaded", function () {
           "🏷️ *You Save: " +
           formatPrice(totalSavings) +
           "*%0A";
+
       }
+
 
       message +=
         "💰 *Grand Total: " +
         formatPrice(grandTotal) +
         "*%0A%0A";
 
+
       message +=
         "🏪 AC Retail%0A";
+
 
       message +=
         "Police Line, Phaltan";
 
+
+      /* WHATSAPP NUMBER */
+
       const whatsappNumber =
         "918830300826";
+
 
       const url =
         "https://wa.me/" +
         whatsappNumber +
         "?text=" +
         message;
+
+
+      /* ORDER DATA */
 
       const orderData = {
 
@@ -654,7 +814,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         customerNote: note,
 
-        status: "Order Placed",
+        status: "Payment Confirmed - Order Placed",
+
+        paymentMethod: "UPI",
+
+        paymentStatus:
+          "Customer Confirmed",
 
         date:
           new Date().toLocaleString("en-IN"),
@@ -664,48 +829,101 @@ document.addEventListener("DOMContentLoaded", function () {
         total: grandTotal,
 
         totalSavings: totalSavings
+
       };
+
+
+      /* LOCAL ORDER SAVE */
 
       let savedOrders =
         JSON.parse(
           localStorage.getItem("acOrders")
         ) || [];
 
+
       savedOrders.push(orderData);
+
 
       localStorage.setItem(
         "acOrders",
         JSON.stringify(savedOrders)
       );
-const AWS_ORDER_URL =
-  "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
 
-fetch(AWS_ORDER_URL, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(orderData)
-})
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("AWS order save failed");
-    }
-    return response.json();
-  })
-  .then(function (result) {
-    console.log("AWS Order Saved:", result);
-  })
-  .catch(function (error) {
-    console.error("AWS Order Error:", error);
-  });
+
+      /* AWS ORDER SAVE */
+
+      const AWS_ORDER_URL =
+        "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
+
+
+      fetch(AWS_ORDER_URL, {
+
+        method: "POST",
+
+        headers: {
+
+          "Content-Type":
+            "application/json"
+
+        },
+
+        body:
+          JSON.stringify(orderData)
+
+      })
+
+      .then(function (response) {
+
+        if (!response.ok) {
+
+          throw new Error(
+            "AWS order save failed"
+          );
+
+        }
+
+        return response.json();
+
+      })
+
+      .then(function (result) {
+
+        console.log(
+          "AWS Order Saved:",
+          result
+        );
+
+      })
+
+      .catch(function (error) {
+
+        console.error(
+          "AWS Order Error:",
+          error
+        );
+
+      });
+
+
+      /* OPEN WHATSAPP */
+
       window.open(
         url,
         "_blank"
       );
+
     }
   );
 
-  renderCart();
+}
+
+
+renderCart();
+  
+
+  
+          
+      
+
 
 });
