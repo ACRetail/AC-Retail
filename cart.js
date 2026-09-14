@@ -851,6 +851,24 @@ if (paymentDoneBtn) {
         JSON.stringify(savedOrders)
       );
 
+      /* FIREBASE ORDER SAVE */
+
+const ordersRef = ref(db, "orders");
+const newOrderRef = push(ordersRef);
+
+set(newOrderRef, orderData)
+  .then(function () {
+    console.log(
+      "Firebase Order Saved:",
+      newOrderRef.key
+    );
+  })
+  .catch(function (error) {
+    console.error(
+      "Firebase Order Error:",
+      error
+    );
+  });
 
       /* AWS ORDER SAVE */
 
