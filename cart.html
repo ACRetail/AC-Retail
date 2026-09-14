@@ -605,7 +605,70 @@
   min-height: 50px;
   box-shadow: 0 4px 12px rgba(0, 150, 60, .18);
 }
+.payment-section {
+  margin-top: 18px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #d5e8db;
+  border-radius: 14px;
+  text-align: center;
+}
 
+.payment-section h3 {
+  margin: 0 0 12px;
+  color: #08752d;
+}
+
+.payment-total {
+  font-size: 17px;
+  margin: 10px 0 15px;
+}
+
+.payment-total strong {
+  color: #08752d;
+  font-size: 20px;
+}
+
+.upi-qr {
+  width: 260px;
+  max-width: 100%;
+  display: block;
+  margin: 12px auto;
+  border-radius: 10px;
+}
+
+.upi-id {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.upi-id strong {
+  color: #08752d;
+}
+
+.payment-help {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px;
+  border: 0;
+  border-radius: 10px;
+  background: #08752d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background: #065d24;
+}
+    
 .whatsapp-btn {
   min-height: 52px;
 }
@@ -768,9 +831,45 @@
     rows="2"
   ></textarea>
 
-  <button id="confirmWhatsApp" class="confirm-btn">
-    🟢 Confirm Order on WhatsApp
+  <!-- PAYMENT SECTION -->
+<div id="paymentSection" class="payment-section" style="display:none;">
+
+  <h3>💳 Pay via UPI</h3>
+
+  <p class="payment-total">
+    Payable Amount:
+    <strong id="paymentAmount">₹0</strong>
+  </p>
+
+  <img
+    src="images/ac-retail-gpay-qr.png"
+    alt="AC Retail UPI QR"
+    class="upi-qr"
+  >
+
+  <p class="upi-id">
+    UPI ID:
+    <strong>8087069719@okbizaxis</strong>
+  </p>
+
+  <p class="payment-help">
+    📱 Scan the QR using Google Pay, PhonePe, Paytm or any UPI app.
+  </p>
+
+  <button id="payNowBtn" class="pay-btn" type="button">
+    💳 Pay via UPI
   </button>
+
+  <button
+    id="paymentDoneBtn"
+    class="confirm-btn"
+    type="button"
+    style="display:none;"
+  >
+    ✅ I Have Completed Payment
+  </button>
+
+</div>
 
 </div>
         <div class="whatsapp-note">
