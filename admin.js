@@ -13,7 +13,7 @@ const totalOrdersEl = document.getElementById("totalOrders");
 const pendingOrdersEl = document.getElementById("pendingOrders");
 const deliveredOrdersEl = document.getElementById("deliveredOrders");
 
-let orders = JSON.parse(localStorage.getItem("acOrders")) || [];
+let orders = [];
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -27,6 +27,20 @@ function escapeHtml(value) {
 function saveOrders() {
   localStorage.setItem("acOrders", JSON.stringify(orders));
 }
+/* FIREBASE LIVE ORDERS */
+
+const firebaseOrdersRef = ref(db, "orders");
+
+onValue(firebaseOrdersRef, (snapshot) => {
+  const data = snapshot.val() || {};
+
+  orders = Object.entries(data).map(([firebaseKey, order]) => ({
+    ...order,
+    firebaseKey
+  }));
+
+  renderOrders();
+});
 
 function updateStats() {
   totalOrdersEl.textContent = orders.length;
