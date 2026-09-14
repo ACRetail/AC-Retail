@@ -1,3 +1,11 @@
+import { db } from "./firebase.js";
+import {
+  ref,
+  onValue,
+  update,
+  remove
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
 const ordersList = document.getElementById("ordersList");
 const searchInput = document.getElementById("orderSearch");
 
