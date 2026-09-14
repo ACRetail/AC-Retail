@@ -188,7 +188,7 @@ function renderOrders() {
   updateStats();
 }
 
-ordersList.addEventListener("click", function(e) {
+ordersList.addEventListener("click", async function(e) {
 
   const button = e.target.closest("button");
 
@@ -199,36 +199,50 @@ ordersList.addEventListener("click", function(e) {
 
   if (!orders[index]) return;
 
+  const order = orders[index];
+  const firebaseKey = order.firebaseKey;
+
+  if (!firebaseKey) {
+    alert("Firebase order key nahi mila.");
+    return;
+  }
+
+  const orderRef = ref(db, "orders/" + firebaseKey);
+
   if (action === "confirm") {
-    orders[index].status = "Confirmed";
-    saveOrders();
-    renderOrders();
+
+    await update(orderRef, {
+      status: "Confirmed"
+    });
+
   }
 
   if (action === "delivered") {
-    orders[index].status = "Delivered";
-    saveOrders();
-    renderOrders();
+
+    await update(orderRef, {
+      status: "Delivered"
+    });
+
   }
 
   if (action === "cancel") {
-    orders[index].status = "Cancelled";
-    saveOrders();
-    renderOrders();
+
+    await update(orderRef, {
+      status: "Cancelled"
+    });
+
   }
 
   if (action === "delete") {
 
     const ok = confirm(
-      `Delete order ${orders[index].orderId || ""}?`
+      `Delete order ${order.orderId || ""}?`
     );
 
     if (!ok) return;
 
-    orders.splice(index, 1);
+    await remove(orderRef);
 
-    saveOrders();
-    renderOrders();
   }
 
 });
