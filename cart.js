@@ -1,3 +1,5 @@
+import { db } from "./firebase.js";
+import { ref, push, set } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 document.addEventListener("DOMContentLoaded", function () {
 
   const CART_KEY = "cart";
