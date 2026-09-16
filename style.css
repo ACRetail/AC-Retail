@@ -2776,10 +2776,12 @@ body:has(.services) .contact-box form .btn {
     url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=85");
 }
 
-/* Rice */
+/* Rice - FIX */
 #homeCategories .category-card:nth-child(2) {
     --category-image:
-    url("https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=800&q=85");
+    url("https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=1000&q=90");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Atta / Flour */
@@ -2794,10 +2796,12 @@ body:has(.services) .contact-box form .btn {
     url("https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=800&q=85");
 }
 
-/* Oil / Sugar / Salt */
+/* Oil Sugar & Salt - FIX */
 #homeCategories .category-card:nth-child(5) {
     --category-image:
-    url("https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=85");
+    url("https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1000&q=90");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Snacks & Beverages */
