@@ -264,13 +264,26 @@ fetch("products.json?v=1", { cache: "no-store" })
         ];
 
         const icons = {
-    "Spices & Dry Fruits": "🌶️",
-    "Rice": "🍚",
-    "Atta Maida Sooji Besan": "🌾",
-    "Dals & Grains": "🫘",
-    "Oil Sugar & Salt": "🫗",
-    "Snacks & Beverages": "🍪",
-    "General Item": "🛍️"
+    "Spices & Dry Fruits":
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=500&q=85",
+
+    "Rice":
+        "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=500&q=85",
+
+    "Atta Maida Sooji Besan":
+        "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=85",
+
+    "Dals & Grains":
+        "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=500&q=85",
+
+    "Oil Sugar & Salt":
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=500&q=85",
+
+    "Snacks & Beverages":
+        "https://images.unsplash.com/photo-1621939514649-280e2aa7a1f?auto=format&fit=crop&w=500&q=85",
+
+    "General Item":
+        "https://images.unsplash.com/photo-1601598851547-4302969d4b1b?auto=format&fit=crop&w=500&q=85"
 };
 
         categoryBox.innerHTML = "";
@@ -287,8 +300,9 @@ fetch("products.json?v=1", { cache: "no-store" })
 
             const icon = document.createElement("span");
             icon.className = "category-icon";
-            icon.textContent = icons[category] || "🛍️";
-
+            icon.innerHTML = icons[category]
+    ? `<img src="${icons[category]}" alt="${category}">`
+    : "🛍️";
             card.appendChild(icon);
             card.appendChild(
                 document.createTextNode(category)
