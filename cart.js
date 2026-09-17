@@ -500,8 +500,8 @@ if (payNowBtn) {
       }
 
       const upiId =
-        "8087069719@okbizaxis";
-
+  "8087069719.eazypay@icici";
+      
       const merchantName =
         "AC Retail";
 
