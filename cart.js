@@ -474,43 +474,12 @@ whatsappButton.addEventListener(
   }
 );
 
-
 /* ================================
    PAY VIA PHONEPE
 ================================ */
 
 if (payNowBtn) {
 
-  payNowBtn.addEventListener(
-    "click",
-    function () {
-
-      const cart = getCart();
-
-      if (!cart.length) {
-        alert("Your cart is empty.");
-        return;
-      }
-
-      const total = getTotal(cart);
-
-      if (total <= 0) {
-        alert("Invalid order amount.");
-        return;
-      }
-
-      /*
-        PhonePe payment attempt.
-        Mobile number is displayed separately because
-        PhonePe does not guarantee direct mobile-number
-        resolution through a generic UPI deep link.
-      */
-
-      const phonePeUrl =
-        "phonepe://";
-
-      window.location.href = phonePeUrl;
-if (payNowBtn) {
   payNowBtn.addEventListener("click", function () {
 
     const cart = getCart();
@@ -532,14 +501,15 @@ if (payNowBtn) {
     }
 
     alert(
-      "PhonePe open karke 8087069719 par ₹" +
+      "PhonePe app manually open karein aur " +
+      "8087069719 par ₹" +
       total.toFixed(2) +
       " payment karein."
     );
 
   });
+
 }
-  
 
 /* ================================
    PAYMENT COMPLETED
