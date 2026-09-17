@@ -3,19 +3,258 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
 
-  <title>Products - AC Retail</title>
+<title>Products - AC Retail</title>
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================
+   PRODUCTS PAGE
+========================= */
+
+.products-page {
+  padding-top: 35px;
+  padding-bottom: 50px;
+}
+
+
+/* Heading */
+
+.products-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.products-heading h1 {
+  margin: 10px 0 8px;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.products-heading p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 30px;
+  background: #eaf7ee;
+  color: #198754;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.product-search-box {
+  max-width: 720px;
+  margin: 0 auto 28px;
+
+  display: flex;
+  align-items: center;
+
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 18px;
+
+  padding: 5px 18px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+}
+
+.product-search-box span {
+  font-size: 22px;
+}
+
+.product-search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 15px 12px;
+
+  font-size: 16px;
+
+  background: transparent;
+}
+
+
+/* =========================
+   FILTER BOX
+========================= */
+
+.filter-section {
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  padding: 18px 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 7px 24px rgba(0,0,0,0.06);
+
+}
+
+.filter-section h3 {
+
+  margin: 0 0 13px;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+}
+
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filters {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+}
+
+.filters button {
+
+  border: 1px solid #ddd;
+
+  background: #f8f9fa;
+
+  color: #333;
+
+  padding: 10px 16px;
+
+  border-radius: 25px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    all 0.25s ease;
+
+}
+
+.filters button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(0,0,0,0.08);
+
+}
+
+
+/* Active filter */
+
+.filters button.active {
+
+  background: #198754;
+
+  color: #fff;
+
+  border-color: #198754;
+
+  box-shadow:
+    0 5px 14px rgba(25,135,84,0.25);
+
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+#productList {
+
+  margin-top: 25px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .products-page {
+
+    padding-top: 22px;
+
+  }
+
+  .products-heading h1 {
+
+    font-size: 27px;
+
+  }
+
+  .products-heading p {
+
+    font-size: 14px;
+
+  }
+
+  .filter-section {
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+  }
+
+  .filters {
+
+    gap: 7px;
+
+  }
+
+  .filters button {
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+
+  }
+
+  .product-search-box {
+
+    border-radius: 15px;
+
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -23,171 +262,175 @@
 <body>
 
 
-  <!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-  <header class="header">
+<header class="header">
 
-    <div class="header-inner">
+<div class="header-inner">
 
-      <div>
+<div>
 
-        <div class="logo">
-          🛒 AC Retail
-        </div>
+<div class="logo">
+🛒 AC Retail
+</div>
 
-        <div class="tagline">
-          Fresh Groceries • Better Living
-        </div>
+<div class="tagline">
+Fresh Groceries • Better Living
+</div>
 
-      </div>
+</div>
 
 
-      <nav>
+<nav>
 
-        <a href="index.html">
-          Home
-        </a>
+<a href="index.html">
+Home
+</a>
 
-        <a
-          href="products.html"
-          class="active"
-        >
-          Products
-        </a>
+<a
+  href="products.html"
+  class="active">
+Products
+</a>
 
-        <a href="cart.html">
-          🛒 Cart
-        </a>
+<a href="cart.html">
+🛒 Cart
+</a>
 
-        <a href="about.html">
-          About
-        </a>
+<a href="about.html">
+About
+</a>
 
-        <a href="offers.html">
-          Offers
-        </a>
+<a href="offers.html">
+Offers
+</a>
 
-        <a href="contact.html">
-          Contact
-        </a>
+<a href="contact.html">
+Contact
+</a>
 
-      </nav>
+</nav>
 
-    </div>
+</div>
 
-  </header>
+</header>
 
 
 
-  <!-- PRODUCTS PAGE -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-  <main class="products-page container">
+<section class="products-page container">
 
 
-    <!-- PAGE HEADING -->
+<div class="products-heading">
 
-    <div class="products-heading">
+<span class="section-badge">
+🛒 AC RETAIL
+</span>
 
-      <span class="section-badge">
-        🛒 AC RETAIL
-      </span>
+<h1>
+Shop Our Products
+</h1>
 
-      <h1>
-        Shop Our Products
-      </h1>
+<p>
+Fresh groceries & daily essentials at great prices
+</p>
 
-      <p>
-        Fresh groceries & daily essentials at great prices
-      </p>
+</div>
 
-    </div>
 
 
+<!-- SEARCH -->
 
-    <!-- SEARCH -->
+<div class="product-search-box">
 
-    <div class="product-search-box">
+<span>
+🔎
+</span>
 
-      <span>
-        🔎
-      </span>
+<input
+  type="text"
+  id="search"
+  placeholder="Search products, brands..."
+  autocomplete="off">
 
-      <input
-        type="text"
-        id="search"
-        placeholder="Search products, brands..."
-        autocomplete="off"
-      >
+</div>
 
-    </div>
 
 
+<!-- BRANDS -->
 
-    <!-- BRAND FILTER -->
+<div class="filter-section">
 
-    <div class="filter-section">
+<h3>
+🏷️ Brands
+</h3>
 
-      <h3>
-        🏷️ Brands
-      </h3>
+<div
+  class="filters"
+  id="brandFilters">
+</div>
 
-      <div
-        class="filters"
-        id="brandFilters"
-      ></div>
+</div>
 
-    </div>
 
 
+<!-- CATEGORIES -->
 
-    <!-- CATEGORY FILTER -->
+<div class="filter-section">
 
-    <div class="filter-section">
+<h3>
+📦 Categories
+</h3>
 
-      <h3>
-        📦 Categories
-      </h3>
+<div
+  class="filters"
+  id="categoryFilters">
+</div>
 
-      <div
-        class="filters"
-        id="categoryFilters"
-      ></div>
+</div>
 
-    </div>
 
 
+<!-- PRODUCTS -->
 
-    <!-- PRODUCT LIST -->
+<div
+  id="productList"
+  class="product-grid">
+</div>
 
-    <div
-      id="productList"
-      class="product-grid"
-    ></div>
 
+</section>
 
-  </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
 
-  <!-- FOOTER -->
+<footer class="footer">
 
-  <footer class="footer">
+<p>
+&copy; 2026 AC Retail | Police Line, Phaltan
+</p>
 
-    <p>
-      &copy; 2026 AC Retail | Police Line, Phaltan
-    </p>
+<p>
+📞 8830300826
+</p>
 
-    <p>
-      📞 8830300826
-    </p>
+</footer>
 
-  </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
-  <!-- PRODUCT JAVASCRIPT -->
-
-  <script src="products.js?v=7"></script>
+<script src="products.js?v=8"></script>
 
 
 </body>
