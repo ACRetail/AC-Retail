@@ -476,8 +476,6 @@ whatsappButton.addEventListener(
 
 
 /* ================================
-   PAY VIA UPI
-/* ================================
    PAY VIA PHONEPE
 ================================ */
 
@@ -512,24 +510,34 @@ if (payNowBtn) {
         "phonepe://";
 
       window.location.href = phonePeUrl;
+if (payNowBtn) {
+  payNowBtn.addEventListener("click", function () {
 
-      setTimeout(function () {
+    const cart = getCart();
 
-        if (paymentDoneBtn) {
-          paymentDoneBtn.style.display = "block";
-        }
-
-        alert(
-          "PhonePe open nahi hua to PhonePe app manually open karke 8087069719 par ₹" +
-          total.toFixed(2) +
-          " payment karein."
-        );
-
-      }, 1200);
-
+    if (!cart.length) {
+      alert("Your cart is empty.");
+      return;
     }
-  );
 
+    const total = getTotal(cart);
+
+    if (total <= 0) {
+      alert("Invalid order amount.");
+      return;
+    }
+
+    if (paymentDoneBtn) {
+      paymentDoneBtn.style.display = "block";
+    }
+
+    alert(
+      "PhonePe open karke 8087069719 par ₹" +
+      total.toFixed(2) +
+      " payment karein."
+    );
+
+  });
 }
   
 
