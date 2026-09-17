@@ -2861,4 +2861,465 @@ body:has(.services) .contact-box form .btn {
         font-size: 21px;
     }
 }
-```
+/* =========================================
+   PREMIUM PRODUCT CARDS - AC RETAIL
+========================================= */
+
+#productList,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+  align-items: stretch;
+}
+
+
+/* CARD */
+
+#productList .product-card,
+.product-grid .product-card {
+  position: relative;
+
+  background: #fff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  box-shadow:
+    0 7px 22px rgba(0,0,0,0.07);
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+
+#productList .product-card:hover,
+.product-grid .product-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,0.13);
+
+  border-color: #d9eadf;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+#productList .product-card img,
+.product-grid .product-card img {
+
+  width: 100%;
+
+  height: 205px;
+
+  object-fit: contain;
+
+  display: block;
+
+  background: #f8faf8;
+
+  padding: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+
+#productList .product-card:hover img,
+.product-grid .product-card:hover img {
+
+  transform: scale(1.05);
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+#productList .product-card > *:not(img),
+.product-grid .product-card > *:not(img) {
+
+  margin-left: 17px;
+  margin-right: 17px;
+
+}
+
+
+/* PRODUCT NAME */
+
+#productList .product-card h3,
+#productList .product-card h4,
+.product-grid .product-card h3,
+.product-grid .product-card h4 {
+
+  margin-top: 15px;
+  margin-bottom: 7px;
+
+  font-size: 16px;
+
+  line-height: 1.35;
+
+  font-weight: 800;
+
+  color: #222;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+#productList .product-card .brand,
+.product-grid .product-card .brand {
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #777;
+
+  margin-bottom: 7px;
+
+}
+
+
+/* =========================================
+   MRP
+========================================= */
+
+#productList .product-card .mrp,
+.product-grid .product-card .mrp {
+
+  font-size: 13px;
+
+  color: #888;
+
+  text-decoration: line-through;
+
+  margin-top: 5px;
+
+}
+
+
+/* =========================================
+   ONLINE PRICE
+========================================= */
+
+#productList .product-card .price,
+#productList .product-card .online-price,
+.product-grid .product-card .price,
+.product-grid .product-card .online-price {
+
+  font-size: 22px;
+
+  font-weight: 900;
+
+  color: #16834b;
+
+  margin-top: 4px;
+
+  margin-bottom: 5px;
+
+}
+
+
+/* =========================================
+   SAVING
+========================================= */
+
+#productList .product-card .saving,
+.product-grid .product-card .saving {
+
+  display: inline-block;
+
+  width: fit-content;
+
+  background: #e9f8ef;
+
+  color: #16834b;
+
+  border-radius: 20px;
+
+  padding: 5px 9px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  margin-top: 3px;
+
+}
+
+
+/* =========================================
+   ADD TO CART BUTTON
+========================================= */
+
+#productList .product-card button,
+.product-grid .product-card button {
+
+  width: calc(100% - 34px);
+
+  margin-top: auto;
+
+  margin-bottom: 17px;
+
+  padding: 12px 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #198754;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+#productList .product-card button:hover,
+.product-grid .product-card button:hover {
+
+  background: #146c43;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 15px rgba(25,135,84,0.25);
+
+}
+
+
+#productList .product-card button:active,
+.product-grid .product-card button:active {
+
+  transform: scale(0.97);
+
+}
+
+
+/* =========================================
+   DISCOUNT BADGE
+========================================= */
+
+#productList .product-card::before,
+.product-grid .product-card::before {
+
+  content: "BEST PRICE";
+
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 5;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #fff;
+
+  color: #198754;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.10);
+
+}
+
+
+/* =========================================
+   NO IMAGE
+========================================= */
+
+#productList .product-card img[src*="default"],
+.product-grid .product-card img[src*="default"] {
+
+  object-fit: contain;
+
+  padding: 35px;
+
+  opacity: 0.65;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  #productList,
+  .product-grid {
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 17px;
+
+  }
+
+  #productList .product-card img,
+  .product-grid .product-card img {
+
+    height: 185px;
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  #productList,
+  .product-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+  }
+
+
+  #productList .product-card,
+  .product-grid .product-card {
+
+    border-radius: 15px;
+
+  }
+
+
+  #productList .product-card img,
+  .product-grid .product-card img {
+
+    height: 145px;
+
+    padding: 10px;
+
+  }
+
+
+  #productList .product-card > *:not(img),
+  .product-grid .product-card > *:not(img) {
+
+    margin-left: 11px;
+    margin-right: 11px;
+
+  }
+
+
+  #productList .product-card h3,
+  #productList .product-card h4,
+  .product-grid .product-card h3,
+  .product-grid .product-card h4 {
+
+    font-size: 13px;
+
+    margin-top: 11px;
+
+  }
+
+
+  #productList .product-card .mrp,
+  .product-grid .product-card .mrp {
+
+    font-size: 11px;
+
+  }
+
+
+  #productList .product-card .price,
+  #productList .product-card .online-price,
+  .product-grid .product-card .price,
+  .product-grid .product-card .online-price {
+
+    font-size: 18px;
+
+  }
+
+
+  #productList .product-card .saving,
+  .product-grid .product-card .saving {
+
+    font-size: 9px;
+
+    padding: 4px 7px;
+
+  }
+
+
+  #productList .product-card button,
+  .product-grid .product-card button {
+
+    width: calc(100% - 22px);
+
+    margin-bottom: 11px;
+
+    padding: 10px 7px;
+
+    font-size: 12px;
+
+    border-radius: 10px;
+
+  }
+
+
+  #productList .product-card::before,
+  .product-grid .product-card::before {
+
+    top: 8px;
+    left: 8px;
+
+    font-size: 8px;
+
+    padding: 4px 6px;
+
+  }
+
+}
