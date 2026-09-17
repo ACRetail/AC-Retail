@@ -715,6 +715,41 @@
     font-size: 12px;
   }
 }  
+    .phonepe-payment-box {
+  background: #f8fbf9;
+  border: 1px solid #d7e9dc;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.phonepe-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.phonepe-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #173b2b;
+}
+
+.phonepe-number {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 18px;
+  border-radius: 30px;
+  background: #e8f7ed;
+  color: #08752d;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.phonepe-payment-box .payment-help {
+  margin: 8px 0 14px;
+}
   </style>
 </head>
 
@@ -831,45 +866,47 @@
     rows="2"
   ></textarea>
 
-  <!-- PAYMENT SECTION -->
+  <!-- PHONEPE PAYMENT -->
 <div id="paymentSection" class="payment-section" style="display:none;">
 
-  <h3>💳 Pay via UPI</h3>
+  <h3>💳 Pay via PhonePe</h3>
 
   <p class="payment-total">
     Payable Amount:
     <strong id="paymentAmount">₹0</strong>
   </p>
 
-  <img
-    src="images/ac-retail-gpay-qr.png"
-    alt="AC Retail UPI QR"
-    class="upi-qr"
-  >
+  <div class="phonepe-payment-box">
 
-  <p class="upi-id">
-    UPI ID:
-    <strong>8087069719@okbizaxis</strong>
-  </p>
+    <div class="phonepe-icon">📱</div>
 
-  <p class="payment-help">
-    📱 Scan the QR using Google Pay, PhonePe, Paytm or any UPI app.
-  </p>
+    <div class="phonepe-title">
+      Pay to AC Retail
+    </div>
 
-  <button id="payNowBtn" class="pay-btn" type="button">
-    💳 Pay via UPI
-  </button>
+    <div class="phonepe-number">
+      8087069719
+    </div>
 
-  <button
-    id="paymentDoneBtn"
-    class="confirm-btn"
-    type="button"
-    style="display:none;"
-  >
-    ✅ I Have Completed Payment
-  </button>
+    <p class="payment-help">
+      Open PhonePe and send the exact payable amount to
+      <strong>8087069719</strong>
+    </p>
 
-</div>
+    <button id="payNowBtn" class="pay-btn" type="button">
+      📱 Pay via PhonePe
+    </button>
+
+    <button
+      id="paymentDoneBtn"
+      class="confirm-btn"
+      type="button"
+      style="display:none;"
+    >
+      ✅ I Have Completed Payment
+    </button>
+
+  </div>
 
 </div>
         <div class="whatsapp-note">
