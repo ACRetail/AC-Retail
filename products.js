@@ -738,8 +738,8 @@ if (productList) {
                 const product =
                     allProducts.find(
                         item =>
-                            item.id ===
-                            whatsappButton.dataset.id
+                            String(item.id) ===
+String(whatsappButton.dataset.id)
                     );
 
                 if (product) {
@@ -765,10 +765,13 @@ function addToCart(id) {
 
     const product =
         allProducts.find(
-            item => item.id === id
+            item => String(item.id) === String(id)
         );
 
-    if (!product) return;
+    if (!product) {
+        console.error("Product not found:", id);
+        return;
+    }
 
     let cart =
         JSON.parse(
@@ -777,29 +780,23 @@ function addToCart(id) {
 
     const existing =
         cart.find(
-            item => item.id === id
+            item => String(item.id) === String(id)
         );
 
     if (existing) {
 
-        existing.qty++;
+        existing.qty =
+            Number(existing.qty || 1) + 1;
 
     } else {
 
         cart.push({
-
             id: product.id,
-
             name: product.name,
-
-            price: product.price,
-
-            mrp: product.mrp,
-
-            image: product.image,
-
+            price: Number(product.price || 0),
+            mrp: Number(product.mrp || product.price || 0),
+            image: product.image || "",
             qty: 1
-
         });
 
     }
@@ -813,7 +810,6 @@ function addToCart(id) {
         product.name +
         " added to cart!"
     );
-
 }
 
 // =============================
