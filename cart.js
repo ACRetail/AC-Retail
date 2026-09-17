@@ -477,6 +477,8 @@ whatsappButton.addEventListener(
 
 /* ================================
    PAY VIA UPI
+/* ================================
+   PAY VIA PHONEPE
 ================================ */
 
 if (payNowBtn) {
@@ -499,24 +501,17 @@ if (payNowBtn) {
         return;
       }
 
-      const upiId =
-  "8087069719.eazypay@icici";
-      
-      const merchantName =
-        "AC Retail";
+      /*
+        PhonePe payment attempt.
+        Mobile number is displayed separately because
+        PhonePe does not guarantee direct mobile-number
+        resolution through a generic UPI deep link.
+      */
 
-      const transactionNote =
-        "AC Retail Order";
+      const phonePeUrl =
+        "phonepe://";
 
-      const upiUrl =
-        "upi://pay" +
-        "?pa=" + encodeURIComponent(upiId) +
-        "&pn=" + encodeURIComponent(merchantName) +
-        "&am=" + encodeURIComponent(total.toFixed(2)) +
-        "&cu=INR" +
-        "&tn=" + encodeURIComponent(transactionNote);
-
-      window.location.href = upiUrl;
+      window.location.href = phonePeUrl;
 
       setTimeout(function () {
 
@@ -524,13 +519,19 @@ if (payNowBtn) {
           paymentDoneBtn.style.display = "block";
         }
 
-      }, 1000);
+        alert(
+          "PhonePe open nahi hua to PhonePe app manually open karke 8087069719 par ₹" +
+          total.toFixed(2) +
+          " payment karein."
+        );
+
+      }, 1200);
 
     }
   );
 
 }
-
+  
 
 /* ================================
    PAYMENT COMPLETED
