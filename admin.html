@@ -11,38 +11,38 @@
 
 <style>
 
-body{
+body {
   background:#f5f8f6;
   margin:0;
   font-family:Arial,sans-serif;
 }
 
-.admin-header{
+.admin-header {
   background:linear-gradient(135deg,#087f46,#12a05a);
   color:white;
   padding:28px 20px;
   text-align:center;
 }
 
-.admin-header h1{
+.admin-header h1 {
   margin:0;
   font-size:30px;
 }
 
-.admin-container{
+.admin-container {
   max-width:1200px;
   margin:auto;
   padding:30px 15px;
 }
 
-.admin-stats{
+.admin-stats {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
   margin-bottom:30px;
 }
 
-.stat-card{
+.stat-card {
   background:white;
   padding:22px;
   border-radius:18px;
@@ -50,18 +50,18 @@ body{
   text-align:center;
 }
 
-.stat-card h2{
+.stat-card h2 {
   margin:0;
   font-size:30px;
   color:#087f46;
 }
 
-.stat-card p{
+.stat-card p {
   margin:8px 0 0;
   color:#666;
 }
 
-.admin-section{
+.admin-section {
   background:white;
   padding:25px;
   border-radius:20px;
@@ -69,11 +69,11 @@ body{
   box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
-.admin-section h2{
+.admin-section h2 {
   margin-top:0;
 }
 
-.order-search{
+.order-search {
   width:100%;
   box-sizing:border-box;
   padding:13px;
@@ -83,7 +83,178 @@ body{
   font-size:15px;
 }
 
-.manager-button{
+.orders-grid {
+  display:grid;
+  gap:18px;
+}
+
+.order-card {
+  border:1px solid #e5e5e5;
+  border-radius:16px;
+  padding:20px;
+  background:#fff;
+}
+
+.order-top {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.order-id {
+  font-weight:bold;
+  color:#087f46;
+  font-size:18px;
+}
+
+.status {
+  padding:6px 12px;
+  border-radius:20px;
+  background:#fff3cd;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.customer-info {
+  line-height:1.7;
+  color:#444;
+}
+
+.order-items {
+  margin:15px 0;
+  padding:15px;
+  background:#f7faf8;
+  border-radius:12px;
+}
+
+.order-item {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:7px 0;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.order-item:last-child {
+  border-bottom:0;
+}
+
+.order-total {
+  font-size:20px;
+  font-weight:bold;
+  color:#087f46;
+  margin:15px 0;
+}
+
+.order-actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.order-actions button {
+  border:0;
+  padding:10px 14px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.confirm-btn {
+  background:#087f46;
+  color:white;
+}
+
+.delivered-btn {
+  background:#198754;
+  color:white;
+}
+
+.cancel-btn {
+  background:#dc3545;
+  color:white;
+}
+
+.delete-btn {
+  background:#333;
+  color:white;
+}
+
+
+/* CATEGORY MANAGER */
+
+.category-product-card {
+  border:1px solid #e2e8e4;
+  border-radius:15px;
+  padding:15px;
+  margin-bottom:12px;
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.category-product-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.category-product-name {
+  font-size:16px;
+  font-weight:800;
+  color:#222;
+}
+
+.category-product-id {
+  font-size:12px;
+  color:#888;
+  margin-top:4px;
+}
+
+.category-current {
+  font-size:13px;
+  color:#666;
+  margin-top:8px;
+}
+
+.category-select {
+  min-width:220px;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  background:white;
+  font-size:14px;
+}
+
+.category-save-btn {
+  margin-top:10px;
+  padding:10px 16px;
+  border:0;
+  border-radius:9px;
+  background:#087f46;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.category-save-btn:hover {
+  opacity:.9;
+}
+
+.category-message {
+  display:none;
+  margin-bottom:15px;
+  padding:12px;
+  border-radius:10px;
+  background:#e8f7ee;
+  color:#087f46;
+  font-weight:bold;
+}
+
+.manager-button {
   margin-top:20px;
   width:100%;
   padding:14px;
@@ -96,358 +267,58 @@ body{
   cursor:pointer;
 }
 
-.manager-button:hover{
-  opacity:.9;
-}
-
-.manager-button.secondary{
+.manager-button.secondary {
   background:#333;
 }
 
-.message{
-  display:none;
-  margin-bottom:15px;
-  padding:12px;
-  border-radius:10px;
-  background:#e8f7ee;
-  color:#087f46;
-  font-weight:bold;
-}
-
-/* ================= PRODUCT MANAGER ================= */
-
-.product-filter-row{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-
-.product-filter-row input{
-  flex:1;
-  min-width:220px;
-}
-
-.product-filter-row select{
-  min-width:230px;
-}
-
-.product-card{
-  border:1px solid #e2e8e4;
-  border-radius:16px;
+.price-manager-card {
+  margin:12px 0;
   padding:15px;
-  margin-bottom:12px;
-  background:#fff;
-  box-shadow:0 3px 12px rgba(0,0,0,.05);
-}
-
-.product-card-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-}
-
-.product-left{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.product-thumb{
-  width:70px;
-  height:70px;
-  border-radius:12px;
-  object-fit:contain;
-  background:#f5f5f5;
   border:1px solid #ddd;
-}
-
-.product-name{
-  font-size:17px;
-  font-weight:bold;
-  color:#222;
-}
-
-.product-meta{
-  color:#777;
-  font-size:13px;
-  margin-top:5px;
-}
-
-.edit-btn{
-  background:#087f46;
-  color:white;
-  border:0;
-  border-radius:9px;
-  padding:10px 16px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-/* ================= EDIT BOX ================= */
-
-.edit-box{
-  display:none;
-  margin-top:15px;
-  padding:18px;
-  border-radius:15px;
-  background:#f7faf8;
-  border:1px solid #dfe8e2;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.form-group.full{
-  grid-column:1/-1;
-}
-
-.form-group label{
-  font-size:13px;
-  font-weight:bold;
-  color:#444;
-}
-
-.form-group input,
-.form-group select{
-  width:100%;
-  box-sizing:border-box;
-  padding:11px;
-  border:1px solid #ccc;
-  border-radius:9px;
-  font-size:14px;
-  background:white;
-}
-
-.current-image{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  border:1px solid #ddd;
-  border-radius:12px;
-  background:white;
-  margin-top:5px;
-}
-
-.image-preview{
-  display:none;
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  border:2px solid #087f46;
-  border-radius:12px;
-  margin-top:8px;
-  background:white;
-}
-
-.edit-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.save-product-btn{
-  background:#087f46;
-  color:white;
-  border:0;
-  border-radius:9px;
-  padding:12px 18px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.cancel-edit-btn{
-  background:#777;
-  color:white;
-  border:0;
-  border-radius:9px;
-  padding:12px 18px;
-  cursor:pointer;
-}
-
-.remove-image-btn{
-  background:#dc3545;
-  color:white;
-  border:0;
-  border-radius:9px;
-  padding:10px 14px;
-  cursor:pointer;
-  margin-top:8px;
-}
-
-/* ================= ORDERS ================= */
-
-.orders-grid{
-  display:grid;
-  gap:18px;
-}
-
-.order-card{
-  border:1px solid #e5e5e5;
-  border-radius:16px;
-  padding:20px;
+  border-radius:14px;
   background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-.order-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
-}
-
-.order-id{
-  font-weight:bold;
-  color:#087f46;
-  font-size:18px;
-}
-
-.status{
-  padding:6px 12px;
-  border-radius:20px;
-  background:#fff3cd;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.customer-info{
-  line-height:1.7;
-  color:#444;
-}
-
-.order-items{
-  margin:15px 0;
-  padding:15px;
-  background:#f7faf8;
-  border-radius:12px;
-}
-
-.order-item{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:7px 0;
-  border-bottom:1px solid #e5e5e5;
-}
-
-.order-item:last-child{
-  border-bottom:0;
-}
-
-.order-total{
-  font-size:20px;
-  font-weight:bold;
-  color:#087f46;
-  margin:15px 0;
-}
-
-.order-actions{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-}
-
-.order-actions button{
-  border:0;
-  padding:10px 14px;
-  border-radius:9px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.confirm-btn{
-  background:#087f46;
-  color:white;
-}
-
-.delivered-btn{
-  background:#198754;
-  color:white;
-}
-
-.cancel-btn{
-  background:#dc3545;
-  color:white;
-}
-
-.delete-btn{
-  background:#333;
-  color:white;
-}
-
-.empty-orders{
+.empty-orders {
   text-align:center;
   padding:35px;
   color:#777;
 }
 
-.no-products{
-  text-align:center;
-  padding:30px;
-  color:#777;
-}
+@media (max-width:700px) {
 
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-  .admin-stats{
+  .admin-stats {
     grid-template-columns:1fr;
   }
 
-  .admin-section{
+  .admin-section {
     padding:18px;
   }
 
-  .product-card-top{
+  .order-item {
+    font-size:14px;
+  }
+
+  .category-product-top {
     display:block;
   }
 
-  .product-left{
-    margin-bottom:12px;
-  }
-
-  .product-card .edit-btn{
+  .category-select {
     width:100%;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-group.full{
-    grid-column:auto;
-  }
-
-  .product-filter-row{
-    display:block;
-  }
-
-  .product-filter-row input,
-  .product-filter-row select{
-    width:100%;
-    margin-bottom:10px;
+    box-sizing:border-box;
+    margin-top:12px;
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
+
 
 <header class="admin-header">
 
@@ -461,129 +332,113 @@ body{
 <main class="admin-container">
 
 
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 
 <div class="admin-stats">
 
 <div class="stat-card">
+
 <h2 id="totalOrders">0</h2>
+
 <p>Total Orders</p>
+
 </div>
 
+
 <div class="stat-card">
+
 <h2 id="pendingOrders">0</h2>
+
 <p>Pending Orders</p>
+
 </div>
+
 
 <div class="stat-card">
+
 <h2 id="deliveredOrders">0</h2>
+
 <p>Delivered</p>
-</div>
 
 </div>
 
+</div>
 
-<!-- =====================================================
-     PRODUCT MANAGER
-===================================================== -->
+
+
+<!-- CATEGORY MANAGER -->
 
 <section class="admin-section">
 
-<h2>🛒 Product Manager</h2>
+<h2>📂 Category Manager</h2>
 
 <p style="color:#666;">
-Product search करें, category बदलें, image add करें और product edit करें.
+
+Product search करके उसकी category बदलें और Save करें.
+
 </p>
 
 
-<div id="productMessage" class="message"></div>
-
-
-<div class="product-filter-row">
-
 <input
 type="text"
-id="productSearch"
+id="categorySearch"
 class="order-search"
-placeholder="🔎 Search product name..."
+placeholder="Search product name..."
 autocomplete="off"
 >
 
-<select id="productCategoryFilter" class="order-search">
 
-<option value="ALL">All Categories</option>
-
-<option value="Spices & Dry fuits">Spices & Dry fuits</option>
-
-<option value="Rice">Rice</option>
-
-<option value="Atta maida sooji besan">
-Atta maida sooji besan
-</option>
-
-<option value="Dals and grains">
-Dals and grains
-</option>
-
-<option value="Oil sugar and salt">
-Oil sugar and salt
-</option>
-
-<option value="Snacks and beverages">
-Snacks and beverages
-</option>
-
-<option value="Home care">Home care</option>
-
-<option value="Personal care">Personal care</option>
-
-<option value="Dairy">Dairy</option>
-
-<option value="General Item">General Item</option>
-
-</select>
-
+<div
+id="categoryMessage"
+class="category-message">
 </div>
 
 
-<div id="productList">
+<div id="categoryProducts">
 
-<div class="no-products">
+<div style="padding:20px;text-align:center;color:#777;">
+
 Loading products...
+
 </div>
 
 </div>
 
 
 <button
-id="exportProducts"
+id="exportCategories"
 class="manager-button">
+
 📥 Export Updated products.json
+
 </button>
 
 
 <p style="font-size:13px;color:#777;margin-top:12px;">
-Product changes browser में तैयार होंगे.
+
+Category changes browser में तैयार होंगे.
 Permanent website update के लिए exported
 <strong>products.json</strong> को GitHub में replace करें.
+
 </p>
 
 </section>
 
 
 
-<!-- =====================================================
-     WEEKLY PRICE MANAGER
-===================================================== -->
+<!-- WEEKLY PRICE MANAGER -->
 
 <section class="admin-section">
 
 <h2>💰 Weekly Price Manager</h2>
 
 <p style="color:#666;">
-Products की कीमत यहाँ check/update करके updated
-products.json export कर सकते हैं.
+
+Products की कीमत यहाँ check/update करके
+updated products.json export कर सकते हैं.
+
 </p>
+
 
 <input
 type="text"
@@ -593,25 +448,28 @@ placeholder="Search product name..."
 autocomplete="off"
 >
 
+
 <div id="priceProducts"></div>
+
 
 <button
 id="exportPrices"
 class="manager-button">
+
 📥 Export Updated products.json
+
 </button>
 
 </section>
 
 
 
-<!-- =====================================================
-     CUSTOMER ORDERS
-===================================================== -->
+<!-- CUSTOMER ORDERS -->
 
 <section class="admin-section">
 
 <h2>📦 Customer Orders</h2>
+
 
 <input
 type="text"
@@ -620,6 +478,7 @@ class="order-search"
 placeholder="Search Order ID, customer name or mobile..."
 autocomplete="off"
 >
+
 
 <div
 id="ordersList"
@@ -632,103 +491,110 @@ class="orders-grid">
 </main>
 
 
-<!-- Existing Firebase order system -->
+
+<!-- EXISTING ADMIN SYSTEM -->
+
 <script type="module" src="admin.js"></script>
 
 
+
+<!-- CATEGORY MANAGER SCRIPT -->
+
 <script>
 
-/* =====================================================
-   PRODUCT MANAGER
-===================================================== */
+let categoryProducts = [];
 
-let products = [];
+let categorySearch =
+document.getElementById("categorySearch");
 
-const productList =
-document.getElementById("productList");
+let categoryProductsEl =
+document.getElementById("categoryProducts");
 
-const productSearch =
-document.getElementById("productSearch");
+let categoryMessage =
+document.getElementById("categoryMessage");
 
-const productCategoryFilter =
-document.getElementById("productCategoryFilter");
-
-const productMessage =
-document.getElementById("productMessage");
-
-const exportProducts =
-document.getElementById("exportProducts");
+let exportCategoriesBtn =
+document.getElementById("exportCategories");
 
 
-/* ================= ESCAPE ================= */
 
-function escapeHtml(value){
+function categoryEscape(value) {
 
 return String(value ?? "")
+
 .replace(/&/g,"&amp;")
+
 .replace(/</g,"&lt;")
+
 .replace(/>/g,"&gt;")
+
 .replace(/"/g,"&quot;")
+
 .replace(/'/g,"&#039;");
 
 }
 
 
-/* ================= MESSAGE ================= */
 
-function showMessage(message){
+function showCategoryMessage(message) {
 
-productMessage.textContent = message;
+categoryMessage.textContent = message;
 
-productMessage.style.display = "block";
+categoryMessage.style.display = "block";
 
-setTimeout(function(){
+setTimeout(function() {
 
-productMessage.style.display = "none";
+categoryMessage.style.display = "none";
 
 },2500);
 
 }
 
 
-/* ================= LOAD PRODUCTS ================= */
 
-async function loadProducts(){
+async function loadCategoryProducts() {
 
-try{
+try {
 
 const response =
-await fetch("products.json?v="+Date.now(),{
+await fetch("products.json?v=" + Date.now(), {
+
 cache:"no-store"
+
 });
 
-if(!response.ok){
+
+if (!response.ok) {
 
 throw new Error("products.json load failed");
 
 }
 
-products = await response.json();
 
-renderProducts();
+categoryProducts =
+await response.json();
+
+
+renderCategoryProducts();
+
 
 }
 
-catch(error){
+catch(error) {
 
 console.error(error);
 
-productList.innerHTML = `
 
-<div class="no-products">
+categoryProductsEl.innerHTML = `
+
+<div style="
+padding:20px;
+text-align:center;
+color:#c00;
+">
 
 ❌ Products load nahi ho rahe.
 
-<br><br>
-
-Check करें कि products.json
-root folder में मौजूद है.
-
 </div>
 
 `;
@@ -738,781 +604,44 @@ root folder में मौजूद है.
 }
 
 
-/* ================= CATEGORIES ================= */
 
-const categories = [
+function getCategories() {
 
-"Spices & Dry fuits",
-
-"Rice",
-
-"Atta maida sooji besan",
-
-"Dals and grains",
-
-"Oil sugar and salt",
-
-"Snacks and beverages",
-
-"Home care",
-
-"Personal care",
-
-"Dairy",
-
-"General Item"
-
-];
+const categories = new Set();
 
 
-/* ================= IMAGE ================= */
+categoryProducts.forEach(function(product) {
 
-function getProductImage(product){
+if (product.category) {
 
-return product.image || "images/products/default.png";
+categories.add(product.category);
+
+}
+
+});
+
+
+categories.add("Grocery & Daily Use");
+
+categories.add("General Item");
+
+
+return Array.from(categories).sort();
 
 }
 
 
-/* ================= RENDER ================= */
 
-function renderProducts(){
+function renderCategoryProducts() {
 
 const search =
-String(productSearch.value || "")
-.toLowerCase()
-.trim();
-
-const selectedCategory =
-productCategoryFilter.value;
-
-
-const filtered =
-products.filter(function(product){
-
-const name =
-String(product.name || "")
-.toLowerCase();
-
-const brand =
-String(product.brand || "")
-.toLowerCase();
-
-const category =
-String(product.category || "General Item");
-
-
-const matchesSearch =
-!search ||
-name.includes(search) ||
-brand.includes(search);
-
-
-const matchesCategory =
-selectedCategory === "ALL" ||
-category === selectedCategory;
-
-
-return matchesSearch &&
-matchesCategory;
-
-});
-
-
-if(filtered.length === 0){
-
-productList.innerHTML = `
-
-<div class="no-products">
-
-<h3>🔍 No Products Found</h3>
-
-<p>Search या category बदलकर देखें.</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-productList.innerHTML =
-filtered.map(function(product){
-
-const id =
-String(product.id ?? "");
-
-const image =
-getProductImage(product);
-
-
-return `
-
-<div class="product-card">
-
-<div class="product-card-top">
-
-<div class="product-left">
-
-<img
-class="product-thumb"
-src="${escapeHtml(image)}"
-alt="${escapeHtml(product.name || "Product")}"
-onerror="this.src='images/products/default.png'"
->
-
-<div>
-
-<div class="product-name">
-
-${escapeHtml(product.name || "Product")}
-
-</div>
-
-<div class="product-meta">
-
-Brand:
-${escapeHtml(product.brand || "-")}
-
-<br>
-
-Category:
-<strong>
-${escapeHtml(product.category || "General Item")}
-</strong>
-
-<br>
-
-MRP:
-₹${escapeHtml(product.mrp ?? product.price ?? 0)}
-
-&nbsp; | &nbsp;
-
-Online:
-₹${escapeHtml(product.price ?? 0)}
-
-</div>
-
-</div>
-
-</div>
-
-
-<button
-class="edit-btn"
-data-edit-id="${escapeHtml(id)}">
-
-✏️ Edit
-
-</button>
-
-</div>
-
-
-<div
-class="edit-box"
-id="edit-${escapeHtml(id)}">
-
-<div class="form-grid">
-
-
-<!-- NAME -->
-
-<div class="form-group">
-
-<label>Product Name</label>
-
-<input
-type="text"
-data-field="name"
-value="${escapeHtml(product.name || "")}"
->
-
-</div>
-
-
-<!-- BRAND -->
-
-<div class="form-group">
-
-<label>Brand</label>
-
-<input
-type="text"
-data-field="brand"
-value="${escapeHtml(product.brand || "")}"
->
-
-</div>
-
-
-<!-- MRP -->
-
-<div class="form-group">
-
-<label>MRP</label>
-
-<input
-type="number"
-step="0.01"
-data-field="mrp"
-value="${escapeHtml(product.mrp ?? product.price ?? "")}"
->
-
-</div>
-
-
-<!-- ONLINE PRICE -->
-
-<div class="form-group">
-
-<label>Online Price</label>
-
-<input
-type="number"
-step="0.01"
-data-field="price"
-value="${escapeHtml(product.price ?? "")}"
->
-
-</div>
-
-
-<!-- CATEGORY -->
-
-<div class="form-group full">
-
-<label>📂 Category</label>
-
-<select data-field="category">
-
-${categories.map(function(category){
-
-const selected =
-String(product.category || "General Item")
-=== category
-? "selected"
-: "";
-
-return `
-
-<option
-value="${escapeHtml(category)}"
-${selected}
->
-
-${escapeHtml(category)}
-
-</option>
-
-`;
-
-}).join("")}
-
-</select>
-
-</div>
-
-
-<!-- CURRENT IMAGE -->
-
-<div class="form-group">
-
-<label>Current Image</label>
-
-<img
-class="current-image"
-src="${escapeHtml(image)}"
-alt="Current Image"
-onerror="this.src='images/products/default.png'"
->
-
-</div>
-
-
-<!-- NEW IMAGE -->
-
-<div class="form-group">
-
-<label>🖼️ Add / Change Image</label>
-
-<input
-type="file"
-accept="image/*"
-data-field="imageFile"
->
-
-<img
-class="image-preview"
-data-preview
-alt="New Image Preview"
->
-
-</div>
-
-
-<!-- IMAGE URL -->
-
-<div class="form-group full">
-
-<label>
-Image URL
-<span style="font-weight:normal;color:#777;">
-(अगर URL से image लगानी हो)
-</span>
-</label>
-
-<input
-type="text"
-data-field="image"
-value="${escapeHtml(product.image || "")}"
-placeholder="images/products/rice.png"
->
-
-</div>
-
-
-</div>
-
-
-<div class="edit-actions">
-
-<button
-class="save-product-btn"
-data-save-id="${escapeHtml(id)}">
-
-💾 Save Product
-
-</button>
-
-
-<button
-class="cancel-edit-btn"
-data-cancel-id="${escapeHtml(id)}">
-
-Cancel
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-/* =====================================================
-   OPEN EDIT
-===================================================== */
-
-productList.addEventListener("click",function(event){
-
-const editButton =
-event.target.closest("[data-edit-id]");
-
-if(editButton){
-
-const id =
-editButton.dataset.editId;
-
-const box =
-document.getElementById("edit-"+id);
-
-if(box){
-
-box.style.display =
-box.style.display === "block"
-? "none"
-: "block";
-
-}
-
-}
-
-
-/* ================= CANCEL ================= */
-
-const cancelButton =
-event.target.closest("[data-cancel-id]");
-
-if(cancelButton){
-
-const id =
-cancelButton.dataset.cancelId;
-
-const box =
-document.getElementById("edit-"+id);
-
-if(box){
-
-box.style.display = "none";
-
-}
-
-}
-
-
-/* ================= SAVE ================= */
-
-const saveButton =
-event.target.closest("[data-save-id]");
-
-if(saveButton){
-
-saveProduct(saveButton.dataset.saveId);
-
-}
-
-});
-
-
-/* =====================================================
-   IMAGE PREVIEW
-===================================================== */
-
-productList.addEventListener("change",function(event){
-
-const input =
-event.target.closest('input[type="file"][data-field="imageFile"]');
-
-if(!input) return;
-
-
-const file =
-input.files && input.files[0];
-
-if(!file) return;
-
-
-const box =
-input.closest(".edit-box");
-
-const preview =
-box.querySelector("[data-preview]");
-
-if(!preview) return;
-
-
-const reader =
-new FileReader();
-
-
-reader.onload = function(){
-
-preview.src =
-reader.result;
-
-preview.style.display =
-"block";
-
-};
-
-
-reader.readAsDataURL(file);
-
-});
-
-
-/* =====================================================
-   SAVE PRODUCT
-===================================================== */
-
-async function saveProduct(id){
-
-const product =
-products.find(function(item){
-
-return String(item.id) === String(id);
-
-});
-
-
-if(!product){
-
-alert("Product nahi mila.");
-
-return;
-
-}
-
-
-const box =
-document.getElementById("edit-"+id);
-
-
-if(!box) return;
-
-
-const nameInput =
-box.querySelector('[data-field="name"]');
-
-const brandInput =
-box.querySelector('[data-field="brand"]');
-
-const mrpInput =
-box.querySelector('[data-field="mrp"]');
-
-const priceInput =
-box.querySelector('[data-field="price"]');
-
-const categoryInput =
-box.querySelector('[data-field="category"]');
-
-const imageInput =
-box.querySelector('[data-field="image"]');
-
-const fileInput =
-box.querySelector('[data-field="imageFile"]');
-
-
-product.name =
-nameInput.value.trim();
-
-product.brand =
-brandInput.value.trim();
-
-product.mrp =
-Number(mrpInput.value || 0);
-
-product.price =
-Number(priceInput.value || 0);
-
-product.category =
-categoryInput.value;
-
-
-/* ================= IMAGE FILE ================= */
-
-if(fileInput &&
-fileInput.files &&
-fileInput.files[0]){
-
-const file =
-fileInput.files[0];
-
-
-if(file.size > 2 * 1024 * 1024){
-
-alert(
-"Image 2 MB se chhoti rakhein."
-);
-
-return;
-
-}
-
-
-try{
-
-const imageData =
-await fileToDataURL(file);
-
-product.image =
-imageData;
-
-}
-
-catch(error){
-
-console.error(error);
-
-alert("Image read nahi ho paayi.");
-
-return;
-
-}
-
-}
-
-
-/* ================= IMAGE URL ================= */
-
-else if(imageInput.value.trim()){
-
-product.image =
-imageInput.value.trim();
-
-}
-
-
-renderProducts();
-
-showMessage(
-"✅ Product updated successfully"
-);
-
-}
-
-
-/* ================= FILE TO DATA URL ================= */
-
-function fileToDataURL(file){
-
-return new Promise(function(resolve,reject){
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(){
-
-resolve(reader.result);
-
-};
-
-reader.onerror =
-function(){
-
-reject(reader.error);
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
-}
-
-
-/* =====================================================
-   SEARCH / FILTER
-===================================================== */
-
-productSearch.addEventListener(
-"input",
-renderProducts
-);
-
-productCategoryFilter.addEventListener(
-"change",
-renderProducts
-);
-
-
-/* =====================================================
-   EXPORT PRODUCTS.JSON
-===================================================== */
-
-exportProducts.addEventListener(
-"click",
-function(){
-
-const json =
-JSON.stringify(products,null,2);
-
-
-const blob =
-new Blob(
-[json],
-{type:"application/json"}
-);
-
-
-const url =
-URL.createObjectURL(blob);
-
-
-const link =
-document.createElement("a");
-
-link.href = url;
-
-link.download =
-"products.json";
-
-document.body.appendChild(link);
-
-link.click();
-
-link.remove();
-
-URL.revokeObjectURL(url);
-
-
-alert(
-"✅ Updated products.json download ho gaya.\n\n" +
-
-"Ab is file ko GitHub ke products.json se replace karein."
-);
-
-});
-
-
-/* =====================================================
-   LOAD
-===================================================== */
-
-loadProducts();
-
-
-/* =====================================================
-   WEEKLY PRICE MANAGER
-===================================================== */
-
-let priceProducts = [];
-
-const priceSearch =
-document.getElementById("priceSearch");
-
-const priceProductsEl =
-document.getElementById("priceProducts");
-
-const exportPrices =
-document.getElementById("exportPrices");
-
-
-async function loadPriceProducts(){
-
-try{
-
-const response =
-await fetch("products.json?v="+Date.now(),{
-cache:"no-store"
-});
-
-if(!response.ok){
-
-throw new Error("products.json load failed");
-
-}
-
-priceProducts =
-await response.json();
-
-renderPriceProducts();
-
-}
-
-catch(error){
-
-console.error(error);
-
-priceProductsEl.innerHTML =
-"<p>Products load nahi ho rahe.</p>";
-
-}
-
-}
-
-
-function renderPriceProducts(){
-
-const search =
-String(priceSearch.value || "")
+String(categorySearch.value || "")
 .toLowerCase()
 .trim();
 
 
 const filtered =
-priceProducts.filter(function(product){
+categoryProducts.filter(function(product) {
 
 return String(product.name || "")
 .toLowerCase()
@@ -1521,72 +650,116 @@ return String(product.name || "")
 });
 
 
-priceProductsEl.innerHTML =
-filtered.map(function(product,index){
+if (filtered.length === 0) {
+
+categoryProductsEl.innerHTML = `
+
+<div style="
+padding:25px;
+text-align:center;
+color:#777;
+">
+
+<h3>No products found</h3>
+
+<p>Search name सही से enter करें.</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+const categories = getCategories();
+
+
+categoryProductsEl.innerHTML = filtered.map(function(product) {
+
+const currentCategory =
+product.category || "General Item";
+
+
+const options = categories.map(function(category) {
+
+const selected =
+category === currentCategory
+? "selected"
+: "";
+
 
 return `
 
-<div class="price-manager-card">
+<option
+value="${categoryEscape(category)}"
+${selected}
+>
 
+${categoryEscape(category)}
+
+</option>
+
+`;
+
+}).join("");
+
+
+return `
+
+<div class="category-product-card">
+
+<div class="category-product-top">
+
+<div>
+
+<div class="category-product-name">
+
+${categoryEscape(product.name || "Product")}
+
+</div>
+
+<div class="category-product-id">
+
+ID: ${categoryEscape(product.id || "-")}
+
+</div>
+
+<div class="category-current">
+
+Current Category:
 <strong>
-${escapeHtml(product.name || "Product")}
+${categoryEscape(currentCategory)}
 </strong>
 
-<div style="font-size:13px;color:#777;margin-top:5px;">
-
-${escapeHtml(product.brand || "")}
-
 </div>
-
-<div style="
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin-top:12px;
-">
-
-<div>
-
-<label style="font-size:12px;">
-MRP
-</label>
-
-<input
-type="number"
-step="0.01"
-data-mrp-index="${index}"
-value="${escapeHtml(product.mrp ?? product.price ?? 0)}"
-style="
-width:100%;
-box-sizing:border-box;
-padding:9px;
-border:1px solid #ccc;
-border-radius:8px;
-"
->
 
 </div>
 
 
 <div>
 
-<label style="font-size:12px;">
-Online Price
-</label>
-
-<input
-type="number"
-step="0.01"
-data-price-index="${index}"
-value="${escapeHtml(product.price ?? 0)}"
-style="
-width:100%;
-box-sizing:border-box;
-padding:9px;
-border:1px solid #ccc;
-border-radius:8px;
-"
+<select
+class="category-select"
+data-category-id="${categoryEscape(product.id)}"
 >
+
+${options}
+
+</select>
+
+
+<br>
+
+
+<button
+class="category-save-btn"
+data-category-save="${categoryEscape(product.id)}">
+
+💾 Save Category
+
+</button>
 
 </div>
 
@@ -1601,46 +774,70 @@ border-radius:8px;
 }
 
 
-priceSearch.addEventListener(
-"input",
-renderPriceProducts
+
+categoryProductsEl.addEventListener(
+"click",
+function(event) {
+
+const button =
+event.target.closest("[data-category-save]");
+
+
+if (!button) return;
+
+
+const id =
+button.dataset.categorySave;
+
+
+const select =
+categoryProductsEl.querySelector(
+`[data-category-id="${CSS.escape(id)}"]`
 );
 
 
-priceProductsEl.addEventListener(
-"input",
-function(event){
-
-if(event.target.dataset.mrpIndex !== undefined){
-
-const index =
-Number(event.target.dataset.mrpIndex);
-
-priceProducts[index].mrp =
-Number(event.target.value || 0);
-
-}
+if (!select) return;
 
 
-if(event.target.dataset.priceIndex !== undefined){
+const product =
+categoryProducts.find(function(item) {
 
-const index =
-Number(event.target.dataset.priceIndex);
-
-priceProducts[index].price =
-Number(event.target.value || 0);
-
-}
+return String(item.id) === String(id);
 
 });
 
 
-exportPrices.addEventListener(
+if (!product) return;
+
+
+product.category = select.value;
+
+
+renderCategoryProducts();
+
+
+showCategoryMessage(
+"✅ Category updated successfully"
+);
+
+});
+
+
+
+categorySearch.addEventListener(
+"input",
+renderCategoryProducts
+);
+
+
+
+exportCategoriesBtn.addEventListener(
 "click",
-function(){
+function() {
 
 const json =
-JSON.stringify(priceProducts,null,2);
+JSON.stringify(categoryProducts,null,2);
+
 
 const blob =
 new Blob(
@@ -1648,16 +845,19 @@ new Blob(
 {type:"application/json"}
 );
 
+
 const url =
 URL.createObjectURL(blob);
+
 
 const link =
 document.createElement("a");
 
+
 link.href = url;
 
-link.download =
-"products.json";
+link.download = "products.json";
+
 
 document.body.appendChild(link);
 
@@ -1665,19 +865,27 @@ link.click();
 
 link.remove();
 
+
 URL.revokeObjectURL(url);
 
+
 alert(
+
 "✅ Updated products.json download ho gaya.\n\n" +
-"GitHub ke products.json ko replace karein."
+
+"Ab is file ko GitHub ke products.json se replace karein."
+
 );
 
 });
 
 
-loadPriceProducts();
+
+loadCategoryProducts();
 
 </script>
 
+
 </body>
+
 </html>
