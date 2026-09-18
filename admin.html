@@ -11,181 +11,268 @@
 
 <style>
 
-body {
-  background:#f5f8f6;
-  margin:0;
-  font-family:Arial,sans-serif;
+*{
+  box-sizing:border-box;
 }
 
-.admin-header {
+body{
+  margin:0;
+  background:#f5f8f6;
+  font-family:Arial,sans-serif;
+  color:#222;
+}
+
+.admin-header{
   background:linear-gradient(135deg,#087f46,#12a05a);
-  color:white;
+  color:#fff;
   padding:28px 20px;
   text-align:center;
 }
 
-.admin-header h1 {
+.admin-header h1{
   margin:0;
   font-size:30px;
 }
 
-.admin-container {
+.admin-header p{
+  margin:8px 0 0;
+}
+
+.admin-container{
   max-width:1200px;
   margin:auto;
   padding:30px 15px;
 }
 
-.admin-stats {
+/* STATS */
+
+.admin-stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
   margin-bottom:30px;
 }
 
-.stat-card {
-  background:white;
+.stat-card{
+  background:#fff;
   padding:22px;
   border-radius:18px;
   box-shadow:0 8px 25px rgba(0,0,0,.07);
   text-align:center;
 }
 
-.stat-card h2 {
+.stat-card h2{
   margin:0;
   font-size:30px;
   color:#087f46;
 }
 
-.stat-card p {
+.stat-card p{
   margin:8px 0 0;
   color:#666;
 }
 
-.admin-section {
-  background:white;
+/* SECTIONS */
+
+.admin-section{
+  background:#fff;
   padding:25px;
   border-radius:20px;
   margin-bottom:25px;
   box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
-.admin-section h2 {
+.admin-section h2{
   margin-top:0;
 }
 
-.order-search {
+/* SEARCH */
+
+.admin-search{
   width:100%;
-  box-sizing:border-box;
-  padding:13px;
+  padding:13px 14px;
   border:1px solid #ddd;
   border-radius:10px;
   margin-bottom:20px;
   font-size:15px;
+  outline:none;
 }
 
-.orders-grid {
+.admin-search:focus,
+.edit-input:focus,
+.edit-select:focus{
+  border-color:#087f46;
+  box-shadow:0 0 0 3px rgba(8,127,70,.08);
+}
+
+/* PRODUCT TOOLS */
+
+.product-manager-tools{
   display:grid;
-  gap:18px;
+  grid-template-columns:2fr 1fr;
+  gap:12px;
+  margin-bottom:20px;
 }
 
-.order-card {
-  border:1px solid #e5e5e5;
+.product-manager-tools .admin-search{
+  margin-bottom:0;
+}
+
+/* PRODUCT LIST */
+
+.product-list{
+  display:grid;
+  gap:15px;
+}
+
+.product-admin-card{
+  border:1px solid #e2e8e4;
   border-radius:16px;
-  padding:20px;
+  padding:16px;
   background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
-.order-top {
+.product-admin-top{
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  gap:10px;
+  gap:15px;
   flex-wrap:wrap;
-  margin-bottom:15px;
 }
 
-.order-id {
-  font-weight:bold;
+.product-info{
+  min-width:0;
+}
+
+.product-name{
+  font-size:17px;
+  font-weight:800;
+  margin-bottom:5px;
+}
+
+.product-id{
+  color:#888;
+  font-size:12px;
+}
+
+.product-category{
   color:#087f46;
-  font-size:18px;
+  font-size:13px;
+  margin-top:5px;
 }
 
-.status {
-  padding:6px 12px;
-  border-radius:20px;
-  background:#fff3cd;
+.edit-product-btn{
+  border:0;
+  background:#087f46;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.edit-product-btn:hover{
+  opacity:.9;
+}
+
+/* EDIT BOX */
+
+.product-edit-box{
+  display:none;
+  margin-top:18px;
+  padding:18px;
+  border-radius:14px;
+  background:#f7faf8;
+  border:1px solid #e0e8e3;
+}
+
+.product-edit-box.open{
+  display:block;
+}
+
+.edit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.edit-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.edit-field.full{
+  grid-column:1/-1;
+}
+
+.edit-field label{
   font-size:13px;
   font-weight:bold;
-}
-
-.customer-info {
-  line-height:1.7;
   color:#444;
 }
 
-.order-items {
-  margin:15px 0;
-  padding:15px;
-  background:#f7faf8;
-  border-radius:12px;
+.edit-input,
+.edit-select{
+  width:100%;
+  padding:11px 12px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  background:#fff;
+  font-size:14px;
+  outline:none;
 }
 
-.order-item {
+.edit-actions{
   display:flex;
-  justify-content:space-between;
   gap:10px;
-  padding:7px 0;
-  border-bottom:1px solid #e5e5e5;
-}
-
-.order-item:last-child {
-  border-bottom:0;
-}
-
-.order-total {
-  font-size:20px;
-  font-weight:bold;
-  color:#087f46;
-  margin:15px 0;
-}
-
-.order-actions {
-  display:flex;
-  gap:8px;
+  margin-top:18px;
   flex-wrap:wrap;
 }
 
-.order-actions button {
+.save-product-btn{
   border:0;
-  padding:10px 14px;
-  border-radius:9px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.confirm-btn {
   background:#087f46;
-  color:white;
+  color:#fff;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.delivered-btn {
-  background:#198754;
-  color:white;
+.cancel-edit-btn{
+  border:0;
+  background:#555;
+  color:#fff;
+  padding:11px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.cancel-btn {
-  background:#dc3545;
-  color:white;
+/* BUTTON */
+
+.manager-button{
+  margin-top:15px;
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:#087f46;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.delete-btn {
-  background:#333;
-  color:white;
+.manager-button:hover{
+  opacity:.9;
 }
-
 
 /* CATEGORY MANAGER */
 
-.category-product-card {
+.category-product-card{
   border:1px solid #e2e8e4;
   border-radius:15px;
   padding:15px;
@@ -194,7 +281,7 @@ body {
   box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
-.category-product-top {
+.category-product-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -202,49 +289,44 @@ body {
   flex-wrap:wrap;
 }
 
-.category-product-name {
+.category-product-name{
   font-size:16px;
   font-weight:800;
-  color:#222;
 }
 
-.category-product-id {
+.category-product-id{
   font-size:12px;
   color:#888;
   margin-top:4px;
 }
 
-.category-current {
+.category-current{
   font-size:13px;
   color:#666;
   margin-top:8px;
 }
 
-.category-select {
+.category-select{
   min-width:220px;
   padding:10px;
   border:1px solid #ccc;
   border-radius:9px;
-  background:white;
+  background:#fff;
   font-size:14px;
 }
 
-.category-save-btn {
+.category-save-btn{
   margin-top:10px;
   padding:10px 16px;
   border:0;
   border-radius:9px;
   background:#087f46;
-  color:white;
+  color:#fff;
   font-weight:bold;
   cursor:pointer;
 }
 
-.category-save-btn:hover {
-  opacity:.9;
-}
-
-.category-message {
+.category-message{
   display:none;
   margin-bottom:15px;
   padding:12px;
@@ -254,24 +336,110 @@ body {
   font-weight:bold;
 }
 
-.manager-button {
-  margin-top:20px;
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:12px;
-  background:#087f46;
-  color:white;
-  font-size:16px;
+/* ORDERS */
+
+.orders-grid{
+  display:grid;
+  gap:18px;
+}
+
+.order-card{
+  border:1px solid #e5e5e5;
+  border-radius:16px;
+  padding:20px;
+  background:#fff;
+}
+
+.order-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.order-id{
   font-weight:bold;
+  color:#087f46;
+  font-size:18px;
+}
+
+.status{
+  padding:6px 12px;
+  border-radius:20px;
+  background:#fff3cd;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.customer-info{
+  line-height:1.7;
+  color:#444;
+}
+
+.order-items{
+  margin:15px 0;
+  padding:15px;
+  background:#f7faf8;
+  border-radius:12px;
+}
+
+.order-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:7px 0;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.order-item:last-child{
+  border-bottom:0;
+}
+
+.order-total{
+  font-size:20px;
+  font-weight:bold;
+  color:#087f46;
+  margin:15px 0;
+}
+
+.order-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.order-actions button{
+  border:0;
+  padding:10px 14px;
+  border-radius:9px;
   cursor:pointer;
+  font-weight:bold;
 }
 
-.manager-button.secondary {
+.confirm-btn{
+  background:#087f46;
+  color:#fff;
+}
+
+.delivered-btn{
+  background:#198754;
+  color:#fff;
+}
+
+.cancel-btn{
+  background:#dc3545;
+  color:#fff;
+}
+
+.delete-btn{
   background:#333;
+  color:#fff;
 }
 
-.price-manager-card {
+/* PRICE MANAGER */
+
+.price-manager-card{
   margin:12px 0;
   padding:15px;
   border:1px solid #ddd;
@@ -280,34 +448,69 @@ body {
   box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-.empty-orders {
+/* MESSAGES */
+
+.loading-box{
+  padding:25px;
   text-align:center;
-  padding:35px;
   color:#777;
 }
 
-@media (max-width:700px) {
+.empty-box{
+  padding:30px;
+  text-align:center;
+  color:#777;
+  background:#fafafa;
+  border-radius:12px;
+}
 
-  .admin-stats {
+.notice-box{
+  padding:13px;
+  background:#fff8df;
+  border:1px solid #f0df9a;
+  border-radius:10px;
+  color:#765d00;
+  font-size:13px;
+  margin-bottom:18px;
+  line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .admin-stats{
     grid-template-columns:1fr;
   }
 
-  .admin-section {
+  .admin-section{
     padding:18px;
   }
 
-  .order-item {
-    font-size:14px;
+  .product-manager-tools{
+    grid-template-columns:1fr;
   }
 
-  .category-product-top {
+  .edit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .edit-field.full{
+    grid-column:auto;
+  }
+
+  .category-product-top{
     display:block;
   }
 
-  .category-select {
+  .category-select{
     width:100%;
-    box-sizing:border-box;
     margin-top:12px;
+  }
+
+  .edit-product-btn{
+    width:100%;
+    margin-top:10px;
   }
 
 }
@@ -332,57 +535,127 @@ body {
 <main class="admin-container">
 
 
-<!-- STATS -->
+<!-- =========================
+     ORDER STATS
+========================= -->
 
 <div class="admin-stats">
 
 <div class="stat-card">
-
 <h2 id="totalOrders">0</h2>
-
 <p>Total Orders</p>
-
 </div>
 
-
 <div class="stat-card">
-
 <h2 id="pendingOrders">0</h2>
-
 <p>Pending Orders</p>
-
 </div>
-
 
 <div class="stat-card">
-
 <h2 id="deliveredOrders">0</h2>
-
 <p>Delivered</p>
-
 </div>
 
 </div>
 
 
 
-<!-- CATEGORY MANAGER -->
+<!-- =========================
+     PRODUCT MANAGER
+========================= -->
+
+<section class="admin-section">
+
+<h2>🛒 Product Manager</h2>
+
+<p style="color:#666;">
+Product search करके product edit करें.
+</p>
+
+
+<div class="product-manager-tools">
+
+<input
+type="text"
+id="productSearch"
+class="admin-search"
+placeholder="Search product name..."
+autocomplete="off"
+>
+
+<select
+id="productCategoryFilter"
+class="admin-search"
+>
+
+<option value="">
+All Categories
+</option>
+
+</select>
+
+</div>
+
+
+<div
+id="productMessage"
+class="category-message">
+</div>
+
+
+<div
+id="productList"
+class="product-list">
+
+<div class="loading-box">
+Loading products...
+</div>
+
+</div>
+
+
+<button
+id="exportProducts"
+class="manager-button">
+
+📥 Export Updated products.json
+
+</button>
+
+
+<p style="font-size:13px;color:#777;margin-top:12px;">
+
+Save के बाद updated
+<strong>products.json</strong>
+download होगा.
+
+उस file को GitHub में existing
+<strong>products.json</strong>
+से replace करें.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORY MANAGER
+========================= -->
 
 <section class="admin-section">
 
 <h2>📂 Category Manager</h2>
 
 <p style="color:#666;">
-
-Product search करके उसकी category बदलें और Save करें.
-
+Product search करके उसकी category बदलें.
 </p>
 
 
 <input
 type="text"
 id="categorySearch"
-class="order-search"
+class="admin-search"
 placeholder="Search product name..."
 autocomplete="off"
 >
@@ -396,10 +669,8 @@ class="category-message">
 
 <div id="categoryProducts">
 
-<div style="padding:20px;text-align:center;color:#777;">
-
+<div class="loading-box">
 Loading products...
-
 </div>
 
 </div>
@@ -413,20 +684,13 @@ class="manager-button">
 
 </button>
 
-
-<p style="font-size:13px;color:#777;margin-top:12px;">
-
-Category changes browser में तैयार होंगे.
-Permanent website update के लिए exported
-<strong>products.json</strong> को GitHub में replace करें.
-
-</p>
-
 </section>
 
 
 
-<!-- WEEKLY PRICE MANAGER -->
+<!-- =========================
+     WEEKLY PRICE MANAGER
+========================= -->
 
 <section class="admin-section">
 
@@ -434,7 +698,7 @@ Permanent website update के लिए exported
 
 <p style="color:#666;">
 
-Products की कीमत यहाँ check/update करके
+Products की कीमत यहाँ update करके
 updated products.json export कर सकते हैं.
 
 </p>
@@ -443,13 +707,19 @@ updated products.json export कर सकते हैं.
 <input
 type="text"
 id="priceSearch"
-class="order-search"
+class="admin-search"
 placeholder="Search product name..."
 autocomplete="off"
 >
 
 
-<div id="priceProducts"></div>
+<div id="priceProducts">
+
+<div class="loading-box">
+Loading prices...
+</div>
+
+</div>
 
 
 <button
@@ -464,7 +734,9 @@ class="manager-button">
 
 
 
-<!-- CUSTOMER ORDERS -->
+<!-- =========================
+     CUSTOMER ORDERS
+========================= -->
 
 <section class="admin-section">
 
@@ -474,7 +746,7 @@ class="manager-button">
 <input
 type="text"
 id="orderSearch"
-class="order-search"
+class="admin-search"
 placeholder="Search Order ID, customer name or mobile..."
 autocomplete="off"
 >
@@ -483,6 +755,11 @@ autocomplete="off"
 <div
 id="ordersList"
 class="orders-grid">
+
+<div class="loading-box">
+Loading orders...
+</div>
+
 </div>
 
 </section>
@@ -492,59 +769,66 @@ class="orders-grid">
 
 
 
-<!-- EXISTING ADMIN SYSTEM -->
+<!-- IMPORTANT:
+     Existing admin.js
+     ko hi use karna hai
+-->
 
 <script type="module" src="admin.js"></script>
 
 
 
-<!-- CATEGORY MANAGER SCRIPT -->
-
 <script>
 
-let categoryProducts = [];
+/* =========================================================
+   PRODUCT MANAGER
+========================================================= */
 
-let categorySearch =
-document.getElementById("categorySearch");
-
-let categoryProductsEl =
-document.getElementById("categoryProducts");
-
-let categoryMessage =
-document.getElementById("categoryMessage");
-
-let exportCategoriesBtn =
-document.getElementById("exportCategories");
+let products = [];
 
 
+const productList =
+document.getElementById("productList");
 
-function categoryEscape(value) {
+const productSearch =
+document.getElementById("productSearch");
+
+const productCategoryFilter =
+document.getElementById("productCategoryFilter");
+
+const productMessage =
+document.getElementById("productMessage");
+
+const exportProductsBtn =
+document.getElementById("exportProducts");
+
+
+
+function escapeHtml(value){
 
 return String(value ?? "")
-
 .replace(/&/g,"&amp;")
-
 .replace(/</g,"&lt;")
-
 .replace(/>/g,"&gt;")
-
 .replace(/"/g,"&quot;")
-
 .replace(/'/g,"&#039;");
 
 }
 
 
 
-function showCategoryMessage(message) {
+function showProductMessage(message){
 
-categoryMessage.textContent = message;
+productMessage.textContent =
+message;
 
-categoryMessage.style.display = "block";
+productMessage.style.display =
+"block";
 
-setTimeout(function() {
+setTimeout(function(){
 
-categoryMessage.style.display = "none";
+productMessage.style.display =
+"none";
 
 },2500);
 
@@ -552,21 +836,782 @@ categoryMessage.style.display = "none";
 
 
 
-async function loadCategoryProducts() {
+/* LOAD PRODUCTS */
 
-try {
+async function loadProducts(){
+
+try{
 
 const response =
-await fetch("products.json?v=" + Date.now(), {
-
+await fetch(
+"products.json?v=" + Date.now(),
+{
 cache:"no-store"
+}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+"products.json load failed"
+);
+
+}
+
+
+products =
+await response.json();
+
+
+if(!Array.isArray(products)){
+
+throw new Error(
+"products.json format invalid"
+);
+
+}
+
+
+buildProductCategories();
+
+renderProducts();
+
+}
+
+catch(error){
+
+console.error(error);
+
+productList.innerHTML = `
+
+<div class="empty-box">
+
+<h3>❌ Products load nahi ho rahe</h3>
+
+<p>
+products.json check करें.
+</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+
+/* CATEGORY FILTER */
+
+function buildProductCategories(){
+
+const categorySet =
+new Set();
+
+
+products.forEach(
+function(product){
+
+if(product.category){
+
+categorySet.add(
+product.category
+);
+
+}
 
 });
 
 
-if (!response.ok) {
+const categories =
+Array.from(categorySet).sort();
 
-throw new Error("products.json load failed");
+
+productCategoryFilter.innerHTML =
+
+`<option value="">
+All Categories
+</option>` +
+
+categories.map(
+function(category){
+
+return `
+
+<option value="${escapeHtml(category)}">
+
+${escapeHtml(category)}
+
+</option>
+
+`;
+
+}).join("");
+
+}
+
+
+
+/* CATEGORY OPTIONS */
+
+function getProductCategoryOptions(
+selected
+){
+
+const categories = [
+
+"Spices & Dry fuits",
+
+"Rice",
+
+"Atta maida sooji besan",
+
+"Dals and grains",
+
+"Oil sugar and salt",
+
+"Snacks and beverages",
+
+"Home care",
+
+"Personal care",
+
+"Dairy",
+
+"General Item"
+
+];
+
+
+if(
+selected &&
+!categories.includes(selected)
+){
+
+categories.push(selected);
+
+}
+
+
+return categories.map(
+function(category){
+
+return `
+
+<option
+value="${escapeHtml(category)}"
+${category === selected ? "selected" : ""}
+>
+
+${escapeHtml(category)}
+
+</option>
+
+`;
+
+}).join("");
+
+}
+
+
+
+/* RENDER */
+
+function renderProducts(){
+
+const search =
+String(
+productSearch.value || ""
+)
+.toLowerCase()
+.trim();
+
+
+const selectedCategory =
+productCategoryFilter.value;
+
+
+const filtered =
+products.filter(
+function(product){
+
+const name =
+String(
+product.name || ""
+)
+.toLowerCase();
+
+
+const matchesSearch =
+name.includes(search);
+
+
+const matchesCategory =
+!selectedCategory ||
+String(product.category || "") ===
+selectedCategory;
+
+
+return matchesSearch &&
+matchesCategory;
+
+});
+
+
+if(filtered.length === 0){
+
+productList.innerHTML = `
+
+<div class="empty-box">
+
+<h3>No products found</h3>
+
+<p>
+Search या category बदलकर देखें.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+productList.innerHTML =
+filtered.map(
+function(product){
+
+return `
+
+<div
+class="product-admin-card"
+data-product-card="${escapeHtml(product.id)}"
+>
+
+
+<div class="product-admin-top">
+
+<div class="product-info">
+
+<div class="product-name">
+
+${escapeHtml(
+product.name || "Product"
+)}
+
+</div>
+
+
+<div class="product-id">
+
+ID:
+${escapeHtml(
+product.id || "-"
+)}
+
+</div>
+
+
+<div class="product-category">
+
+Category:
+${escapeHtml(
+product.category ||
+"General Item"
+)}
+
+</div>
+
+</div>
+
+
+<button
+class="edit-product-btn"
+data-edit-product="${escapeHtml(product.id)}"
+>
+
+✏️ Edit Product
+
+</button>
+
+</div>
+
+
+
+<div
+class="product-edit-box"
+id="edit-${escapeHtml(product.id)}"
+>
+
+
+<div class="edit-grid">
+
+
+<div class="edit-field">
+
+<label>
+Product Name
+</label>
+
+<input
+class="edit-input"
+data-field="name"
+value="${escapeHtml(
+product.name || ""
+)}"
+>
+
+</div>
+
+
+
+<div class="edit-field">
+
+<label>
+Product ID
+</label>
+
+<input
+class="edit-input"
+value="${escapeHtml(
+product.id || ""
+)}"
+disabled
+>
+
+</div>
+
+
+
+<div class="edit-field">
+
+<label>
+MRP
+</label>
+
+<input
+class="edit-input"
+type="number"
+step="0.01"
+data-field="mrp"
+value="${product.mrp ?? ""}"
+>
+
+</div>
+
+
+
+<div class="edit-field">
+
+<label>
+Online Price
+</label>
+
+<input
+class="edit-input"
+type="number"
+step="0.01"
+data-field="price"
+value="${product.price ?? ""}"
+>
+
+</div>
+
+
+
+<div class="edit-field full">
+
+<label>
+Category
+</label>
+
+<select
+class="edit-select"
+data-field="category"
+>
+
+${getProductCategoryOptions(
+product.category ||
+"General Item"
+)}
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="edit-actions">
+
+
+<button
+class="save-product-btn"
+data-save-product="${escapeHtml(product.id)}"
+>
+
+💾 Save Product
+
+</button>
+
+
+<button
+class="cancel-edit-btn"
+data-cancel-product="${escapeHtml(product.id)}"
+>
+
+Cancel
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+
+/* CLICK EVENTS */
+
+productList.addEventListener(
+"click",
+function(event){
+
+
+/* EDIT */
+
+const editButton =
+event.target.closest(
+"[data-edit-product]"
+);
+
+
+if(editButton){
+
+const id =
+editButton.dataset.editProduct;
+
+
+const box =
+document.getElementById(
+"edit-" + id
+);
+
+
+if(box){
+
+box.classList.toggle("open");
+
+}
+
+return;
+
+}
+
+
+
+/* CANCEL */
+
+const cancelButton =
+event.target.closest(
+"[data-cancel-product]"
+);
+
+
+if(cancelButton){
+
+const id =
+cancelButton.dataset.cancelProduct;
+
+
+const box =
+document.getElementById(
+"edit-" + id
+);
+
+
+if(box){
+
+box.classList.remove("open");
+
+}
+
+return;
+
+}
+
+
+
+/* SAVE */
+
+const saveButton =
+event.target.closest(
+"[data-save-product]"
+);
+
+
+if(!saveButton){
+
+return;
+
+}
+
+
+const id =
+saveButton.dataset.saveProduct;
+
+
+const product =
+products.find(
+function(item){
+
+return String(item.id) ===
+String(id);
+
+});
+
+
+if(!product){
+
+alert("Product nahi mila.");
+
+return;
+
+}
+
+
+const card =
+saveButton.closest(
+".product-admin-card"
+);
+
+
+if(!card){
+
+return;
+
+}
+
+
+const nameInput =
+card.querySelector(
+'[data-field="name"]'
+);
+
+
+const mrpInput =
+card.querySelector(
+'[data-field="mrp"]'
+);
+
+
+const priceInput =
+card.querySelector(
+'[data-field="price"]'
+);
+
+
+const categoryInput =
+card.querySelector(
+'[data-field="category"]'
+);
+
+
+product.name =
+nameInput.value.trim();
+
+
+product.mrp =
+mrpInput.value === ""
+? null
+: Number(mrpInput.value);
+
+
+product.price =
+priceInput.value === ""
+? 0
+: Number(priceInput.value);
+
+
+product.category =
+categoryInput.value;
+
+
+renderProducts();
+
+showProductMessage(
+"✅ Product updated successfully"
+);
+
+});
+
+
+
+/* SEARCH */
+
+productSearch.addEventListener(
+"input",
+renderProducts
+);
+
+
+productCategoryFilter.addEventListener(
+"change",
+renderProducts
+);
+
+
+
+/* EXPORT */
+
+exportProductsBtn.addEventListener(
+"click",
+function(){
+
+const json =
+JSON.stringify(
+products,
+null,
+2
+);
+
+
+const blob =
+new Blob(
+[json],
+{
+type:"application/json"
+}
+);
+
+
+const url =
+URL.createObjectURL(blob);
+
+
+const link =
+document.createElement("a");
+
+
+link.href = url;
+
+link.download =
+"products.json";
+
+
+document.body.appendChild(link);
+
+link.click();
+
+link.remove();
+
+URL.revokeObjectURL(url);
+
+
+alert(
+"✅ Updated products.json download ho gaya.\n\n" +
+"GitHub में existing products.json को replace करें."
+);
+
+});
+
+
+loadProducts();
+
+
+
+/* =========================================================
+   CATEGORY MANAGER
+========================================================= */
+
+let categoryProducts = [];
+
+
+const categorySearch =
+document.getElementById(
+"categorySearch"
+);
+
+const categoryProductsEl =
+document.getElementById(
+"categoryProducts"
+);
+
+const categoryMessage =
+document.getElementById(
+"categoryMessage"
+);
+
+const exportCategoriesBtn =
+document.getElementById(
+"exportCategories"
+);
+
+
+
+function categoryEscape(value){
+
+return String(value ?? "")
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+
+function showCategoryMessage(message){
+
+categoryMessage.textContent =
+message;
+
+categoryMessage.style.display =
+"block";
+
+setTimeout(function(){
+
+categoryMessage.style.display =
+"none";
+
+},2500);
+
+}
+
+
+
+async function loadCategoryProducts(){
+
+try{
+
+const response =
+await fetch(
+"products.json?v=" + Date.now(),
+{
+cache:"no-store"
+}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+"products.json load failed"
+);
 
 }
 
@@ -577,21 +1622,15 @@ await response.json();
 
 renderCategoryProducts();
 
-
 }
 
-catch(error) {
+catch(error){
 
 console.error(error);
 
-
 categoryProductsEl.innerHTML = `
 
-<div style="
-padding:20px;
-text-align:center;
-color:#c00;
-">
+<div class="empty-box">
 
 ❌ Products load nahi ho rahe.
 
@@ -605,64 +1644,89 @@ color:#c00;
 
 
 
-function getCategories() {
+function getCategories(){
 
-const categories = new Set();
+const categories = new Set([
+
+"Spices & Dry fuits",
+
+"Rice",
+
+"Atta maida sooji besan",
+
+"Dals and grains",
+
+"Oil sugar and salt",
+
+"Snacks and beverages",
+
+"Home care",
+
+"Personal care",
+
+"Dairy",
+
+"General Item"
+
+]);
 
 
-categoryProducts.forEach(function(product) {
+categoryProducts.forEach(
+function(product){
 
-if (product.category) {
+if(product.category){
 
-categories.add(product.category);
+categories.add(
+product.category
+);
 
 }
 
 });
 
 
-categories.add("Grocery & Daily Use");
-
-categories.add("General Item");
-
-
-return Array.from(categories).sort();
+return Array.from(
+categories
+).sort();
 
 }
 
 
 
-function renderCategoryProducts() {
+function renderCategoryProducts(){
 
 const search =
-String(categorySearch.value || "")
+String(
+categorySearch.value || ""
+)
 .toLowerCase()
 .trim();
 
 
 const filtered =
-categoryProducts.filter(function(product) {
+categoryProducts.filter(
+function(product){
 
-return String(product.name || "")
+return String(
+product.name || ""
+)
 .toLowerCase()
 .includes(search);
 
 });
 
 
-if (filtered.length === 0) {
+if(filtered.length === 0){
 
 categoryProductsEl.innerHTML = `
 
-<div style="
-padding:25px;
-text-align:center;
-color:#777;
-">
+<div class="empty-box">
 
 <h3>No products found</h3>
 
-<p>Search name सही से enter करें.</p>
+<p>
+Search name सही से enter करें.
+</p>
 
 </div>
 
@@ -673,28 +1737,28 @@ return;
 }
 
 
-const categories = getCategories();
+const categories =
+getCategories();
 
 
-categoryProductsEl.innerHTML = filtered.map(function(product) {
+categoryProductsEl.innerHTML =
+filtered.map(
+function(product){
 
 const currentCategory =
-product.category || "General Item";
+product.category ||
+"General Item";
 
 
-const options = categories.map(function(category) {
-
-const selected =
-category === currentCategory
-? "selected"
-: "";
-
+const options =
+categories.map(
+function(category){
 
 return `
 
 <option
 value="${categoryEscape(category)}"
-${selected}
+${category === currentCategory ? "selected" : ""}
 >
 
 ${categoryEscape(category)}
@@ -712,30 +1776,45 @@ return `
 
 <div class="category-product-top">
 
+
 <div>
 
 <div class="category-product-name">
 
-${categoryEscape(product.name || "Product")}
+${categoryEscape(
+product.name ||
+"Product"
+)}
 
 </div>
+
 
 <div class="category-product-id">
 
-ID: ${categoryEscape(product.id || "-")}
+ID:
+${categoryEscape(
+product.id || "-"
+)}
 
 </div>
+
 
 <div class="category-current">
 
 Current Category:
+
 <strong>
-${categoryEscape(currentCategory)}
+
+${categoryEscape(
+currentCategory
+)}
+
 </strong>
 
 </div>
 
 </div>
+
 
 
 <div>
@@ -755,13 +1834,15 @@ ${options}
 
 <button
 class="category-save-btn"
-data-category-save="${categoryEscape(product.id)}">
+data-category-save="${categoryEscape(product.id)}"
+>
 
 💾 Save Category
 
 </button>
 
 </div>
+
 
 </div>
 
@@ -775,15 +1856,23 @@ data-category-save="${categoryEscape(product.id)}">
 
 
 
+/* CATEGORY SAVE */
+
 categoryProductsEl.addEventListener(
 "click",
-function(event) {
+function(event){
 
 const button =
-event.target.closest("[data-category-save]");
+event.target.closest(
+"[data-category-save]"
+);
 
 
-if (!button) return;
+if(!button){
+
+return;
+
+}
 
 
 const id =
@@ -796,22 +1885,43 @@ categoryProductsEl.querySelector(
 );
 
 
-if (!select) return;
+if(!select){
+
+return;
+
+}
 
 
 const product =
-categoryProducts.find(function(item) {
+categoryProducts.find(
+function(item){
 
-return String(item.id) === String(id);
+return String(item.id) ===
+String(id);
 
 });
 
 
-if (!product) return;
+if(!product){
+
+return;
+
+}
 
 
-product.category = select.value;
+product.category =
+select.value;
 
+
+/* Keep Product Manager synced */
+
+products =
+categoryProducts;
+
+
+buildProductCategories();
+
+renderProducts();
 
 renderCategoryProducts();
 
@@ -831,18 +1941,26 @@ renderCategoryProducts
 
 
 
+/* EXPORT CATEGORY */
+
 exportCategoriesBtn.addEventListener(
 "click",
-function() {
+function(){
 
 const json =
-JSON.stringify(categoryProducts,null,2);
+JSON.stringify(
+categoryProducts,
+null,
+2
+);
 
 
 const blob =
 new Blob(
 [json],
-{type:"application/json"}
+{
+type:"application/json"
+}
 );
 
 
@@ -856,7 +1974,8 @@ document.createElement("a");
 
 link.href = url;
 
-link.download = "products.json";
+link.download =
+"products.json";
 
 
 document.body.appendChild(link);
@@ -865,20 +1984,15 @@ link.click();
 
 link.remove();
 
-
 URL.revokeObjectURL(url);
 
 
 alert(
-
 "✅ Updated products.json download ho gaya.\n\n" +
-
-"Ab is file ko GitHub ke products.json se replace karein."
-
+"GitHub में existing products.json को replace करें."
 );
 
 });
-
 
 
 loadCategoryProducts();
