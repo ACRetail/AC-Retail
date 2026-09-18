@@ -9,19 +9,10 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 2,
-    "name": "Aashirvad Besan 500 Gm",
-    "brand": "",
-    "category": "Atta Maida Sooji Besan",
-    "price": 60,
-    "mrp": 60,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 3,
     "name": "Active Wheel Green Bar 200 Gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 9.8,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -3049,5 +3040,13 @@
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
+  },
+  {
+    "id": "341",
+    "name": "Pears Soap 211 Rs",
+    "brand": "HUL",
+    "category": "Personal care",
+    "mrp": 211,
+    "price": 200
   }
 ]
