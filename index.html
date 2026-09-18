@@ -3,272 +3,19 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>AC Retail - Grocery Store</title>
+    <title>AC Retail - Grocery Store</title>
 
-<link
-rel="stylesheet"
-href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
-<style>
-
-/* =========================
-   HOME CATEGORY SECTION
-========================= */
-
-#homeCategories {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-top: 28px;
-}
-
-#homeCategories .category-card {
-  position: relative;
-
-  min-height: 185px;
-
-  border-radius: 22px;
-
-  overflow: hidden;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: flex-end;
-
-  padding: 18px 12px;
-
-  text-decoration: none;
-
-  color: #fff;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,0.80) 0%,
-      rgba(0,0,0,0.30) 50%,
-      rgba(0,0,0,0.05) 100%
-    ),
-    var(--category-image);
-
-  background-size: cover;
-
-  background-position: center;
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,0.13);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-#homeCategories .category-card:hover {
-
-  transform: translateY(-8px);
-
-  box-shadow:
-    0 18px 35px rgba(0,0,0,0.22);
-}
-
-#homeCategories .category-icon {
-
-  position: absolute;
-
-  top: 14px;
-  left: 14px;
-
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background:
-    rgba(255,255,255,0.95);
-
-  box-shadow:
-    0 5px 15px rgba(0,0,0,0.18);
-
-  overflow: hidden;
-}
-
-#homeCategories .category-icon img {
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-#homeCategories .category-name {
-
-  position: relative;
-
-  z-index: 2;
-
-  width: 100%;
-
-  padding: 10px 8px;
-
-  border-radius: 12px;
-
-  background:
-    rgba(0,0,0,0.35);
-
-  backdrop-filter: blur(4px);
-
-  font-size: 16px;
-
-  font-weight: 800;
-
-  text-align: center;
-
-  letter-spacing: 0.2px;
-}
-
-
-/* =========================
-   CATEGORY IMAGES
-========================= */
-
-#homeCategories .category-card:nth-child(1) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(2) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(3) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(4) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(5) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(6) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1621939514649-280e2aa7a1f?auto=format&fit=crop&w=900&q=85");
-
-}
-
-#homeCategories .category-card:nth-child(7) {
-
-  --category-image:
-  url("https://images.unsplash.com/photo-1601598851547-4302969d4b1b?auto=format&fit=crop&w=900&q=85");
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-  #homeCategories {
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    gap: 16px;
-
-  }
-
-  #homeCategories
-  .category-card {
-
-    min-height: 165px;
-
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  #homeCategories {
-
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 13px;
-
-    margin-top: 20px;
-
-  }
-
-  #homeCategories
-  .category-card {
-
-    min-height: 145px;
-
-    border-radius: 17px;
-
-    padding: 14px 8px;
-
-  }
-
-  #homeCategories
-  .category-icon {
-
-    width: 40px;
-    height: 40px;
-
-    top: 10px;
-    left: 10px;
-
-  }
-
-  #homeCategories
-  .category-name {
-
-    font-size: 13px;
-
-    padding: 8px 5px;
-
-  }
-
-}
-
-</style>
+    
 
 </head>
 
@@ -281,56 +28,26 @@ href="style.css">
 ========================= -->
 
 <header>
+    <div class="header-inner">
 
-<div class="header-inner">
+        <div>
+            <div class="logo">🛒 AC Retail</div>
+            <div class="tagline">
+                Fresh Groceries • Better Living
+            </div>
+        </div>
 
-<div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">🛒 Cart</a>
+            <a href="about.html">About</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-<div class="logo">
-🛒 AC Retail
-</div>
-
-<div class="tagline">
-Fresh Groceries • Better Living
-</div>
-
-</div>
-
-
-<nav>
-
-<a
-href="index.html"
-class="active">
-Home
-</a>
-
-<a href="products.html">
-Products
-</a>
-
-<a href="cart.html">
-🛒 Cart
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="offers.html">
-Offers
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-</nav>
-
-</div>
-
+    </div>
 </header>
-
 
 
 <!-- =========================
@@ -339,47 +56,31 @@ Contact
 
 <section class="hero">
 
-<h2>
+    <h2>
+        Fresh Groceries,<br>
+        Better Prices.
+    </h2>
 
-Fresh Groceries,
-<br>
-Better Prices.
+    <p>
+        AC Retail – your trusted grocery store in Phaltan.
+    </p>
 
-</h2>
+    <div class="hero-buttons">
 
+        <a href="products.html"
+           class="hero-btn shop-btn">
+            🛒 Shop Now
+        </a>
 
-<p>
+        <a href="https://wa.me/918830300826"
+           class="hero-btn wa-btn-home"
+           target="_blank">
+            💬 Order on WhatsApp
+        </a>
 
-AC Retail – your trusted
-grocery store in Phaltan.
-
-</p>
-
-
-<div class="hero-buttons">
-
-<a
-href="products.html"
-class="hero-btn shop-btn">
-
-🛒 Shop Now
-
-</a>
-
-
-<a
-href="https://wa.me/918830300826"
-class="hero-btn wa-btn-home"
-target="_blank">
-
-💬 Order on WhatsApp
-
-</a>
-
-</div>
+    </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -388,18 +89,16 @@ target="_blank">
 
 <section class="category-section">
 
-<h2>
-🛍️ Shop by Category
-</h2>
+    <h2>
+        🛍️ Shop by Category
+    </h2>
 
 
-<div
-class="category-grid"
-id="homeCategories">
-</div>
+    <div class="category-grid" id="homeCategories"></div>            
+        
+
 
 </section>
-
 
 
 <!-- =========================
@@ -408,57 +107,56 @@ id="homeCategories">
 
 <section class="services">
 
-<h2>
-Why Choose AC Retail?
-</h2>
+    <h2>
+        Why Choose AC Retail?
+    </h2>
 
 
-<div class="cards">
+    <div class="cards">
 
 
-<div class="card">
+        <div class="card">
 
-<h3>
-🥬 Fresh Grocery
-</h3>
+            <h3>
+                🥬 Fresh Grocery
+            </h3>
 
-<p>
-Fresh and Quality Products
-</p>
+            <p>
+                Fresh and Quality Products
+            </p>
 
-</div>
-
-
-<div class="card">
-
-<h3>
-💰 Best Prices
-</h3>
-
-<p>
-Affordable Daily Prices
-</p>
-
-</div>
+        </div>
 
 
-<div class="card">
+        <div class="card">
 
-<h3>
-🚚 Fast Service
-</h3>
+            <h3>
+                💰 Best Prices
+            </h3>
 
-<p>
-Customer Satisfaction First
-</p>
+            <p>
+                Affordable Daily Prices
+            </p>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="card">
+
+            <h3>
+                🚚 Fast Service
+            </h3>
+
+            <p>
+                Customer Satisfaction First
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -466,21 +164,20 @@ Customer Satisfaction First
 ========================= -->
 
 <section
-style="
-text-align:center;
-margin:40px 20px;
-">
+    style="
+        text-align:center;
+        margin:40px 20px;
+    ">
 
-<a
-href="products.html"
-class="btn">
+    <a
+        href="products.html"
+        class="btn">
 
-🛒 View All Products
+        🛒 View All Products
 
-</a>
+    </a>
 
 </section>
-
 
 
 <!-- =========================
@@ -489,27 +186,23 @@ class="btn">
 
 <section class="location-box">
 
-<h3>
-📍 Visit AC Retail
-</h3>
+    <h3>
+        📍 Visit AC Retail
+    </h3>
 
+    <p>
+        Police Line, Phaltan
+    </p>
 
-<p>
-Police Line, Phaltan
-</p>
+    <p>
+        📞 8830300826
+    </p>
 
-
-<p>
-📞 8830300826
-</p>
-
-
-<p>
-🕒 Open: 7:00 AM – 9:00 PM
-</p>
+    <p>
+        🕒 Open: 7:00 AM – 9:00 PM
+    </p>
 
 </section>
-
 
 
 <!-- =========================
@@ -518,35 +211,28 @@ Police Line, Phaltan
 
 <footer class="footer">
 
-<h3>
-AC Retail
-</h3>
+    <h3>
+        AC Retail
+    </h3>
 
+    <p>
+        Police Line, Phaltan
+    </p>
 
-<p>
-Police Line, Phaltan
-</p>
+    <p>
+        📞 8830300826
+    </p>
 
+    <p>
+        🕒 Open: 7:00 AM – 9:00 PM
+    </p>
 
-<p>
-📞 8830300826
-</p>
-
-
-<p>
-🕒 Open: 7:00 AM – 9:00 PM
-</p>
-
-
-<p>
-
-&copy; 2026 AC Retail.
-All Rights Reserved.
-
-</p>
+    <p>
+        &copy; 2026 AC Retail.
+        All Rights Reserved.
+    </p>
 
 </footer>
-
 
 
 <!-- =========================
@@ -554,225 +240,81 @@ All Rights Reserved.
 ========================= -->
 
 <a
-href="https://wa.me/918830300826"
-class="whatsapp-float"
-target="_blank">
+    href="https://wa.me/918830300826"
+    class="whatsapp-float"
+    target="_blank">
 
-💬
+    💬
 
 </a>
 
-
-
-<!-- =========================
-     LOAD CATEGORIES
-========================= -->
-
 <script>
+fetch("products.json?v=1", { cache: "no-store" })
+    .then(response => response.json())
+    .then(products => {
 
-fetch(
-  "products.json?v=2",
-  {
-    cache: "no-store"
-  }
-)
+        const categoryBox = document.getElementById("homeCategories");
 
-.then(response => {
+        const categories = [
+            ...new Set(
+                products
+                    .map(product => product.category)
+                    .filter(category => category && category.trim())
+            )
+        ];
 
-  if (!response.ok) {
-
-    throw new Error(
-      "Products file could not be loaded"
-    );
-
-  }
-
-  return response.json();
-
-})
-
-
-.then(products => {
-
-
-  const categoryBox =
-    document.getElementById(
-      "homeCategories"
-    );
-
-
-  /* Get categories directly
-     from products.json */
-
-  const categories = [
-
-    ...new Set(
-
-      products
-
-        .map(product =>
-          product.category
-        )
-
-        .filter(category =>
-          category &&
-          category.trim()
-        )
-
-    )
-
-  ];
-
-
-  /* Exact category photos */
-
-  const categoryImages = {
-
-
+        const icons = {
     "Spices & Dry Fruits":
-
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=500&q=85",
 
     "Rice":
-
-      "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=500&q=85",
 
     "Atta Maida Sooji Besan":
-
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=85",
 
     "Dals & Grains":
-
-      "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=500&q=85",
 
     "Oil Sugar & Salt":
-
-      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=500&q=85",
 
     "Snacks & Beverages":
-
-      "https://images.unsplash.com/photo-1621939514649-280e2aa7a1f?auto=format&fit=crop&w=900&q=85",
-
+        "https://images.unsplash.com/photo-1621939514649-280e2aa7a1f?auto=format&fit=crop&w=500&q=85",
 
     "General Item":
+        "https://images.unsplash.com/photo-1601598851547-4302969d4b1b?auto=format&fit=crop&w=500&q=85"
+};
 
-      "https://images.unsplash.com/photo-1601598851547-4302969d4b1b?auto=format&fit=crop&w=900&q=85"
+        categoryBox.innerHTML = "";
 
-  };
+        categories.forEach(category => {
 
+            const card = document.createElement("a");
 
-  categoryBox.innerHTML = "";
+            card.className = "category-card";
 
+            card.href =
+                "products.html?category=" +
+                encodeURIComponent(category);
 
-  categories.forEach(category => {
+            const icon = document.createElement("span");
+            icon.className = "category-icon";
+            icon.innerHTML = icons[category]
+    ? `<img src="${icons[category]}" alt="${category}">`
+    : "🛍️";
+            card.appendChild(icon);
+            card.appendChild(
+                document.createTextNode(category)
+            );
 
-
-    const card =
-      document.createElement("a");
-
-
-    card.className =
-      "category-card";
-
-
-    /* Category click */
-
-    card.href =
-      "products.html?category=" +
-      encodeURIComponent(category);
-
-
-    /* Background image */
-
-    const image =
-      categoryImages[category];
-
-
-    if (image) {
-
-      card.style.setProperty(
-        "--category-image",
-        `url("${image}")`
-      );
-
-    }
-
-
-    /* Small image icon */
-
-    const icon =
-      document.createElement("span");
-
-
-    icon.className =
-      "category-icon";
-
-
-    if (image) {
-
-      const img =
-        document.createElement("img");
-
-
-      img.src = image;
-
-      img.alt = category;
-
-      img.loading = "lazy";
-
-
-      icon.appendChild(img);
-
-    }
-    else {
-
-      icon.textContent = "🛍️";
-
-    }
-
-
-    /* Category name */
-
-    const name =
-      document.createElement("span");
-
-
-    name.className =
-      "category-name";
-
-
-    name.textContent =
-      category;
-
-
-    card.appendChild(icon);
-
-    card.appendChild(name);
-
-    categoryBox.appendChild(card);
-
-  });
-
-})
-
-
-.catch(error => {
-
-  console.error(
-    "Category loading error:",
-    error
-  );
-
-});
-
+            categoryBox.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error("Category loading error:", error);
+    });
 </script>
-
-
 </body>
 
 </html>
