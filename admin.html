@@ -22,6 +22,8 @@ body{
   color:#222;
 }
 
+/* HEADER */
+
 .admin-header{
   background:linear-gradient(135deg,#087f46,#12a05a);
   color:#fff;
@@ -37,6 +39,8 @@ body{
 .admin-header p{
   margin:8px 0 0;
 }
+
+/* CONTAINER */
 
 .admin-container{
   max-width:1200px;
@@ -162,6 +166,8 @@ body{
   margin-top:5px;
 }
 
+/* EDIT BUTTON */
+
 .edit-product-btn{
   border:0;
   background:#087f46;
@@ -224,6 +230,8 @@ body{
   outline:none;
 }
 
+/* EDIT ACTIONS */
+
 .edit-actions{
   display:flex;
   gap:10px;
@@ -251,7 +259,7 @@ body{
   cursor:pointer;
 }
 
-/* BUTTON */
+/* GENERAL BUTTON */
 
 .manager-button{
   margin-top:15px;
@@ -268,72 +276,6 @@ body{
 
 .manager-button:hover{
   opacity:.9;
-}
-
-/* CATEGORY MANAGER */
-
-.category-product-card{
-  border:1px solid #e2e8e4;
-  border-radius:15px;
-  padding:15px;
-  margin-bottom:12px;
-  background:#fff;
-  box-shadow:0 3px 12px rgba(0,0,0,.05);
-}
-
-.category-product-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.category-product-name{
-  font-size:16px;
-  font-weight:800;
-}
-
-.category-product-id{
-  font-size:12px;
-  color:#888;
-  margin-top:4px;
-}
-
-.category-current{
-  font-size:13px;
-  color:#666;
-  margin-top:8px;
-}
-
-.category-select{
-  min-width:220px;
-  padding:10px;
-  border:1px solid #ccc;
-  border-radius:9px;
-  background:#fff;
-  font-size:14px;
-}
-
-.category-save-btn{
-  margin-top:10px;
-  padding:10px 16px;
-  border:0;
-  border-radius:9px;
-  background:#087f46;
-  color:#fff;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.category-message{
-  display:none;
-  margin-bottom:15px;
-  padding:12px;
-  border-radius:10px;
-  background:#e8f7ee;
-  color:#087f46;
-  font-weight:bold;
 }
 
 /* ORDERS */
@@ -448,7 +390,17 @@ body{
   box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-/* MESSAGES */
+/* MESSAGE */
+
+.category-message{
+  display:none;
+  margin-bottom:15px;
+  padding:12px;
+  border-radius:10px;
+  background:#e8f7ee;
+  color:#087f46;
+  font-weight:bold;
+}
 
 .loading-box{
   padding:25px;
@@ -462,17 +414,6 @@ body{
   color:#777;
   background:#fafafa;
   border-radius:12px;
-}
-
-.notice-box{
-  padding:13px;
-  background:#fff8df;
-  border:1px solid #f0df9a;
-  border-radius:10px;
-  color:#765d00;
-  font-size:13px;
-  margin-bottom:18px;
-  line-height:1.6;
 }
 
 /* MOBILE */
@@ -499,15 +440,6 @@ body{
     grid-column:auto;
   }
 
-  .category-product-top{
-    display:block;
-  }
-
-  .category-select{
-    width:100%;
-    margin-top:12px;
-  }
-
   .edit-product-btn{
     width:100%;
     margin-top:10px;
@@ -523,6 +455,10 @@ body{
 <body>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="admin-header">
 
 <h1>AC Retail Admin</h1>
@@ -530,6 +466,7 @@ body{
 <p>Order & Product Management Dashboard</p>
 
 </header>
+
 
 
 <main class="admin-container">
@@ -542,18 +479,29 @@ body{
 <div class="admin-stats">
 
 <div class="stat-card">
+
 <h2 id="totalOrders">0</h2>
+
 <p>Total Orders</p>
+
 </div>
 
+
 <div class="stat-card">
+
 <h2 id="pendingOrders">0</h2>
+
 <p>Pending Orders</p>
+
 </div>
 
+
 <div class="stat-card">
+
 <h2 id="deliveredOrders">0</h2>
+
 <p>Delivered</p>
+
 </div>
 
 </div>
@@ -569,11 +517,14 @@ body{
 <h2>🛒 Product Manager</h2>
 
 <p style="color:#666;">
-Product search करके product edit करें.
+
+Search product and edit its details.
+
 </p>
 
 
 <div class="product-manager-tools">
+
 
 <input
 type="text"
@@ -582,6 +533,7 @@ class="admin-search"
 placeholder="Search product name..."
 autocomplete="off"
 >
+
 
 <select
 id="productCategoryFilter"
@@ -593,6 +545,7 @@ All Categories
 </option>
 
 </select>
+
 
 </div>
 
@@ -608,7 +561,9 @@ id="productList"
 class="product-list">
 
 <div class="loading-box">
+
 Loading products...
+
 </div>
 
 </div>
@@ -625,64 +580,13 @@ class="manager-button">
 
 <p style="font-size:13px;color:#777;margin-top:12px;">
 
-Save के बाद updated
+After saving changes, download the updated
 <strong>products.json</strong>
-download होगा.
-
-उस file को GitHub में existing
+and replace the existing
 <strong>products.json</strong>
-से replace करें.
+file on GitHub.
 
 </p>
-
-</section>
-
-
-
-<!-- =========================
-     CATEGORY MANAGER
-========================= -->
-
-<section class="admin-section">
-
-<h2>📂 Category Manager</h2>
-
-<p style="color:#666;">
-Product search करके उसकी category बदलें.
-</p>
-
-
-<input
-type="text"
-id="categorySearch"
-class="admin-search"
-placeholder="Search product name..."
-autocomplete="off"
->
-
-
-<div
-id="categoryMessage"
-class="category-message">
-</div>
-
-
-<div id="categoryProducts">
-
-<div class="loading-box">
-Loading products...
-</div>
-
-</div>
-
-
-<button
-id="exportCategories"
-class="manager-button">
-
-📥 Export Updated products.json
-
-</button>
 
 </section>
 
@@ -698,8 +602,8 @@ class="manager-button">
 
 <p style="color:#666;">
 
-Products की कीमत यहाँ update करके
-updated products.json export कर सकते हैं.
+Update product prices here and export the updated
+products.json.
 
 </p>
 
@@ -716,7 +620,9 @@ autocomplete="off"
 <div id="priceProducts">
 
 <div class="loading-box">
+
 Loading prices...
+
 </div>
 
 </div>
@@ -757,7 +663,9 @@ id="ordersList"
 class="orders-grid">
 
 <div class="loading-box">
+
 Loading orders...
+
 </div>
 
 </div>
@@ -769,12 +677,14 @@ Loading orders...
 
 
 
-<!-- IMPORTANT:
-     Existing admin.js
-     ko hi use karna hai
--->
+<!-- =========================
+     EXISTING ADMIN JS
+========================= -->
 
-<script type="module" src="admin.js"></script>
+<script
+type="module"
+src="admin.js">
+</script>
 
 
 
@@ -794,15 +704,23 @@ const productSearch =
 document.getElementById("productSearch");
 
 const productCategoryFilter =
-document.getElementById("productCategoryFilter");
+document.getElementById(
+"productCategoryFilter"
+);
 
 const productMessage =
-document.getElementById("productMessage");
+document.getElementById(
+"productMessage"
+);
 
 const exportProductsBtn =
-document.getElementById("exportProducts");
+document.getElementById(
+"exportProducts"
+);
 
 
+
+/* ESCAPE HTML */
 
 function escapeHtml(value){
 
@@ -817,6 +735,8 @@ return String(value ?? "")
 
 
 
+/* MESSAGE */
+
 function showProductMessage(message){
 
 productMessage.textContent =
@@ -824,6 +744,7 @@ message;
 
 productMessage.style.display =
 "block";
+
 
 setTimeout(function(){
 
@@ -844,7 +765,8 @@ try{
 
 const response =
 await fetch(
-"products.json?v=" + Date.now(),
+"products.json?v=" +
+Date.now(),
 {
 cache:"no-store"
 }
@@ -882,6 +804,7 @@ renderProducts();
 catch(error){
 
 console.error(error);
+
 
 productList.innerHTML = `
 
@@ -926,7 +849,9 @@ product.category
 
 
 const categories =
-Array.from(categorySet).sort();
+Array.from(
+categorySet
+).sort();
 
 
 productCategoryFilter.innerHTML =
@@ -1002,7 +927,9 @@ return `
 
 <option
 value="${escapeHtml(category)}"
-${category === selected ? "selected" : ""}
+${category === selected
+? "selected"
+: ""}
 >
 
 ${escapeHtml(category)}
@@ -1017,7 +944,7 @@ ${escapeHtml(category)}
 
 
 
-/* RENDER */
+/* RENDER PRODUCTS */
 
 function renderProducts(){
 
@@ -1050,7 +977,9 @@ name.includes(search);
 
 const matchesCategory =
 !selectedCategory ||
-String(product.category || "") ===
+String(
+product.category || ""
+) ===
 selectedCategory;
 
 
@@ -1095,12 +1024,14 @@ data-product-card="${escapeHtml(product.id)}"
 
 <div class="product-admin-top">
 
+
 <div class="product-info">
 
 <div class="product-name">
 
 ${escapeHtml(
-product.name || "Product"
+product.name ||
+"Product"
 )}
 
 </div>
@@ -1110,7 +1041,8 @@ product.name || "Product"
 
 ID:
 ${escapeHtml(
-product.id || "-"
+product.id ||
+"-"
 )}
 
 </div>
@@ -1138,6 +1070,7 @@ data-edit-product="${escapeHtml(product.id)}"
 
 </button>
 
+
 </div>
 
 
@@ -1150,6 +1083,8 @@ id="edit-${escapeHtml(product.id)}"
 
 <div class="edit-grid">
 
+
+<!-- PRODUCT NAME -->
 
 <div class="edit-field">
 
@@ -1169,6 +1104,8 @@ product.name || ""
 
 
 
+<!-- PRODUCT ID -->
+
 <div class="edit-field">
 
 <label>
@@ -1186,6 +1123,8 @@ disabled
 </div>
 
 
+
+<!-- MRP -->
 
 <div class="edit-field">
 
@@ -1205,6 +1144,8 @@ value="${product.mrp ?? ""}"
 
 
 
+<!-- ONLINE PRICE -->
+
 <div class="edit-field">
 
 <label>
@@ -1222,6 +1163,8 @@ value="${product.price ?? ""}"
 </div>
 
 
+
+<!-- CATEGORY -->
 
 <div class="edit-field full">
 
@@ -1246,6 +1189,9 @@ product.category ||
 
 </div>
 
+
+
+<!-- ACTIONS -->
 
 <div class="edit-actions">
 
@@ -1272,7 +1218,9 @@ Cancel
 
 </div>
 
+
 </div>
+
 
 </div>
 
@@ -1284,7 +1232,7 @@ Cancel
 
 
 
-/* CLICK EVENTS */
+/* PRODUCT EVENTS */
 
 productList.addEventListener(
 "click",
@@ -1452,6 +1400,7 @@ categoryInput.value;
 
 renderProducts();
 
+
 showProductMessage(
 "✅ Product updated successfully"
 );
@@ -1529,476 +1478,11 @@ alert(
 });
 
 
+/* START */
+
 loadProducts();
 
-
-
-/* =========================================================
-   CATEGORY MANAGER
-========================================================= */
-
-let categoryProducts = [];
-
-
-const categorySearch =
-document.getElementById(
-"categorySearch"
-);
-
-const categoryProductsEl =
-document.getElementById(
-"categoryProducts"
-);
-
-const categoryMessage =
-document.getElementById(
-"categoryMessage"
-);
-
-const exportCategoriesBtn =
-document.getElementById(
-"exportCategories"
-);
-
-
-
-function categoryEscape(value){
-
-return String(value ?? "")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
-
-}
-
-
-
-function showCategoryMessage(message){
-
-categoryMessage.textContent =
-message;
-
-categoryMessage.style.display =
-"block";
-
-setTimeout(function(){
-
-categoryMessage.style.display =
-"none";
-
-},2500);
-
-}
-
-
-
-async function loadCategoryProducts(){
-
-try{
-
-const response =
-await fetch(
-"products.json?v=" + Date.now(),
-{
-cache:"no-store"
-}
-);
-
-
-if(!response.ok){
-
-throw new Error(
-"products.json load failed"
-);
-
-}
-
-
-categoryProducts =
-await response.json();
-
-
-renderCategoryProducts();
-
-}
-
-catch(error){
-
-console.error(error);
-
-categoryProductsEl.innerHTML = `
-
-<div class="empty-box">
-
-❌ Products load nahi ho rahe.
-
-</div>
-
-`;
-
-}
-
-}
-
-
-
-function getCategories(){
-
-const categories = new Set([
-
-"Spices & Dry fuits",
-
-"Rice",
-
-"Atta maida sooji besan",
-
-"Dals and grains",
-
-"Oil sugar and salt",
-
-"Snacks and beverages",
-
-"Home care",
-
-"Personal care",
-
-"Dairy",
-
-"General Item"
-
-]);
-
-
-categoryProducts.forEach(
-function(product){
-
-if(product.category){
-
-categories.add(
-product.category
-);
-
-}
-
-});
-
-
-return Array.from(
-categories
-).sort();
-
-}
-
-
-
-function renderCategoryProducts(){
-
-const search =
-String(
-categorySearch.value || ""
-)
-.toLowerCase()
-.trim();
-
-
-const filtered =
-categoryProducts.filter(
-function(product){
-
-return String(
-product.name || ""
-)
-.toLowerCase()
-.includes(search);
-
-});
-
-
-if(filtered.length === 0){
-
-categoryProductsEl.innerHTML = `
-
-<div class="empty-box">
-
-<h3>No products found</h3>
-
-<p>
-Search name सही से enter करें.
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-const categories =
-getCategories();
-
-
-categoryProductsEl.innerHTML =
-filtered.map(
-function(product){
-
-const currentCategory =
-product.category ||
-"General Item";
-
-
-const options =
-categories.map(
-function(category){
-
-return `
-
-<option
-value="${categoryEscape(category)}"
-${category === currentCategory ? "selected" : ""}
->
-
-${categoryEscape(category)}
-
-</option>
-
-`;
-
-}).join("");
-
-
-return `
-
-<div class="category-product-card">
-
-<div class="category-product-top">
-
-
-<div>
-
-<div class="category-product-name">
-
-${categoryEscape(
-product.name ||
-"Product"
-)}
-
-</div>
-
-
-<div class="category-product-id">
-
-ID:
-${categoryEscape(
-product.id || "-"
-)}
-
-</div>
-
-
-<div class="category-current">
-
-Current Category:
-
-<strong>
-
-${categoryEscape(
-currentCategory
-)}
-
-</strong>
-
-</div>
-
-</div>
-
-
-
-<div>
-
-<select
-class="category-select"
-data-category-id="${categoryEscape(product.id)}"
->
-
-${options}
-
-</select>
-
-
-<br>
-
-
-<button
-class="category-save-btn"
-data-category-save="${categoryEscape(product.id)}"
->
-
-💾 Save Category
-
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-}
-
-
-
-/* CATEGORY SAVE */
-
-categoryProductsEl.addEventListener(
-"click",
-function(event){
-
-const button =
-event.target.closest(
-"[data-category-save]"
-);
-
-
-if(!button){
-
-return;
-
-}
-
-
-const id =
-button.dataset.categorySave;
-
-
-const select =
-categoryProductsEl.querySelector(
-`[data-category-id="${CSS.escape(id)}"]`
-);
-
-
-if(!select){
-
-return;
-
-}
-
-
-const product =
-categoryProducts.find(
-function(item){
-
-return String(item.id) ===
-String(id);
-
-});
-
-
-if(!product){
-
-return;
-
-}
-
-
-product.category =
-select.value;
-
-
-/* Keep Product Manager synced */
-
-products =
-categoryProducts;
-
-
-buildProductCategories();
-
-renderProducts();
-
-renderCategoryProducts();
-
-
-showCategoryMessage(
-"✅ Category updated successfully"
-);
-
-});
-
-
-
-categorySearch.addEventListener(
-"input",
-renderCategoryProducts
-);
-
-
-
-/* EXPORT CATEGORY */
-
-exportCategoriesBtn.addEventListener(
-"click",
-function(){
-
-const json =
-JSON.stringify(
-categoryProducts,
-null,
-2
-);
-
-
-const blob =
-new Blob(
-[json],
-{
-type:"application/json"
-}
-);
-
-
-const url =
-URL.createObjectURL(blob);
-
-
-const link =
-document.createElement("a");
-
-
-link.href = url;
-
-link.download =
-"products.json";
-
-
-document.body.appendChild(link);
-
-link.click();
-
-link.remove();
-
-URL.revokeObjectURL(url);
-
-
-alert(
-"✅ Updated products.json download ho gaya.\n\n" +
-"GitHub में existing products.json को replace करें."
-);
-
-});
-
-
-loadCategoryProducts();
-
 </script>
-
 
 </body>
 
