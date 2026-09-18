@@ -6,7 +6,8 @@
     "category": "Home care",
     "price": 97,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 3,
@@ -15,7 +16,8 @@
     "category": "Home care",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": true
   },
   {
     "id": 4,
@@ -24,7 +26,8 @@
     "category": "Spices & Dry Fruits",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 5,
@@ -33,7 +36,8 @@
     "category": "Dals & Grains",
     "price": 25,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 6,
@@ -42,7 +46,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 7,
@@ -51,7 +56,8 @@
     "category": "General Item",
     "price": 25.5,
     "mrp": 26,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 8,
@@ -60,7 +66,8 @@
     "category": "Personal care",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 9,
@@ -69,7 +76,8 @@
     "category": "Spices & Dry Fruits",
     "price": 33,
     "mrp": 33,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 10,
@@ -78,7 +86,8 @@
     "category": "General Item",
     "price": 34,
     "mrp": 35,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 11,
@@ -87,7 +96,8 @@
     "category": "General Item",
     "price": 33,
     "mrp": 33,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 12,
@@ -96,7 +106,8 @@
     "category": "General Item",
     "price": 120,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 13,
@@ -105,7 +116,8 @@
     "category": "Snacks & Beverages",
     "price": 58,
     "mrp": 60,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 14,
@@ -114,7 +126,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 15,
@@ -123,7 +136,8 @@
     "category": "Atta Maida Sooji Besan",
     "price": 29,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 16,
@@ -132,7 +146,8 @@
     "category": "Dals & Grains",
     "price": 120,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 17,
@@ -141,7 +156,8 @@
     "category": "Oil Sugar & Salt",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 18,
@@ -150,7 +166,8 @@
     "category": "Rice",
     "price": 125,
     "mrp": 130,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 19,
@@ -159,7 +176,8 @@
     "category": "Spices & Dry Fruits",
     "price": 4.9,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 20,
@@ -168,7 +186,8 @@
     "category": "Home care",
     "price": 83,
     "mrp": 85,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 21,
@@ -177,7 +196,8 @@
     "category": "General Item",
     "price": 9.6,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 22,
@@ -186,7 +206,8 @@
     "category": "General Item",
     "price": 29.5,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 23,
@@ -195,7 +216,8 @@
     "category": "General Item",
     "price": 4.9,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 24,
@@ -204,7 +226,8 @@
     "category": "General Item",
     "price": 20,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 25,
@@ -213,7 +236,8 @@
     "category": "Snacks and beverages",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 26,
@@ -222,7 +246,8 @@
     "category": "Snacks and beverages",
     "price": 2,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 27,
@@ -231,7 +256,8 @@
     "category": "Personal care",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 28,
@@ -240,7 +266,8 @@
     "category": "Dairy",
     "price": 62,
     "mrp": 63,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 29,
@@ -249,7 +276,8 @@
     "category": "Snacks and beverages",
     "price": 70,
     "mrp": 80,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 30,
@@ -258,7 +286,8 @@
     "category": "Snacks and beverages",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 31,
@@ -267,7 +296,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 32,
@@ -276,7 +306,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 33,
@@ -285,7 +316,8 @@
     "category": "Spices & Dry Fruits",
     "price": 4.8,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 34,
@@ -294,7 +326,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 35,
@@ -303,7 +336,8 @@
     "category": "Personal care",
     "price": 0.93,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 36,
@@ -312,7 +346,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 37,
@@ -321,7 +356,8 @@
     "category": "Personal care",
     "price": 72,
     "mrp": 73,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 38,
@@ -330,7 +366,8 @@
     "category": "Personal care",
     "price": 19.5,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 39,
@@ -339,7 +376,8 @@
     "category": "General Item",
     "price": 19.5,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 40,
@@ -348,7 +386,8 @@
     "category": "General Item",
     "price": 26,
     "mrp": 27,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 41,
@@ -357,7 +396,8 @@
     "category": "General Item",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 42,
@@ -366,7 +406,8 @@
     "category": "Personal care",
     "price": 85,
     "mrp": 89,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 43,
@@ -375,7 +416,8 @@
     "category": "Home care",
     "price": 39,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 44,
@@ -384,7 +426,8 @@
     "category": "Snacks & Beverages",
     "price": 4.8,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 45,
@@ -393,7 +436,8 @@
     "category": "General Item",
     "price": 30,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 46,
@@ -402,7 +446,8 @@
     "category": "Personal care",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 47,
@@ -411,7 +456,8 @@
     "category": "Dairy",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 48,
@@ -420,7 +466,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 49,
@@ -429,7 +476,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 50,
@@ -438,7 +486,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 51,
@@ -447,7 +496,8 @@
     "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 52,
@@ -456,7 +506,8 @@
     "category": "General Item",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 53,
@@ -465,7 +516,8 @@
     "category": "General Item",
     "price": 41,
     "mrp": 41.49,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 54,
@@ -474,7 +526,8 @@
     "category": "Personal care",
     "price": 9.9,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 55,
@@ -483,7 +536,8 @@
     "category": "Personal care",
     "price": 179,
     "mrp": 182,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 56,
@@ -492,7 +546,8 @@
     "category": "Spices & Dry fuits",
     "price": 21,
     "mrp": 22,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 57,
@@ -501,7 +556,8 @@
     "category": "Spices & Dry fuits",
     "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 58,
@@ -510,7 +566,8 @@
     "category": "Personal care",
     "price": 1.87,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 59,
@@ -519,7 +576,8 @@
     "category": "Personal care",
     "price": 4.85,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 60,
@@ -528,7 +586,8 @@
     "category": "Personal care",
     "price": 13,
     "mrp": 13,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 61,
@@ -537,7 +596,8 @@
     "category": "Personal care",
     "price": 24.5,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 62,
@@ -546,7 +606,8 @@
     "category": "Personal care",
     "price": 40,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 63,
@@ -555,7 +616,8 @@
     "category": "General Item",
     "price": 25,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 64,
@@ -564,7 +626,8 @@
     "category": "Personal care",
     "price": 135,
     "mrp": 135,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 65,
@@ -573,7 +636,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 66,
@@ -582,7 +646,8 @@
     "category": "Spices & Dry Fruits",
     "price": 4.85,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 67,
@@ -591,7 +656,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 68,
@@ -600,7 +666,8 @@
     "category": "Spices & Dry fuits",
     "price": 21,
     "mrp": 22,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 69,
@@ -609,7 +676,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 70,
@@ -618,7 +686,8 @@
     "category": "Spices & Dry fuits",
     "price": 2,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 71,
@@ -627,7 +696,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 72,
@@ -636,7 +706,8 @@
     "category": "Spices & Dry Fruits",
     "price": 34,
     "mrp": 34,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 73,
@@ -645,7 +716,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 74,
@@ -654,7 +726,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 75,
@@ -663,7 +736,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 76,
@@ -672,7 +746,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 77,
@@ -681,7 +756,8 @@
     "category": "Dairy",
     "price": 9.9,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 78,
@@ -690,7 +766,8 @@
     "category": "General Item",
     "price": 120,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 79,
@@ -699,7 +776,8 @@
     "category": "General Item",
     "price": 40,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 80,
@@ -708,7 +786,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 81,
@@ -717,7 +796,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 82,
@@ -726,7 +806,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 83,
@@ -735,7 +816,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.8,
     "mrp": 9.8,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 84,
@@ -744,7 +826,8 @@
     "category": "General Item",
     "price": 34.5,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 85,
@@ -753,7 +836,8 @@
     "category": "Home care",
     "price": 190,
     "mrp": 220,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 86,
@@ -762,7 +846,8 @@
     "category": "Oil sugar and salt",
     "price": 172,
     "mrp": 210,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 87,
@@ -771,7 +856,8 @@
     "category": "Oil Sugar & Salt",
     "price": 180,
     "mrp": 210,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 88,
@@ -780,7 +866,8 @@
     "category": "Spices & Dry Fruits",
     "price": 1,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 89,
@@ -789,7 +876,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.5,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 90,
@@ -798,7 +886,8 @@
     "category": "Dairy",
     "price": 97.5,
     "mrp": 100,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 91,
@@ -807,7 +896,8 @@
     "category": "Spices & Dry fuits",
     "price": 4.6,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 92,
@@ -816,7 +906,8 @@
     "category": "Spices & Dry fuits",
     "price": 42,
     "mrp": 46,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 93,
@@ -825,7 +916,8 @@
     "category": "Spices & Dry Fruits",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 94,
@@ -834,7 +926,8 @@
     "category": "Home care",
     "price": 72.5,
     "mrp": 75,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 95,
@@ -843,7 +936,8 @@
     "category": "Personal care",
     "price": 110,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 96,
@@ -852,7 +946,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 97,
@@ -861,7 +956,8 @@
     "category": "General Item",
     "price": 90,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 99,
@@ -870,7 +966,8 @@
     "category": "Personal care",
     "price": 15,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 100,
@@ -879,7 +976,8 @@
     "category": "Personal care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 101,
@@ -888,7 +986,8 @@
     "category": "Personal care",
     "price": 135,
     "mrp": 140,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 102,
@@ -897,7 +996,8 @@
     "category": "Personal care",
     "price": 128,
     "mrp": 130,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 103,
@@ -906,7 +1006,8 @@
     "category": "Personal care",
     "price": 14.5,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 104,
@@ -915,7 +1016,8 @@
     "category": "Personal care",
     "price": 14.5,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 105,
@@ -924,7 +1026,8 @@
     "category": "Personal care",
     "price": 37.5,
     "mrp": 38,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 106,
@@ -933,7 +1036,8 @@
     "category": "Home care",
     "price": 77,
     "mrp": 79,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 107,
@@ -942,7 +1046,8 @@
     "category": "Dairy",
     "price": 12,
     "mrp": 14,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 108,
@@ -951,7 +1056,8 @@
     "category": "Dairy",
     "price": 29,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 109,
@@ -960,7 +1066,8 @@
     "category": "General Item",
     "price": 160,
     "mrp": 180,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 110,
@@ -969,7 +1076,8 @@
     "category": "General Item",
     "price": 35,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 111,
@@ -978,7 +1086,8 @@
     "category": "Dairy",
     "price": 99,
     "mrp": 125,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 113,
@@ -987,7 +1096,8 @@
     "category": "Spices & Dry fuits",
     "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 116,
@@ -996,7 +1106,8 @@
     "category": "Atta Maida Sooji Besan",
     "price": 210,
     "mrp": 230,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 117,
@@ -1005,7 +1116,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 118,
@@ -1014,7 +1126,8 @@
     "category": "Dals and grains",
     "price": 94,
     "mrp": 100,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 119,
@@ -1023,7 +1136,8 @@
     "category": "Dals & Grains",
     "price": 93,
     "mrp": 97,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 120,
@@ -1032,7 +1146,8 @@
     "category": "Home care",
     "price": 44,
     "mrp": 46,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 121,
@@ -1041,7 +1156,8 @@
     "category": "Home care",
     "price": 107,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 122,
@@ -1050,7 +1166,8 @@
     "category": "Personal care",
     "price": 58,
     "mrp": 61,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 123,
@@ -1059,7 +1176,8 @@
     "category": "Personal care",
     "price": 1.88,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 124,
@@ -1068,7 +1186,8 @@
     "category": "Personal care",
     "price": 19.5,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 125,
@@ -1077,7 +1196,8 @@
     "category": "Spices & Dry Fruits",
     "price": 29,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 126,
@@ -1086,7 +1206,8 @@
     "category": "Dals and grains",
     "price": 136,
     "mrp": 140,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 127,
@@ -1095,7 +1216,8 @@
     "category": "Personal care",
     "price": 97,
     "mrp": 99,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 128,
@@ -1104,7 +1226,8 @@
     "category": "Personal care",
     "price": 1.88,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 129,
@@ -1113,7 +1236,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 131,
@@ -1122,7 +1246,8 @@
     "category": "Spices & Dry fuits",
     "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 133,
@@ -1131,7 +1256,8 @@
     "category": "Spices & Dry fuits",
     "price": 260,
     "mrp": 280,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 134,
@@ -1140,7 +1266,8 @@
     "category": "Spices & Dry fuits",
     "price": 65,
     "mrp": 70,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 135,
@@ -1149,7 +1276,8 @@
     "category": "General Item",
     "price": 50,
     "mrp": 50,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 136,
@@ -1158,7 +1286,8 @@
     "category": "Spices & Dry Fruits",
     "price": 75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 137,
@@ -1167,7 +1296,8 @@
     "category": "Spices & Dry fuits",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 138,
@@ -1176,7 +1306,8 @@
     "category": "Spices & Dry Fruits",
     "price": 28,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 139,
@@ -1185,7 +1316,8 @@
     "category": "Spices & Dry fuits",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 140,
@@ -1194,7 +1326,8 @@
     "category": "Spices & Dry Fruits",
     "price": 40,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 141,
@@ -1203,7 +1336,8 @@
     "category": "Spices & Dry fuits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 143,
@@ -1212,7 +1346,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 144,
@@ -1221,7 +1356,8 @@
     "category": "General Item",
     "price": 38,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 145,
@@ -1230,7 +1366,8 @@
     "category": "Spices & Dry Fruits",
     "price": 50,
     "mrp": 50,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 146,
@@ -1239,7 +1376,8 @@
     "category": "Personal care",
     "price": 1.88,
     "mrp": 2,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 147,
@@ -1248,7 +1386,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 148,
@@ -1257,7 +1396,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 149,
@@ -1266,7 +1406,8 @@
     "category": "General Item",
     "price": 80,
     "mrp": 80,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 150,
@@ -1275,7 +1416,8 @@
     "category": "General Item",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 152,
@@ -1284,7 +1426,8 @@
     "category": "Snacks and beverages",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 153,
@@ -1293,7 +1436,8 @@
     "category": "Snacks and beverages",
     "price": 29,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 154,
@@ -1302,7 +1446,8 @@
     "category": "Spices & Dry fuits",
     "price": 320,
     "mrp": 320,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 155,
@@ -1311,7 +1456,8 @@
     "category": "General Item",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 156,
@@ -1320,7 +1466,8 @@
     "category": "Snacks and beverages",
     "price": 14.5,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 157,
@@ -1329,7 +1476,8 @@
     "category": "Rice",
     "price": 76,
     "mrp": 78,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 158,
@@ -1338,7 +1486,8 @@
     "category": "Spices & Dry Fruits",
     "price": 40,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 159,
@@ -1347,7 +1496,8 @@
     "category": "Personal care",
     "price": 79,
     "mrp": 80,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 160,
@@ -1356,7 +1506,8 @@
     "category": "Personal care",
     "price": 94,
     "mrp": 95,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 161,
@@ -1365,7 +1516,8 @@
     "category": "Personal care",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 162,
@@ -1374,7 +1526,8 @@
     "category": "Personal care",
     "price": 123,
     "mrp": 125,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 163,
@@ -1383,7 +1536,8 @@
     "category": "Personal care",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 164,
@@ -1392,7 +1546,8 @@
     "category": "Personal care",
     "price": 38,
     "mrp": 38,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 165,
@@ -1401,7 +1556,8 @@
     "category": "General Item",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 166,
@@ -1410,7 +1566,8 @@
     "category": "Personal care",
     "price": 168,
     "mrp": 170,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 167,
@@ -1419,7 +1576,8 @@
     "category": "Home care",
     "price": 45,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 168,
@@ -1428,7 +1586,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 169,
@@ -1437,7 +1596,8 @@
     "category": "Snacks & Beverages",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 170,
@@ -1446,7 +1606,8 @@
     "category": "Snacks & Beverages",
     "price": 14.7,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 171,
@@ -1455,7 +1616,8 @@
     "category": "Snacks & Beverages",
     "price": 19.7,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 172,
@@ -1464,7 +1626,8 @@
     "category": "Snacks & Beverages",
     "price": 29.5,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 173,
@@ -1473,7 +1636,8 @@
     "category": "Snacks & Beverages",
     "price": 60,
     "mrp": 60,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 174,
@@ -1482,7 +1646,8 @@
     "category": "Snacks & Beverages",
     "price": 7,
     "mrp": 7,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 175,
@@ -1491,7 +1656,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 176,
@@ -1500,7 +1666,8 @@
     "category": "Snacks & Beverages",
     "price": 15,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 177,
@@ -1509,7 +1676,8 @@
     "category": "Dals & Grains",
     "price": 145,
     "mrp": 145,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 178,
@@ -1518,7 +1686,8 @@
     "category": "Atta Maida Sooji Besan",
     "price": 42,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 179,
@@ -1527,7 +1696,8 @@
     "category": "Atta maida sooji besan",
     "price": 80,
     "mrp": 90,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 180,
@@ -1536,7 +1706,8 @@
     "category": "Snacks & Beverages",
     "price": 145,
     "mrp": 180,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 181,
@@ -1545,7 +1716,8 @@
     "category": "Dals & Grains",
     "price": 95,
     "mrp": 104,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 183,
@@ -1554,7 +1726,8 @@
     "category": "Dals & Grains",
     "price": 112,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 184,
@@ -1563,7 +1736,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 185,
@@ -1572,7 +1746,8 @@
     "category": "Home care",
     "price": 215,
     "mrp": 215,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 186,
@@ -1581,7 +1756,8 @@
     "category": "Home care",
     "price": 160,
     "mrp": 260,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 187,
@@ -1590,7 +1766,8 @@
     "category": "Home care",
     "price": 125,
     "mrp": 225,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 188,
@@ -1599,7 +1776,8 @@
     "category": "Home care",
     "price": 250,
     "mrp": 250,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 189,
@@ -1608,7 +1786,8 @@
     "category": "Home care",
     "price": 103,
     "mrp": 122,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 190,
@@ -1617,7 +1796,8 @@
     "category": "Home care",
     "price": 125,
     "mrp": 145,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 191,
@@ -1626,7 +1806,8 @@
     "category": "Home care",
     "price": 160,
     "mrp": 180,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 192,
@@ -1635,7 +1816,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 193,
@@ -1644,7 +1826,8 @@
     "category": "General Item",
     "price": 185,
     "mrp": 180,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 194,
@@ -1653,7 +1836,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 195,
@@ -1662,7 +1846,8 @@
     "category": "Spices & Dry Fruits",
     "price": 25,
     "mrp": 28,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 196,
@@ -1671,7 +1856,8 @@
     "category": "Snacks and beverages",
     "price": 19,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 197,
@@ -1680,7 +1866,8 @@
     "category": "General Item",
     "price": 97,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 198,
@@ -1689,7 +1876,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 199,
@@ -1698,7 +1886,8 @@
     "category": "Home care",
     "price": 42,
     "mrp": 43,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 200,
@@ -1707,7 +1896,8 @@
     "category": "Dals & Grains",
     "price": 114,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 201,
@@ -1716,7 +1906,8 @@
     "category": "Personal care",
     "price": 1,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 202,
@@ -1725,7 +1916,8 @@
     "category": "Snacks and beverages",
     "price": 9.4,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 205,
@@ -1734,7 +1926,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 206,
@@ -1743,7 +1936,8 @@
     "category": "Snacks & Beverages",
     "price": 75,
     "mrp": 80,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 207,
@@ -1752,7 +1946,8 @@
     "category": "Dals and grains",
     "price": 100,
     "mrp": 100,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 208,
@@ -1761,7 +1956,8 @@
     "category": "Snacks and beverages",
     "price": 150,
     "mrp": 200,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 209,
@@ -1770,7 +1966,8 @@
     "category": "General Item",
     "price": 18,
     "mrp": 18,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 210,
@@ -1779,7 +1976,8 @@
     "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 211,
@@ -1788,7 +1986,8 @@
     "category": "General Item",
     "price": 50,
     "mrp": 55,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 212,
@@ -1797,7 +1996,8 @@
     "category": "General Item",
     "price": 95,
     "mrp": 99,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 213,
@@ -1806,7 +2006,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 214,
@@ -1815,7 +2016,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 215,
@@ -1824,7 +2026,8 @@
     "category": "Spices & Dry Fruits",
     "price": 25,
     "mrp": 26,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 216,
@@ -1833,7 +2036,8 @@
     "category": "Personal care",
     "price": 19.5,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 217,
@@ -1842,7 +2046,8 @@
     "category": "Personal care",
     "price": 53,
     "mrp": 53,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 218,
@@ -1851,7 +2056,8 @@
     "category": "Personal care",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 219,
@@ -1860,7 +2066,8 @@
     "category": "Personal care",
     "price": 112,
     "mrp": 115,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 220,
@@ -1869,7 +2076,8 @@
     "category": "Personal care",
     "price": 19.5,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 221,
@@ -1878,7 +2086,8 @@
     "category": "Personal care",
     "price": 162,
     "mrp": 162,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 222,
@@ -1887,7 +2096,8 @@
     "category": "Personal care",
     "price": 64.5,
     "mrp": 65,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 223,
@@ -1896,7 +2106,8 @@
     "category": "Personal care",
     "price": 49,
     "mrp": 50,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 224,
@@ -1905,7 +2116,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 226,
@@ -1914,7 +2126,8 @@
     "category": "General Item",
     "price": 150,
     "mrp": 150,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 227,
@@ -1923,7 +2136,8 @@
     "category": "General Item",
     "price": 54,
     "mrp": 55,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 228,
@@ -1932,7 +2146,8 @@
     "category": "Snacks & Beverages",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 229,
@@ -1941,7 +2156,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 230,
@@ -1950,7 +2166,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 231,
@@ -1959,7 +2176,8 @@
     "category": "General Item",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 232,
@@ -1968,7 +2186,8 @@
     "category": "General Item",
     "price": 0.9,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 233,
@@ -1977,7 +2196,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 234,
@@ -1986,7 +2206,8 @@
     "category": "General Item",
     "price": 115,
     "mrp": 115,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 235,
@@ -1995,7 +2216,8 @@
     "category": "General Item",
     "price": 20,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 236,
@@ -2004,7 +2226,8 @@
     "category": "General Item",
     "price": 60,
     "mrp": 56,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 237,
@@ -2013,7 +2236,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 238,
@@ -2022,7 +2246,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 239,
@@ -2031,7 +2256,8 @@
     "category": "Personal care",
     "price": 58,
     "mrp": 58,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 240,
@@ -2040,7 +2266,8 @@
     "category": "Personal care",
     "price": 41,
     "mrp": 42,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 241,
@@ -2049,7 +2276,8 @@
     "category": "Home care",
     "price": 47,
     "mrp": 50,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 242,
@@ -2058,7 +2286,8 @@
     "category": "Home care",
     "price": 89,
     "mrp": 92,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 243,
@@ -2067,7 +2296,8 @@
     "category": "General Item",
     "price": 27,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 244,
@@ -2076,7 +2306,8 @@
     "category": "General Item",
     "price": 37,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 245,
@@ -2085,7 +2316,8 @@
     "category": "General Item",
     "price": 23,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 246,
@@ -2094,7 +2326,8 @@
     "category": "General Item",
     "price": 60,
     "mrp": 70,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 247,
@@ -2103,7 +2336,8 @@
     "category": "General Item",
     "price": 159,
     "mrp": 220,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 248,
@@ -2112,7 +2346,8 @@
     "category": "General Item",
     "price": 289,
     "mrp": 325,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 249,
@@ -2121,7 +2356,8 @@
     "category": "General Item",
     "price": 89,
     "mrp": 95,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 250,
@@ -2130,7 +2366,8 @@
     "category": "General Item",
     "price": 220,
     "mrp": 220,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 251,
@@ -2139,7 +2376,8 @@
     "category": "General Item",
     "price": 15,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 252,
@@ -2148,7 +2386,8 @@
     "category": "General Item",
     "price": 9,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 253,
@@ -2157,7 +2396,8 @@
     "category": "General Item",
     "price": 14,
     "mrp": 15,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 254,
@@ -2166,7 +2406,8 @@
     "category": "General Item",
     "price": 27,
     "mrp": 28,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 255,
@@ -2175,7 +2416,8 @@
     "category": "General Item",
     "price": 112.5,
     "mrp": 130,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 256,
@@ -2184,7 +2426,8 @@
     "category": "General Item",
     "price": 209,
     "mrp": 230,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 257,
@@ -2193,7 +2436,8 @@
     "category": "Atta maida sooji besan",
     "price": 58,
     "mrp": 60,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 258,
@@ -2202,7 +2446,8 @@
     "category": "Personal care",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 259,
@@ -2211,7 +2456,8 @@
     "category": "Personal care",
     "price": 24.5,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 260,
@@ -2220,7 +2466,8 @@
     "category": "Personal care",
     "price": 34,
     "mrp": 35,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 261,
@@ -2229,7 +2476,8 @@
     "category": "Personal care",
     "price": 9.8,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 262,
@@ -2238,7 +2486,8 @@
     "category": "Personal care",
     "price": 64,
     "mrp": 65,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 263,
@@ -2247,7 +2496,8 @@
     "category": "Personal care",
     "price": 9.7,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 264,
@@ -2256,7 +2506,8 @@
     "category": "Personal care",
     "price": 123.5,
     "mrp": 125,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 265,
@@ -2265,7 +2516,8 @@
     "category": "Spices & Dry fuits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 267,
@@ -2274,7 +2526,8 @@
     "category": "Home care",
     "price": 73,
     "mrp": 75,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 268,
@@ -2283,7 +2536,8 @@
     "category": "Home care",
     "price": 60.5,
     "mrp": 61,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 269,
@@ -2292,7 +2546,8 @@
     "category": "Home care",
     "price": 44,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 270,
@@ -2301,7 +2556,8 @@
     "category": "Home care",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 271,
@@ -2310,7 +2566,8 @@
     "category": "Home care",
     "price": 98,
     "mrp": 100,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 272,
@@ -2319,7 +2576,8 @@
     "category": "Home care",
     "price": 45,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 273,
@@ -2328,7 +2586,8 @@
     "category": "Home care",
     "price": 119,
     "mrp": 120,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 274,
@@ -2337,7 +2596,8 @@
     "category": "Home care",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 275,
@@ -2346,7 +2606,8 @@
     "category": "Home care",
     "price": 129,
     "mrp": 169,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 276,
@@ -2355,7 +2616,8 @@
     "category": "Oil sugar and salt",
     "price": 55,
     "mrp": 61,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 277,
@@ -2364,7 +2626,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 278,
@@ -2373,7 +2636,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 279,
@@ -2382,7 +2646,8 @@
     "category": "Dals & Grains",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 280,
@@ -2391,7 +2656,8 @@
     "category": "Personal care",
     "price": 143,
     "mrp": 146,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 283,
@@ -2400,7 +2666,8 @@
     "category": "Atta maida sooji besan",
     "price": 86,
     "mrp": 89,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 284,
@@ -2409,7 +2676,8 @@
     "category": "Atta maida sooji besan",
     "price": 105,
     "mrp": 110,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 285,
@@ -2418,7 +2686,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 287,
@@ -2427,7 +2696,8 @@
     "category": "Dairy",
     "price": 65,
     "mrp": 68,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 288,
@@ -2436,7 +2706,8 @@
     "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 289,
@@ -2445,7 +2716,8 @@
     "category": "Snacks and beverages",
     "price": 155,
     "mrp": 155,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 290,
@@ -2454,7 +2726,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 291,
@@ -2463,7 +2736,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 292,
@@ -2472,7 +2746,8 @@
     "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 293,
@@ -2481,7 +2756,8 @@
     "category": "Oil Sugar & Salt",
     "price": 143,
     "mrp": 180,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 294,
@@ -2490,7 +2766,8 @@
     "category": "Oil Sugar & Salt",
     "price": 77,
     "mrp": 90,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 295,
@@ -2499,7 +2776,8 @@
     "category": "Personal care",
     "price": 34,
     "mrp": 35,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 296,
@@ -2508,7 +2786,8 @@
     "category": "Personal care",
     "price": 41,
     "mrp": 42,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 297,
@@ -2517,7 +2796,8 @@
     "category": "Personal care",
     "price": 54,
     "mrp": 55,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 298,
@@ -2526,7 +2806,8 @@
     "category": "Personal care",
     "price": 49,
     "mrp": 50,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 299,
@@ -2535,7 +2816,8 @@
     "category": "Spices & Dry fuits",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 300,
@@ -2544,7 +2826,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 301,
@@ -2553,7 +2836,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 302,
@@ -2562,7 +2846,8 @@
     "category": "Spices & Dry fuits",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 303,
@@ -2571,7 +2856,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 304,
@@ -2580,7 +2866,8 @@
     "category": "Spices & Dry Fruits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 305,
@@ -2589,7 +2876,8 @@
     "category": "Spices & Dry Fruits",
     "price": 5,
     "mrp": 5,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 306,
@@ -2598,7 +2886,8 @@
     "category": "Spices & Dry Fruits",
     "price": 0,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 307,
@@ -2607,7 +2896,8 @@
     "category": "Spices & Dry fuits",
     "price": 9.5,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 308,
@@ -2616,7 +2906,8 @@
     "category": "Home care",
     "price": 63,
     "mrp": 65,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 309,
@@ -2625,7 +2916,8 @@
     "category": "Personal care",
     "price": 0.94,
     "mrp": 1,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 311,
@@ -2634,7 +2926,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 312,
@@ -2643,7 +2936,8 @@
     "category": "Home care",
     "price": 20,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 313,
@@ -2652,7 +2946,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 314,
@@ -2661,7 +2956,8 @@
     "category": "Home care",
     "price": 84,
     "mrp": 85,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 315,
@@ -2670,7 +2966,8 @@
     "category": "Home care",
     "price": 280,
     "mrp": 290,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 316,
@@ -2679,7 +2976,8 @@
     "category": "Atta maida sooji besan",
     "price": 25,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 317,
@@ -2688,7 +2986,8 @@
     "category": "Oil Sugar & Salt",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 318,
@@ -2697,7 +2996,8 @@
     "category": "Oil Sugar & Salt",
     "price": 30,
     "mrp": 32,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 319,
@@ -2706,7 +3006,8 @@
     "category": "Oil Sugar & Salt",
     "price": 15,
     "mrp": 16,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 320,
@@ -2715,7 +3016,8 @@
     "category": "Snacks & Beverages",
     "price": 40,
     "mrp": 45,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 322,
@@ -2724,7 +3026,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 323,
@@ -2733,7 +3036,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 324,
@@ -2742,7 +3046,8 @@
     "category": "Snacks & Beverages",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 325,
@@ -2751,7 +3056,8 @@
     "category": "Rice",
     "price": 44,
     "mrp": 43,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 326,
@@ -2760,7 +3066,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 327,
@@ -2769,7 +3076,8 @@
     "category": "General Item",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 328,
@@ -2778,7 +3086,8 @@
     "category": "Personal care",
     "price": 29,
     "mrp": 30,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 329,
@@ -2787,7 +3096,8 @@
     "category": "Personal care",
     "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 330,
@@ -2796,7 +3106,8 @@
     "category": "Home care",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 331,
@@ -2805,7 +3116,8 @@
     "category": "Home care",
     "price": 39,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 333,
@@ -2814,7 +3126,8 @@
     "category": "Home care",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 334,
@@ -2823,7 +3136,8 @@
     "category": "General Item",
     "price": 36,
     "mrp": 40,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 335,
@@ -2832,7 +3146,8 @@
     "category": "Snacks and beverages",
     "price": 9.5,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 336,
@@ -2841,7 +3156,8 @@
     "category": "General Item",
     "price": 20,
     "mrp": 20,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 337,
@@ -2850,7 +3166,8 @@
     "category": "Home care",
     "price": 87,
     "mrp": 90,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": 338,
@@ -2859,7 +3176,8 @@
     "category": "Home care",
     "price": 9.75,
     "mrp": 10,
-    "image": "images/products/default.png"
+    "image": "images/products/default.png",
+    "featured": false
   },
   {
     "id": "341",
@@ -2867,7 +3185,8 @@
     "brand": "HUL",
     "category": "Personal care",
     "mrp": 211,
-    "price": 200
+    "price": 200,
+    "featured": false
   },
   {
     "id": "342",
@@ -2875,6 +3194,7 @@
     "brand": "HUL",
     "category": "Home care",
     "mrp": 46,
-    "price": 45
+    "price": 45,
+    "featured": false
   }
 ]
