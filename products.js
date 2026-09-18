@@ -169,43 +169,126 @@ function createBrandFilters() {
 // Category Filters
 // =============================
 
+
+                    // =============================
+// CATEGORY FILTERS - CLEAN
+// =============================
 function createCategoryFilters() {
 
     if (!categoryFilters) return;
 
-    // Get categories directly from products.json
-    const existingCategories = [
-        ...new Set(
-            allProducts
-                .map(product =>
-                    String(product.category || "").trim()
-                )
-                .filter(Boolean)
-        )
+    const categoryGroups = [
+        {
+            name: "Spices & Dry fuits",
+            aliases: [
+                "Spices & Dry fuits",
+                "Spices & Dry Fruits"
+            ]
+        },
+        {
+            name: "Rice",
+            aliases: [
+                "Rice"
+            ]
+        },
+        {
+            name: "Atta maida sooji besan",
+            aliases: [
+                "Atta maida sooji besan",
+                "Atta Maida Sooji Besan"
+            ]
+        },
+        {
+            name: "Dals and grains",
+            aliases: [
+                "Dals and grains",
+                "Dals & Grains"
+            ]
+        },
+        {
+            name: "Oil sugar and salt",
+            aliases: [
+                "Oil sugar and salt",
+                "Oil Sugar & Salt"
+            ]
+        },
+        {
+            name: "Snacks and beverages",
+            aliases: [
+                "Snacks and beverages",
+                "Snacks & Beverages"
+            ]
+        },
+        {
+            name: "Home care",
+            aliases: [
+                "Home care"
+            ]
+        },
+        {
+            name: "Personal care",
+            aliases: [
+                "Personal care"
+            ]
+        },
+        {
+            name: "Dairy",
+            aliases: [
+                "Dairy"
+            ]
+        },
+        {
+            name: "General Item",
+            aliases: [
+                "General Item"
+            ]
+        }
     ];
-
-    // Sort actual categories from JSON
-    const categories =
-        existingCategories.sort((a, b) =>
-            a.localeCompare(b)
-        );
 
     categoryFilters.innerHTML =
         `<button
-            class="cat-btn"
+            class="cat-btn active"
             data-category="">
             All Categories
         </button>` +
 
-        categories.map(category => `
-            <button
-                class="cat-btn"
-                data-category="${escapeHtml(category)}">
-                ${escapeHtml(category)}
-            </button>
-        `).join("");
+        categoryGroups
+            .filter(group => {
 
-    // Activate selected category
+                return allProducts.some(product => {
+
+                    const productCategory =
+                        String(
+                            product.category || ""
+                        ).trim();
+
+                    return group.aliases.includes(
+                        productCategory
+                    );
+
+                });
+
+            })
+            .map(group => {
+
+                return `
+                    <button
+                        class="cat-btn"
+                        data-category="${escapeHtml(
+                            group.name
+                        )}">
+                        ${escapeHtml(group.name)}
+                    </button>
+                `;
+
+            })
+            .join("");
+
+
+    // =============================
+    // CATEGORY BUTTON EVENTS
+    // =============================
+
     categoryFilters
         .querySelectorAll(".cat-btn")
         .forEach(button => {
@@ -215,44 +298,41 @@ function createCategoryFilters() {
                     button.dataset.category || ""
                 ) ===
                 normalizeCategory(
-                    selectedCategory
+                    selectedCategory || ""
                 )
             ) {
                 button.classList.add("active");
             }
 
-            button.addEventListener("click", () => {
 
-                categoryFilters
-                    .querySelectorAll(".cat-btn")
-                    .forEach(btn =>
-                        btn.classList.remove("active")
+            button.addEventListener(
+                "click",
+                () => {
+
+                    categoryFilters
+                        .querySelectorAll(".cat-btn")
+                        .forEach(btn =>
+                            btn.classList.remove(
+                                "active"
+                            )
+                        );
+
+
+                    button.classList.add(
+                        "active"
                     );
 
-                button.classList.add("active");
 
-                selectedCategory =
-                    button.dataset.category || "";
+                    selectedCategory =
+                        button.dataset.category || "";
 
-                applyFilters();
 
-            });
+                    applyFilters();
 
-        });
-
-    // If no category selected
-    if (!selectedCategory) {
-
-        const allButton =
-            categoryFilters.querySelector(
-                '[data-category=""]'
+                }
             );
 
-        if (allButton) {
-            allButton.classList.add("active");
-        }
-
-    }
+        });
 
 }
 
@@ -281,6 +361,7 @@ function normalizeCategory(value) {
     return String(value ?? "")
         .toLowerCase()
         .replace(/&/g, "and")
+        .replace(/fuits/g, "fruits")
         .replace(/\s+/g, " ")
         .trim();
 
