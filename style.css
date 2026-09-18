@@ -2906,7 +2906,268 @@ body:has(.offers-grid) .wa-btn {
 
 }
 
+/* =========================================
+   AC RETAIL - FEATURED PRODUCTS
+   ========================================= */
 
+.featured-section{
+    max-width:1200px;
+    margin:38px auto 45px;
+    padding:0 18px;
+}
+
+.featured-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.featured-title{
+    margin:0;
+    font-size:28px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.featured-subtitle{
+    margin:7px 0 0;
+    color:#6b7280;
+    font-size:14px;
+}
+
+.featured-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 13px;
+    border-radius:30px;
+    background:#fff7ed;
+    color:#c2410c;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.featured-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.featured-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+    transition:.25s ease;
+}
+
+.featured-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 32px rgba(0,0,0,.12);
+}
+
+.featured-image-wrap{
+    position:relative;
+    height:190px;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+.featured-image{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:14px;
+}
+
+.featured-no-image{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.featured-label{
+    position:absolute;
+    top:11px;
+    left:11px;
+    padding:6px 10px;
+    border-radius:8px;
+    background:#111827;
+    color:#fff;
+    font-size:11px;
+    font-weight:800;
+}
+
+.featured-discount{
+    position:absolute;
+    top:11px;
+    right:11px;
+    padding:6px 9px;
+    border-radius:8px;
+    background:#dcfce7;
+    color:#166534;
+    font-size:11px;
+    font-weight:800;
+}
+
+.featured-body{
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.featured-name{
+    margin:0;
+    min-height:43px;
+    font-size:16px;
+    line-height:1.35;
+    font-weight:700;
+}
+
+.featured-brand{
+    margin:6px 0 11px;
+    color:#6b7280;
+    font-size:13px;
+}
+
+.featured-prices{
+    display:flex;
+    align-items:baseline;
+    gap:9px;
+    flex-wrap:wrap;
+}
+
+.featured-mrp{
+    color:#9ca3af;
+    font-size:12px;
+}
+
+.featured-online{
+    color:#15803d;
+    font-size:20px;
+    font-weight:900;
+}
+
+.featured-save{
+    margin-top:5px;
+    color:#16a34a;
+    font-size:12px;
+    font-weight:700;
+}
+
+.featured-add{
+    width:100%;
+    margin-top:13px;
+    padding:11px 12px;
+    border:0;
+    border-radius:11px;
+    background:#198754;
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.featured-add:hover{
+    filter:brightness(.94);
+}
+
+.featured-add:active{
+    transform:scale(.98);
+}
+
+.featured-view{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:19px;
+    padding:11px 19px;
+    border:1px solid #198754;
+    border-radius:10px;
+    background:#fff;
+    color:#198754;
+    text-decoration:none;
+    font-weight:800;
+}
+
+.featured-view:hover{
+    background:#f0fdf4;
+}
+
+
+/* TABLET */
+@media(max-width:900px){
+
+    .featured-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .featured-section{
+        margin:27px auto 35px;
+        padding:0 12px;
+    }
+
+    .featured-head{
+        align-items:flex-start;
+    }
+
+    .featured-title{
+        font-size:23px;
+    }
+
+    .featured-subtitle{
+        font-size:13px;
+    }
+
+    .featured-badge{
+        padding:6px 9px;
+        font-size:11px;
+    }
+
+    .featured-grid{
+        display:flex;
+        overflow-x:auto;
+        gap:13px;
+        padding:3px 2px 12px;
+        scroll-snap-type:x mandatory;
+        scrollbar-width:none;
+    }
+
+    .featured-grid::-webkit-scrollbar{
+        display:none;
+    }
+
+    .featured-card{
+        flex:0 0 78%;
+        scroll-snap-align:start;
+    }
+
+    .featured-image-wrap{
+        height:175px;
+    }
+
+}
 /* =========================================================
    END
    ========================================================= */
