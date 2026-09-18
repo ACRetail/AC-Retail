@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "555 Zadu",
+    "name": "Zadu 555",
     "brand": "",
-    "category": "General Item",
-    "price": 99.0,
-    "mrp": 110.0,
+    "category": "Home care",
+    "price": 97,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -13,8 +13,8 @@
     "name": "Aashirvad Besan 500 Gm",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 60.0,
-    "mrp": 60.0,
+    "price": 60,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
@@ -23,7 +23,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -31,8 +31,8 @@
     "name": "Ajwain Ova",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -40,8 +40,8 @@
     "name": "Akkha Masur 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 25.0,
-    "mrp": 30.0,
+    "price": 25,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -49,8 +49,8 @@
     "name": "Anda Curry Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -59,7 +59,7 @@
     "brand": "",
     "category": "General Item",
     "price": 25.5,
-    "mrp": 26.0,
+    "mrp": 26,
     "image": "images/products/default.png"
   },
   {
@@ -68,7 +68,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -76,8 +76,8 @@
     "name": "Bajaj Almond Oil 33 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 33.0,
-    "mrp": 33.0,
+    "price": 33,
+    "mrp": 33,
     "image": "images/products/default.png"
   },
   {
@@ -85,8 +85,8 @@
     "name": "Bajari 1 KG",
     "brand": "",
     "category": "General Item",
-    "price": 34.0,
-    "mrp": 35.0,
+    "price": 34,
+    "mrp": 35,
     "image": "images/products/default.png"
   },
   {
@@ -94,8 +94,8 @@
     "name": "Baking Soda 100Gm",
     "brand": "",
     "category": "General Item",
-    "price": 33.0,
-    "mrp": 33.0,
+    "price": 33,
+    "mrp": 33,
     "image": "images/products/default.png"
   },
   {
@@ -103,8 +103,8 @@
     "name": "Bansuri Jira Papad 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -112,8 +112,8 @@
     "name": "Batate Wafers",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 58.0,
-    "mrp": 60.0,
+    "price": 58,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
@@ -121,8 +121,8 @@
     "name": "Bedgi Mirchi Powder 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -130,8 +130,8 @@
     "name": "Besan",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 29.0,
-    "mrp": 30.0,
+    "price": 29,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -139,8 +139,8 @@
     "name": "Bhajaki Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -148,8 +148,8 @@
     "name": "Big Salt 10 Rs",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -157,8 +157,8 @@
     "name": "Biryani Tandul",
     "brand": "",
     "category": "Rice",
-    "price": 125.0,
-    "mrp": 130.0,
+    "price": 125,
+    "mrp": 130,
     "image": "images/products/default.png"
   },
   {
@@ -167,7 +167,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 4.9,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -175,8 +175,8 @@
     "name": "Black Hit 125 ML",
     "brand": "",
     "category": "General Item",
-    "price": 85.0,
-    "mrp": 85.0,
+    "price": 85,
+    "mrp": 85,
     "image": "images/products/default.png"
   },
   {
@@ -185,7 +185,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.6,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -194,7 +194,7 @@
     "brand": "",
     "category": "General Item",
     "price": 29.5,
-    "mrp": 30.0,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -203,7 +203,7 @@
     "brand": "",
     "category": "General Item",
     "price": 4.9,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -211,8 +211,8 @@
     "name": "Bread 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -221,7 +221,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -229,8 +229,8 @@
     "name": "Bru 2 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 2.0,
-    "mrp": 2.0,
+    "price": 2,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -238,8 +238,8 @@
     "name": "Brush 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 19.0,
-    "mrp": 20.0,
+    "price": 19,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -247,8 +247,8 @@
     "name": "Butter",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -256,8 +256,8 @@
     "name": "Chaha Powder Sutti",
     "brand": "",
     "category": "General Item",
-    "price": 75.0,
-    "mrp": 80.0,
+    "price": 75,
+    "mrp": 80,
     "image": "images/products/default.png"
   },
   {
@@ -266,7 +266,7 @@
     "brand": "",
     "category": "General Item",
     "price": 19.5,
-    "mrp": 20.0,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -275,7 +275,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -284,7 +284,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -293,7 +293,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 4.8,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -302,7 +302,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -310,8 +310,8 @@
     "name": "Clinic Plus 1 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 1.0,
-    "mrp": 1.0,
+    "price": 1,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -319,8 +319,8 @@
     "name": "Coconut Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -328,8 +328,8 @@
     "name": "Colgate Active Salt 100gm",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 72.0,
-    "mrp": 73.0,
+    "price": 72,
+    "mrp": 73,
     "image": "images/products/default.png"
   },
   {
@@ -338,7 +338,7 @@
     "brand": "",
     "category": "Oil Sugar & Salt",
     "price": 19.5,
-    "mrp": 20.0,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -347,7 +347,7 @@
     "brand": "",
     "category": "General Item",
     "price": 19.5,
-    "mrp": 20.0,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -355,8 +355,8 @@
     "name": "Colgate Toothbrush Hard",
     "brand": "",
     "category": "General Item",
-    "price": 26.0,
-    "mrp": 27.0,
+    "price": 26,
+    "mrp": 27,
     "image": "images/products/default.png"
   },
   {
@@ -364,8 +364,8 @@
     "name": "Colgate Toothbrush Jr 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 19.0,
-    "mrp": 20.0,
+    "price": 19,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -373,8 +373,8 @@
     "name": "Colgate Visible White 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 89.0,
-    "mrp": 89.0,
+    "price": 89,
+    "mrp": 89,
     "image": "images/products/default.png"
   },
   {
@@ -383,7 +383,7 @@
     "brand": "",
     "category": "General Item",
     "price": 39.5,
-    "mrp": 40.0,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -392,7 +392,7 @@
     "brand": "",
     "category": "Snacks & Beverages",
     "price": 4.8,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -400,8 +400,8 @@
     "name": "Cup UseThrow",
     "brand": "",
     "category": "General Item",
-    "price": 30.0,
-    "mrp": 40.0,
+    "price": 30,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -410,7 +410,7 @@
     "brand": "",
     "category": "Oil Sugar & Salt",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -418,8 +418,8 @@
     "name": "Dahi 200 GM",
     "brand": "",
     "category": "General Item",
-    "price": 19.0,
-    "mrp": 20.0,
+    "price": 19,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -428,7 +428,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -436,8 +436,8 @@
     "name": "Dalcha Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -445,8 +445,8 @@
     "name": "Dark Fanta Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -454,8 +454,8 @@
     "name": "Dark Fantacy 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -464,7 +464,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -472,7 +472,7 @@
     "name": "Dettol Antiseptic 60ML",
     "brand": "",
     "category": "General Item",
-    "price": 41.0,
+    "price": 41,
     "mrp": 41.49,
     "image": "images/products/default.png"
   },
@@ -482,7 +482,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.9,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -490,8 +490,8 @@
     "name": "Dettol Soap 4+1",
     "brand": "",
     "category": "General Item",
-    "price": 175.0,
-    "mrp": 182.0,
+    "price": 175,
+    "mrp": 182,
     "image": "images/products/default.png"
   },
   {
@@ -499,8 +499,8 @@
     "name": "Dhana Powder 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 21.0,
-    "mrp": 22.0,
+    "price": 21,
+    "mrp": 22,
     "image": "images/products/default.png"
   },
   {
@@ -508,8 +508,8 @@
     "name": "Doodh Masal 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 24.0,
-    "mrp": 25.0,
+    "price": 24,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -518,7 +518,7 @@
     "brand": "",
     "category": "General Item",
     "price": 1.87,
-    "mrp": 2.0,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -527,7 +527,7 @@
     "brand": "",
     "category": "General Item",
     "price": 4.85,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -535,8 +535,8 @@
     "name": "Dove Soap 25g",
     "brand": "",
     "category": "General Item",
-    "price": 13.0,
-    "mrp": 13.0,
+    "price": 13,
+    "mrp": 13,
     "image": "images/products/default.png"
   },
   {
@@ -544,8 +544,8 @@
     "name": "Dove Soap 50g",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -553,8 +553,8 @@
     "name": "Dove Soap 75g",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -562,8 +562,8 @@
     "name": "Drain It Powder",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 25.0,
-    "mrp": 30.0,
+    "price": 25,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -571,8 +571,8 @@
     "name": "Dyna Soap 135 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 135.0,
-    "mrp": 135.0,
+    "price": 135,
+    "mrp": 135,
     "image": "images/products/default.png"
   },
   {
@@ -581,7 +581,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -590,7 +590,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 4.85,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -599,7 +599,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -607,8 +607,8 @@
     "name": "Everest Dhana Powder 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 21.0,
-    "mrp": 22.0,
+    "price": 21,
+    "mrp": 22,
     "image": "images/products/default.png"
   },
   {
@@ -617,7 +617,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -625,8 +625,8 @@
     "name": "Everest Jaljira 2 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 2.0,
-    "mrp": 2.0,
+    "price": 2,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -635,7 +635,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -643,8 +643,8 @@
     "name": "Everest Kanda Lasun Masala 34 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 34.0,
-    "mrp": 34.0,
+    "price": 34,
+    "mrp": 34,
     "image": "images/products/default.png"
   },
   {
@@ -653,7 +653,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.8,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -661,8 +661,8 @@
     "name": "Everest Sabji Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -670,8 +670,8 @@
     "name": "Everest Shahi Biryani Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -679,8 +679,8 @@
     "name": "Everest Shahi Paneer Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 1.0,
+    "price": 10,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -689,7 +689,7 @@
     "brand": "",
     "category": "General Item",
     "price": 9.9,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -697,8 +697,8 @@
     "name": "Farsana 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -706,8 +706,8 @@
     "name": "Farsana 200gm",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 45.0,
+    "price": 40,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
@@ -716,7 +716,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -724,8 +724,8 @@
     "name": "Fish Curry Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -734,7 +734,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.7,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -752,7 +752,7 @@
     "brand": "",
     "category": "General Item",
     "price": 34.5,
-    "mrp": 40.0,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -760,8 +760,8 @@
     "name": "Gala Zadu 220 Rd",
     "brand": "",
     "category": "General Item",
-    "price": 197.0,
-    "mrp": 220.0,
+    "price": 197,
+    "mrp": 220,
     "image": "images/products/default.png"
   },
   {
@@ -769,8 +769,8 @@
     "name": "Gemini RiceBran Oil",
     "brand": "",
     "category": "Rice",
-    "price": 172.0,
-    "mrp": 210.0,
+    "price": 172,
+    "mrp": 210,
     "image": "images/products/default.png"
   },
   {
@@ -778,8 +778,8 @@
     "name": "Gemini Suryaful Oil",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 180.0,
-    "mrp": 210.0,
+    "price": 180,
+    "mrp": 210,
     "image": "images/products/default.png"
   },
   {
@@ -787,8 +787,8 @@
     "name": "Gharkul Masala 1 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 1.0,
-    "mrp": 1.0,
+    "price": 1,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -797,7 +797,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.5,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -806,7 +806,7 @@
     "brand": "",
     "category": "General Item",
     "price": 97.5,
-    "mrp": 100.0,
+    "mrp": 100,
     "image": "images/products/default.png"
   },
   {
@@ -815,7 +815,7 @@
     "brand": "",
     "category": "General Item",
     "price": 4.6,
-    "mrp": 5.0,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -823,8 +823,8 @@
     "name": "Ginger Garlic Paste 200gm",
     "brand": "",
     "category": "General Item",
-    "price": 42.0,
-    "mrp": 46.0,
+    "price": 42,
+    "mrp": 46,
     "image": "images/products/default.png"
   },
   {
@@ -833,7 +833,7 @@
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 9.75,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -842,7 +842,7 @@
     "brand": "",
     "category": "General Item",
     "price": 72.5,
-    "mrp": 75.0,
+    "mrp": 75,
     "image": "images/products/default.png"
   },
   {
@@ -850,8 +850,8 @@
     "name": "Godrej Cinthol",
     "brand": "",
     "category": "General Item",
-    "price": 110.0,
-    "mrp": 110.0,
+    "price": 110,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -859,8 +859,8 @@
     "name": "Godrej Cinthol 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -868,8 +868,8 @@
     "name": "Godrej Cinthol Lime",
     "brand": "",
     "category": "General Item",
-    "price": 90.0,
-    "mrp": 110.0,
+    "price": 90,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -877,8 +877,8 @@
     "name": "Godrej Expert 25G Blue Die",
     "brand": "",
     "category": "General Item",
-    "price": 22.0,
-    "mrp": 22.0,
+    "price": 22,
+    "mrp": 22,
     "image": "images/products/default.png"
   },
   {
@@ -886,8 +886,8 @@
     "name": "Godrej Expert Black 15 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -895,8 +895,8 @@
     "name": "Godrej No. 1 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -904,8 +904,8 @@
     "name": "Godrej No. 1 140",
     "brand": "",
     "category": "General Item",
-    "price": 135.0,
-    "mrp": 120.0,
+    "price": 135,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -913,8 +913,8 @@
     "name": "Godrej No. 1 Kesar 130 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 130.0,
-    "mrp": 130.0,
+    "price": 130,
+    "mrp": 130,
     "image": "images/products/default.png"
   },
   {
@@ -922,8 +922,8 @@
     "name": "Godrej Rich Cream Black",
     "brand": "",
     "category": "General Item",
-    "price": 37.0,
-    "mrp": 15.0,
+    "price": 37,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -931,8 +931,8 @@
     "name": "Godrej Shampoo 15 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -940,8 +940,8 @@
     "name": "Godrej Shikakai Soap",
     "brand": "",
     "category": "General Item",
-    "price": 38.0,
-    "mrp": 35.0,
+    "price": 38,
+    "mrp": 35,
     "image": "images/products/default.png"
   },
   {
@@ -949,8 +949,8 @@
     "name": "Godrej Toilet Cleaner",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 79.0,
-    "mrp": 79.0,
+    "price": 79,
+    "mrp": 79,
     "image": "images/products/default.png"
   },
   {
@@ -958,8 +958,8 @@
     "name": "Govind Milk 200 ML",
     "brand": "",
     "category": "General Item",
-    "price": 11.0,
-    "mrp": 11.0,
+    "price": 11,
+    "mrp": 11,
     "image": "images/products/default.png"
   },
   {
@@ -967,8 +967,8 @@
     "name": "Govind Milk 500 ML",
     "brand": "",
     "category": "General Item",
-    "price": 26.0,
-    "mrp": 30.0,
+    "price": 26,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -976,8 +976,8 @@
     "name": "Green Piece 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 160.0,
-    "mrp": 180.0,
+    "price": 160,
+    "mrp": 180,
     "image": "images/products/default.png"
   },
   {
@@ -985,8 +985,8 @@
     "name": "Green Piece 200gm",
     "brand": "",
     "category": "General Item",
-    "price": 55.0,
-    "mrp": 40.0,
+    "price": 55,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -994,8 +994,8 @@
     "name": "Gulab Jamun",
     "brand": "",
     "category": "General Item",
-    "price": 0.0,
-    "mrp": 125.0,
+    "price": 0,
+    "mrp": 125,
     "image": "images/products/default.png"
   },
   {
@@ -1003,8 +1003,8 @@
     "name": "Halad 5 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -1012,8 +1012,8 @@
     "name": "Halad 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1021,8 +1021,8 @@
     "name": "Haldiram Petha 200 Gm",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 65.0,
-    "mrp": 65.0,
+    "price": 65,
+    "mrp": 65,
     "image": "images/products/default.png"
   },
   {
@@ -1030,8 +1030,8 @@
     "name": "Haldiram Soan Papdi",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 75.0,
-    "mrp": 75.0,
+    "price": 75,
+    "mrp": 75,
     "image": "images/products/default.png"
   },
   {
@@ -1039,8 +1039,8 @@
     "name": "Happy Atta",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 230.0,
-    "mrp": 230.0,
+    "price": 230,
+    "mrp": 230,
     "image": "images/products/default.png"
   },
   {
@@ -1048,8 +1048,8 @@
     "name": "Happy Happy Biscuit 10 Rs Parle",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1057,8 +1057,8 @@
     "name": "Harbhara 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 100.0,
-    "mrp": 100.0,
+    "price": 100,
+    "mrp": 100,
     "image": "images/products/default.png"
   },
   {
@@ -1066,8 +1066,8 @@
     "name": "Harbhara Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 84.0,
-    "mrp": 88.0,
+    "price": 84,
+    "mrp": 88,
     "image": "images/products/default.png"
   },
   {
@@ -1075,8 +1075,8 @@
     "name": "Harpic 46 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 44.0,
-    "mrp": 46.0,
+    "price": 44,
+    "mrp": 46,
     "image": "images/products/default.png"
   },
   {
@@ -1084,8 +1084,8 @@
     "name": "Harpic 500 ML",
     "brand": "",
     "category": "General Item",
-    "price": 110.0,
-    "mrp": 110.0,
+    "price": 110,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -1093,8 +1093,8 @@
     "name": "Harpic Lemon 250 ML",
     "brand": "",
     "category": "General Item",
-    "price": 58.0,
-    "mrp": 61.0,
+    "price": 58,
+    "mrp": 61,
     "image": "images/products/default.png"
   },
   {
@@ -1102,8 +1102,8 @@
     "name": "Head & Shoulder",
     "brand": "",
     "category": "General Item",
-    "price": 2.0,
-    "mrp": 2.0,
+    "price": 2,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -1111,8 +1111,8 @@
     "name": "Himalaya Facewash 15 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -1120,8 +1120,8 @@
     "name": "Hing",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1129,8 +1129,8 @@
     "name": "Hirav Mug 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 128.0,
-    "mrp": 140.0,
+    "price": 128,
+    "mrp": 140,
     "image": "images/products/default.png"
   },
   {
@@ -1138,8 +1138,8 @@
     "name": "Indulekha Oil 90",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 99.0,
-    "mrp": 90.0,
+    "price": 99,
+    "mrp": 90,
     "image": "images/products/default.png"
   },
   {
@@ -1147,8 +1147,8 @@
     "name": "Indulekha Shampoo",
     "brand": "",
     "category": "General Item",
-    "price": 2.0,
-    "mrp": 2.0,
+    "price": 2,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -1156,8 +1156,8 @@
     "name": "Jimjam Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1165,8 +1165,8 @@
     "name": "Jire 1kg",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 400.0,
+    "price": 40,
+    "mrp": 400,
     "image": "images/products/default.png"
   },
   {
@@ -1174,8 +1174,8 @@
     "name": "Jire 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1183,8 +1183,8 @@
     "name": "Jwari",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 46.0,
+    "price": 40,
+    "mrp": 46,
     "image": "images/products/default.png"
   },
   {
@@ -1192,8 +1192,8 @@
     "name": "Kanda Lasun Chatni 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 240.0,
-    "mrp": 240.0,
+    "price": 240,
+    "mrp": 240,
     "image": "images/products/default.png"
   },
   {
@@ -1201,8 +1201,8 @@
     "name": "Kanda Lasun Chatni Sutti",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 50.0,
+    "price": 50,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -1210,8 +1210,8 @@
     "name": "Karhale Chutney 50 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 50.0,
+    "price": 50,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -1219,8 +1219,8 @@
     "name": "Kasuri Methi",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 75.0,
-    "mrp": 10.0,
+    "price": 75,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1228,8 +1228,8 @@
     "name": "Katdare Aamchur Powder 25 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1237,8 +1237,8 @@
     "name": "Katdare Bhadang Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 30.0,
-    "mrp": 30.0,
+    "price": 30,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -1246,8 +1246,8 @@
     "name": "Katdare Corn Flour 20 Rs",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1255,8 +1255,8 @@
     "name": "Katdare Doodh Masala",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -1264,8 +1264,8 @@
     "name": "Katdare Halad 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1273,8 +1273,8 @@
     "name": "Katdare Malvani Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1282,8 +1282,8 @@
     "name": "Katdare Mirchi Powder",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1291,8 +1291,8 @@
     "name": "Katdare Shabu Pith",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -1300,8 +1300,8 @@
     "name": "Katdare Varai Pith 50 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 50.0,
-    "mrp": 50.0,
+    "price": 50,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -1309,8 +1309,8 @@
     "name": "Kesh King Shampoo 2 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 2.0,
-    "mrp": 2.0,
+    "price": 2,
+    "mrp": 2,
     "image": "images/products/default.png"
   },
   {
@@ -1318,8 +1318,8 @@
     "name": "Khada Masala",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -1327,8 +1327,8 @@
     "name": "Khada Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1336,8 +1336,8 @@
     "name": "Khadi Sakhar 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 80.0,
-    "mrp": 80.0,
+    "price": 80,
+    "mrp": 80,
     "image": "images/products/default.png"
   },
   {
@@ -1345,8 +1345,8 @@
     "name": "Khadi Sakhar 5 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -1354,8 +1354,8 @@
     "name": "Khadi Sakhar Mothi 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -1363,8 +1363,8 @@
     "name": "Khari 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1372,8 +1372,8 @@
     "name": "Khari 30 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 30.0,
-    "mrp": 30.0,
+    "price": 30,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -1381,8 +1381,8 @@
     "name": "Kharik",
     "brand": "",
     "category": "General Item",
-    "price": 320.0,
-    "mrp": 320.0,
+    "price": 320,
+    "mrp": 320,
     "image": "images/products/default.png"
   },
   {
@@ -1390,8 +1390,8 @@
     "name": "Kissan Fruit Jam",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1399,8 +1399,8 @@
     "name": "Kissan Ketchup 15Rs",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -1408,8 +1408,8 @@
     "name": "Kolam Tandool Kalas",
     "brand": "",
     "category": "General Item",
-    "price": 70.0,
-    "mrp": 78.0,
+    "price": 70,
+    "mrp": 78,
     "image": "images/products/default.png"
   },
   {
@@ -1417,8 +1417,8 @@
     "name": "Lonache Masala",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -1426,8 +1426,8 @@
     "name": "Loreal Shampoo",
     "brand": "",
     "category": "General Item",
-    "price": 80.0,
-    "mrp": 80.0,
+    "price": 80,
+    "mrp": 80,
     "image": "images/products/default.png"
   },
   {
@@ -1435,8 +1435,8 @@
     "name": "Loreal Shampoo Fall Repair",
     "brand": "",
     "category": "General Item",
-    "price": 95.0,
-    "mrp": 95.0,
+    "price": 95,
+    "mrp": 95,
     "image": "images/products/default.png"
   },
   {
@@ -1444,8 +1444,8 @@
     "name": "Lux 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1453,8 +1453,8 @@
     "name": "Lux 100Gm",
     "brand": "",
     "category": "General Item",
-    "price": 125.0,
-    "mrp": 125.0,
+    "price": 125,
+    "mrp": 125,
     "image": "images/products/default.png"
   },
   {
@@ -1462,8 +1462,8 @@
     "name": "Lux 250 G",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1471,8 +1471,8 @@
     "name": "Lux 75g",
     "brand": "",
     "category": "General Item",
-    "price": 38.0,
-    "mrp": 38.0,
+    "price": 38,
+    "mrp": 38,
     "image": "images/products/default.png"
   },
   {
@@ -1480,8 +1480,8 @@
     "name": "Lux Bodywash 50 ML",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1489,8 +1489,8 @@
     "name": "Lux Bright 250 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 155.0,
-    "mrp": 170.0,
+    "price": 155,
+    "mrp": 170,
     "image": "images/products/default.png"
   },
   {
@@ -1498,8 +1498,8 @@
     "name": "Lysol 200 ML",
     "brand": "",
     "category": "General Item",
-    "price": 45.0,
-    "mrp": 45.0,
+    "price": 45,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
@@ -1507,8 +1507,8 @@
     "name": "Machurian Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1516,8 +1516,8 @@
     "name": "Maggi 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1525,8 +1525,8 @@
     "name": "Maggi 15 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -1534,8 +1534,8 @@
     "name": "Maggi 20 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1543,8 +1543,8 @@
     "name": "Maggi 30 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 30.0,
-    "mrp": 30.0,
+    "price": 30,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -1552,8 +1552,8 @@
     "name": "Maggi 60 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 60.0,
-    "mrp": 60.0,
+    "price": 60,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
@@ -1561,8 +1561,8 @@
     "name": "Maggi 7 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 7.0,
-    "mrp": 7.0,
+    "price": 7,
+    "mrp": 7,
     "image": "images/products/default.png"
   },
   {
@@ -1570,8 +1570,8 @@
     "name": "Maggi Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -1579,8 +1579,8 @@
     "name": "Maggi Pichkoo 15 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -1588,8 +1588,8 @@
     "name": "Mahuri Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 145.0,
-    "mrp": 145.0,
+    "price": 145,
+    "mrp": 145,
     "image": "images/products/default.png"
   },
   {
@@ -1597,8 +1597,8 @@
     "name": "Maida 1 Kg",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 45.0,
-    "mrp": 42.0,
+    "price": 45,
+    "mrp": 42,
     "image": "images/products/default.png"
   },
   {
@@ -1606,8 +1606,8 @@
     "name": "Maka Pohe",
     "brand": "",
     "category": "General Item",
-    "price": 80.0,
-    "mrp": 90.0,
+    "price": 80,
+    "mrp": 90,
     "image": "images/products/default.png"
   },
   {
@@ -1615,8 +1615,8 @@
     "name": "Mapro Juice 180 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 160.0,
-    "mrp": 180.0,
+    "price": 160,
+    "mrp": 180,
     "image": "images/products/default.png"
   },
   {
@@ -1624,8 +1624,8 @@
     "name": "Masur Dal 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 104.0,
-    "mrp": 100.0,
+    "price": 104,
+    "mrp": 100,
     "image": "images/products/default.png"
   },
   {
@@ -1633,8 +1633,8 @@
     "name": "Masur Dal Pivali 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -1642,8 +1642,8 @@
     "name": "Mataki Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 100.0,
-    "mrp": 110.0,
+    "price": 100,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -1651,8 +1651,8 @@
     "name": "Matches Box",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1660,8 +1660,8 @@
     "name": "Mayuri Golden Celling Zadu",
     "brand": "",
     "category": "General Item",
-    "price": 215.0,
-    "mrp": 215.0,
+    "price": 215,
+    "mrp": 215,
     "image": "images/products/default.png"
   },
   {
@@ -1669,8 +1669,8 @@
     "name": "Mayuri Mop Flat 260 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 160.0,
-    "mrp": 260.0,
+    "price": 160,
+    "mrp": 260,
     "image": "images/products/default.png"
   },
   {
@@ -1678,8 +1678,8 @@
     "name": "Mayuri Mop RY Flat 225 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 125.0,
-    "mrp": 225.0,
+    "price": 125,
+    "mrp": 225,
     "image": "images/products/default.png"
   },
   {
@@ -1687,8 +1687,8 @@
     "name": "Mayuri Sunflower Brush Zadu",
     "brand": "",
     "category": "General Item",
-    "price": 250.0,
-    "mrp": 250.0,
+    "price": 250,
+    "mrp": 250,
     "image": "images/products/default.png"
   },
   {
@@ -1696,8 +1696,8 @@
     "name": "Mayuri Zadu Smart Rs 122",
     "brand": "",
     "category": "General Item",
-    "price": 122.0,
-    "mrp": 122.0,
+    "price": 122,
+    "mrp": 122,
     "image": "images/products/default.png"
   },
   {
@@ -1705,8 +1705,8 @@
     "name": "Mayuri Zadu Steel Rs 145",
     "brand": "",
     "category": "General Item",
-    "price": 145.0,
-    "mrp": 145.0,
+    "price": 145,
+    "mrp": 145,
     "image": "images/products/default.png"
   },
   {
@@ -1714,8 +1714,8 @@
     "name": "Mayuri Zadu Steel Rs 190",
     "brand": "",
     "category": "General Item",
-    "price": 180.0,
-    "mrp": 180.0,
+    "price": 180,
+    "mrp": 180,
     "image": "images/products/default.png"
   },
   {
@@ -1723,8 +1723,8 @@
     "name": "Medimix 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1732,8 +1732,8 @@
     "name": "Medimix 185 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 185.0,
-    "mrp": 180.0,
+    "price": 185,
+    "mrp": 180,
     "image": "images/products/default.png"
   },
   {
@@ -1741,8 +1741,8 @@
     "name": "Milk Bikis Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1750,8 +1750,8 @@
     "name": "Mirchi Powder 50 Gm",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 25.0,
-    "mrp": 28.0,
+    "price": 25,
+    "mrp": 28,
     "image": "images/products/default.png"
   },
   {
@@ -1759,8 +1759,8 @@
     "name": "Mirinda 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1768,8 +1768,8 @@
     "name": "Misal Farsana",
     "brand": "",
     "category": "General Item",
-    "price": 97.0,
-    "mrp": 110.0,
+    "price": 97,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -1777,8 +1777,8 @@
     "name": "Monaco Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1786,8 +1786,8 @@
     "name": "More Light Powder 1/2 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 43.0,
-    "mrp": 43.0,
+    "price": 43,
+    "mrp": 43,
     "image": "images/products/default.png"
   },
   {
@@ -1795,8 +1795,8 @@
     "name": "Mug Dal 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 120.0,
-    "mrp": 120.0,
+    "price": 120,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -1804,8 +1804,8 @@
     "name": "Navaratna Tel Rs 1",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 1.0,
-    "mrp": 1.0,
+    "price": 1,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -1813,8 +1813,8 @@
     "name": "Neutrella Chikki",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1822,8 +1822,8 @@
     "name": "Nilon Pasta 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1831,8 +1831,8 @@
     "name": "Nirma Powder",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1840,8 +1840,8 @@
     "name": "Nirma Soap 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1849,8 +1849,8 @@
     "name": "Noodles Kachche 1 Kg",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 80.0,
-    "mrp": 80.0,
+    "price": 80,
+    "mrp": 80,
     "image": "images/products/default.png"
   },
   {
@@ -1858,8 +1858,8 @@
     "name": "Nylon Shabu 1 KG",
     "brand": "",
     "category": "General Item",
-    "price": 100.0,
-    "mrp": 100.0,
+    "price": 100,
+    "mrp": 100,
     "image": "images/products/default.png"
   },
   {
@@ -1867,8 +1867,8 @@
     "name": "Nylon Shabu Talalele",
     "brand": "",
     "category": "General Item",
-    "price": 200.0,
-    "mrp": 160.0,
+    "price": 200,
+    "mrp": 160,
     "image": "images/products/default.png"
   },
   {
@@ -1876,8 +1876,8 @@
     "name": "Odomos 18 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 18.0,
-    "mrp": 18.0,
+    "price": 18,
+    "mrp": 18,
     "image": "images/products/default.png"
   },
   {
@@ -1885,8 +1885,8 @@
     "name": "Oreo 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1894,8 +1894,8 @@
     "name": "Paneer 100 GM",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 55.0,
+    "price": 50,
+    "mrp": 55,
     "image": "images/products/default.png"
   },
   {
@@ -1903,8 +1903,8 @@
     "name": "Paneer 200 GM",
     "brand": "",
     "category": "General Item",
-    "price": 95.0,
-    "mrp": 99.0,
+    "price": 95,
+    "mrp": 99,
     "image": "images/products/default.png"
   },
   {
@@ -1912,8 +1912,8 @@
     "name": "Paneer Chilli Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1921,8 +1921,8 @@
     "name": "Paneer Masala",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -1930,8 +1930,8 @@
     "name": "Paneer Tikka Masala 25 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -1939,8 +1939,8 @@
     "name": "Parachute Jasmin 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1948,8 +1948,8 @@
     "name": "Parachute Jasmin 90 ML",
     "brand": "",
     "category": "General Item",
-    "price": 53.0,
-    "mrp": 53.0,
+    "price": 53,
+    "mrp": 53,
     "image": "images/products/default.png"
   },
   {
@@ -1957,8 +1957,8 @@
     "name": "Parachute Oil 10 Rs",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -1966,8 +1966,8 @@
     "name": "Parachute Oil 175 ML",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 115.0,
-    "mrp": 115.0,
+    "price": 115,
+    "mrp": 115,
     "image": "images/products/default.png"
   },
   {
@@ -1975,8 +1975,8 @@
     "name": "Parachute Oil 20 Rs",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1984,8 +1984,8 @@
     "name": "Parachute Oil 250 ML",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 135.0,
-    "mrp": 162.0,
+    "price": 135,
+    "mrp": 162,
     "image": "images/products/default.png"
   },
   {
@@ -1993,8 +1993,8 @@
     "name": "Parachute Oil 65",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 40.0,
-    "mrp": 65.0,
+    "price": 40,
+    "mrp": 65,
     "image": "images/products/default.png"
   },
   {
@@ -2002,8 +2002,8 @@
     "name": "Parachute Oil Pouch",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 32.0,
-    "mrp": 50.0,
+    "price": 32,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -2011,8 +2011,8 @@
     "name": "Parivar Chaha 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2020,8 +2020,8 @@
     "name": "Parivar Chaha 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -2029,8 +2029,8 @@
     "name": "Parivar Chaha 250 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 145.0,
-    "mrp": 150.0,
+    "price": 145,
+    "mrp": 150,
     "image": "images/products/default.png"
   },
   {
@@ -2038,8 +2038,8 @@
     "name": "Parivar Chaha 50 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 55.0,
+    "price": 50,
+    "mrp": 55,
     "image": "images/products/default.png"
   },
   {
@@ -2047,8 +2047,8 @@
     "name": "Parle Happy Happy Biscuit",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2056,8 +2056,8 @@
     "name": "Pasta Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2065,8 +2065,8 @@
     "name": "Patanjali Dishwash Bar 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2074,8 +2074,8 @@
     "name": "Patanjali Dishwash Bar 70 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2084,7 +2084,7 @@
     "brand": "",
     "category": "General Item",
     "price": 0.9,
-    "mrp": 1.0,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -2092,8 +2092,8 @@
     "name": "Patanjali Toothpaste 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2101,8 +2101,8 @@
     "name": "Patanjali Toothpaste 115 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 115.0,
-    "mrp": 115.0,
+    "price": 115,
+    "mrp": 115,
     "image": "images/products/default.png"
   },
   {
@@ -2110,8 +2110,8 @@
     "name": "Patanjali Toothpaste 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -2119,8 +2119,8 @@
     "name": "Patanjali Toothpaste 60 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 60.0,
-    "mrp": 56.0,
+    "price": 60,
+    "mrp": 56,
     "image": "images/products/default.png"
   },
   {
@@ -2128,8 +2128,8 @@
     "name": "Pavbhaji Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2137,8 +2137,8 @@
     "name": "Pavbhaji Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2146,8 +2146,8 @@
     "name": "Pear Soap 100 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 58.0,
-    "mrp": 58.0,
+    "price": 58,
+    "mrp": 58,
     "image": "images/products/default.png"
   },
   {
@@ -2155,8 +2155,8 @@
     "name": "Pears Oil Clear Soap 75 Gm",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 63.0,
-    "mrp": 38.0,
+    "price": 63,
+    "mrp": 38,
     "image": "images/products/default.png"
   },
   {
@@ -2164,8 +2164,8 @@
     "name": "Phenyle",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 50.0,
+    "price": 50,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -2173,8 +2173,8 @@
     "name": "Phenyle 1 Ltr",
     "brand": "",
     "category": "General Item",
-    "price": 92.0,
-    "mrp": 92.0,
+    "price": 92,
+    "mrp": 92,
     "image": "images/products/default.png"
   },
   {
@@ -2182,8 +2182,8 @@
     "name": "Philips Bulb 10 w",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 30.0,
+    "price": 25,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -2191,8 +2191,8 @@
     "name": "Philips Bulb 200 w",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -2200,8 +2200,8 @@
     "name": "Philips Bulb 60w",
     "brand": "",
     "category": "General Item",
-    "price": 23.0,
-    "mrp": 23.0,
+    "price": 23,
+    "mrp": 23,
     "image": "images/products/default.png"
   },
   {
@@ -2209,8 +2209,8 @@
     "name": "Philips Led Bulb 0.5w",
     "brand": "",
     "category": "General Item",
-    "price": 70.0,
-    "mrp": 70.0,
+    "price": 70,
+    "mrp": 70,
     "image": "images/products/default.png"
   },
   {
@@ -2218,8 +2218,8 @@
     "name": "Philips Led Bulb 12W",
     "brand": "",
     "category": "General Item",
-    "price": 220.0,
-    "mrp": 220.0,
+    "price": 220,
+    "mrp": 220,
     "image": "images/products/default.png"
   },
   {
@@ -2227,8 +2227,8 @@
     "name": "Philips Led Bulb 16W",
     "brand": "",
     "category": "General Item",
-    "price": 325.0,
-    "mrp": 325.0,
+    "price": 325,
+    "mrp": 325,
     "image": "images/products/default.png"
   },
   {
@@ -2236,8 +2236,8 @@
     "name": "Philips Led Bulb 9W",
     "brand": "",
     "category": "General Item",
-    "price": 95.0,
-    "mrp": 95.0,
+    "price": 95,
+    "mrp": 95,
     "image": "images/products/default.png"
   },
   {
@@ -2245,8 +2245,8 @@
     "name": "Phillips Bulb Eyepro 10.5W",
     "brand": "",
     "category": "General Item",
-    "price": 220.0,
-    "mrp": 220.0,
+    "price": 220,
+    "mrp": 220,
     "image": "images/products/default.png"
   },
   {
@@ -2254,8 +2254,8 @@
     "name": "Pitambari",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 5.0,
+    "price": 15,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2263,8 +2263,8 @@
     "name": "Pitambari 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2272,8 +2272,8 @@
     "name": "Pitambari 30 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -2281,8 +2281,8 @@
     "name": "Pitambari 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 28.0,
-    "mrp": 28.0,
+    "price": 28,
+    "mrp": 28,
     "image": "images/products/default.png"
   },
   {
@@ -2291,7 +2291,7 @@
     "brand": "",
     "category": "General Item",
     "price": 112.5,
-    "mrp": 130.0,
+    "mrp": 130,
     "image": "images/products/default.png"
   },
   {
@@ -2299,8 +2299,8 @@
     "name": "Pitambari Deep Shakti 900ML",
     "brand": "",
     "category": "General Item",
-    "price": 230.0,
-    "mrp": 230.0,
+    "price": 230,
+    "mrp": 230,
     "image": "images/products/default.png"
   },
   {
@@ -2308,8 +2308,8 @@
     "name": "Pohe",
     "brand": "",
     "category": "General Item",
-    "price": 55.0,
-    "mrp": 55.0,
+    "price": 55,
+    "mrp": 55,
     "image": "images/products/default.png"
   },
   {
@@ -2317,8 +2317,8 @@
     "name": "Ponds Cream 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2326,8 +2326,8 @@
     "name": "Ponds Facewash 25Rs",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 20.0,
+    "price": 25,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -2335,8 +2335,8 @@
     "name": "Ponds Facewash 35 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 35.0,
-    "mrp": 35.0,
+    "price": 35,
+    "mrp": 35,
     "image": "images/products/default.png"
   },
   {
@@ -2344,8 +2344,8 @@
     "name": "Ponds Moisturiser 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2353,8 +2353,8 @@
     "name": "Ponds Powder",
     "brand": "",
     "category": "General Item",
-    "price": 65.0,
-    "mrp": 59.0,
+    "price": 65,
+    "mrp": 59,
     "image": "images/products/default.png"
   },
   {
@@ -2362,8 +2362,8 @@
     "name": "Ponds Powder 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2371,8 +2371,8 @@
     "name": "Ponds Powder 100 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 125.0,
-    "mrp": 125.0,
+    "price": 125,
+    "mrp": 125,
     "image": "images/products/default.png"
   },
   {
@@ -2380,8 +2380,8 @@
     "name": "RA Owa Rs 10",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2389,8 +2389,8 @@
     "name": "Radhuni Oil",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 134.0,
-    "mrp": 134.0,
+    "price": 134,
+    "mrp": 134,
     "image": "images/products/default.png"
   },
   {
@@ -2398,8 +2398,8 @@
     "name": "Red Hit 125 ML",
     "brand": "",
     "category": "General Item",
-    "price": 75.0,
-    "mrp": 75.0,
+    "price": 75,
+    "mrp": 75,
     "image": "images/products/default.png"
   },
   {
@@ -2408,7 +2408,7 @@
     "brand": "",
     "category": "General Item",
     "price": 50.89,
-    "mrp": 60.0,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
@@ -2416,8 +2416,8 @@
     "name": "Rin Ala 200 ML",
     "brand": "",
     "category": "General Item",
-    "price": 44.0,
-    "mrp": 45.0,
+    "price": 44,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
@@ -2425,8 +2425,8 @@
     "name": "Rin Bar 150 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2434,8 +2434,8 @@
     "name": "Rin Bar 250Gm",
     "brand": "",
     "category": "General Item",
-    "price": 100.0,
-    "mrp": 100.0,
+    "price": 100,
+    "mrp": 100,
     "image": "images/products/default.png"
   },
   {
@@ -2443,8 +2443,8 @@
     "name": "Rin Bar 45 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 0.0,
-    "mrp": 45.0,
+    "price": 0,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
@@ -2452,8 +2452,8 @@
     "name": "Rin Powder 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 111.0,
-    "mrp": 111.0,
+    "price": 111,
+    "mrp": 111,
     "image": "images/products/default.png"
   },
   {
@@ -2462,7 +2462,7 @@
     "brand": "",
     "category": "General Item",
     "price": 8.93,
-    "mrp": 10.0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2470,8 +2470,8 @@
     "name": "Room Freshner 220ml",
     "brand": "",
     "category": "General Item",
-    "price": 169.0,
-    "mrp": 169.0,
+    "price": 169,
+    "mrp": 169,
     "image": "images/products/default.png"
   },
   {
@@ -2479,8 +2479,8 @@
     "name": "Sakhar 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 46.0,
-    "mrp": 61.0,
+    "price": 46,
+    "mrp": 61,
     "image": "images/products/default.png"
   },
   {
@@ -2488,8 +2488,8 @@
     "name": "Sambar Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2497,8 +2497,8 @@
     "name": "Sambar Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2506,8 +2506,8 @@
     "name": "Santoor 10 Rs",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2515,8 +2515,8 @@
     "name": "Santoor Soap 4 Pack",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 156.0,
-    "mrp": 146.0,
+    "price": 156,
+    "mrp": 146,
     "image": "images/products/default.png"
   },
   {
@@ -2524,8 +2524,8 @@
     "name": "Santoor Soap 75 Gm",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 110.0,
-    "mrp": 110.0,
+    "price": 110,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -2533,8 +2533,8 @@
     "name": "Santoor Soap Single",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 41.0,
-    "mrp": 41.0,
+    "price": 41,
+    "mrp": 41,
     "image": "images/products/default.png"
   },
   {
@@ -2542,8 +2542,8 @@
     "name": "Shabu",
     "brand": "",
     "category": "General Item",
-    "price": 53.0,
-    "mrp": 89.0,
+    "price": 53,
+    "mrp": 89,
     "image": "images/products/default.png"
   },
   {
@@ -2551,8 +2551,8 @@
     "name": "Shabu Lahan 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 90.0,
-    "mrp": 110.0,
+    "price": 90,
+    "mrp": 110,
     "image": "images/products/default.png"
   },
   {
@@ -2560,8 +2560,8 @@
     "name": "Shevbhaji Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2569,8 +2569,8 @@
     "name": "Shrikhand 100 GM",
     "brand": "",
     "category": "General Item",
-    "price": 33.0,
-    "mrp": 35.0,
+    "price": 33,
+    "mrp": 35,
     "image": "images/products/default.png"
   },
   {
@@ -2578,8 +2578,8 @@
     "name": "Shrikhand 250 GM",
     "brand": "",
     "category": "General Item",
-    "price": 60.0,
-    "mrp": 68.0,
+    "price": 60,
+    "mrp": 68,
     "image": "images/products/default.png"
   },
   {
@@ -2587,8 +2587,8 @@
     "name": "Society Chaha 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2596,8 +2596,8 @@
     "name": "Society Chaha 250 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 155.0,
-    "mrp": 155.0,
+    "price": 155,
+    "mrp": 155,
     "image": "images/products/default.png"
   },
   {
@@ -2605,8 +2605,8 @@
     "name": "Soup Manchow",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2614,8 +2614,8 @@
     "name": "Soup Sweet Corn 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2623,8 +2623,8 @@
     "name": "Soup Tomato 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2632,8 +2632,8 @@
     "name": "Soyabean Oil 1 Ltr",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 140.0,
-    "mrp": 180.0,
+    "price": 140,
+    "mrp": 180,
     "image": "images/products/default.png"
   },
   {
@@ -2641,8 +2641,8 @@
     "name": "Soyabean Oil 1/2 Ltr",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 75.0,
-    "mrp": 76.0,
+    "price": 75,
+    "mrp": 76,
     "image": "images/products/default.png"
   },
   {
@@ -2650,8 +2650,8 @@
     "name": "Stayfree 35 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 35.0,
-    "mrp": 35.0,
+    "price": 35,
+    "mrp": 35,
     "image": "images/products/default.png"
   },
   {
@@ -2659,8 +2659,8 @@
     "name": "Stayfree 42 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 42.0,
-    "mrp": 42.0,
+    "price": 42,
+    "mrp": 42,
     "image": "images/products/default.png"
   },
   {
@@ -2668,8 +2668,8 @@
     "name": "Stayfree Ultra",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 55.0,
+    "price": 50,
+    "mrp": 55,
     "image": "images/products/default.png"
   },
   {
@@ -2677,8 +2677,8 @@
     "name": "Stayfree XXL",
     "brand": "",
     "category": "General Item",
-    "price": 50.0,
-    "mrp": 50.0,
+    "price": 50,
+    "mrp": 50,
     "image": "images/products/default.png"
   },
   {
@@ -2686,8 +2686,8 @@
     "name": "Suhana Akha Masur 10 Rs",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2695,8 +2695,8 @@
     "name": "Suhana Chicken Masala 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2704,8 +2704,8 @@
     "name": "Suhana Chole Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2713,8 +2713,8 @@
     "name": "Suhana Dhana Powder 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2722,8 +2722,8 @@
     "name": "Suhana Kachhi Dabeli Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2731,8 +2731,8 @@
     "name": "Suhana Mirchi Powder 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2740,8 +2740,8 @@
     "name": "Suhana Mirchi Powder 5 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 5.0,
-    "mrp": 5.0,
+    "price": 5,
+    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
@@ -2749,8 +2749,8 @@
     "name": "Suhana Paneer Masala 10 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 0.0,
-    "mrp": 10.0,
+    "price": 0,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2758,8 +2758,8 @@
     "name": "Suhana Schezwan Chutney 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2767,8 +2767,8 @@
     "name": "Sunny Phenyl",
     "brand": "",
     "category": "General Item",
-    "price": 55.0,
-    "mrp": 65.0,
+    "price": 55,
+    "mrp": 65,
     "image": "images/products/default.png"
   },
   {
@@ -2776,8 +2776,8 @@
     "name": "Sunsilk 1 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 1.0,
-    "mrp": 1.0,
+    "price": 1,
+    "mrp": 1,
     "image": "images/products/default.png"
   },
   {
@@ -2785,8 +2785,8 @@
     "name": "Sunsilk Serum 3 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 3.0,
-    "mrp": 3.0,
+    "price": 3,
+    "mrp": 3,
     "image": "images/products/default.png"
   },
   {
@@ -2794,8 +2794,8 @@
     "name": "Surf Excel Bar 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2803,8 +2803,8 @@
     "name": "Surf Excel Bar 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -2812,8 +2812,8 @@
     "name": "Surf Excel M/C Liquid 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2821,8 +2821,8 @@
     "name": "Surf Excel Powder 1/2 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 76.0,
-    "mrp": 79.0,
+    "price": 76,
+    "mrp": 79,
     "image": "images/products/default.png"
   },
   {
@@ -2830,8 +2830,8 @@
     "name": "Surf Machine Powder 1Kg",
     "brand": "",
     "category": "General Item",
-    "price": 290.0,
-    "mrp": 290.0,
+    "price": 290,
+    "mrp": 290,
     "image": "images/products/default.png"
   },
   {
@@ -2839,8 +2839,8 @@
     "name": "Tandool Pith 25 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -2848,8 +2848,8 @@
     "name": "Tata Rock Salt 10 Rs",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2857,8 +2857,8 @@
     "name": "Tata Salt 1 Kg",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 30.0,
-    "mrp": 30.0,
+    "price": 30,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -2866,8 +2866,8 @@
     "name": "Tata Salt 1/2 Kg",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 15.0,
-    "mrp": 15.0,
+    "price": 15,
+    "mrp": 15,
     "image": "images/products/default.png"
   },
   {
@@ -2875,8 +2875,8 @@
     "name": "Tata Tea 100 Gm",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 40.0,
-    "mrp": 45.0,
+    "price": 40,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
@@ -2884,8 +2884,8 @@
     "name": "Tide 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 85.0,
-    "mrp": 85.0,
+    "price": 85,
+    "mrp": 85,
     "image": "images/products/default.png"
   },
   {
@@ -2893,8 +2893,8 @@
     "name": "Tide Bar 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2902,8 +2902,8 @@
     "name": "Tide Powder 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2911,8 +2911,8 @@
     "name": "Tiger Biscuit 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2920,8 +2920,8 @@
     "name": "Tukda Tandul 1 Kg",
     "brand": "",
     "category": "Rice",
-    "price": 44.0,
-    "mrp": 43.0,
+    "price": 44,
+    "mrp": 43,
     "image": "images/products/default.png"
   },
   {
@@ -2929,8 +2929,8 @@
     "name": "Vaseline 10 Rs PJ",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2938,8 +2938,8 @@
     "name": "Vaseline Lotion 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2947,8 +2947,8 @@
     "name": "Vicco Soap 30 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 0.0,
-    "mrp": 30.0,
+    "price": 0,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -2956,8 +2956,8 @@
     "name": "Vicco Soap 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 25.0,
-    "mrp": 25.0,
+    "price": 25,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -2965,8 +2965,8 @@
     "name": "Vim Bar 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -2974,8 +2974,8 @@
     "name": "Vim Bar 30 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 30.0,
-    "mrp": 30.0,
+    "price": 30,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
@@ -2983,8 +2983,8 @@
     "name": "Vim Bar 500 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 60.0,
-    "mrp": 60.0,
+    "price": 60,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
@@ -2992,8 +2992,8 @@
     "name": "Vim Liquid 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -3001,8 +3001,8 @@
     "name": "Vinegar 200 ML",
     "brand": "",
     "category": "General Item",
-    "price": 40.0,
-    "mrp": 40.0,
+    "price": 40,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
@@ -3010,8 +3010,8 @@
     "name": "WaghBakri Chaha 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -3019,8 +3019,8 @@
     "name": "Water 20 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 20.0,
-    "mrp": 20.0,
+    "price": 20,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -3028,8 +3028,8 @@
     "name": "Wheel Powder 1 Kg",
     "brand": "",
     "category": "General Item",
-    "price": 73.0,
-    "mrp": 76.0,
+    "price": 73,
+    "mrp": 76,
     "image": "images/products/default.png"
   },
   {
@@ -3037,8 +3037,8 @@
     "name": "Wheel Powder 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   },
   {
@@ -3046,8 +3046,8 @@
     "name": "Yippee Maggi 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10.0,
-    "mrp": 10.0,
+    "price": 10,
+    "mrp": 10,
     "image": "images/products/default.png"
   }
 ]
