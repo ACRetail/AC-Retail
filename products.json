@@ -57,7 +57,7 @@
     "id": 8,
     "name": "Baja Almond Oil 10 Rs",
     "brand": "",
-    "category": "Spices & Dry Fruits",
+    "category": "Personal care",
     "price": 9.8,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -165,8 +165,8 @@
     "id": 20,
     "name": "Black Hit 125 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 85,
+    "category": "Home care",
+    "price": 83,
     "mrp": 85,
     "image": "images/products/default.png"
   },
@@ -210,7 +210,7 @@
     "id": 25,
     "name": "Bru 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 9.8,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -219,7 +219,7 @@
     "id": 26,
     "name": "Bru 2 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 2,
     "mrp": 2,
     "image": "images/products/default.png"
@@ -228,7 +228,7 @@
     "id": 27,
     "name": "Brush 20 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
@@ -237,17 +237,17 @@
     "id": 28,
     "name": "Butter",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
-    "mrp": 10,
+    "category": "Dairy",
+    "price": 62,
+    "mrp": 63,
     "image": "images/products/default.png"
   },
   {
     "id": 29,
     "name": "Chaha Powder Sutti",
     "brand": "",
-    "category": "General Item",
-    "price": 75,
+    "category": "Snacks and beverages",
+    "price": 70,
     "mrp": 80,
     "image": "images/products/default.png"
   },
@@ -255,8 +255,8 @@
     "id": 30,
     "name": "Cheese Cubes Britannia",
     "brand": "",
-    "category": "General Item",
-    "price": 19.5,
+    "category": "Snacks and beverages",
+    "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -300,8 +300,8 @@
     "id": 35,
     "name": "Clinic Plus 1 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 1,
+    "category": "Personal care",
+    "price": 0.93,
     "mrp": 1,
     "image": "images/products/default.png"
   },
@@ -318,7 +318,7 @@
     "id": 37,
     "name": "Colgate Active Salt 100gm",
     "brand": "",
-    "category": "Oil Sugar & Salt",
+    "category": "Personal care",
     "price": 72,
     "mrp": 73,
     "image": "images/products/default.png"
@@ -327,7 +327,7 @@
     "id": 38,
     "name": "Colgate Active Salt 36 Gm",
     "brand": "",
-    "category": "Oil Sugar & Salt",
+    "category": "Personal care",
     "price": 19.5,
     "mrp": 20,
     "image": "images/products/default.png"
@@ -363,8 +363,8 @@
     "id": 42,
     "name": "Colgate Visible White 50 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 89,
+    "category": "Personal care",
+    "price": 85,
     "mrp": 89,
     "image": "images/products/default.png"
   },
@@ -372,8 +372,8 @@
     "id": 43,
     "name": "Colin 125 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 39.5,
+    "category": "Home care",
+    "price": 39,
     "mrp": 40,
     "image": "images/products/default.png"
   },
@@ -399,7 +399,7 @@
     "id": 46,
     "name": "Dabur Coconut Oil 10 Rs",
     "brand": "",
-    "category": "Oil Sugar & Salt",
+    "category": "Personal care",
     "price": 9.8,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -408,7 +408,7 @@
     "id": 47,
     "name": "Dahi 200 GM",
     "brand": "",
-    "category": "General Item",
+    "category": "Dairy",
     "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
@@ -444,7 +444,7 @@
     "id": 51,
     "name": "Dark Fantacy 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -471,7 +471,7 @@
     "id": 54,
     "name": "Dettol Soap 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 9.9,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -480,8 +480,8 @@
     "id": 55,
     "name": "Dettol Soap 4+1",
     "brand": "",
-    "category": "General Item",
-    "price": 175,
+    "category": "Personal care",
+    "price": 179,
     "mrp": 182,
     "image": "images/products/default.png"
   },
@@ -489,16 +489,16 @@
     "id": 56,
     "name": "Dhana Powder 50 Gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 21,
     "mrp": 22,
     "image": "images/products/default.png"
   },
   {
     "id": 57,
-    "name": "Doodh Masal 20 Rs",
+    "name": "Doodh Masal 25 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 24,
     "mrp": 25,
     "image": "images/products/default.png"
@@ -507,7 +507,7 @@
     "id": 58,
     "name": "Dove 2 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 1.87,
     "mrp": 2,
     "image": "images/products/default.png"
@@ -516,7 +516,7 @@
     "id": 59,
     "name": "Dove Shampoo Conditioner",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 4.85,
     "mrp": 5,
     "image": "images/products/default.png"
@@ -525,7 +525,7 @@
     "id": 60,
     "name": "Dove Soap 25g",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 13,
     "mrp": 13,
     "image": "images/products/default.png"
@@ -534,8 +534,8 @@
     "id": 61,
     "name": "Dove Soap 50g",
     "brand": "",
-    "category": "General Item",
-    "price": 25,
+    "category": "Personal care",
+    "price": 24.5,
     "mrp": 25,
     "image": "images/products/default.png"
   },
@@ -543,7 +543,7 @@
     "id": 62,
     "name": "Dove Soap 75g",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 40,
     "mrp": 40,
     "image": "images/products/default.png"
@@ -552,7 +552,7 @@
     "id": 63,
     "name": "Drain It Powder",
     "brand": "",
-    "category": "Spices & Dry Fruits",
+    "category": "General Item",
     "price": 25,
     "mrp": 30,
     "image": "images/products/default.png"
@@ -561,7 +561,7 @@
     "id": 64,
     "name": "Dyna Soap 135 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 135,
     "mrp": 135,
     "image": "images/products/default.png"
@@ -597,7 +597,7 @@
     "id": 68,
     "name": "Everest Dhana Powder 50 Gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 21,
     "mrp": 22,
     "image": "images/products/default.png"
@@ -615,7 +615,7 @@
     "id": 70,
     "name": "Everest Jaljira 2 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 2,
     "mrp": 2,
     "image": "images/products/default.png"
@@ -678,7 +678,7 @@
     "id": 77,
     "name": "Everyday Milk Powder",
     "brand": "",
-    "category": "General Item",
+    "category": "Dairy",
     "price": 9.9,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -748,10 +748,10 @@
   },
   {
     "id": 85,
-    "name": "Gala Zadu 220 Rd",
+    "name": "Gala Zadu 220 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 197,
+    "category": "Home care",
+    "price": 190,
     "mrp": 220,
     "image": "images/products/default.png"
   },
@@ -759,7 +759,7 @@
     "id": 86,
     "name": "Gemini RiceBran Oil",
     "brand": "",
-    "category": "Rice",
+    "category": "Oil sugar and salt",
     "price": 172,
     "mrp": 210,
     "image": "images/products/default.png"
@@ -795,7 +795,7 @@
     "id": 90,
     "name": "Ghee",
     "brand": "",
-    "category": "General Item",
+    "category": "Dairy",
     "price": 97.5,
     "mrp": 100,
     "image": "images/products/default.png"
@@ -804,7 +804,7 @@
     "id": 91,
     "name": "Ginger Garlic Paste",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 4.6,
     "mrp": 5,
     "image": "images/products/default.png"
@@ -813,7 +813,7 @@
     "id": 92,
     "name": "Ginger Garlic Paste 200gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 42,
     "mrp": 46,
     "image": "images/products/default.png"
@@ -831,7 +831,7 @@
     "id": 94,
     "name": "Godrej Air Pocket",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 72.5,
     "mrp": 75,
     "image": "images/products/default.png"
@@ -840,7 +840,7 @@
     "id": 95,
     "name": "Godrej Cinthol",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 110,
     "mrp": 110,
     "image": "images/products/default.png"
@@ -864,19 +864,10 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 98,
-    "name": "Godrej Expert 25G Blue Die",
-    "brand": "",
-    "category": "General Item",
-    "price": 22,
-    "mrp": 22,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 99,
     "name": "Godrej Expert Black 15 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 15,
     "mrp": 15,
     "image": "images/products/default.png"
@@ -885,7 +876,7 @@
     "id": 100,
     "name": "Godrej No. 1 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -894,17 +885,17 @@
     "id": 101,
     "name": "Godrej No. 1 140",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 135,
-    "mrp": 120,
+    "mrp": 140,
     "image": "images/products/default.png"
   },
   {
     "id": 102,
     "name": "Godrej No. 1 Kesar 130 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 130,
+    "category": "Personal care",
+    "price": 128,
     "mrp": 130,
     "image": "images/products/default.png"
   },
@@ -912,8 +903,8 @@
     "id": 103,
     "name": "Godrej Rich Cream Black",
     "brand": "",
-    "category": "General Item",
-    "price": 37,
+    "category": "Personal care",
+    "price": 14.5,
     "mrp": 15,
     "image": "images/products/default.png"
   },
@@ -921,8 +912,8 @@
     "id": 104,
     "name": "Godrej Shampoo 15 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 15,
+    "category": "Personal care",
+    "price": 14.5,
     "mrp": 15,
     "image": "images/products/default.png"
   },
@@ -930,17 +921,17 @@
     "id": 105,
     "name": "Godrej Shikakai Soap",
     "brand": "",
-    "category": "General Item",
-    "price": 38,
-    "mrp": 35,
+    "category": "Personal care",
+    "price": 37.5,
+    "mrp": 38,
     "image": "images/products/default.png"
   },
   {
     "id": 106,
     "name": "Godrej Toilet Cleaner",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 79,
+    "category": "Home care",
+    "price": 77,
     "mrp": 79,
     "image": "images/products/default.png"
   },
@@ -948,17 +939,17 @@
     "id": 107,
     "name": "Govind Milk 200 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 11,
-    "mrp": 11,
+    "category": "Dairy",
+    "price": 12,
+    "mrp": 14,
     "image": "images/products/default.png"
   },
   {
     "id": 108,
     "name": "Govind Milk 500 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 26,
+    "category": "Dairy",
+    "price": 29,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -976,7 +967,7 @@
     "name": "Green Piece 200gm",
     "brand": "",
     "category": "General Item",
-    "price": 55,
+    "price": 35,
     "mrp": 40,
     "image": "images/products/default.png"
   },
@@ -984,45 +975,18 @@
     "id": 111,
     "name": "Gulab Jamun",
     "brand": "",
-    "category": "General Item",
-    "price": 0,
+    "category": "Dairy",
+    "price": 99,
     "mrp": 125,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 112,
-    "name": "Halad 5 Rs",
-    "brand": "",
-    "category": "General Item",
-    "price": 5,
-    "mrp": 5,
     "image": "images/products/default.png"
   },
   {
     "id": 113,
     "name": "Halad 50 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 25,
+    "category": "Spices & Dry fuits",
+    "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 114,
-    "name": "Haldiram Petha 200 Gm",
-    "brand": "",
-    "category": "Spices & Dry Fruits",
-    "price": 65,
-    "mrp": 65,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 115,
-    "name": "Haldiram Soan Papdi",
-    "brand": "",
-    "category": "Spices & Dry Fruits",
-    "price": 75,
-    "mrp": 75,
     "image": "images/products/default.png"
   },
   {
@@ -1030,7 +994,7 @@
     "name": "Happy Atta",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 230,
+    "price": 210,
     "mrp": 230,
     "image": "images/products/default.png"
   },
@@ -1047,8 +1011,8 @@
     "id": 118,
     "name": "Harbhara 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 100,
+    "category": "Dals and grains",
+    "price": 94,
     "mrp": 100,
     "image": "images/products/default.png"
   },
@@ -1057,15 +1021,15 @@
     "name": "Harbhara Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 84,
-    "mrp": 88,
+    "price": 93,
+    "mrp": 97,
     "image": "images/products/default.png"
   },
   {
     "id": 120,
     "name": "Harpic 46 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 44,
     "mrp": 46,
     "image": "images/products/default.png"
@@ -1074,8 +1038,8 @@
     "id": 121,
     "name": "Harpic 500 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 110,
+    "category": "Home care",
+    "price": 107,
     "mrp": 110,
     "image": "images/products/default.png"
   },
@@ -1083,7 +1047,7 @@
     "id": 122,
     "name": "Harpic Lemon 250 ML",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 58,
     "mrp": 61,
     "image": "images/products/default.png"
@@ -1092,8 +1056,8 @@
     "id": 123,
     "name": "Head & Shoulder",
     "brand": "",
-    "category": "General Item",
-    "price": 2,
+    "category": "Personal care",
+    "price": 1.88,
     "mrp": 2,
     "image": "images/products/default.png"
   },
@@ -1101,9 +1065,9 @@
     "id": 124,
     "name": "Himalaya Facewash 15 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 15,
-    "mrp": 15,
+    "category": "Personal care",
+    "price": 19.5,
+    "mrp": 20,
     "image": "images/products/default.png"
   },
   {
@@ -1111,16 +1075,16 @@
     "name": "Hing",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 20,
-    "mrp": 20,
+    "price": 29,
+    "mrp": 30,
     "image": "images/products/default.png"
   },
   {
     "id": 126,
     "name": "Hirav Mug 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 128,
+    "category": "Dals and grains",
+    "price": 136,
     "mrp": 140,
     "image": "images/products/default.png"
   },
@@ -1128,17 +1092,17 @@
     "id": 127,
     "name": "Indulekha Oil 90",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 99,
-    "mrp": 90,
+    "category": "Personal care",
+    "price": 97,
+    "mrp": 99,
     "image": "images/products/default.png"
   },
   {
     "id": 128,
     "name": "Indulekha Shampoo",
     "brand": "",
-    "category": "General Item",
-    "price": 2,
+    "category": "Personal care",
+    "price": 1.88,
     "mrp": 2,
     "image": "images/products/default.png"
   },
@@ -1152,48 +1116,30 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 130,
-    "name": "Jire 1kg",
-    "brand": "",
-    "category": "General Item",
-    "price": 40,
-    "mrp": 400,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 131,
     "name": "Jire 50 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 25,
+    "category": "Spices & Dry fuits",
+    "price": 24,
     "mrp": 25,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 132,
-    "name": "Jwari",
-    "brand": "",
-    "category": "General Item",
-    "price": 40,
-    "mrp": 46,
     "image": "images/products/default.png"
   },
   {
     "id": 133,
     "name": "Kanda Lasun Chatni 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 240,
-    "mrp": 240,
+    "category": "Spices & Dry fuits",
+    "price": 260,
+    "mrp": 280,
     "image": "images/products/default.png"
   },
   {
     "id": 134,
     "name": "Kanda Lasun Chatni Sutti",
     "brand": "",
-    "category": "General Item",
-    "price": 50,
-    "mrp": 50,
+    "category": "Spices & Dry fuits",
+    "price": 65,
+    "mrp": 70,
     "image": "images/products/default.png"
   },
   {
@@ -1218,17 +1164,17 @@
     "id": 137,
     "name": "Katdare Aamchur Powder 25 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 25,
     "mrp": 25,
     "image": "images/products/default.png"
   },
   {
     "id": 138,
-    "name": "Katdare Bhadang Masala 10 Rs",
+    "name": "Katdare Bhadang Masala",
     "brand": "",
     "category": "Spices & Dry Fruits",
-    "price": 30,
+    "price": 28,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -1236,8 +1182,8 @@
     "id": 139,
     "name": "Katdare Corn Flour 20 Rs",
     "brand": "",
-    "category": "Atta Maida Sooji Besan",
-    "price": 20,
+    "category": "Spices & Dry fuits",
+    "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1254,16 +1200,7 @@
     "id": 141,
     "name": "Katdare Halad 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
-    "mrp": 10,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 142,
-    "name": "Katdare Malvani Masala 10 Rs",
-    "brand": "",
-    "category": "Spices & Dry Fruits",
+    "category": "Spices & Dry fuits",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -1282,7 +1219,7 @@
     "name": "Katdare Shabu Pith",
     "brand": "",
     "category": "General Item",
-    "price": 40,
+    "price": 38,
     "mrp": 40,
     "image": "images/products/default.png"
   },
@@ -1299,8 +1236,8 @@
     "id": 146,
     "name": "Kesh King Shampoo 2 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 2,
+    "category": "Personal care",
+    "price": 1.88,
     "mrp": 2,
     "image": "images/products/default.png"
   },
@@ -1341,20 +1278,11 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 151,
-    "name": "Khadi Sakhar Mothi 1 Kg",
-    "brand": "",
-    "category": "General Item",
-    "price": 120,
-    "mrp": 120,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 152,
     "name": "Khari 20 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 20,
+    "category": "Snacks and beverages",
+    "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1362,8 +1290,8 @@
     "id": 153,
     "name": "Khari 30 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 30,
+    "category": "Snacks and beverages",
+    "price": 29,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -1371,7 +1299,7 @@
     "id": 154,
     "name": "Kharik",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 320,
     "mrp": 320,
     "image": "images/products/default.png"
@@ -1389,8 +1317,8 @@
     "id": 156,
     "name": "Kissan Ketchup 15Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 15,
+    "category": "Snacks and beverages",
+    "price": 14.5,
     "mrp": 15,
     "image": "images/products/default.png"
   },
@@ -1398,8 +1326,8 @@
     "id": 157,
     "name": "Kolam Tandool Kalas",
     "brand": "",
-    "category": "General Item",
-    "price": 70,
+    "category": "Rice",
+    "price": 76,
     "mrp": 78,
     "image": "images/products/default.png"
   },
@@ -1416,8 +1344,8 @@
     "id": 159,
     "name": "Loreal Shampoo",
     "brand": "",
-    "category": "General Item",
-    "price": 80,
+    "category": "Personal care",
+    "price": 79,
     "mrp": 80,
     "image": "images/products/default.png"
   },
@@ -1425,8 +1353,8 @@
     "id": 160,
     "name": "Loreal Shampoo Fall Repair",
     "brand": "",
-    "category": "General Item",
-    "price": 95,
+    "category": "Personal care",
+    "price": 94,
     "mrp": 95,
     "image": "images/products/default.png"
   },
@@ -1434,8 +1362,8 @@
     "id": 161,
     "name": "Lux 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Personal care",
+    "price": 9.7,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -1443,8 +1371,8 @@
     "id": 162,
     "name": "Lux 100Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 125,
+    "category": "Personal care",
+    "price": 123,
     "mrp": 125,
     "image": "images/products/default.png"
   },
@@ -1452,7 +1380,7 @@
     "id": 163,
     "name": "Lux 250 G",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 25,
     "mrp": 25,
     "image": "images/products/default.png"
@@ -1461,7 +1389,7 @@
     "id": 164,
     "name": "Lux 75g",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 38,
     "mrp": 38,
     "image": "images/products/default.png"
@@ -1479,8 +1407,8 @@
     "id": 166,
     "name": "Lux Bright 250 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 155,
+    "category": "Personal care",
+    "price": 168,
     "mrp": 170,
     "image": "images/products/default.png"
   },
@@ -1488,7 +1416,7 @@
     "id": 167,
     "name": "Lysol 200 ML",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 45,
     "mrp": 45,
     "image": "images/products/default.png"
@@ -1507,7 +1435,7 @@
     "name": "Maggi 10 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 10,
+    "price": 9.7,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -1516,7 +1444,7 @@
     "name": "Maggi 15 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 15,
+    "price": 14.7,
     "mrp": 15,
     "image": "images/products/default.png"
   },
@@ -1525,7 +1453,7 @@
     "name": "Maggi 20 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 20,
+    "price": 19.7,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1534,7 +1462,7 @@
     "name": "Maggi 30 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 30,
+    "price": 29.5,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -1588,15 +1516,15 @@
     "name": "Maida 1 Kg",
     "brand": "",
     "category": "Atta Maida Sooji Besan",
-    "price": 45,
-    "mrp": 42,
+    "price": 42,
+    "mrp": 45,
     "image": "images/products/default.png"
   },
   {
     "id": 179,
     "name": "Maka Pohe",
     "brand": "",
-    "category": "General Item",
+    "category": "Atta maida sooji besan",
     "price": 80,
     "mrp": 90,
     "image": "images/products/default.png"
@@ -1606,7 +1534,7 @@
     "name": "Mapro Juice 180 Rs",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 160,
+    "price": 145,
     "mrp": 180,
     "image": "images/products/default.png"
   },
@@ -1615,17 +1543,8 @@
     "name": "Masur Dal 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 104,
-    "mrp": 100,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 182,
-    "name": "Masur Dal Pivali 1 Kg",
-    "brand": "",
-    "category": "Dals & Grains",
-    "price": 120,
-    "mrp": 120,
+    "price": 95,
+    "mrp": 104,
     "image": "images/products/default.png"
   },
   {
@@ -1633,8 +1552,8 @@
     "name": "Mataki Dal",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 100,
-    "mrp": 110,
+    "price": 112,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
@@ -1650,7 +1569,7 @@
     "id": 185,
     "name": "Mayuri Golden Celling Zadu",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 215,
     "mrp": 215,
     "image": "images/products/default.png"
@@ -1659,7 +1578,7 @@
     "id": 186,
     "name": "Mayuri Mop Flat 260 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 160,
     "mrp": 260,
     "image": "images/products/default.png"
@@ -1668,7 +1587,7 @@
     "id": 187,
     "name": "Mayuri Mop RY Flat 225 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 125,
     "mrp": 225,
     "image": "images/products/default.png"
@@ -1677,7 +1596,7 @@
     "id": 188,
     "name": "Mayuri Sunflower Brush Zadu",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 250,
     "mrp": 250,
     "image": "images/products/default.png"
@@ -1686,8 +1605,8 @@
     "id": 189,
     "name": "Mayuri Zadu Smart Rs 122",
     "brand": "",
-    "category": "General Item",
-    "price": 122,
+    "category": "Home care",
+    "price": 103,
     "mrp": 122,
     "image": "images/products/default.png"
   },
@@ -1695,8 +1614,8 @@
     "id": 190,
     "name": "Mayuri Zadu Steel Rs 145",
     "brand": "",
-    "category": "General Item",
-    "price": 145,
+    "category": "Home care",
+    "price": 125,
     "mrp": 145,
     "image": "images/products/default.png"
   },
@@ -1704,8 +1623,8 @@
     "id": 191,
     "name": "Mayuri Zadu Steel Rs 190",
     "brand": "",
-    "category": "General Item",
-    "price": 180,
+    "category": "Home care",
+    "price": 160,
     "mrp": 180,
     "image": "images/products/default.png"
   },
@@ -1749,8 +1668,8 @@
     "id": 196,
     "name": "Mirinda 20 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 20,
+    "category": "Snacks and beverages",
+    "price": 19,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1776,8 +1695,8 @@
     "id": 199,
     "name": "More Light Powder 1/2 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 43,
+    "category": "Home care",
+    "price": 42,
     "mrp": 43,
     "image": "images/products/default.png"
   },
@@ -1786,7 +1705,7 @@
     "name": "Mug Dal 1 Kg",
     "brand": "",
     "category": "Dals & Grains",
-    "price": 120,
+    "price": 114,
     "mrp": 120,
     "image": "images/products/default.png"
   },
@@ -1794,7 +1713,7 @@
     "id": 201,
     "name": "Navaratna Tel Rs 1",
     "brand": "",
-    "category": "Oil Sugar & Salt",
+    "category": "Personal care",
     "price": 1,
     "mrp": 1,
     "image": "images/products/default.png"
@@ -1803,26 +1722,8 @@
     "id": 202,
     "name": "Neutrella Chikki",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
-    "mrp": 10,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 203,
-    "name": "Nilon Pasta 10 Rs",
-    "brand": "",
-    "category": "Snacks & Beverages",
-    "price": 10,
-    "mrp": 10,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 204,
-    "name": "Nirma Powder",
-    "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Snacks and beverages",
+    "price": 9.4,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -1830,7 +1731,7 @@
     "id": 205,
     "name": "Nirma Soap 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -1840,7 +1741,7 @@
     "name": "Noodles Kachche 1 Kg",
     "brand": "",
     "category": "Snacks & Beverages",
-    "price": 80,
+    "price": 75,
     "mrp": 80,
     "image": "images/products/default.png"
   },
@@ -1848,7 +1749,7 @@
     "id": 207,
     "name": "Nylon Shabu 1 KG",
     "brand": "",
-    "category": "General Item",
+    "category": "Dals and grains",
     "price": 100,
     "mrp": 100,
     "image": "images/products/default.png"
@@ -1857,9 +1758,9 @@
     "id": 208,
     "name": "Nylon Shabu Talalele",
     "brand": "",
-    "category": "General Item",
-    "price": 200,
-    "mrp": 160,
+    "category": "Snacks and beverages",
+    "price": 150,
+    "mrp": 200,
     "image": "images/products/default.png"
   },
   {
@@ -1875,7 +1776,7 @@
     "id": 210,
     "name": "Oreo 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -1918,19 +1819,19 @@
   },
   {
     "id": 215,
-    "name": "Paneer Tikka Masala 25 Rs",
+    "name": "Paneer Tikka Masala 26 Rs",
     "brand": "",
     "category": "Spices & Dry Fruits",
     "price": 25,
-    "mrp": 25,
+    "mrp": 26,
     "image": "images/products/default.png"
   },
   {
     "id": 216,
     "name": "Parachute Jasmin 20 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 20,
+    "category": "Personal care",
+    "price": 19.5,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1938,7 +1839,7 @@
     "id": 217,
     "name": "Parachute Jasmin 90 ML",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 53,
     "mrp": 53,
     "image": "images/products/default.png"
@@ -1947,8 +1848,8 @@
     "id": 218,
     "name": "Parachute Oil 10 Rs",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 10,
+    "category": "Personal care",
+    "price": 9.7,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -1956,8 +1857,8 @@
     "id": 219,
     "name": "Parachute Oil 175 ML",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 115,
+    "category": "Personal care",
+    "price": 112,
     "mrp": 115,
     "image": "images/products/default.png"
   },
@@ -1965,8 +1866,8 @@
     "id": 220,
     "name": "Parachute Oil 20 Rs",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 20,
+    "category": "Personal care",
+    "price": 19.5,
     "mrp": 20,
     "image": "images/products/default.png"
   },
@@ -1974,8 +1875,8 @@
     "id": 221,
     "name": "Parachute Oil 250 ML",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 135,
+    "category": "Personal care",
+    "price": 162,
     "mrp": 162,
     "image": "images/products/default.png"
   },
@@ -1983,8 +1884,8 @@
     "id": 222,
     "name": "Parachute Oil 65",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 40,
+    "category": "Personal care",
+    "price": 64.5,
     "mrp": 65,
     "image": "images/products/default.png"
   },
@@ -1992,8 +1893,8 @@
     "id": 223,
     "name": "Parachute Oil Pouch",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 32,
+    "category": "Personal care",
+    "price": 49,
     "mrp": 50,
     "image": "images/products/default.png"
   },
@@ -2007,20 +1908,11 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 225,
-    "name": "Parivar Chaha 20 Rs",
-    "brand": "",
-    "category": "General Item",
-    "price": 20,
-    "mrp": 20,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 226,
     "name": "Parivar Chaha 250 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 145,
+    "price": 150,
     "mrp": 150,
     "image": "images/products/default.png"
   },
@@ -2029,7 +1921,7 @@
     "name": "Parivar Chaha 50 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 50,
+    "price": 54,
     "mrp": 55,
     "image": "images/products/default.png"
   },
@@ -2136,7 +2028,7 @@
     "id": 239,
     "name": "Pear Soap 100 Gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Personal care",
     "price": 58,
     "mrp": 58,
     "image": "images/products/default.png"
@@ -2145,17 +2037,17 @@
     "id": 240,
     "name": "Pears Oil Clear Soap 75 Gm",
     "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 63,
-    "mrp": 38,
+    "category": "Personal care",
+    "price": 41,
+    "mrp": 42,
     "image": "images/products/default.png"
   },
   {
     "id": 241,
     "name": "Phenyle",
     "brand": "",
-    "category": "General Item",
-    "price": 50,
+    "category": "Home care",
+    "price": 47,
     "mrp": 50,
     "image": "images/products/default.png"
   },
@@ -2163,8 +2055,8 @@
     "id": 242,
     "name": "Phenyle 1 Ltr",
     "brand": "",
-    "category": "General Item",
-    "price": 92,
+    "category": "Home care",
+    "price": 89,
     "mrp": 92,
     "image": "images/products/default.png"
   },
@@ -2173,7 +2065,7 @@
     "name": "Philips Bulb 10 w",
     "brand": "",
     "category": "General Item",
-    "price": 25,
+    "price": 27,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -2182,7 +2074,7 @@
     "name": "Philips Bulb 200 w",
     "brand": "",
     "category": "General Item",
-    "price": 40,
+    "price": 37,
     "mrp": 40,
     "image": "images/products/default.png"
   },
@@ -2192,7 +2084,7 @@
     "brand": "",
     "category": "General Item",
     "price": 23,
-    "mrp": 23,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
@@ -2200,7 +2092,7 @@
     "name": "Philips Led Bulb 0.5w",
     "brand": "",
     "category": "General Item",
-    "price": 70,
+    "price": 60,
     "mrp": 70,
     "image": "images/products/default.png"
   },
@@ -2209,7 +2101,7 @@
     "name": "Philips Led Bulb 12W",
     "brand": "",
     "category": "General Item",
-    "price": 220,
+    "price": 159,
     "mrp": 220,
     "image": "images/products/default.png"
   },
@@ -2218,7 +2110,7 @@
     "name": "Philips Led Bulb 16W",
     "brand": "",
     "category": "General Item",
-    "price": 325,
+    "price": 289,
     "mrp": 325,
     "image": "images/products/default.png"
   },
@@ -2227,7 +2119,7 @@
     "name": "Philips Led Bulb 9W",
     "brand": "",
     "category": "General Item",
-    "price": 95,
+    "price": 89,
     "mrp": 95,
     "image": "images/products/default.png"
   },
@@ -2254,7 +2146,7 @@
     "name": "Pitambari 10 Rs",
     "brand": "",
     "category": "General Item",
-    "price": 10,
+    "price": 9,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2263,7 +2155,7 @@
     "name": "Pitambari 30 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 15,
+    "price": 14,
     "mrp": 15,
     "image": "images/products/default.png"
   },
@@ -2272,7 +2164,7 @@
     "name": "Pitambari 50 Gm",
     "brand": "",
     "category": "General Item",
-    "price": 28,
+    "price": 27,
     "mrp": 28,
     "image": "images/products/default.png"
   },
@@ -2290,7 +2182,7 @@
     "name": "Pitambari Deep Shakti 900ML",
     "brand": "",
     "category": "General Item",
-    "price": 230,
+    "price": 209,
     "mrp": 230,
     "image": "images/products/default.png"
   },
@@ -2298,17 +2190,17 @@
     "id": 257,
     "name": "Pohe",
     "brand": "",
-    "category": "General Item",
-    "price": 55,
-    "mrp": 55,
+    "category": "Atta maida sooji besan",
+    "price": 58,
+    "mrp": 60,
     "image": "images/products/default.png"
   },
   {
     "id": 258,
     "name": "Ponds Cream 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Personal care",
+    "price": 9.7,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2316,17 +2208,17 @@
     "id": 259,
     "name": "Ponds Facewash 25Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 25,
-    "mrp": 20,
+    "category": "Personal care",
+    "price": 24.5,
+    "mrp": 25,
     "image": "images/products/default.png"
   },
   {
     "id": 260,
     "name": "Ponds Facewash 35 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 35,
+    "category": "Personal care",
+    "price": 34,
     "mrp": 35,
     "image": "images/products/default.png"
   },
@@ -2334,8 +2226,8 @@
     "id": 261,
     "name": "Ponds Moisturiser 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Personal care",
+    "price": 9.8,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2343,17 +2235,17 @@
     "id": 262,
     "name": "Ponds Powder",
     "brand": "",
-    "category": "General Item",
-    "price": 65,
-    "mrp": 59,
+    "category": "Personal care",
+    "price": 64,
+    "mrp": 65,
     "image": "images/products/default.png"
   },
   {
     "id": 263,
     "name": "Ponds Powder 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Personal care",
+    "price": 9.7,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2361,8 +2253,8 @@
     "id": 264,
     "name": "Ponds Powder 100 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 125,
+    "category": "Personal care",
+    "price": 123.5,
     "mrp": 125,
     "image": "images/products/default.png"
   },
@@ -2370,26 +2262,17 @@
     "id": 265,
     "name": "RA Owa Rs 10",
     "brand": "",
-    "category": "General Item",
+    "category": "Spices & Dry fuits",
     "price": 10,
     "mrp": 10,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 266,
-    "name": "Radhuni Oil",
-    "brand": "",
-    "category": "Oil Sugar & Salt",
-    "price": 134,
-    "mrp": 134,
     "image": "images/products/default.png"
   },
   {
     "id": 267,
     "name": "Red Hit 125 ML",
     "brand": "",
-    "category": "General Item",
-    "price": 75,
+    "category": "Home care",
+    "price": 73,
     "mrp": 75,
     "image": "images/products/default.png"
   },
@@ -2397,16 +2280,16 @@
     "id": 268,
     "name": "Rin Advanced Detergent Powder 500 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 50.89,
-    "mrp": 60,
+    "category": "Home care",
+    "price": 60.5,
+    "mrp": 61,
     "image": "images/products/default.png"
   },
   {
     "id": 269,
     "name": "Rin Ala 200 ML",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 44,
     "mrp": 45,
     "image": "images/products/default.png"
@@ -2415,8 +2298,8 @@
     "id": 270,
     "name": "Rin Bar 150 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Home care",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2424,8 +2307,8 @@
     "id": 271,
     "name": "Rin Bar 250Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 100,
+    "category": "Home care",
+    "price": 98,
     "mrp": 100,
     "image": "images/products/default.png"
   },
@@ -2433,8 +2316,8 @@
     "id": 272,
     "name": "Rin Bar 45 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 0,
+    "category": "Home care",
+    "price": 45,
     "mrp": 45,
     "image": "images/products/default.png"
   },
@@ -2442,17 +2325,17 @@
     "id": 273,
     "name": "Rin Powder 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 111,
-    "mrp": 111,
+    "category": "Home care",
+    "price": 119,
+    "mrp": 120,
     "image": "images/products/default.png"
   },
   {
     "id": 274,
     "name": "Rin Powder 125 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 8.93,
+    "category": "Home care",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2460,8 +2343,8 @@
     "id": 275,
     "name": "Room Freshner 220ml",
     "brand": "",
-    "category": "General Item",
-    "price": 169,
+    "category": "Home care",
+    "price": 129,
     "mrp": 169,
     "image": "images/products/default.png"
   },
@@ -2469,8 +2352,8 @@
     "id": 276,
     "name": "Sakhar 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 46,
+    "category": "Oil sugar and salt",
+    "price": 55,
     "mrp": 61,
     "image": "images/products/default.png"
   },
@@ -2505,35 +2388,17 @@
     "id": 280,
     "name": "Santoor Soap 4 Pack",
     "brand": "",
-    "category": "Dals & Grains",
-    "price": 156,
+    "category": "Personal care",
+    "price": 143,
     "mrp": 146,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 281,
-    "name": "Santoor Soap 75 Gm",
-    "brand": "",
-    "category": "Dals & Grains",
-    "price": 110,
-    "mrp": 110,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 282,
-    "name": "Santoor Soap Single",
-    "brand": "",
-    "category": "Dals & Grains",
-    "price": 41,
-    "mrp": 41,
     "image": "images/products/default.png"
   },
   {
     "id": 283,
     "name": "Shabu",
     "brand": "",
-    "category": "General Item",
-    "price": 53,
+    "category": "Atta maida sooji besan",
+    "price": 86,
     "mrp": 89,
     "image": "images/products/default.png"
   },
@@ -2541,8 +2406,8 @@
     "id": 284,
     "name": "Shabu Lahan 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 90,
+    "category": "Atta maida sooji besan",
+    "price": 105,
     "mrp": 110,
     "image": "images/products/default.png"
   },
@@ -2556,20 +2421,11 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 286,
-    "name": "Shrikhand 100 GM",
-    "brand": "",
-    "category": "General Item",
-    "price": 33,
-    "mrp": 35,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 287,
     "name": "Shrikhand 250 GM",
     "brand": "",
-    "category": "General Item",
-    "price": 60,
+    "category": "Dairy",
+    "price": 65,
     "mrp": 68,
     "image": "images/products/default.png"
   },
@@ -2577,7 +2433,7 @@
     "id": 288,
     "name": "Society Chaha 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2586,7 +2442,7 @@
     "id": 289,
     "name": "Society Chaha 250 Gm",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 155,
     "mrp": 155,
     "image": "images/products/default.png"
@@ -2613,7 +2469,7 @@
     "id": 292,
     "name": "Soup Tomato 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Snacks and beverages",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2623,7 +2479,7 @@
     "name": "Soyabean Oil 1 Ltr",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 140,
+    "price": 143,
     "mrp": 180,
     "image": "images/products/default.png"
   },
@@ -2632,16 +2488,16 @@
     "name": "Soyabean Oil 1/2 Ltr",
     "brand": "",
     "category": "Oil Sugar & Salt",
-    "price": 75,
-    "mrp": 76,
+    "price": 77,
+    "mrp": 90,
     "image": "images/products/default.png"
   },
   {
     "id": 295,
     "name": "Stayfree 35 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 35,
+    "category": "Personal care",
+    "price": 34,
     "mrp": 35,
     "image": "images/products/default.png"
   },
@@ -2649,8 +2505,8 @@
     "id": 296,
     "name": "Stayfree 42 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 42,
+    "category": "Personal care",
+    "price": 41,
     "mrp": 42,
     "image": "images/products/default.png"
   },
@@ -2658,8 +2514,8 @@
     "id": 297,
     "name": "Stayfree Ultra",
     "brand": "",
-    "category": "General Item",
-    "price": 50,
+    "category": "Personal care",
+    "price": 54,
     "mrp": 55,
     "image": "images/products/default.png"
   },
@@ -2667,8 +2523,8 @@
     "id": 298,
     "name": "Stayfree XXL",
     "brand": "",
-    "category": "General Item",
-    "price": 50,
+    "category": "Personal care",
+    "price": 49,
     "mrp": 50,
     "image": "images/products/default.png"
   },
@@ -2676,8 +2532,8 @@
     "id": 299,
     "name": "Suhana Akha Masur 10 Rs",
     "brand": "",
-    "category": "Dals & Grains",
-    "price": 10,
+    "category": "Spices & Dry fuits",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2703,8 +2559,8 @@
     "id": 302,
     "name": "Suhana Dhana Powder 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Spices & Dry fuits",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2748,8 +2604,8 @@
     "id": 307,
     "name": "Suhana Schezwan Chutney 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Spices & Dry fuits",
+    "price": 9.5,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -2757,8 +2613,8 @@
     "id": 308,
     "name": "Sunny Phenyl",
     "brand": "",
-    "category": "General Item",
-    "price": 55,
+    "category": "Home care",
+    "price": 63,
     "mrp": 65,
     "image": "images/products/default.png"
   },
@@ -2766,25 +2622,16 @@
     "id": 309,
     "name": "Sunsilk 1 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 1,
+    "category": "Personal care",
+    "price": 0.94,
     "mrp": 1,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 310,
-    "name": "Sunsilk Serum 3 Rs",
-    "brand": "",
-    "category": "General Item",
-    "price": 3,
-    "mrp": 3,
     "image": "images/products/default.png"
   },
   {
     "id": 311,
     "name": "Surf Excel Bar 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2793,7 +2640,7 @@
     "id": 312,
     "name": "Surf Excel Bar 20 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 20,
     "mrp": 20,
     "image": "images/products/default.png"
@@ -2802,7 +2649,7 @@
     "id": 313,
     "name": "Surf Excel M/C Liquid 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2811,17 +2658,17 @@
     "id": 314,
     "name": "Surf Excel Powder 1/2 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 76,
-    "mrp": 79,
+    "category": "Home care",
+    "price": 84,
+    "mrp": 85,
     "image": "images/products/default.png"
   },
   {
     "id": 315,
     "name": "Surf Machine Powder 1Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 290,
+    "category": "Home care",
+    "price": 280,
     "mrp": 290,
     "image": "images/products/default.png"
   },
@@ -2829,7 +2676,7 @@
     "id": 316,
     "name": "Tandool Pith 25 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Atta maida sooji besan",
     "price": 25,
     "mrp": 25,
     "image": "images/products/default.png"
@@ -2849,7 +2696,7 @@
     "brand": "",
     "category": "Oil Sugar & Salt",
     "price": 30,
-    "mrp": 30,
+    "mrp": 32,
     "image": "images/products/default.png"
   },
   {
@@ -2858,7 +2705,7 @@
     "brand": "",
     "category": "Oil Sugar & Salt",
     "price": 15,
-    "mrp": 15,
+    "mrp": 16,
     "image": "images/products/default.png"
   },
   {
@@ -2871,19 +2718,10 @@
     "image": "images/products/default.png"
   },
   {
-    "id": 321,
-    "name": "Tide 1 Kg",
-    "brand": "",
-    "category": "General Item",
-    "price": 85,
-    "mrp": 85,
-    "image": "images/products/default.png"
-  },
-  {
     "id": 322,
     "name": "Tide Bar 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2892,7 +2730,7 @@
     "id": 323,
     "name": "Tide Powder 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2937,8 +2775,8 @@
     "id": 328,
     "name": "Vicco Soap 30 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 0,
+    "category": "Personal care",
+    "price": 29,
     "mrp": 30,
     "image": "images/products/default.png"
   },
@@ -2946,8 +2784,8 @@
     "id": 329,
     "name": "Vicco Soap 50 Gm",
     "brand": "",
-    "category": "General Item",
-    "price": 25,
+    "category": "Personal care",
+    "price": 24,
     "mrp": 25,
     "image": "images/products/default.png"
   },
@@ -2955,34 +2793,25 @@
     "id": 330,
     "name": "Vim Bar 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Home care",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
   {
     "id": 331,
-    "name": "Vim Bar 30 Rs",
+    "name": "Vim Bar 40 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 30,
-    "mrp": 30,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 332,
-    "name": "Vim Bar 500 Gm",
-    "brand": "",
-    "category": "General Item",
-    "price": 60,
-    "mrp": 60,
+    "category": "Home care",
+    "price": 39,
+    "mrp": 40,
     "image": "images/products/default.png"
   },
   {
     "id": 333,
     "name": "Vim Liquid 10 Rs",
     "brand": "",
-    "category": "General Item",
+    "category": "Home care",
     "price": 10,
     "mrp": 10,
     "image": "images/products/default.png"
@@ -2992,7 +2821,7 @@
     "name": "Vinegar 200 ML",
     "brand": "",
     "category": "General Item",
-    "price": 40,
+    "price": 36,
     "mrp": 40,
     "image": "images/products/default.png"
   },
@@ -3000,8 +2829,8 @@
     "id": 335,
     "name": "WaghBakri Chaha 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
+    "category": "Snacks and beverages",
+    "price": 9.5,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -3018,26 +2847,17 @@
     "id": 337,
     "name": "Wheel Powder 1 Kg",
     "brand": "",
-    "category": "General Item",
-    "price": 73,
-    "mrp": 76,
+    "category": "Home care",
+    "price": 87,
+    "mrp": 90,
     "image": "images/products/default.png"
   },
   {
     "id": 338,
     "name": "Wheel Powder 10 Rs",
     "brand": "",
-    "category": "General Item",
-    "price": 10,
-    "mrp": 10,
-    "image": "images/products/default.png"
-  },
-  {
-    "id": 339,
-    "name": "Yippee Maggi 10 Rs",
-    "brand": "",
-    "category": "Snacks & Beverages",
-    "price": 10,
+    "category": "Home care",
+    "price": 9.75,
     "mrp": 10,
     "image": "images/products/default.png"
   },
@@ -3048,5 +2868,13 @@
     "category": "Personal care",
     "mrp": 211,
     "price": 200
+  },
+  {
+    "id": "342",
+    "name": "Wheel Powder 500gm",
+    "brand": "HUL",
+    "category": "Home care",
+    "mrp": 46,
+    "price": 45
   }
 ]
