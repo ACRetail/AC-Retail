@@ -169,17 +169,13 @@ function createBrandFilters() {
 // Category Filters
 // =============================
 
-
-                    // =============================
-// CATEGORY FILTERS - CLEAN
-// =============================
 function createCategoryFilters() {
 
     if (!categoryFilters) return;
 
     const categoryGroups = [
         {
-            name: "Spices & Dry fuits",
+            name: "Spices & Dry Fruits",
             aliases: [
                 "Spices & Dry fuits",
                 "Spices & Dry Fruits"
@@ -192,47 +188,47 @@ function createCategoryFilters() {
             ]
         },
         {
-            name: "Atta maida sooji besan",
+            name: "Atta Maida Sooji Besan",
             aliases: [
                 "Atta maida sooji besan",
                 "Atta Maida Sooji Besan"
             ]
         },
         {
-            name: "Dals and grains",
+            name: "Dals and Grains",
             aliases: [
                 "Dals and grains",
                 "Dals & Grains"
             ]
         },
         {
-            name: "Oil sugar and salt",
+            name: "Oil Sugar and Salt",
             aliases: [
                 "Oil sugar and salt",
                 "Oil Sugar & Salt"
             ]
         },
         {
-            name: "Snacks and beverages",
+            name: "Snacks and Beverages",
             aliases: [
                 "Snacks and beverages",
                 "Snacks & Beverages"
             ]
         },
         {
-            name: "Home care",
+            name: "Home Care",
             aliases: [
                 "Home care"
             ]
         },
         {
-            name: "Personal care",
+            name: "Personal Care",
             aliases: [
                 "Personal care"
             ]
         },
         {
-            name: "Dairy",
+            name: "Dairy & Products",
             aliases: [
                 "Dairy"
             ]
