@@ -3,1423 +3,331 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>AC Retail - Grocery Store</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
-
-/* ==========================================
-   SIMPLE CATEGORY DESIGN
-   ========================================== */
-
 #homeCategories{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:20px;
-    margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-top:28px;
 }
-
 #homeCategories .category-card{
-    position:relative;
-    min-height:205px;
-    border-radius:22px;
-    padding:22px 12px 16px;
-    text-decoration:none;
-    color:#064e3b;
-    background:linear-gradient(145deg,#ffffff,#f4faf7);
-    border:1px solid #e1eee8;
-    box-shadow:0 8px 24px rgba(0,80,55,.08);
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
+  position:relative;
+  min-height:185px;
+  border-radius:22px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:18px 12px;
+  text-decoration:none;
+  color:#fff;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.28) 55%,rgba(0,0,0,.05)),
+    var(--category-image);
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.13);
+  transition:.35s;
 }
-
 #homeCategories .category-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 16px 32px rgba(0,80,55,.14);
-    border-color:#b8ddce;
+  transform:translateY(-7px);
+  box-shadow:0 18px 35px rgba(0,0,0,.22);
 }
-
 .category-icon{
-    position:static;
-    width:86px;
-    height:86px;
-    border-radius:50%;
-
-    background:#e8f6ef;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:48px;
-    line-height:1;
-
-    box-shadow:
-        inset 0 0 0 7px rgba(255,255,255,.7);
-
-    margin-bottom:16px;
+  position:absolute;
+  top:14px;
+  left:14px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 5px 15px rgba(0,0,0,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:23px;
 }
-
-.category-icon img{
-    display:none !important;
-}
-
+.category-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .category-name{
-    width:auto;
-    padding:0;
-
-    border-radius:0;
-    background:none;
-    backdrop-filter:none;
-
-    font-size:16px;
-    line-height:1.25;
-    font-weight:800;
-
-    color:#075e42;
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:10px 8px;
+  border-radius:12px;
+  background:rgba(0,0,0,.42);
+  backdrop-filter:blur(4px);
+  font-size:16px;
+  font-weight:800;
+  text-align:center;
 }
 
-.category-arrow{
-    margin-top:13px;
-
-    width:34px;
-    height:34px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#dff2e9;
-    color:#087443;
-
-    font-size:20px;
-    font-weight:900;
-}
-
-
-/* TABLET */
-
-@media(max-width:1100px){
-
-    #homeCategories{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-}
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    #homeCategories{
-        grid-template-columns:repeat(2,1fr);
-        gap:14px;
-    }
-
-    #homeCategories .category-card{
-        min-height:180px;
-        padding:18px 9px 14px;
-        border-radius:18px;
-    }
-
-    .category-icon{
-        width:72px;
-        height:72px;
-        font-size:38px;
-        margin-bottom:12px;
-    }
-
-    .category-name{
-        font-size:14px;
-    }
-
-    .category-arrow{
-        width:30px;
-        height:30px;
-        margin-top:10px;
-        font-size:17px;
-    }
-
-}
-
-
-/* ==========================================
-   FEATURED PRODUCTS
-   ========================================== */
-
-.featured-section{
-    max-width:1200px;
-    margin:38px auto 42px;
-    padding:0 18px;
-}
-
-.featured-section > h2{
-    margin:0;
-    font-size:28px;
-    font-weight:800;
-}
-
-.featured-subtitle{
-    margin:7px 0 20px;
-    color:#6b7280;
-    font-size:14px;
-}
-
+.featured-section{display:none;padding:38px 20px 10px}
+.featured-section h2{text-align:center;margin:0 0 6px}
+.featured-subtitle{text-align:center;margin:0 0 24px;opacity:.72}
 .featured-grid{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:18px;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
 }
-
 .featured-card{
-    overflow:hidden;
-
-    border:1px solid #e5e7eb;
-    border-radius:18px;
-
-    background:#fff;
-
-    box-shadow:0 7px 24px rgba(0,0,0,.07);
-
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 7px 25px rgba(0,0,0,.10);
+  border:1px solid rgba(0,0,0,.06);
+  transition:.3s;
 }
-
-.featured-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 13px 30px rgba(0,0,0,.12);
-}
-
-.featured-image{
-    width:100%;
-    height:180px;
-
-    object-fit:contain;
-
-    padding:12px;
-
-    background:#f8fafc;
-
-    display:block;
-}
-
-.featured-info{
-    padding:14px;
-}
-
-.featured-brand{
-    color:#6b7280;
-    font-size:12px;
-    margin-bottom:5px;
-}
-
-.featured-name{
-    min-height:40px;
-
-    font-size:15px;
-    font-weight:800;
-    line-height:1.3;
-}
-
-.featured-mrp{
-    color:#9ca3af;
-
-    font-size:12px;
-
-    text-decoration:line-through;
-
-    margin-top:7px;
-}
-
-.featured-price{
-    color:#15803d;
-
-    font-size:18px;
-    font-weight:900;
-
-    margin-top:3px;
-}
-
-.featured-save{
-    color:#16a34a;
-
-    font-size:12px;
-    font-weight:700;
-
-    margin-top:4px;
-}
-
+.featured-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,.16)}
+.featured-image{width:100%;height:190px;object-fit:cover;display:block;background:#f3f3f3}
+.featured-info{padding:15px}
+.featured-brand{font-size:12px;opacity:.65;margin-bottom:4px}
+.featured-name{font-size:16px;font-weight:800;min-height:42px}
+.featured-mrp{margin-top:8px;font-size:13px;opacity:.6;text-decoration:line-through}
+.featured-price{font-size:21px;font-weight:900;margin-top:2px}
+.featured-save{font-size:12px;margin:4px 0 12px;font-weight:700}
 .featured-add-btn{
-    width:100%;
-
-    margin-top:11px;
-
-    padding:10px 12px;
-
-    border:0;
-    border-radius:10px;
-
-    background:#198754;
-    color:#fff;
-
-    font-weight:800;
-
-    cursor:pointer;
+  width:100%;border:0;border-radius:10px;padding:11px;cursor:pointer;
+  font-weight:800;font-size:14px;
 }
-
-.featured-add-btn:hover{
-    filter:brightness(.94);
-}
-
-.featured-view-all{
-    display:inline-flex;
-
-    padding:11px 20px;
-
-    border-radius:11px;
-
-    background:#198754;
-    color:#fff;
-
-    text-decoration:none;
-
-    font-weight:800;
-}
-
-
-/* FEATURED TABLET */
 
 @media(max-width:900px){
-
-    .featured-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
+  #homeCategories{grid-template-columns:repeat(3,1fr);gap:16px}
+  .featured-grid{grid-template-columns:repeat(3,1fr)}
 }
-
-
-/* FEATURED MOBILE */
-
 @media(max-width:600px){
-
-    .featured-section{
-        padding:0 12px;
-        margin:28px auto 35px;
-    }
-
-    .featured-section > h2{
-        font-size:23px;
-    }
-
-    .featured-grid{
-        gap:12px;
-    }
-
-    .featured-image{
-        height:145px;
-        padding:9px;
-    }
-
-    .featured-info{
-        padding:11px;
-    }
-
-    .featured-name{
-        font-size:14px;
-        min-height:37px;
-    }
-
-    .featured-price{
-        font-size:16px;
-    }
-
+  #homeCategories{grid-template-columns:repeat(2,1fr);gap:13px;margin-top:20px}
+  #homeCategories .category-card{min-height:145px;border-radius:17px;padding:14px 8px}
+  .category-icon{width:40px;height:40px;top:10px;left:10px}
+  .category-name{font-size:13px;padding:8px 5px}
+  .featured-section{padding:28px 12px 5px}
+  .featured-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .featured-image{height:145px}
+  .featured-info{padding:11px}
+  .featured-name{font-size:14px;min-height:38px}
+  .featured-price{font-size:18px}
 }
-
 </style>
-
 </head>
 
-
 <body>
-
-
-<!-- ==========================================
-     HEADER
-     ========================================== -->
-
 <header>
-
-<div class="header-inner">
-
-<div>
-
-<div class="logo">
-🛒 AC Retail
-</div>
-
-<div class="tagline">
-Fresh Groceries • Better Living
-</div>
-
-</div>
-
-
-<nav>
-
-<a href="index.html" class="active">
-Home
-</a>
-
-<a href="products.html">
-Products
-</a>
-
-<a href="cart.html">
-🛒 Cart
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="offers.html">
-Offers
-</a>
-
-<a href="contact.html">
-Contact
-</a>
-
-</nav>
-
-</div>
-
+  <div class="header-inner">
+    <div>
+      <div class="logo">🛒 AC Retail</div>
+      <div class="tagline">Fresh Groceries • Better Living</div>
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">🛒 Cart</a>
+      <a href="about.html">About</a>
+      <a href="offers.html">Offers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-
-
-<!-- ==========================================
-     HERO
-     ========================================== -->
-
 <section class="hero">
-
-<h2>
-Fresh Groceries,<br>
-Better Prices.
-</h2>
-
-<p>
-AC Retail – your trusted grocery store in Phaltan.
-</p>
-
-
-<div class="hero-buttons">
-
-<a
-href="products.html"
-class="hero-btn shop-btn">
-
-🛒 Shop Now
-
-</a>
-
-
-<a
-href="https://wa.me/918830300826"
-class="hero-btn wa-btn-home"
-target="_blank">
-
-💬 Order on WhatsApp
-
-</a>
-
-</div>
-
+  <h2>Fresh Groceries,<br>Better Prices.</h2>
+  <p>AC Retail – your trusted grocery store in Phaltan.</p>
+  <div class="hero-buttons">
+    <a href="products.html" class="hero-btn shop-btn">🛒 Shop Now</a>
+    <a href="https://wa.me/918830300826" class="hero-btn wa-btn-home" target="_blank">💬 Order on WhatsApp</a>
+  </div>
 </section>
 
-
-
-<!-- ==========================================
-     FEATURED PRODUCTS
-     ========================================== -->
-
-<section
-class="featured-section"
-id="featuredProductsSection"
->
-
-<h2>
-⭐ Featured Products
-</h2>
-
-
-<p class="featured-subtitle">
-Explore our complete range of products
-</p>
-
-
-<div
-class="featured-grid"
-id="featuredProducts">
-</div>
-
-
-<div
-style="text-align:center;margin-top:22px;"
->
-
-<a
-href="products.html"
-class="featured-view-all">
-
-View All Products →
-
-</a>
-
-</div>
-
+<section class="featured-section" id="featuredProductsSection">
+  <h2>⭐ Featured Products</h2>
+  <p class="featured-subtitle">Selected products from AC Retail</p>
+  <div class="featured-grid" id="featuredProducts"></div>
 </section>
-
-
-
-<!-- ==========================================
-     CATEGORIES
-     ========================================== -->
 
 <section class="category-section">
-
-<h2>
-🛍️ Shop by Category
-</h2>
-
-
-<div
-class="category-grid"
-id="homeCategories">
-</div>
-
+  <h2>🛍️ Shop by Category</h2>
+  <div class="category-grid" id="homeCategories"></div>
 </section>
-
-
-
-<!-- ==========================================
-     SERVICES
-     ========================================== -->
 
 <section class="services">
-
-<h2>
-Why Choose AC Retail?
-</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-🥬 Fresh Grocery
-</h3>
-
-<p>
-Fresh and Quality Products
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-💰 Best Prices
-</h3>
-
-<p>
-Affordable Daily Prices
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-🚚 Fast Service
-</h3>
-
-<p>
-Customer Satisfaction First
-</p>
-
-</div>
-
-
-</div>
-
+  <h2>Why Choose AC Retail?</h2>
+  <div class="cards">
+    <div class="card"><h3>🥬 Fresh Grocery</h3><p>Fresh and Quality Products</p></div>
+    <div class="card"><h3>💰 Best Prices</h3><p>Affordable Daily Prices</p></div>
+    <div class="card"><h3>🚚 Fast Service</h3><p>Customer Satisfaction First</p></div>
+  </div>
 </section>
 
-
-
-<!-- ==========================================
-     VIEW ALL PRODUCTS
-     ========================================== -->
-
-<section
-style="text-align:center;margin:40px 20px"
->
-
-<a
-href="products.html"
-class="btn">
-
-🛒 View All Products
-
-</a>
-
+<section style="text-align:center;margin:40px 20px">
+  <a href="products.html" class="btn">🛒 View All Products</a>
 </section>
-
-
-
-<!-- ==========================================
-     LOCATION
-     ========================================== -->
 
 <section class="location-box">
-
-<h3>
-📍 Visit AC Retail
-</h3>
-
-<p>
-Police Line, Phaltan
-</p>
-
-<p>
-📞 8830300826
-</p>
-
-<p>
-🕒 Open: 7:00 AM – 9:00 PM
-</p>
-
+  <h3>📍 Visit AC Retail</h3>
+  <p>Police Line, Phaltan</p>
+  <p>📞 8830300826</p>
+  <p>🕒 Open: 7:00 AM – 9:00 PM</p>
 </section>
 
-
-
-<!-- ==========================================
-     FOOTER
-     ========================================== -->
-
 <footer class="footer">
-
-<h3>
-AC Retail
-</h3>
-
-<p>
-Police Line, Phaltan
-</p>
-
-<p>
-📞 8830300826
-</p>
-
-<p>
-🕒 Open: 7:00 AM – 9:00 PM
-</p>
-
-<p>
-&copy; 2026 AC Retail. All Rights Reserved.
-</p>
-
+  <h3>AC Retail</h3>
+  <p>Police Line, Phaltan</p>
+  <p>📞 8830300826</p>
+  <p>🕒 Open: 7:00 AM – 9:00 PM</p>
+  <p>&copy; 2026 AC Retail. All Rights Reserved.</p>
 </footer>
 
-
-
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/918830300826"
-class="whatsapp-float"
-target="_blank">
-
-💬
-
-</a>
-
-
+<a href="https://wa.me/918830300826" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
-
-
-/* ==========================================
-   LOAD PRODUCTS
-   ========================================== */
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-
-fetch(
-"products.json?v=" + Date.now(),
-{
-cache:"no-store"
-}
-)
-
-
-.then(function(response){
-
-if(!response.ok){
-
-throw new Error(
-"Products file could not be loaded"
-);
-
-}
-
-return response.json();
-
-})
-
-
-.then(function(products){
-
-
-if(!Array.isArray(products)){
-
-products = [];
-
-}
-
-
-
-/* ==========================================
-   FEATURED PRODUCTS
-   HOME PAR SIRF 8 PRODUCTS
-   ========================================== */
-
-var featuredSection =
-document.getElementById(
-"featuredProductsSection"
-);
-
-
-var featuredBox =
-document.getElementById(
-"featuredProducts"
-);
-
-
-if(products.length){
-
-featuredSection.style.display =
-"block";
-
-
-var featuredProducts =
-products.slice(0,8);
-
-
-featuredBox.innerHTML =
-featuredProducts.map(
-function(product){
-
-
-var mrp =
-Number(
-product.mrp ||
-product.price ||
-0
-);
-
-
-var price =
-Number(
-product.price ||
-0
-);
-
-
-var saving =
-Math.max(
-0,
-mrp - price
-);
-
-
-var discount =
-mrp > 0 &&
-price < mrp
-
-?
-
-Math.round(
-(saving / mrp) * 100
-)
-
-:
-
-0;
-
-
-var image =
-product.image ||
-"images/products/default.png";
-
-
-return (
-
-'<div class="featured-card">' +
-
-
-'<div style="position:relative">' +
-
-
-'<img class="featured-image" src="' +
-
-escapeHTML(image) +
-
-'" alt="' +
-
-escapeHTML(
-product.name ||
-"Product"
-) +
-
-'" loading="lazy" ' +
-
-'onerror="this.style.display=\'none\'">' +
-
-
-(
-discount > 0
-
-?
-
-'<span style="' +
-'position:absolute;' +
-'top:10px;' +
-'right:10px;' +
-'background:#198754;' +
-'color:#fff;' +
-'padding:5px 8px;' +
-'border-radius:8px;' +
-'font-size:11px;' +
-'font-weight:800">' +
-
-discount +
-
-'% OFF</span>'
-
-:
-
-''
-
-) +
-
-
-'</div>' +
-
-
-'<div class="featured-info">' +
-
-
-'<div class="featured-brand">' +
-
-escapeHTML(
-product.brand ||
-""
-) +
-
-'</div>' +
-
-
-'<div class="featured-name">' +
-
-escapeHTML(
-product.name ||
-"Product"
-) +
-
-'</div>' +
-
-
-'<div class="featured-mrp">' +
-
-'MRP ₹' +
-
-mrp.toFixed(2) +
-
-'</div>' +
-
-
-'<div class="featured-price">' +
-
-'Online Price ₹' +
-
-price.toFixed(2) +
-
-'</div>' +
-
-
-(
-
-saving > 0
-
-?
-
-'<div class="featured-save">' +
-
-'You Save ₹' +
-
-saving.toFixed(2) +
-
-'</div>'
-
-:
-
-''
-
-) +
-
-
-'<button ' +
-
-'class="featured-add-btn" ' +
-
-'onclick="addToCart(' +
-
-JSON.stringify(product.id) +
-
-')">' +
-
-'🛒 Add to Cart' +
-
-'</button>' +
-
-
-'</div>' +
-
-
-'</div>';
-
-
-}
-
-).join("");
-
-}
-
-
-
-/* ==========================================
-   EXACT 10 CATEGORIES
-   ========================================== */
-
-var categoryGroups = [
-
-
-[
-"Spices & Dry fuits",
-
-[
-"Spices & Dry fuits",
-"Spices & Dry Fruits"
-],
-
-"🌶️"
-],
-
-
-[
-"Rice",
-
-[
-"Rice"
-],
-
-"🍚"
-],
-
-
-[
-"Atta maida sooji besan",
-
-[
-"Atta maida sooji besan",
-"Atta Maida Sooji Besan"
-],
-
-"🌾"
-],
-
-
-[
-"Dals and grains",
-
-[
-"Dals and grains",
-"Dals & Grains"
-],
-
-"🫘"
-],
-
-
-[
-"Oil sugar and salt",
-
-[
-"Oil sugar and salt",
-"Oil Sugar & Salt"
-],
-
-"🫙"
-],
-
-
-[
-"Snacks and beverages",
-
-[
-"Snacks and beverages",
-"Snacks & Beverages"
-],
-
-"🍪"
-],
-
-
-[
-"Home care",
-
-[
-"Home care"
-],
-
-"🧹"
-],
-
-
-[
-"Personal care",
-
-[
-"Personal care"
-],
-
-"🧴"
-],
-
-
-[
-"Dairy",
-
-[
-"Dairy"
-],
-
-"🥛"
-],
-
-
-[
-"General Item",
-
-[
-"General Item"
-],
-
-"🛍️"
-]
-
-
-];
-
-
-
-/* ==========================================
-   CREATE CATEGORY CARDS
-   ========================================== */
-
-var categoryBox =
-document.getElementById(
-"homeCategories"
-);
-
-
-categoryBox.innerHTML = "";
-
-
-categoryGroups.forEach(
-function(group){
-
-
-var displayName =
-group[0];
-
-
-var aliases =
-group[1];
-
-
-var emoji =
-group[2];
-
-
-var actualCategory =
-aliases.find(
-function(alias){
-
-
-return products.some(
-function(product){
-
-
-return String(
-product.category || ""
-).trim() === alias;
-
-
+document.addEventListener("DOMContentLoaded", function(){
+  fetch("products.json?v=" + Date.now(), {cache:"no-store"})
+    .then(function(response){
+      if(!response.ok) throw new Error("Products file could not be loaded");
+      return response.json();
+    })
+    .then(function(products){
+
+      /* FEATURED PRODUCTS */
+      var featuredSection = document.getElementById("featuredProductsSection");
+      var featuredBox = document.getElementById("featuredProducts");
+      var featured = products.filter(function(product){
+        return product.featured === true;
+      });
+
+      if(featured.length){
+        featuredSection.style.display = "block";
+        featuredBox.innerHTML = featured.map(function(product){
+          var mrp = Number(product.mrp || product.price || 0);
+          var price = Number(product.price || 0);
+          var saving = Math.max(0, mrp - price);
+          var image = product.image || "images/products/default.png";
+
+          return '<div class="featured-card">' +
+            '<img class="featured-image" src="' + escapeHTML(image) +
+            '" alt="' + escapeHTML(product.name || "Product") +
+            '" onerror="this.style.display=\'none\'">' +
+            '<div class="featured-info">' +
+            '<div class="featured-brand">' + escapeHTML(product.brand || "") + '</div>' +
+            '<div class="featured-name">' + escapeHTML(product.name || "Product") + '</div>' +
+            '<div class="featured-mrp">MRP ₹' + mrp.toFixed(2) + '</div>' +
+            '<div class="featured-price">Online Price ₹' + price.toFixed(2) + '</div>' +
+            (saving > 0 ? '<div class="featured-save">You Save ₹' + saving.toFixed(2) + '</div>' : '') +
+            '<button class="featured-add-btn" onclick="addToCart(' + JSON.stringify(product.id) + ')">🛒 Add to Cart</button>' +
+            '</div></div>';
+        }).join("");
+      }
+
+      /* EXACTLY 10 CATEGORY GROUPS */
+      var categoryGroups = [
+        ["Spices & Dry fuits", ["Spices & Dry fuits","Spices & Dry Fruits"], "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=900&q=85"],
+        ["Rice", ["Rice"], "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&w=900&q=85"],
+        ["Atta maida sooji besan", ["Atta maida sooji besan","Atta Maida Sooji Besan"], "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"],
+        ["Dals and grains", ["Dals and grains","Dals & Grains"], "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=900&q=85"],
+        ["Oil sugar and salt", ["Oil sugar and salt","Oil Sugar & Salt"], "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85"],
+        ["Snacks and beverages", ["Snacks and beverages","Snacks & Beverages"], "https://images.unsplash.com/photo-1621939514649-280e2aa7a1f?auto=format&fit=crop&w=900&q=85"],
+        ["Home care", ["Home care"], "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"],
+        ["Personal care", ["Personal care"], "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=85"],
+        ["Dairy", ["Dairy"], "https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=900&q=85"],
+        ["General Item", ["General Item"], "https://images.unsplash.com/photo-1601598851547-4302969d4b1b?auto=format&fit=crop&w=900&q=85"]
+      ];
+
+      var categoryBox = document.getElementById("homeCategories");
+      categoryBox.innerHTML = "";
+
+      categoryGroups.forEach(function(group){
+        var displayName = group[0];
+        var aliases = group[1];
+        var image = group[2];
+
+        var actualCategory = aliases.find(function(alias){
+          return products.some(function(product){
+            return String(product.category || "").trim() === alias;
+          });
+        });
+
+        if(!actualCategory) return;
+
+        var card = document.createElement("a");
+        card.className = "category-card";
+        card.href = "products.html?category=" + encodeURIComponent(actualCategory);
+        card.style.setProperty("--category-image", 'url("' + image + '")');
+
+        var icon = document.createElement("span");
+        icon.className = "category-icon";
+
+        var img = document.createElement("img");
+        img.src = image;
+        img.alt = displayName;
+        img.loading = "lazy";
+        img.onerror = function(){
+          icon.innerHTML = "🛍️";
+        };
+        icon.appendChild(img);
+
+        var name = document.createElement("span");
+        name.className = "category-name";
+        name.textContent = displayName;
+
+        card.appendChild(icon);
+        card.appendChild(name);
+        categoryBox.appendChild(card);
+      });
+    })
+    .catch(function(error){
+      console.error("Home loading error:", error);
+    });
 });
-
-
-}
-);
-
-
-if(!actualCategory){
-
-return;
-
-}
-
-
-var card =
-document.createElement(
-"a"
-);
-
-
-card.className =
-"category-card";
-
-
-card.href =
-"products.html?category=" +
-
-encodeURIComponent(
-actualCategory
-);
-
-
-
-/* ICON */
-
-var icon =
-document.createElement(
-"span"
-);
-
-
-icon.className =
-"category-icon";
-
-
-icon.textContent =
-emoji;
-
-
-
-/* NAME */
-
-var name =
-document.createElement(
-"span"
-);
-
-
-name.className =
-"category-name";
-
-
-name.textContent =
-displayName;
-
-
-
-/* ARROW */
-
-var arrow =
-document.createElement(
-"span"
-);
-
-
-arrow.className =
-"category-arrow";
-
-
-arrow.textContent =
-"→";
-
-
-
-card.appendChild(icon);
-
-card.appendChild(name);
-
-card.appendChild(arrow);
-
-
-categoryBox.appendChild(card);
-
-
-});
-
-
-})
-
-
-.catch(function(error){
-
-
-console.error(
-"Home loading error:",
-error
-);
-
-
-});
-
-
-});
-
-
-
-/* ==========================================
-   ESCAPE HTML
-   ========================================== */
 
 function escapeHTML(value){
-
-
-return String(
-value ?? ""
-)
-
-
-.replace(
-/&/g,
-"&amp;"
-)
-
-
-.replace(
-/</g,
-"&lt;"
-)
-
-
-.replace(
-/>/g,
-"&gt;"
-)
-
-
-.replace(
-/"/g,
-"&quot;"
-)
-
-
-.replace(
-/'/g,
-"&#039;"
-);
-
-
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 }
-
-
-
-/* ==========================================
-   ADD TO CART
-   ========================================== */
 
 function addToCart(productId){
+  fetch("products.json?v=" + Date.now(), {cache:"no-store"})
+    .then(function(response){ return response.json(); })
+    .then(function(products){
+      var product = products.find(function(item){
+        return String(item.id) === String(productId);
+      });
+      if(!product) return;
 
+      var cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      var existing = cart.find(function(item){
+        return String(item.id) === String(product.id);
+      });
 
-fetch(
+      if(existing){
+        existing.qty = Number(existing.qty || 0) + 1;
+      }else{
+        cart.push({
+          id:product.id,
+          name:product.name,
+          brand:product.brand || "",
+          category:product.category || "",
+          mrp:product.mrp || product.price || 0,
+          price:product.price || 0,
+          image:product.image || "",
+          qty:1
+        });
+      }
 
-"products.json?v=" +
-Date.now(),
-
-{
-cache:"no-store"
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Product added to cart 🛒");
+    })
+    .catch(function(error){
+      console.error("Add to cart error:", error);
+    });
 }
-
-)
-
-
-.then(
-function(response){
-
-return response.json();
-
-}
-)
-
-
-.then(
-function(products){
-
-
-var product =
-products.find(
-function(item){
-
-
-return String(
-item.id
-) === String(
-productId
-);
-
-
-}
-);
-
-
-if(!product){
-
-return;
-
-}
-
-
-var cart =
-JSON.parse(
-localStorage.getItem(
-"cart"
-) || "[]"
-);
-
-
-var existing =
-cart.find(
-function(item){
-
-
-return String(
-item.id
-) === String(
-product.id
-);
-
-
-}
-);
-
-
-if(existing){
-
-
-existing.qty =
-Number(
-existing.qty || 0
-) + 1;
-
-
-}
-
-else{
-
-
-cart.push({
-
-id:product.id,
-
-name:product.name,
-
-brand:
-product.brand || "",
-
-category:
-product.category || "",
-
-mrp:
-product.mrp ||
-product.price ||
-0,
-
-price:
-product.price ||
-0,
-
-image:
-product.image ||
-"",
-
-qty:1
-
-});
-
-
-}
-
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
-
-
-alert(
-"Product added to cart 🛒"
-);
-
-
-})
-
-
-.catch(
-function(error){
-
-
-console.error(
-"Add to cart error:",
-error
-);
-
-
-}
-);
-
-
-}
-
 </script>
-
-
 </body>
 </html>
