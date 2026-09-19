@@ -167,7 +167,7 @@
     "price": 125,
     "mrp": 130,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 19,
@@ -337,7 +337,7 @@
     "price": 0.93,
     "mrp": 1,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 36,
@@ -457,7 +457,7 @@
     "price": 19,
     "mrp": 20,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 48,
@@ -577,7 +577,7 @@
     "price": 4.85,
     "mrp": 5,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 60,
@@ -857,7 +857,7 @@
     "price": 180,
     "mrp": 210,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 88,
@@ -1057,7 +1057,7 @@
     "price": 29,
     "mrp": 30,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 109,
@@ -2617,7 +2617,7 @@
     "price": 55,
     "mrp": 61,
     "image": "images/products/default.png",
-    "featured": false
+    "featured": true
   },
   {
     "id": 277,
