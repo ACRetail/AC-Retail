@@ -132,9 +132,6 @@
   }
 }
 
-
-/* FEATURED PRODUCTS */
-
 .featured-section{
   display:none;
   padding:38px 20px 10px;
@@ -227,7 +224,6 @@
 }
 
 @media(max-width:900px){
-
   #homeCategories{
     grid-template-columns:repeat(3,1fr);
     gap:16px;
@@ -236,11 +232,9 @@
   .featured-grid{
     grid-template-columns:repeat(3,1fr);
   }
-
 }
 
 @media(max-width:600px){
-
   #homeCategories{
     grid-template-columns:repeat(2,1fr);
     gap:13px;
@@ -248,7 +242,7 @@
   }
 
   #homeCategories .category-card{
-    min-height:170px;
+    min-height:145px;
     border-radius:17px;
     padding:14px 8px;
   }
@@ -278,7 +272,6 @@
   .featured-price{
     font-size:18px;
   }
-
 }
 </style>
 </head>
@@ -287,7 +280,6 @@
 
 <header>
   <div class="header-inner">
-
     <div>
       <div class="logo">🛒 AC Retail</div>
       <div class="tagline">Fresh Groceries • Better Living</div>
@@ -301,17 +293,11 @@
       <a href="offers.html">Offers</a>
       <a href="contact.html">Contact</a>
     </nav>
-
   </div>
 </header>
 
-
 <section class="hero">
-
-  <h2>
-    Fresh Groceries,<br>
-    Better Prices.
-  </h2>
+  <h2>Fresh Groceries,<br>Better Prices.</h2>
 
   <p>
     AC Retail – your trusted grocery store in Phaltan.
@@ -319,22 +305,19 @@
 
   <div class="hero-buttons">
 
-    <a href="products.html" class="hero-btn shop-btn">
-      🛒 Shop Now
+    <a href="products.html"
+       class="hero-btn shop-btn">
+       🛒 Shop Now
     </a>
 
-    <a
-      href="https://wa.me/918830300826"
-      class="hero-btn wa-btn-home"
-      target="_blank"
-    >
-      💬 Order on WhatsApp
+    <a href="https://wa.me/918830300826"
+       class="hero-btn wa-btn-home"
+       target="_blank">
+       💬 Order on WhatsApp
     </a>
 
   </div>
-
 </section>
-
 
 <section class="featured-section" id="featuredProductsSection">
 
@@ -344,25 +327,21 @@
     Selected products from AC Retail
   </p>
 
-  <div
-    class="featured-grid"
-    id="featuredProducts"
-  ></div>
+  <div class="featured-grid"
+       id="featuredProducts">
+  </div>
 
 </section>
-
 
 <section class="category-section">
 
   <h2>🛍️ Shop by Category</h2>
 
-  <div
-    class="category-grid"
-    id="homeCategories"
-  ></div>
+  <div class="category-grid"
+       id="homeCategories">
+  </div>
 
 </section>
-
 
 <section class="services">
 
@@ -389,15 +368,14 @@
 
 </section>
 
-
 <section style="text-align:center;margin:40px 20px">
 
-  <a href="products.html" class="btn">
-    🛒 View All Products
+  <a href="products.html"
+     class="btn">
+     🛒 View All Products
   </a>
 
 </section>
-
 
 <section class="location-box">
 
@@ -410,7 +388,6 @@
   <p>🕒 Open: 7:00 AM – 9:00 PM</p>
 
 </section>
-
 
 <footer class="footer">
 
@@ -428,26 +405,19 @@
 
 </footer>
 
-
-<a
-  href="https://wa.me/918830300826"
-  class="whatsapp-float"
-  target="_blank"
->
-  💬
+<a href="https://wa.me/918830300826"
+   class="whatsapp-float"
+   target="_blank">
+   💬
 </a>
-
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
-  fetch(
-    "products.json?v=" + Date.now(),
-    {
-      cache:"no-store"
-    }
-  )
+  fetch("products.json?v=" + Date.now(), {
+    cache:"no-store"
+  })
 
   .then(function(response){
 
@@ -464,7 +434,6 @@ document.addEventListener("DOMContentLoaded", function(){
   })
 
   .then(function(products){
-
 
     /* =========================
        FEATURED PRODUCTS
@@ -487,12 +456,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
       });
 
-
     if(featured.length){
 
       featuredSection.style.display =
         "block";
-
 
       featuredBox.innerHTML =
         featured.map(function(product){
@@ -504,13 +471,11 @@ document.addEventListener("DOMContentLoaded", function(){
               0
             );
 
-
           var price =
             Number(
               product.price ||
               0
             );
-
 
           var saving =
             Math.max(
@@ -518,75 +483,76 @@ document.addEventListener("DOMContentLoaded", function(){
               mrp - price
             );
 
-
           var image =
             product.image ||
             "images/products/default.png";
-
 
           return (
 
             '<div class="featured-card">' +
 
-              '<img ' +
-                'class="featured-image" ' +
-                'src="' +
-                escapeHTML(image) +
-                '" ' +
-                'alt="' +
-                escapeHTML(
-                  product.name ||
-                  "Product"
-                ) +
-                '" ' +
-                'onerror="this.style.display=\'none\'">' +
+            '<img class="featured-image"' +
 
-              '<div class="featured-info">' +
+            ' src="' +
+            escapeHTML(image) +
+            '"' +
 
-                '<div class="featured-brand">' +
-                  escapeHTML(
-                    product.brand ||
-                    ""
-                  ) +
-                '</div>' +
+            ' alt="' +
+            escapeHTML(
+              product.name ||
+              "Product"
+            ) +
+            '"' +
 
-                '<div class="featured-name">' +
-                  escapeHTML(
-                    product.name ||
-                    "Product"
-                  ) +
-                '</div>' +
+            ' onerror="' +
+            "this.style.display='none'" +
+            '">' +
 
-                '<div class="featured-mrp">' +
-                  'MRP ₹' +
-                  mrp.toFixed(2) +
-                '</div>' +
+            '<div class="featured-info">' +
 
-                '<div class="featured-price">' +
-                  'Online Price ₹' +
-                  price.toFixed(2) +
-                '</div>' +
+            '<div class="featured-brand">' +
+            escapeHTML(
+              product.brand || ""
+            ) +
+            '</div>' +
 
-                (
-                  saving > 0
-                  ?
-                  '<div class="featured-save">' +
-                    'You Save ₹' +
-                    saving.toFixed(2) +
-                  '</div>'
-                  :
-                  ''
-                ) +
+            '<div class="featured-name">' +
+            escapeHTML(
+              product.name ||
+              "Product"
+            ) +
+            '</div>' +
 
-                '<button ' +
-                  'class="featured-add-btn" ' +
-                  'onclick="addToCart(' +
-                  JSON.stringify(product.id) +
-                  ')">' +
-                  '🛒 Add to Cart' +
-                '</button>' +
+            '<div class="featured-mrp">' +
+            'MRP ₹' +
+            mrp.toFixed(2) +
+            '</div>' +
 
-              '</div>' +
+            '<div class="featured-price">' +
+            'Online Price ₹' +
+            price.toFixed(2) +
+            '</div>' +
+
+            (
+              saving > 0
+              ?
+              '<div class="featured-save">' +
+              'You Save ₹' +
+              saving.toFixed(2) +
+              '</div>'
+              :
+              ''
+            ) +
+
+            '<button ' +
+            'class="featured-add-btn" ' +
+            'onclick="addToCart(' +
+            JSON.stringify(product.id) +
+            ')">' +
+            '🛒 Add to Cart' +
+            '</button>' +
+
+            '</div>' +
 
             '</div>'
 
@@ -599,7 +565,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     /* =========================
        HOME CATEGORIES
-       ONE CATEGORY LIST ONLY
+       ONLY ONE CATEGORY LIST
        ========================= */
 
     var categoryGroups = [
@@ -693,7 +659,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================
-       ILLUSTRATED SVG ICONS
+       CATEGORY ILLUSTRATIONS
        ========================= */
 
     var icons = {
@@ -701,25 +667,20 @@ document.addEventListener("DOMContentLoaded", function(){
       spices:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M34 82c18-10 29-27 35-51 ' +
-          '14 12 19 28 12 43-8 16-28 19-47 8Z" ' +
-          'fill="#e94b35"/>' +
+      '<path d="M34 82c18-10 29-27 35-51 ' +
+      '14 12 19 28 12 43 ' +
+      '-8 16-28 19-47 8Z" ' +
+      'fill="#e94b35"/>' +
 
-        '<path ' +
-          'd="M43 78c17-12 25-25 28-42" ' +
-          'fill="none" ' +
-          'stroke="#b92e24" ' +
-          'stroke-width="5" ' +
-          'stroke-linecap="round"/>' +
+      '<path d="M43 78c17-12 25-25 28-42" ' +
+      'fill="none" stroke="#b92e24" ' +
+      'stroke-width="5" stroke-linecap="round"/>' +
 
-        '<circle ' +
-          'cx="84" cy="33" r="7" ' +
-          'fill="#f3a23a"/>' +
+      '<circle cx="84" cy="33" r="7" ' +
+      'fill="#f3a23a"/>' +
 
-        '<circle ' +
-          'cx="96" cy="43" r="5" ' +
-          'fill="#e94b35"/>' +
+      '<circle cx="96" cy="43" r="5" ' +
+      'fill="#e94b35"/>' +
 
       '</svg>',
 
@@ -727,40 +688,25 @@ document.addEventListener("DOMContentLoaded", function(){
       rice:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M20 67h80c-3 25-19 37-40 37S23 92 20 67Z" ' +
-          'fill="#d9edf0" ' +
-          'stroke="#277c79" ' +
-          'stroke-width="4"/>' +
+      '<path d="M20 67h80c-3 25-19 37-40 37S23 92 20 67Z" ' +
+      'fill="#d9edf0" stroke="#277c79" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M27 67c7-13 17-19 25-19 ' +
-          '7 0 12 5 18 5s11-5 18-5 ' +
-          'c9 0 17 7 25 19" ' +
-          'fill="#fff" ' +
-          'stroke="#277c79" ' +
-          'stroke-width="4"/>' +
+      '<path d="M27 67c7-13 17-19 25-19 ' +
+      '7 0 12 5 18 5s11-5 18-5 ' +
+      'c9 0 17 7 25 19" ' +
+      'fill="#fff" stroke="#277c79" stroke-width="4"/>' +
 
-        '<ellipse ' +
-          'cx="43" cy="43" rx="5" ry="10" ' +
-          'fill="#fff" ' +
-          'stroke="#78aeb0" ' +
-          'stroke-width="2" ' +
-          'transform="rotate(-20 43 43)"/>' +
+      '<ellipse cx="43" cy="43" rx="5" ry="10" ' +
+      'fill="#fff" stroke="#78aeb0" ' +
+      'stroke-width="2" transform="rotate(-20 43 43)"/>' +
 
-        '<ellipse ' +
-          'cx="58" cy="37" rx="5" ry="11" ' +
-          'fill="#fff" ' +
-          'stroke="#78aeb0" ' +
-          'stroke-width="2" ' +
-          'transform="rotate(12 58 37)"/>' +
+      '<ellipse cx="58" cy="37" rx="5" ry="11" ' +
+      'fill="#fff" stroke="#78aeb0" ' +
+      'stroke-width="2" transform="rotate(12 58 37)"/>' +
 
-        '<ellipse ' +
-          'cx="75" cy="43" rx="5" ry="10" ' +
-          'fill="#fff" ' +
-          'stroke="#78aeb0" ' +
-          'stroke-width="2" ' +
-          'transform="rotate(-15 75 43)"/>' +
+      '<ellipse cx="75" cy="43" rx="5" ry="10" ' +
+      'fill="#fff" stroke="#78aeb0" ' +
+      'stroke-width="2" transform="rotate(-15 75 43)"/>' +
 
       '</svg>',
 
@@ -768,29 +714,19 @@ document.addEventListener("DOMContentLoaded", function(){
       flour:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M34 29h52v58c0 10-12 17-26 17s-26-7-26-17Z" ' +
-          'fill="#fff3dc" ' +
-          'stroke="#c58b43" ' +
-          'stroke-width="4"/>' +
+      '<path d="M34 29h52v58c0 10-12 17-26 17s-26-7-26-17Z" ' +
+      'fill="#fff3dc" stroke="#c58b43" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M34 43h52" ' +
-          'stroke="#c58b43" ' +
-          'stroke-width="4"/>' +
+      '<path d="M34 43h52" ' +
+      'stroke="#c58b43" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M45 55c8-8 16-8 24 0M45 70c8-8 16-8 24 0" ' +
-          'fill="none" ' +
-          'stroke="#d7a55b" ' +
-          'stroke-width="5" ' +
-          'stroke-linecap="round"/>' +
+      '<path d="M45 55c8-8 16-8 24 0M45 70c8-8 16-8 24 0" ' +
+      'fill="none" stroke="#d7a55b" ' +
+      'stroke-width="5" stroke-linecap="round"/>' +
 
-        '<path ' +
-          'd="M42 20c8 7 28 7 36 0" ' +
-          'fill="none" ' +
-          'stroke="#c58b43" ' +
-          'stroke-width="4"/>' +
+      '<path d="M42 20c8 7 28 7 36 0" ' +
+      'fill="none" stroke="#c58b43" ' +
+      'stroke-width="4"/>' +
 
       '</svg>',
 
@@ -798,21 +734,14 @@ document.addEventListener("DOMContentLoaded", function(){
       dals:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M18 62h84c-3 27-20 39-42 39S21 89 18 62Z" ' +
-          'fill="#f5dfb0" ' +
-          'stroke="#a96c27" ' +
-          'stroke-width="4"/>' +
+      '<path d="M18 62h84c-3 27-20 39-42 39S21 89 18 62Z" ' +
+      'fill="#f5dfb0" stroke="#a96c27" stroke-width="4"/>' +
 
-        '<circle cx="43" cy="57" r="7" fill="#f0a52b"/>' +
-
-        '<circle cx="59" cy="51" r="7" fill="#d97825"/>' +
-
-        '<circle cx="75" cy="58" r="7" fill="#e8c34b"/>' +
-
-        '<circle cx="51" cy="66" r="6" fill="#8aaf42"/>' +
-
-        '<circle cx="69" cy="68" r="6" fill="#c96b38"/>' +
+      '<circle cx="43" cy="57" r="7" fill="#f0a52b"/>' +
+      '<circle cx="59" cy="51" r="7" fill="#d97825"/>' +
+      '<circle cx="75" cy="58" r="7" fill="#e8c34b"/>' +
+      '<circle cx="51" cy="66" r="6" fill="#8aaf42"/>' +
+      '<circle cx="69" cy="68" r="6" fill="#c96b38"/>' +
 
       '</svg>',
 
@@ -820,27 +749,15 @@ document.addEventListener("DOMContentLoaded", function(){
       oil:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M42 26h36v13l7 9v48H35V48l7-9Z" ' +
-          'fill="#f4c84a" ' +
-          'stroke="#a97817" ' +
-          'stroke-width="4"/>' +
+      '<path d="M42 26h36v13l7 9v48H35V48l7-9Z" ' +
+      'fill="#f4c84a" stroke="#a97817" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M50 26h20v-8H50Z" ' +
-          'fill="#fff" ' +
-          'stroke="#a97817" ' +
-          'stroke-width="4"/>' +
+      '<path d="M50 26h20v-8H50Z" ' +
+      'fill="#fff" stroke="#a97817" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M43 55h34" ' +
-          'stroke="#fff" ' +
-          'stroke-width="5"/>' +
+      '<path d="M43 55h34" stroke="#fff" stroke-width="5"/>' +
 
-        '<path ' +
-          'd="M50 68h20" ' +
-          'stroke="#b47d17" ' +
-          'stroke-width="4"/>' +
+      '<path d="M50 68h20" stroke="#b47d17" stroke-width="4"/>' +
 
       '</svg>',
 
@@ -848,26 +765,17 @@ document.addEventListener("DOMContentLoaded", function(){
       snacks:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M27 39c0-10 10-18 20-14 ' +
-          '6-10 20-10 26 0 ' +
-          '12-4 22 4 20 15 ' +
-          '10 5 11 19 2 26 ' +
-          '4 11-5 22-16 21 ' +
-          '7 9-21 8-27-1 ' +
-          '11 4-22-4-20-15 ' +
-          '10-5 11-22 5-32Z" ' +
-          'fill="#e9a23b" ' +
-          'stroke="#b96e20" ' +
-          'stroke-width="4"/>' +
+      '<path d="M27 39c0-10 10-18 20-14 ' +
+      '6-10 20-10 26 0 12-4 22 4 20 15 ' +
+      '10 5 11 19 2 26 4 11-5 22-16 21 ' +
+      '-7 9-21 8-27-1-11 4-22-4-20-15 ' +
+      '-10-5-11-22-5-32Z" ' +
+      'fill="#e9a23b" stroke="#b96e20" stroke-width="4"/>' +
 
-        '<circle cx="47" cy="48" r="4" fill="#9a5c1b"/>' +
-
-        '<circle cx="72" cy="43" r="4" fill="#9a5c1b"/>' +
-
-        '<circle cx="61" cy="67" r="4" fill="#9a5c1b"/>' +
-
-        '<circle cx="83" cy="62" r="4" fill="#9a5c1b"/>' +
+      '<circle cx="47" cy="48" r="4" fill="#9a5c1b"/>' +
+      '<circle cx="72" cy="43" r="4" fill="#9a5c1b"/>' +
+      '<circle cx="61" cy="67" r="4" fill="#9a5c1b"/>' +
+      '<circle cx="83" cy="62" r="4" fill="#9a5c1b"/>' +
 
       '</svg>',
 
@@ -875,17 +783,14 @@ document.addEventListener("DOMContentLoaded", function(){
       home:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M36 25h9l-8 58c-1 8-7 13-14 13h-4v-8c5 0 7-3 8-8Z" ' +
-          'fill="#79a84b"/>' +
+      '<path d="M36 25h9l-8 58c-1 8-7 13-14 13h-4v-8c5 0 7-3 8-8Z" ' +
+      'fill="#79a84b"/>' +
 
-        '<path ' +
-          'd="M46 26h9l22 64h-9Z" ' +
-          'fill="#c58a48"/>' +
+      '<path d="M46 26h9l22 64h-9Z" ' +
+      'fill="#c58a48"/>' +
 
-        '<path ' +
-          'd="M71 88h28c2 0 4 2 4 4v5H67v-5c0-2 2-4 4-4Z" ' +
-          'fill="#62a1a2"/>' +
+      '<path d="M71 88h28c2 0 4 2 4 4v5H67v-5c0-2 2-4 4-4Z" ' +
+      'fill="#62a1a2"/>' +
 
       '</svg>',
 
@@ -893,25 +798,16 @@ document.addEventListener("DOMContentLoaded", function(){
       personal:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M45 24h30v10l7 8v50c0 7-5 11-12 11H50c-7 0-12-4-12-11V42l7-8Z" ' +
-          'fill="#9bc7df" ' +
-          'stroke="#467b98" ' +
-          'stroke-width="4"/>' +
+      '<path d="M45 24h30v10l7 8v50c0 7-5 11-12 11H50c-7 0-12-4-12-11V42l7-8Z" ' +
+      'fill="#9bc7df" stroke="#467b98" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M48 24h24v-7H48Z" ' +
-          'fill="#fff" ' +
-          'stroke="#467b98" ' +
-          'stroke-width="4"/>' +
+      '<path d="M48 24h24v-7H48Z" ' +
+      'fill="#fff" stroke="#467b98" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M43 56h34v22H43Z" ' +
-          'fill="#e9f5fa"/>' +
+      '<path d="M43 56h34v22H43Z" ' +
+      'fill="#e9f5fa"/>' +
 
-        '<circle ' +
-          'cx="60" cy="67" r="7" ' +
-          'fill="#78a8c4"/>' +
+      '<circle cx="60" cy="67" r="7" fill="#78a8c4"/>' +
 
       '</svg>',
 
@@ -919,27 +815,17 @@ document.addEventListener("DOMContentLoaded", function(){
       dairy:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M39 28h42v11l7 10v42c0 6-5 10-11 10H43c-6 0-11-4-11-10V49l7-10Z" ' +
-          'fill="#fff" ' +
-          'stroke="#5795a5" ' +
-          'stroke-width="4"/>' +
+      '<path d="M39 28h42v11l7 10v42c0 6-5 10-11 10H43c-6 0-11-4-11-10V49l7-10Z" ' +
+      'fill="#fff" stroke="#5795a5" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M39 28h42v12H39Z" ' +
-          'fill="#d8eef3" ' +
-          'stroke="#5795a5" ' +
-          'stroke-width="4"/>' +
+      '<path d="M39 28h42v12H39Z" ' +
+      'fill="#d8eef3" stroke="#5795a5" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M39 67c10-10 20-10 42 0v20H39Z" ' +
-          'fill="#9cced7"/>' +
+      '<path d="M39 67c10-10 20-10 42 0v20H39Z" ' +
+      'fill="#9cced7"/>' +
 
-        '<path ' +
-          'd="M50 55c6-8 14-8 20 0" ' +
-          'fill="none" ' +
-          'stroke="#5795a5" ' +
-          'stroke-width="4"/>' +
+      '<path d="M50 55c6-8 14-8 20 0" ' +
+      'fill="none" stroke="#5795a5" stroke-width="4"/>' +
 
       '</svg>',
 
@@ -947,32 +833,19 @@ document.addEventListener("DOMContentLoaded", function(){
       general:
       '<svg viewBox="0 0 120 120" aria-hidden="true">' +
 
-        '<path ' +
-          'd="M26 43h68l-7 58H33Z" ' +
-          'fill="#e8c37e" ' +
-          'stroke="#9c6c2f" ' +
-          'stroke-width="4"/>' +
+      '<path d="M26 43h68l-7 58H33Z" ' +
+      'fill="#e8c37e" stroke="#9c6c2f" stroke-width="4"/>' +
 
-        '<path ' +
-          'd="M40 43c0-18 9-27 20-27s20 9 20 27" ' +
-          'fill="none" ' +
-          'stroke="#9c6c2f" ' +
-          'stroke-width="5"/>' +
+      '<path d="M40 43c0-18 9-27 20-27s20 9 20 27" ' +
+      'fill="none" stroke="#9c6c2f" stroke-width="5"/>' +
 
-        '<path ' +
-          'd="M40 61h40M45 77h30" ' +
-          'stroke="#fff0cf" ' +
-          'stroke-width="5" ' +
-          'stroke-linecap="round"/>' +
+      '<path d="M40 61h40M45 77h30" ' +
+      'stroke="#fff0cf" stroke-width="5" stroke-linecap="round"/>' +
 
       '</svg>'
 
     };
 
-
-    /* =========================
-       RENDER CATEGORIES
-       ========================= */
 
     var categoryBox =
       document.getElementById(
@@ -1014,7 +887,6 @@ document.addEventListener("DOMContentLoaded", function(){
         card.className =
           "category-card";
 
-
         card.href =
           "products.html?category=" +
           encodeURIComponent(
@@ -1028,7 +900,6 @@ document.addEventListener("DOMContentLoaded", function(){
         icon.className =
           "category-icon";
 
-
         icon.innerHTML =
           icons[group.icon];
 
@@ -1038,7 +909,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
         name.className =
           "category-name";
-
 
         name.textContent =
           group.name;
@@ -1067,168 +937,125 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
-/* =========================
-   ESCAPE HTML
-   ========================= */
-
 function escapeHTML(value){
 
   return String(value ?? "")
 
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================
-   ADD TO CART
-   ========================= */
-
 function addToCart(productId){
 
   fetch(
-    "products.json?v=" +
-    Date.now(),
-    {
-      cache:"no-store"
-    }
+    "products.json?v=" + Date.now(),
+    {cache:"no-store"}
   )
 
-  .then(
-    function(response){
+  .then(function(response){
 
-      return response.json();
+    return response.json();
 
-    }
-  )
+  })
 
-  .then(
-    function(products){
+  .then(function(products){
 
-      var product =
-        products.find(
-          function(item){
+    var product =
+      products.find(
+        function(item){
 
-            return String(item.id) ===
-                   String(productId);
+          return String(item.id) ===
+                 String(productId);
 
-          }
-        );
-
-
-      if(!product){
-        return;
-      }
-
-
-      var cart =
-        JSON.parse(
-          localStorage.getItem(
-            "cart"
-          ) || "[]"
-        );
-
-
-      var existing =
-        cart.find(
-          function(item){
-
-            return String(item.id) ===
-                   String(product.id);
-
-          }
-        );
-
-
-      if(existing){
-
-        existing.qty =
-          Number(
-            existing.qty || 0
-          ) + 1;
-
-      }
-
-      else{
-
-        cart.push({
-
-          id:product.id,
-
-          name:product.name,
-
-          brand:
-            product.brand || "",
-
-          category:
-            product.category || "",
-
-          mrp:
-            product.mrp ||
-            product.price ||
-            0,
-
-          price:
-            product.price ||
-            0,
-
-          image:
-            product.image ||
-            "",
-
-          qty:1
-
-        });
-
-      }
-
-
-      localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
+        }
       );
 
 
-      alert(
-        "Product added to cart 🛒"
+    if(!product){
+      return;
+    }
+
+
+    var cart =
+      JSON.parse(
+        localStorage.getItem("cart") ||
+        "[]"
       );
 
-    }
-  )
 
-  .catch(
-    function(error){
+    var existing =
+      cart.find(
+        function(item){
 
-      console.error(
-        "Add to cart error:",
-        error
+          return String(item.id) ===
+                 String(product.id);
+
+        }
       );
 
+
+    if(existing){
+
+      existing.qty =
+        Number(existing.qty || 0) + 1;
+
+    }else{
+
+      cart.push({
+
+        id:product.id,
+
+        name:product.name,
+
+        brand:product.brand || "",
+
+        category:product.category || "",
+
+        mrp:
+          product.mrp ||
+          product.price ||
+          0,
+
+        price:
+          product.price ||
+          0,
+
+        image:
+          product.image ||
+          "",
+
+        qty:1
+
+      });
+
     }
-  );
+
+
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(cart)
+    );
+
+
+    alert(
+      "Product added to cart 🛒"
+    );
+
+  })
+
+  .catch(function(error){
+
+    console.error(
+      "Add to cart error:",
+      error
+    );
+
+  });
 
 }
 
