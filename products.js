@@ -470,42 +470,33 @@ function fuzzyWordMatch(queryWord, productWords) {
 
 function smartSearchMatch(keyword, product) {
 
-    const query =
-        normalizeText(keyword);
+    const query = normalizeText(keyword);
 
     if (!query) {
         return true;
     }
 
-    const productText =
-        normalizeText(
-            `${product.name || ""} ` +
-            `${product.brand || ""} ` +
-            `${product.category || ""}`
-        );
+    const productText = normalizeText(
+        String(product.name || "") + " " +
+        String(product.brand || "") + " " +
+        String(product.category || "")
+    );
 
-    // Full phrase exact match
+    // Full search phrase
     if (productText.includes(query)) {
         return true;
     }
 
-    const queryWords =
-        query
-            .split(/\s+/)
-            .filter(Boolean);
+    // Search each word separately
+    const queryWords = query
+        .split(/\s+/)
+        .filter(Boolean);
 
-    const productWords =
-        productText
-            .split(/\s+/)
-            .filter(Boolean);
+    return queryWords.every(function(word) {
 
-    // Every search word must match something
-    return queryWords.every(queryWord =>
-        fuzzyWordMatch(
-            queryWord,
-            productWords
-        )
-    );
+        return productText.includes(word);
+
+    });
 
 }
 
