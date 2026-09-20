@@ -809,37 +809,71 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 
-  /* ================================
-     PAY VIA PHONEPE
-     
-     IMPORTANT:
-     No PhonePe link.
-     No UPI link.
-     No QR.
-     ================================ */
+/* ================================
+   PAY VIA UPI APP
+================================ */
 
 if (payNowBtn) {
 
-  payNowBtn.addEventListener("click", function () {
+    payNowBtn.addEventListener(
+        "click",
+        function () {
 
-    const cart = getCart();
+            const cart = getCart();
 
-    if (!cart.length) {
-      alert("Your cart is empty.");
-      return;
-    }
+            if (!cart.length) {
 
-    const total = getTotal(cart);
+                alert(
+                    "Your cart is empty."
+                );
 
-    if (total <= 0) {
-      alert("Invalid order amount.");
-      return;
-    }
+                return;
+            }
 
-                    "&cu=INR";
+            const total =
+                getTotal(cart);
+
+            if (total <= 0) {
+
+                alert(
+                    "Invalid order amount."
+                );
+
+                return;
+            }
 
 
-            /* Show completed button */
+            /*
+             * AC RETAIL UPI
+             */
+
+            const upiId =
+                "acretail@axl";
+
+            const payeeName =
+                "AVINASH VINAYAK CHAWARE";
+
+
+            /*
+             * STANDARD UPI INTENT
+             */
+
+            const upiLink =
+                "upi://pay" +
+                "?pa=" +
+                encodeURIComponent(upiId) +
+                "&pn=" +
+                encodeURIComponent(payeeName) +
+                "&am=" +
+                encodeURIComponent(
+                    total.toFixed(2)
+                ) +
+                "&cu=INR";
+
+
+            /*
+             * Show completed button
+             */
 
             if (paymentDoneBtn) {
 
@@ -849,7 +883,9 @@ if (payNowBtn) {
             }
 
 
-            /* OPEN UPI APP */
+            /*
+             * OPEN UPI APP
+             */
 
             window.location.href =
                 upiLink;
