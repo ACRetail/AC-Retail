@@ -818,71 +818,64 @@ document.addEventListener("DOMContentLoaded", function () {
      No QR.
      ================================ */
 
-  if (payNowBtn) {
+if (payNowBtn) {
 
-    payNowBtn.addEventListener(
-      "click",
-      function () {
+  payNowBtn.addEventListener("click", function () {
 
-        const cart =
-          getCart();
+    const cart = getCart();
 
+    if (!cart.length) {
+      alert("Your cart is empty.");
+      return;
+    }
 
-        if (!cart.length) {
+    const total = getTotal(cart);
 
-          alert(
-            "Your cart is empty."
-          );
+    if (total <= 0) {
+      alert("Invalid order amount.");
+      return;
+    }
 
-          return;
+    /*
+     * AC Retail UPI
+     * Amount automatically added
+     */
+    const upiId = "acretail@axl";
+    const payeeName = "AVINASH VINAYAK CHAWARE";
 
-        }
+    /*
+     * UPI PAYMENT LINK
+     */
 
+    const upiLink =
+      "upi://pay" +
+      "?pa=" + encodeURIComponent(upiId) +
+      "&pn=" + encodeURIComponent(payeeName) +
+      "&am=" + encodeURIComponent(total.toFixed(2)) +
+      "&cu=INR" +
+      "&mc=0000" +
+      "&mode=02" +
+      "&purpose=00";
 
-        const total =
-          getTotal(cart);
+    /*
+    * Show Completed button
+     */
 
+            if (paymentDoneBtn) {
 
-        if (total <= 0) {
+                paymentDoneBtn.style.display =
+                    "block";
 
-          alert(
-            "Invalid order amount."
-          );
+            }
+    
+    /*
+     * Try opening UPI app
+     */
+    window.location.href = upiLink;
 
-          return;
+  });
 
-        }
-
-
-        if (paymentDoneBtn) {
-
-          paymentDoneBtn.style.display =
-            "block";
-
-        }
-
-
-        alert(
-
-          "PhonePe app manually open karein.\n\n" +
-
-          "Payment Number: 8087069719\n" +
-
-          "Amount: ₹" +
-          total.toFixed(2) +
-
-          "\n\n" +
-
-          "Payment complete hone ke baad\n" +
-
-          "\"I Have Completed Payment\" dabayein."
-
-        );
-
-      }
-    );
-
-  }
+}
 
 
   /* ================================
