@@ -849,8 +849,8 @@ if (payNowBtn) {
 
     const upiLink =
       "upi://pay" +
-      "?pa=" + encodeURIComponent(upiId) +
-      "&pn=" + encodeURIComponent(payeeName) +
+      "?pa=" + encodeURIComponent("acretail@axl") +
+      "&pn=" + encodeURIComponent("AVINASH VINAYAK CHAWARE") +
       "&am=" + encodeURIComponent(total.toFixed(2)) +
       "&cu=INR" +
       "&mc=0000" +
