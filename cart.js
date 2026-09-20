@@ -836,30 +836,10 @@ if (payNowBtn) {
       return;
     }
 
-    /*
-     * AC Retail UPI
-     * Amount automatically added
-     */
-    const upiId = "acretail@axl";
-    const payeeName = "AVINASH VINAYAK CHAWARE";
+                    "&cu=INR";
 
-    /*
-     * UPI PAYMENT LINK
-     */
 
-    const upiLink =
-      "upi://pay" +
-      "?pa=" + encodeURIComponent("acretail@axl") +
-      "&pn=" + encodeURIComponent("AVINASH VINAYAK CHAWARE") +
-      "&am=" + encodeURIComponent(total.toFixed(2)) +
-      "&cu=INR" +
-      "&mc=0000" +
-      "&mode=02" +
-      "&purpose=00";
-
-    /*
-    * Show Completed button
-     */
+            /* Show completed button */
 
             if (paymentDoneBtn) {
 
@@ -867,13 +847,15 @@ if (payNowBtn) {
                     "block";
 
             }
-    
-    /*
-     * Try opening UPI app
-     */
-    window.location.href = upiLink;
 
-  });
+
+            /* OPEN UPI APP */
+
+            window.location.href =
+                upiLink;
+
+        }
+    );
 
 }
 
