@@ -228,7 +228,7 @@ function createCategoryFilters() {
             ]
         },
         {
-            name: "Dairy & Products",
+            name: "Dairy",
             aliases: [
                 "Dairy"
             ]
