@@ -1816,45 +1816,7 @@ function renderProducts(){
 }
 
 
-  /* =========================
-     GROUP PRODUCTS BY CATEGORY
-  ========================= */
 
-  const groups = {};
-
-
-  filtered.forEach(product=>{
-
-    const category =
-      product.category ||
-      "General Item";
-
-
-    if(!groups[category]){
-
-      groups[category] = [];
-
-    }
-
-
-    groups[category].push(product);
-
-  });
-
-
-  /* =========================
-     SORT CATEGORY
-  ========================= */
-
-  const sortedCategories =
-    Object.keys(groups).sort(
-
-      (a,b)=>
-
-        getCategoryOrder(a) -
-        getCategoryOrder(b)
-
-    );
 
 
   /* =========================
@@ -2088,94 +2050,7 @@ function renderProducts(){
                     </div>
 
 
-                    <div class="edit-field full">
 
-                      <label class="featured-option">
-
-                        <input
-                          type="checkbox"
-                          data-field="featured"
-                          ${
-                            product.featured === true
-                            ? "checked"
-                            : ""
-                          }
-                        >
-
-                        ⭐ Show on Home
-
-                      </label>
-
-                    </div>
-
-
-                  </div>
-
-
-                  <!-- SAVE BUTTON -->
-
-                  <div class="edit-actions">
-
-                    <button
-                      class="save-product-btn"
-                      data-save-product="${escapeHtml(product.id)}"
-                      type="button"
-                    >
-                      💾 Save Product
-                    </button>
-
-
-                    <button
-                      class="cancel-edit-btn"
-                      data-cancel-product="${escapeHtml(product.id)}"
-                      type="button"
-                    >
-                      Cancel
-                    </button>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            `)
-
-            .join("");
-
-
-        return `
-
-          <div class="category-group">
-
-            <div class="category-title">
-
-              <span>
-                ${escapeHtml(category)}
-              </span>
-
-              <span class="category-count">
-                ${categoryProducts.length} items
-              </span>
-
-            </div>
-
-
-            <div class="category-products">
-
-              ${productsHtml}
-
-            </div>
-
-          </div>
-
-        `;
-
-      })
-
-      .join("");
-
-}
 
 
 /* =========================
