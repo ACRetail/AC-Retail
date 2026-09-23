@@ -1,13 +1,36 @@
 import { db } from "./firebase.js";
+
 import {
   ref,
   push,
   set
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
+
 document.addEventListener("DOMContentLoaded", function () {
 
+  /* =========================================================
+     SETTINGS
+  ========================================================= */
+
   const CART_KEY = "cart";
+
+  const CASHFREE_LAMBDA_URL =
+    "https://stwcn5xmfcn5avdreicnjrpzuq0olglq.lambda-url.ap-south-1.on.aws/";
+
+  const AWS_ORDER_URL =
+    "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
+
+  const WHATSAPP_NUMBER =
+    "918830300826";
+
+  const PENDING_PAYMENT_KEY =
+    "acRetailPendingCashfreePayment";
+
+
+  /* =========================================================
+     ELEMENTS
+  ========================================================= */
 
   const cartItemsBox =
     document.getElementById("cartItems");
@@ -27,10 +50,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const clearButton =
     document.getElementById("clearCart");
 
+  const checkoutForm =
+    document.getElementById("checkoutForm");
 
-  /* ================================
-     GET CART
-  ================================ */
+  const paymentSection =
+    document.getElementById("paymentSection");
+
+  const paymentAmount =
+    document.getElementById("paymentAmount");
+
+  const payNowBtn =
+    document.getElementById("payNowBtn");
+
+  const paymentStatus =
+    document.getElementById("paymentStatus");
+
+
+  /* =========================================================
+     CART
+  ========================================================= */
 
   function getCart() {
 
@@ -44,16 +82,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     } catch (error) {
 
+      console.error(
+        "Cart read error:",
+        error
+      );
+
       return [];
 
     }
 
   }
 
-
-  /* ================================
-     SAVE CART
-  ================================ */
 
   function saveCart(cart) {
 
@@ -65,52 +104,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
-     FORMAT PRICE
-  ================================ */
+  /* =========================================================
+     PRICE
+  ========================================================= */
 
   function formatPrice(price) {
 
-    return "₹" +
+    return (
+      "₹" +
       Number(price || 0).toLocaleString(
         "en-IN",
         {
           minimumFractionDigits: 2,
           maximumFractionDigits: 2
         }
-      );
+      )
+    );
 
   }
 
-
-  /* ================================
-     ESCAPE HTML
-  ================================ */
-
-  function escapeHTML(text) {
-
-    return String(text ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-
-  }
-
-
-  /* ================================
-     GET TOTAL
-  ================================ */
 
   function getTotal(cart) {
 
     return cart.reduce(
       function (total, item) {
 
-        return total +
+        return (
+          total +
           Number(item.price || 0) *
-          Number(item.qty || 1);
+          Number(item.qty || 1)
+        );
 
       },
       0
@@ -118,10 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-
-  /* ================================
-     GET TOTAL SAVINGS
-  ================================ */
 
   function getTotalSavings(cart) {
 
@@ -141,11 +160,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const qty =
           Number(item.qty || 1);
 
-        return saving +
+        return (
+          saving +
           Math.max(
             0,
             (mrp - price) * qty
-          );
+          )
+        );
 
       },
       0
@@ -153,18 +174,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-
-  /* ================================
-     GET ITEM COUNT
-  ================================ */
 
   function getItemCount(cart) {
 
     return cart.reduce(
       function (total, item) {
 
-        return total +
-          Number(item.qty || 1);
+        return (
+          total +
+          Number(item.qty || 1)
+        );
 
       },
       0
@@ -173,9 +192,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
+  /* =========================================================
+     HTML ESCAPE
+  ========================================================= */
+
+  function escapeHTML(text) {
+
+    return String(text ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================================
      SAVINGS DISPLAY
-  ================================ */
+  ========================================================= */
 
   function updateSavingsDisplay(
     totalSavings
@@ -193,10 +228,14 @@ document.addEventListener("DOMContentLoaded", function () {
           ".summary-total"
         );
 
-      if (!summaryTotal) return;
+      if (!summaryTotal) {
+        return;
+      }
 
       savingsBox =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
       savingsBox.id =
         "cartSavings";
@@ -251,13 +290,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
+  /* =========================================================
      RENDER CART
-  ================================ */
+  ========================================================= */
 
   function renderCart() {
 
-    const cart = getCart();
+    const cart =
+      getCart();
 
     const total =
       getTotal(cart);
@@ -269,21 +309,33 @@ document.addEventListener("DOMContentLoaded", function () {
       getItemCount(cart);
 
 
-    itemCountBox.textContent =
-      itemCount +
-      (
-        itemCount === 1
-          ? " item"
-          : " items"
-      );
+    if (itemCountBox) {
+
+      itemCountBox.textContent =
+        itemCount +
+        (
+          itemCount === 1
+            ? " item"
+            : " items"
+        );
+
+    }
 
 
-    summaryItemsBox.textContent =
-      itemCount;
+    if (summaryItemsBox) {
+
+      summaryItemsBox.textContent =
+        itemCount;
+
+    }
 
 
-    cartTotalBox.textContent =
-      formatPrice(total);
+    if (cartTotalBox) {
+
+      cartTotalBox.textContent =
+        formatPrice(total);
+
+    }
 
 
     updateSavingsDisplay(
@@ -295,47 +347,59 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cart.length === 0) {
 
-      cartItemsBox.innerHTML = `
+      if (cartItemsBox) {
 
-        <div class="empty-cart">
+        cartItemsBox.innerHTML = `
 
-          <div class="empty-icon">
-            🛒
+          <div class="empty-cart">
+
+            <div class="empty-icon">
+              🛒
+            </div>
+
+            <h2>
+              Your cart is empty
+            </h2>
+
+            <p>
+              Add some grocery products to your
+              cart and order on WhatsApp.
+            </p>
+
+            <a
+              href="products.html"
+              class="shop-btn"
+            >
+              🛍️ Start Shopping
+            </a>
+
           </div>
 
-          <h2>
-            Your cart is empty
-          </h2>
+        `;
 
-          <p>
-            Add some grocery products to your
-            cart and order on WhatsApp.
-          </p>
-
-          <a
-            href="products.html"
-            class="shop-btn"
-          >
-            🛍️ Start Shopping
-          </a>
-
-        </div>
-
-      `;
+      }
 
 
-      whatsappButton.disabled =
-        true;
+      if (whatsappButton) {
 
-      whatsappButton.style.opacity =
-        "0.5";
+        whatsappButton.disabled =
+          true;
+
+        whatsappButton.style.opacity =
+          "0.5";
+
+      }
 
 
-      clearButton.disabled =
-        true;
+      if (clearButton) {
 
-      clearButton.style.opacity =
-        "0.5";
+        clearButton.disabled =
+          true;
+
+        clearButton.style.opacity =
+          "0.5";
+
+      }
 
 
       return;
@@ -343,21 +407,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    whatsappButton.disabled =
-      false;
+    if (whatsappButton) {
 
-    whatsappButton.style.opacity =
-      "1";
+      whatsappButton.disabled =
+        false;
+
+      whatsappButton.style.opacity =
+        "1";
+
+    }
 
 
-    clearButton.disabled =
-      false;
+    if (clearButton) {
 
-    clearButton.style.opacity =
-      "1";
+      clearButton.disabled =
+        false;
+
+      clearButton.style.opacity =
+        "1";
+
+    }
 
 
     /* CART ITEMS */
+
+    if (!cartItemsBox) {
+      return;
+    }
+
 
     cartItemsBox.innerHTML =
       cart.map(
@@ -391,7 +468,9 @@ document.addEventListener("DOMContentLoaded", function () {
             item.image &&
             !String(item.image)
               .toLowerCase()
-              .endsWith("default.png")
+              .endsWith(
+                "default.png"
+              )
           ) {
 
             imageHTML = `
@@ -418,10 +497,8 @@ document.addEventListener("DOMContentLoaded", function () {
             imageHTML = `
 
               <div class="no-image">
-
                 🖼️<br>
                 No Image
-
               </div>
 
             `;
@@ -439,35 +516,27 @@ document.addEventListener("DOMContentLoaded", function () {
               <div>
 
                 <div class="product-name">
-
                   ${escapeHTML(
                     item.name
                   )}
-
                 </div>
 
 
                 <div class="cart-price-box">
 
                   <div class="cart-mrp">
-
                     MRP:
-
                     <span>
                       ${formatPrice(mrp)}
                     </span>
-
                   </div>
 
 
                   <div class="cart-online-price">
-
                     Online Price:
-
                     <strong>
                       ${formatPrice(price)}
                     </strong>
-
                   </div>
 
 
@@ -503,9 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                   <span class="quantity">
-
                     ${qty}
-
                   </span>
 
 
@@ -553,276 +620,351 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
-     PLUS BUTTON
-  ================================ */
+  /* =========================================================
+     PLUS / MINUS / REMOVE
+  ========================================================= */
 
-  cartItemsBox.addEventListener(
-    "click",
-    function (event) {
+  if (cartItemsBox) {
 
-      const plusButton =
-        event.target.closest(
-          ".qty-plus"
-        );
+    cartItemsBox.addEventListener(
+      "click",
+      function (event) {
 
-      if (!plusButton) return;
+        const plusButton =
+          event.target.closest(
+            ".qty-plus"
+          );
 
+        if (plusButton) {
 
-      const index =
-        Number(
-          plusButton.dataset.index
-        );
+          const index =
+            Number(
+              plusButton.dataset.index
+            );
 
+          const cart =
+            getCart();
 
-      const cart =
-        getCart();
+          if (!cart[index]) {
+            return;
+          }
 
+          cart[index].qty =
+            Number(
+              cart[index].qty || 1
+            ) + 1;
 
-      if (!cart[index]) return;
+          saveCart(cart);
 
+          renderCart();
 
-      cart[index].qty =
-        Number(
-          cart[index].qty || 1
-        ) + 1;
+          return;
 
-
-      saveCart(cart);
-
-      renderCart();
-
-    }
-  );
-
-
-  /* ================================
-     MINUS BUTTON
-  ================================ */
-
-  cartItemsBox.addEventListener(
-    "click",
-    function (event) {
-
-      const minusButton =
-        event.target.closest(
-          ".qty-minus"
-        );
-
-      if (!minusButton) return;
+        }
 
 
-      const index =
-        Number(
-          minusButton.dataset.index
-        );
+        const minusButton =
+          event.target.closest(
+            ".qty-minus"
+          );
+
+        if (minusButton) {
+
+          const index =
+            Number(
+              minusButton.dataset.index
+            );
+
+          const cart =
+            getCart();
+
+          if (!cart[index]) {
+            return;
+          }
+
+          cart[index].qty =
+            Number(
+              cart[index].qty || 1
+            ) - 1;
 
 
-      const cart =
-        getCart();
+          if (cart[index].qty <= 0) {
+
+            cart.splice(
+              index,
+              1
+            );
+
+          }
 
 
-      if (!cart[index]) return;
+          saveCart(cart);
+
+          renderCart();
+
+          return;
+
+        }
 
 
-      cart[index].qty =
-        Number(
-          cart[index].qty || 1
-        ) - 1;
+        const removeButton =
+          event.target.closest(
+            ".remove-btn"
+          );
 
+        if (removeButton) {
 
-      if (cart[index].qty <= 0) {
+          const index =
+            Number(
+              removeButton.dataset.index
+            );
 
-        cart.splice(
-          index,
-          1
-        );
+          const cart =
+            getCart();
+
+          if (!cart[index]) {
+            return;
+          }
+
+          cart.splice(
+            index,
+            1
+          );
+
+          saveCart(cart);
+
+          renderCart();
+
+        }
 
       }
+    );
+
+  }
 
 
-      saveCart(cart);
-
-      renderCart();
-
-    }
-  );
-
-
-  /* ================================
-     REMOVE BUTTON
-  ================================ */
-
-  cartItemsBox.addEventListener(
-    "click",
-    function (event) {
-
-      const removeButton =
-        event.target.closest(
-          ".remove-btn"
-        );
-
-      if (!removeButton) return;
-
-
-      const index =
-        Number(
-          removeButton.dataset.index
-        );
-
-
-      const cart =
-        getCart();
-
-
-      if (!cart[index]) return;
-
-
-      cart.splice(
-        index,
-        1
-      );
-
-
-      saveCart(cart);
-
-      renderCart();
-
-    }
-  );
-
-
-  /* ================================
+  /* =========================================================
      CLEAR CART
-  ================================ */
+  ========================================================= */
 
-  clearButton.addEventListener(
-    "click",
-    function () {
+  if (clearButton) {
 
-      const cart =
-        getCart();
+    clearButton.addEventListener(
+      "click",
+      function () {
+
+        const cart =
+          getCart();
+
+        if (!cart.length) {
+          return;
+        }
 
 
-      if (!cart.length) return;
+        const ok =
+          confirm(
+            "Are you sure you want to clear your cart?"
+          );
+
+        if (!ok) {
+          return;
+        }
 
 
-      const ok =
-        confirm(
-          "Are you sure you want to clear your cart?"
+        localStorage.removeItem(
+          CART_KEY
         );
 
+        localStorage.removeItem(
+          PENDING_PAYMENT_KEY
+        );
 
-      if (!ok) return;
+        renderCart();
+
+      }
+    );
+
+  }
 
 
-      localStorage.removeItem(
-        CART_KEY
+  /* =========================================================
+     OPEN CHECKOUT
+  ========================================================= */
+
+  if (whatsappButton) {
+
+    whatsappButton.addEventListener(
+      "click",
+      function () {
+
+        const cart =
+          getCart();
+
+        if (!cart.length) {
+          return;
+        }
+
+
+        if (checkoutForm) {
+
+          checkoutForm.style.display =
+            "block";
+
+        }
+
+
+        if (paymentSection) {
+
+          paymentSection.style.display =
+            "block";
+
+        }
+
+
+        const total =
+          getTotal(cart);
+
+
+        if (paymentAmount) {
+
+          paymentAmount.textContent =
+            formatPrice(total);
+
+        }
+
+
+        if (checkoutForm) {
+
+          checkoutForm.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* =========================================================
+     SAVE PENDING PAYMENT DATA
+  ========================================================= */
+
+  function savePendingPaymentData(
+    orderId
+  ) {
+
+    const nameElement =
+      document.getElementById(
+        "customerName"
+      );
+
+    const mobileElement =
+      document.getElementById(
+        "customerMobile"
+      );
+
+    const addressElement =
+      document.getElementById(
+        "customerAddress"
+      );
+
+    const noteElement =
+      document.getElementById(
+        "customerNote"
       );
 
 
-      renderCart();
+    const data = {
+
+      cashfreeOrderId:
+        orderId,
+
+      customerName:
+        nameElement
+          ? nameElement.value.trim()
+          : "",
+
+      customerMobile:
+        mobileElement
+          ? mobileElement.value.trim()
+          : "",
+
+      customerAddress:
+        addressElement
+          ? addressElement.value.trim()
+          : "",
+
+      customerNote:
+        noteElement
+          ? noteElement.value.trim()
+          : "",
+
+      cart:
+        getCart(),
+
+      savedAt:
+        Date.now()
+
+    };
+
+
+    localStorage.setItem(
+      PENDING_PAYMENT_KEY,
+      JSON.stringify(data)
+    );
+
+  }
+
+
+  /* =========================================================
+     GET PENDING PAYMENT DATA
+  ========================================================= */
+
+  function getPendingPaymentData() {
+
+    try {
+
+      return (
+        JSON.parse(
+          localStorage.getItem(
+            PENDING_PAYMENT_KEY
+          )
+        ) || null
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Pending payment data error:",
+        error
+      );
+
+      return null;
 
     }
-  );
+
+  }
 
 
-  /* ================================
-     CHECKOUT ELEMENTS
-  ================================ */
+  /* =========================================================
+     CLEAR PENDING PAYMENT DATA
+  ========================================================= */
 
-  const checkoutForm =
-    document.getElementById(
-      "checkoutForm"
+  function clearPendingPaymentData() {
+
+    localStorage.removeItem(
+      PENDING_PAYMENT_KEY
     );
 
-
-  const paymentSection =
-    document.getElementById(
-      "paymentSection"
-    );
+  }
 
 
-  const paymentAmount =
-    document.getElementById(
-      "paymentAmount"
-    );
-
-
-  const payNowBtn =
-    document.getElementById(
-      "payNowBtn"
-    );
-
-
-  const paymentDoneBtn =
-    document.getElementById(
-      "paymentDoneBtn"
-    );
-
-
-  /* ================================
-     OPEN CHECKOUT
-  ================================ */
-
-  whatsappButton.addEventListener(
-    "click",
-    function () {
-
-      const cart =
-        getCart();
-
-
-      if (!cart.length) return;
-
-
-      checkoutForm.style.display =
-        "block";
-
-
-      if (paymentSection) {
-
-        paymentSection.style.display =
-          "block";
-
-      }
-
-
-      const total =
-        getTotal(cart);
-
-
-      if (paymentAmount) {
-
-        paymentAmount.textContent =
-          formatPrice(total);
-
-      }
-
-
-      checkoutForm.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-
-    }
-  );
-
-
-  /* ================================
-     CASHFREE PAYMENT
-  ================================ */
-
-  const CASHFREE_LAMBDA_URL =
-    "https://stwcn5xmfcn5avdreicnjrpzuq0olglq.lambda-url.ap-south-1.on.aws/";
-
-
-  let cashfreeOrderId = null;
-
-
-  /* ================================
+  /* =========================================================
      CREATE CASHFREE ORDER
-  ================================ */
+  ========================================================= */
 
   async function createCashfreeOrder(
     amount,
@@ -834,7 +976,9 @@ document.addEventListener("DOMContentLoaded", function () {
       await fetch(
         CASHFREE_LAMBDA_URL,
         {
-          method: "POST",
+
+          method:
+            "POST",
 
           headers: {
             "Content-Type":
@@ -844,7 +988,8 @@ document.addEventListener("DOMContentLoaded", function () {
           body:
             JSON.stringify({
 
-              action: "create",
+              action:
+                "create",
 
               amount:
                 Number(
@@ -861,6 +1006,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "customer@acretail.in"
 
             })
+
         }
       );
 
@@ -887,18 +1033,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    cashfreeOrderId =
-      result.orderId;
-
-
     return result;
 
   }
 
 
-  /* ================================
+  /* =========================================================
      VERIFY CASHFREE PAYMENT
-  ================================ */
+  ========================================================= */
 
   async function verifyCashfreePayment(
     orderId
@@ -908,7 +1050,9 @@ document.addEventListener("DOMContentLoaded", function () {
       await fetch(
         CASHFREE_LAMBDA_URL,
         {
-          method: "POST",
+
+          method:
+            "POST",
 
           headers: {
             "Content-Type":
@@ -925,6 +1069,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 orderId
 
             })
+
         }
       );
 
@@ -956,9 +1101,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
+  /* =========================================================
      PAY NOW
-  ================================ */
+  ========================================================= */
 
   if (payNowBtn) {
 
@@ -983,40 +1128,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         /* CUSTOMER DETAILS */
 
-        const name =
-          document
-            .getElementById(
-              "customerName"
-            )
-            .value
-            .trim();
+        const nameElement =
+          document.getElementById(
+            "customerName"
+          );
 
+        const mobileElement =
+          document.getElementById(
+            "customerMobile"
+          );
+
+        const addressElement =
+          document.getElementById(
+            "customerAddress"
+          );
+
+        const noteElement =
+          document.getElementById(
+            "customerNote"
+          );
+
+
+        const name =
+          nameElement
+            ? nameElement.value.trim()
+            : "";
 
         const mobile =
-          document
-            .getElementById(
-              "customerMobile"
-            )
-            .value
-            .trim();
-
+          mobileElement
+            ? mobileElement.value.trim()
+            : "";
 
         const address =
-          document
-            .getElementById(
-              "customerAddress"
-            )
-            .value
-            .trim();
-
+          addressElement
+            ? addressElement.value.trim()
+            : "";
 
         const note =
-          document
-            .getElementById(
-              "customerNote"
-            )
-            .value
-            .trim();
+          noteElement
+            ? noteElement.value.trim()
+            : "";
 
 
         /* VALIDATION */
@@ -1027,11 +1178,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Please enter your name."
           );
 
-          document
-            .getElementById(
-              "customerName"
-            )
-            .focus();
+          if (nameElement) {
+            nameElement.focus();
+          }
 
           return;
 
@@ -1048,11 +1197,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Please enter a valid 10-digit mobile number."
           );
 
-          document
-            .getElementById(
-              "customerMobile"
-            )
-            .focus();
+          if (mobileElement) {
+            mobileElement.focus();
+          }
 
           return;
 
@@ -1065,11 +1212,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Please enter your delivery address."
           );
 
-          document
-            .getElementById(
-              "customerAddress"
-            )
-            .focus();
+          if (addressElement) {
+            addressElement.focus();
+          }
 
           return;
 
@@ -1091,15 +1236,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* BUTTON */
-
         const originalText =
           payNowBtn.textContent;
 
 
         payNowBtn.disabled =
           true;
-
 
         payNowBtn.textContent =
           "⏳ Preparing Payment...";
@@ -1128,7 +1270,15 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
 
-          /* INITIALIZE CASHFREE */
+          /* SAVE CUSTOMER + CART
+             BEFORE REDIRECT */
+
+          savePendingPaymentData(
+            payment.orderId
+          );
+
+
+          /* CASHFREE SDK CHECK */
 
           if (
             typeof Cashfree !==
@@ -1142,6 +1292,8 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
 
+          /* SANDBOX */
+
           const cashfree =
             Cashfree({
               mode: "sandbox"
@@ -1152,14 +1304,16 @@ document.addEventListener("DOMContentLoaded", function () {
             "💳 Opening Payment...";
 
 
-          /* OPEN CASHFREE CHECKOUT */
+          /* OPEN CASHFREE */
 
           await cashfree.checkout({
+
             paymentSessionId:
               payment.paymentSessionId,
 
             redirectTarget:
               "_self"
+
           });
 
 
@@ -1192,11 +1346,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
-     CASHFREE RETURN / PAYMENT CHECK
-  ================================ */
+  /* =========================================================
+     GET RETURNED CASHFREE ORDER ID
+  ========================================================= */
 
-  async function checkCashfreeReturn() {
+  function getReturnedCashfreeOrderId() {
 
     const params =
       new URLSearchParams(
@@ -1204,121 +1358,43 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
 
-    const returnedOrderId =
+    return (
       params.get(
         "cashfree_order_id"
       ) ||
       params.get(
         "order_id"
+      )
+    );
+
+  }
+
+
+  /* =========================================================
+     PLACE VERIFIED ORDER
+  ========================================================= */
+
+  async function placeVerifiedOrder(
+    paymentResult
+  ) {
+
+    const pending =
+      getPendingPaymentData();
+
+
+    if (!pending) {
+
+      alert(
+        "Payment was verified, but order details were not found. Please contact AC Retail."
       );
-
-
-    if (!returnedOrderId) {
 
       return;
 
     }
 
 
-    cashfreeOrderId =
-      returnedOrderId;
-
-
-    const statusBox =
-      document.getElementById(
-        "paymentStatus"
-      );
-
-
-    if (statusBox) {
-
-      statusBox.style.display =
-        "block";
-
-      statusBox.textContent =
-        "⏳ Verifying payment...";
-
-    }
-
-
-    try {
-
-      const result =
-        await verifyCashfreePayment(
-          returnedOrderId
-        );
-
-
-      if (
-        result.paid === true &&
-        result.paymentStatus ===
-          "SUCCESS"
-      ) {
-
-        if (statusBox) {
-
-          statusBox.textContent =
-            "✅ Payment successful. Placing your order...";
-
-        }
-
-
-        await placeVerifiedOrder(
-          result
-        );
-
-
-      } else {
-
-        if (statusBox) {
-
-          statusBox.textContent =
-            "❌ Payment was not successful yet.";
-
-        }
-
-
-        alert(
-          "Payment is not confirmed yet. Please try again."
-        );
-
-      }
-
-
-    } catch (error) {
-
-      console.error(
-        "Payment Verification Error:",
-        error
-      );
-
-
-      if (statusBox) {
-
-        statusBox.textContent =
-          "⚠️ Payment verification failed.";
-
-      }
-
-
-      alert(
-        "Payment verification failed. Please contact AC Retail."
-      );
-
-    }
-
-  }
-
-
-  /* ================================
-     PLACE VERIFIED ORDER
-  ================================ */
-
-  async function placeVerifiedOrder(
-    paymentResult
-  ) {
-
     const cart =
+      pending.cart ||
       getCart();
 
 
@@ -1334,50 +1410,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const name =
-      document
-        .getElementById(
-          "customerName"
-        )
-        .value
-        .trim();
-
+      pending.customerName ||
+      "";
 
     const mobile =
-      document
-        .getElementById(
-          "customerMobile"
-        )
-        .value
-        .trim();
-
+      pending.customerMobile ||
+      "";
 
     const address =
-      document
-        .getElementById(
-          "customerAddress"
-        )
-        .value
-        .trim();
-
+      pending.customerAddress ||
+      "";
 
     const note =
-      document
-        .getElementById(
-          "customerNote"
-        )
-        .value
-        .trim();
+      pending.customerNote ||
+      "";
+
+
+    if (
+      !name ||
+      !mobile ||
+      !address
+    ) {
+
+      alert(
+        "Customer details are missing. Please contact AC Retail."
+      );
+
+      return;
+
+    }
 
 
     const grandTotal =
       getTotal(cart);
 
-
     const totalSavings =
       getTotalSavings(cart);
 
 
-    /* AC RETAIL ORDER ID */
+    /* =====================================================
+       AC RETAIL ORDER ID
+    ===================================================== */
 
     const orderId =
       "AC-" +
@@ -1392,7 +1465,9 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
 
-    /* WHATSAPP MESSAGE */
+    /* =====================================================
+       WHATSAPP MESSAGE
+    ===================================================== */
 
     let message =
       "🛒 *AC Retail Order*%0A%0A";
@@ -1464,28 +1539,23 @@ document.addEventListener("DOMContentLoaded", function () {
             item.qty || 1
           );
 
-
         const price =
           Number(
             item.price || 0
           );
-
 
         const mrp =
           Number(
             item.mrp || price
           );
 
-
         const itemTotal =
           price * qty;
-
 
         const itemSaving =
           Math.max(
             0,
-            (mrp - price) *
-            qty
+            (mrp - price) * qty
           );
 
 
@@ -1569,25 +1639,24 @@ document.addEventListener("DOMContentLoaded", function () {
     message +=
       "🏪 AC Retail%0A";
 
-
     message +=
       "Police Line, Phaltan";
 
 
-    /* WHATSAPP */
-
-    const whatsappNumber =
-      "918830300826";
-
+    /* =====================================================
+       WHATSAPP URL
+    ===================================================== */
 
     const url =
       "https://wa.me/" +
-      whatsappNumber +
+      WHATSAPP_NUMBER +
       "?text=" +
       message;
 
 
-    /* ORDER DATA */
+    /* =====================================================
+       ORDER DATA
+    ===================================================== */
 
     const orderData = {
 
@@ -1596,7 +1665,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       cashfreeOrderId:
         paymentResult.orderId ||
-        cashfreeOrderId,
+        pending.cashfreeOrderId ||
+        null,
 
       paymentId:
         paymentResult.paymentId ||
@@ -1641,30 +1711,81 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* LOCAL ORDER SAVE */
+    /* =====================================================
+       PREVENT DUPLICATE ORDER
+    ===================================================== */
 
-    let savedOrders =
-      JSON.parse(
-        localStorage.getItem(
-          "acOrders"
-        )
-      ) || [];
+    const processedKey =
+      "acRetailProcessed_" +
+      (
+        paymentResult.orderId ||
+        pending.cashfreeOrderId ||
+        ""
+      );
 
 
-    savedOrders.push(
-      orderData
-    );
+    if (
+      localStorage.getItem(
+        processedKey
+      ) === "yes"
+    ) {
+
+      console.log(
+        "Order already processed."
+      );
+
+      clearPendingPaymentData();
+
+      return;
+
+    }
 
 
     localStorage.setItem(
-      "acOrders",
-      JSON.stringify(
-        savedOrders
-      )
+      processedKey,
+      "yes"
     );
 
 
-    /* FIREBASE ORDER SAVE */
+    /* =====================================================
+       LOCAL STORAGE ORDER
+    ===================================================== */
+
+    try {
+
+      let savedOrders =
+        JSON.parse(
+          localStorage.getItem(
+            "acOrders"
+          )
+        ) || [];
+
+
+      savedOrders.push(
+        orderData
+      );
+
+
+      localStorage.setItem(
+        "acOrders",
+        JSON.stringify(
+          savedOrders
+        )
+      );
+
+    } catch (error) {
+
+      console.error(
+        "Local order save error:",
+        error
+      );
+
+    }
+
+
+    /* =====================================================
+       FIREBASE ORDER SAVE
+    ===================================================== */
 
     try {
 
@@ -1692,7 +1813,6 @@ document.addEventListener("DOMContentLoaded", function () {
         newOrderRef.key
       );
 
-
     } catch (error) {
 
       console.error(
@@ -1703,11 +1823,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* AWS ORDER SAVE */
-
-    const AWS_ORDER_URL =
-      "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
-
+    /* =====================================================
+       AWS ORDER SAVE
+    ===================================================== */
 
     try {
 
@@ -1751,7 +1869,6 @@ document.addEventListener("DOMContentLoaded", function () {
         result
       );
 
-
     } catch (error) {
 
       console.error(
@@ -1762,17 +1879,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* CLEAR CART */
+    /* =====================================================
+       CLEAR CART
+    ===================================================== */
 
     localStorage.removeItem(
       CART_KEY
     );
 
 
+    clearPendingPaymentData();
+
+
     renderCart();
 
 
-    /* OPEN WHATSAPP */
+    /* =====================================================
+       REMOVE CASHFREE QUERY PARAMETER
+    ===================================================== */
+
+    try {
+
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
+
+    } catch (error) {
+
+      console.log(
+        "URL cleanup skipped:",
+        error
+      );
+
+    }
+
+
+    /* =====================================================
+       SUCCESS MESSAGE
+    ===================================================== */
+
+    alert(
+      "✅ Payment successful!\n\n" +
+      "Order ID: " +
+      orderId +
+      "\n\n" +
+      "Your order has been placed successfully."
+    );
+
+
+    /* =====================================================
+       OPEN WHATSAPP
+    ===================================================== */
 
     window.open(
       url,
@@ -1782,550 +1941,155 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* ================================
-     CHECK CASHFREE RETURN
-  ================================ */
+  /* =========================================================
+     CASHFREE RETURN / PAYMENT CHECK
+  ========================================================= */
 
-  checkCashfreeReturn();
+  async function checkCashfreeReturn() {
 
+    const returnedOrderId =
+      getReturnedCashfreeOrderId();
 
-  /* ================================
-     PAYMENT COMPLETED
-  ================================ */
 
-  if (paymentDoneBtn) {
+    if (!returnedOrderId) {
 
-    paymentDoneBtn.addEventListener(
-      "click",
-      function () {
+      return;
 
-        const cart =
-          getCart();
+    }
 
 
-        if (!cart.length) {
+    console.log(
+      "Cashfree returned order:",
+      returnedOrderId
+    );
 
-          alert(
-            "Your cart is empty."
-          );
 
-          return;
+    /* SHOW PAYMENT SECTION */
 
-        }
+    if (paymentSection) {
 
+      paymentSection.style.display =
+        "block";
 
-        /* CUSTOMER DETAILS */
+    }
 
-        const name =
-          document
-            .getElementById(
-              "customerName"
-            )
-            .value
-            .trim();
 
+    if (paymentStatus) {
 
-        const mobile =
-          document
-            .getElementById(
-              "customerMobile"
-            )
-            .value
-            .trim();
+      paymentStatus.style.display =
+        "block";
 
+      paymentStatus.textContent =
+        "⏳ Verifying payment...";
 
-        const address =
-          document
-            .getElementById(
-              "customerAddress"
-            )
-            .value
-            .trim();
+    }
 
 
-        const note =
-          document
-            .getElementById(
-              "customerNote"
-            )
-            .value
-            .trim();
+    if (paymentAmount) {
 
+      const pending =
+        getPendingPaymentData();
 
-        /* VALIDATION */
+      if (pending) {
 
-        if (!name) {
-
-          alert(
-            "Please enter your name."
-          );
-
-
-          document
-            .getElementById(
-              "customerName"
-            )
-            .focus();
-
-
-          return;
-
-        }
-
-
-        if (
-          !/^[0-9]{10}$/.test(
-            mobile
-          )
-        ) {
-
-          alert(
-            "Please enter a valid 10-digit mobile number."
-          );
-
-
-          document
-            .getElementById(
-              "customerMobile"
-            )
-            .focus();
-
-
-          return;
-
-        }
-
-
-        if (!address) {
-
-          alert(
-            "Please enter your delivery address."
-          );
-
-
-          document
-            .getElementById(
-              "customerAddress"
-            )
-            .focus();
-
-
-          return;
-
-        }
-
-
-        /* ORDER ID */
-
-        const orderId =
-          "AC-" +
-
-          new Date()
-            .toISOString()
-            .slice(0, 10)
-            .replace(/-/g, "") +
-
-          "-" +
-
-          Math.floor(
-            1000 +
-            Math.random() *
-            9000
-          );
-
-
-        /* TOTAL */
-
-        const grandTotal =
-          getTotal(cart);
-
-
-        const totalSavings =
-          getTotalSavings(cart);
-
-
-        /* WHATSAPP MESSAGE */
-
-        let message =
-          "🛒 *AC Retail Order*%0A%0A";
-
-
-        message +=
-          "🆔 *Order ID:* " +
-          encodeURIComponent(
-            orderId
-          ) +
-          "%0A";
-
-
-        message +=
-          "💳 *Payment:* UPI%0A";
-
-
-        message +=
-          "🟢 *Payment Status:* Customer Confirmed%0A%0A";
-
-
-        message +=
-          "👤 *Customer:* " +
-          encodeURIComponent(
-            name
-          ) +
-          "%0A";
-
-
-        message +=
-          "📱 *Mobile:* " +
-          encodeURIComponent(
-            mobile
-          ) +
-          "%0A";
-
-
-        message +=
-          "📍 *Address:* " +
-          encodeURIComponent(
-            address
-          ) +
-          "%0A";
-
-
-        if (note) {
-
-          message +=
-            "📝 *Note:* " +
-            encodeURIComponent(
-              note
-            ) +
-            "%0A";
-
-        }
-
-
-        message +=
-          "%0A━━━━━━━━━━━━━━%0A";
-
-
-        /* ITEMS */
-
-        cart.forEach(
-          function (item, index) {
-
-            const qty =
-              Number(
-                item.qty || 1
-              );
-
-
-            const price =
-              Number(
-                item.price || 0
-              );
-
-
-            const mrp =
-              Number(
-                item.mrp || price
-              );
-
-
-            const itemTotal =
-              price * qty;
-
-
-            const itemSaving =
-              Math.max(
-                0,
-                (mrp - price) * qty
-              );
-
-
-            message +=
-              `${index + 1}. ` +
-              encodeURIComponent(
-                item.name
-              ) +
-              "%0A";
-
-
-            message +=
-              " Qty: " +
-              qty +
-              "%0A";
-
-
-            message +=
-              " MRP: " +
-              formatPrice(mrp) +
-              "%0A";
-
-
-            message +=
-              " Online Price: " +
-              formatPrice(price) +
-              "%0A";
-
-
-            if (itemSaving > 0) {
-
-              message +=
-                " You Save: " +
-                formatPrice(
-                  itemSaving
-                ) +
-                "%0A";
-
-            }
-
-
-            message +=
-              " Total: " +
-              formatPrice(
-                itemTotal
-              ) +
-              "%0A%0A";
-
-          }
-        );
-
-
-        message +=
-          "━━━━━━━━━━━━━━%0A";
-
-
-        if (totalSavings > 0) {
-
-          message +=
-            "🏷️ *You Save: " +
-            formatPrice(
-              totalSavings
-            ) +
-            "*%0A";
-
-        }
-
-
-        message +=
-          "💰 *Grand Total: " +
+        paymentAmount.textContent =
           formatPrice(
-            grandTotal
-          ) +
-          "*%0A%0A";
-
-
-        message +=
-          "🏪 AC Retail%0A";
-
-
-        message +=
-          "Police Line, Phaltan";
-
-
-        /* WHATSAPP NUMBER */
-
-        const whatsappNumber =
-          "918830300826";
-
-
-        const url =
-          "https://wa.me/" +
-          whatsappNumber +
-          "?text=" +
-          message;
-
-
-        /* ORDER DATA */
-
-        const orderData = {
-
-          orderId:
-            orderId,
-
-          customerName:
-            name,
-
-          customerMobile:
-            mobile,
-
-          customerAddress:
-            address,
-
-          customerNote:
-            note,
-
-          status:
-            "Payment Confirmed - Order Placed",
-
-          paymentMethod:
-            "UPI",
-
-          paymentStatus:
-            "Customer Confirmed",
-
-          date:
-            new Date()
-              .toLocaleString(
-                "en-IN"
-              ),
-
-          items:
-            cart,
-
-          total:
-            grandTotal,
-
-          totalSavings:
-            totalSavings
-
-        };
-
-
-        /* LOCAL ORDER SAVE */
-
-        let savedOrders =
-          JSON.parse(
-            localStorage.getItem(
-              "acOrders"
+            getTotal(
+              pending.cart || []
             )
-          ) || [];
+          );
+
+      }
+
+    }
 
 
-        savedOrders.push(
-          orderData
+    try {
+
+      const result =
+        await verifyCashfreePayment(
+          returnedOrderId
         );
 
 
-        localStorage.setItem(
-          "acOrders",
-          JSON.stringify(
-            savedOrders
-          )
+      console.log(
+        "Cashfree verification:",
+        result
+      );
+
+
+      if (
+        result.paid === true &&
+        result.paymentStatus ===
+          "SUCCESS"
+      ) {
+
+        if (paymentStatus) {
+
+          paymentStatus.textContent =
+            "✅ Payment successful. Placing your order...";
+
+        }
+
+
+        await placeVerifiedOrder(
+          result
         );
 
 
-        /* FIREBASE ORDER SAVE */
+      } else {
 
-        const ordersRef =
-          ref(
-            db,
-            "orders"
-          );
+        if (paymentStatus) {
 
+          paymentStatus.textContent =
+            "❌ Payment was not successful yet.";
 
-        const newOrderRef =
-          push(
-            ordersRef
-          );
+        }
 
 
-        set(
-          newOrderRef,
-          orderData
-        )
-          .then(
-            function () {
-
-              console.log(
-                "Firebase Order Saved:",
-                newOrderRef.key
-              );
-
-            }
-          )
-          .catch(
-            function (error) {
-
-              console.error(
-                "Firebase Order Error:",
-                error
-              );
-
-            }
-          );
-
-
-        /* AWS ORDER SAVE */
-
-        const AWS_ORDER_URL =
-          "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
-
-
-        fetch(
-          AWS_ORDER_URL,
-          {
-
-            method:
-              "POST",
-
-            headers: {
-
-              "Content-Type":
-                "application/json"
-
-            },
-
-            body:
-              JSON.stringify(
-                orderData
-              )
-
-          }
-        )
-          .then(
-            function (response) {
-
-              if (!response.ok) {
-
-                throw new Error(
-                  "AWS order save failed"
-                );
-
-              }
-
-
-              return response.json();
-
-            }
-          )
-          .then(
-            function (result) {
-
-              console.log(
-                "AWS Order Saved:",
-                result
-              );
-
-            }
-          )
-          .catch(
-            function (error) {
-
-              console.error(
-                "AWS Order Error:",
-                error
-              );
-
-            }
-          );
-
-
-        /* OPEN WHATSAPP */
-
-        window.open(
-          url,
-          "_blank"
+        alert(
+          "Payment is not confirmed yet. Please try again."
         );
 
       }
-    );
+
+
+    } catch (error) {
+
+      console.error(
+        "Payment Verification Error:",
+        error
+      );
+
+
+      if (paymentStatus) {
+
+        paymentStatus.textContent =
+          "⚠️ Payment verification failed.";
+
+      }
+
+
+      alert(
+        "Payment verification failed. Please contact AC Retail."
+      );
+
+    }
 
   }
 
 
-  /* ================================
+  /* =========================================================
      INITIAL RENDER
-  ================================ */
+  ========================================================= */
 
   renderCart();
+
+
+  /* =========================================================
+     CHECK CASHFREE RETURN
+  ========================================================= */
+
+  checkCashfreeReturn();
 
 });
