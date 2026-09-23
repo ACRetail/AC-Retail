@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AC Retail Admin</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
+
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
   background:#f5f8f6;
   font-family:Arial,sans-serif;
-  color:#222
+  color:#222;
 }
 
 .admin-header{
   background:linear-gradient(135deg,#087f46,#12a05a);
   color:#fff;
   padding:28px 20px;
-  text-align:center
+  text-align:center;
+  position:relative;
 }
 
 .admin-header h1{
   margin:0;
-  font-size:30px
+  font-size:30px;
 }
 
 .admin-header p{
-  margin:8px 0 0
+  margin:8px 0 0;
 }
 
 .admin-container{
   max-width:1200px;
   margin:auto;
-  padding:30px 15px
+  padding:30px 15px;
 }
 
 .admin-stats{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
-  margin-bottom:30px
+  margin-bottom:30px;
 }
 
 .stat-card{
@@ -52,18 +58,18 @@ body{
   padding:22px;
   border-radius:18px;
   box-shadow:0 8px 25px rgba(0,0,0,.07);
-  text-align:center
+  text-align:center;
 }
 
 .stat-card h2{
   margin:0;
   font-size:30px;
-  color:#087f46
+  color:#087f46;
 }
 
 .stat-card p{
   margin:8px 0 0;
-  color:#666
+  color:#666;
 }
 
 .admin-section{
@@ -71,11 +77,11 @@ body{
   padding:25px;
   border-radius:20px;
   margin-bottom:25px;
-  box-shadow:0 8px 25px rgba(0,0,0,.06)
+  box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
 .admin-section h2{
-  margin-top:0
+  margin-top:0;
 }
 
 .admin-search{
@@ -85,27 +91,23 @@ body{
   border-radius:10px;
   margin-bottom:20px;
   font-size:15px;
-  outline:none
+  outline:none;
 }
 
-.admin-search:focus,
-.edit-input:focus,
-.edit-select:focus,
-.add-input:focus,
-.add-select:focus{
+.admin-search:focus{
   border-color:#087f46;
-  box-shadow:0 0 0 3px rgba(8,127,70,.08)
+  box-shadow:0 0 0 3px rgba(8,127,70,.08);
 }
 
 .product-manager-tools{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:12px;
-  margin-bottom:20px
+  margin-bottom:20px;
 }
 
 .product-manager-tools .admin-search{
-  margin-bottom:0
+  margin-bottom:0;
 }
 
 .add-product-button,
@@ -118,19 +120,16 @@ body{
   color:#fff;
   font-size:16px;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .add-product-button{
-  margin-bottom:18px
+  margin-bottom:18px;
 }
 
 .add-product-button:hover,
-.manager-button:hover,
-.create-product-btn:hover,
-.save-product-btn:hover,
-.delete-product-btn:hover{
-  opacity:.9
+.manager-button:hover{
+  opacity:.9;
 }
 
 .add-product-box{
@@ -139,42 +138,42 @@ body{
   padding:20px;
   border-radius:15px;
   background:#f7faf8;
-  border:1px solid #dce7e1
+  border:1px solid #dce7e1;
 }
 
 .add-product-box.open{
-  display:block
+  display:block;
 }
 
 .add-product-box h3{
   margin-top:0;
-  color:#087f46
+  color:#087f46;
 }
 
 .add-grid,
 .edit-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px
+  gap:14px;
 }
 
 .add-field,
 .edit-field{
   display:flex;
   flex-direction:column;
-  gap:6px
+  gap:6px;
 }
 
 .add-field.full,
 .edit-field.full{
-  grid-column:1/-1
+  grid-column:1/-1;
 }
 
 .add-field label,
 .edit-field label{
   font-size:13px;
   font-weight:bold;
-  color:#444
+  color:#444;
 }
 
 .add-input,
@@ -187,7 +186,15 @@ body{
   border-radius:9px;
   background:#fff;
   font-size:14px;
-  outline:none
+  outline:none;
+}
+
+.add-input:focus,
+.add-select:focus,
+.edit-input:focus,
+.edit-select:focus{
+  border-color:#087f46;
+  box-shadow:0 0 0 3px rgba(8,127,70,.08);
 }
 
 .add-actions,
@@ -197,7 +204,7 @@ body{
   display:flex;
   gap:10px;
   margin-top:18px;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
 .create-product-btn,
@@ -208,7 +215,7 @@ body{
   padding:11px 18px;
   border-radius:10px;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .cancel-add-btn,
@@ -219,13 +226,13 @@ body{
   padding:11px 18px;
   border-radius:10px;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .product-list,
 .orders-grid{
   display:grid;
-  gap:15px
+  gap:15px;
 }
 
 .product-admin-card,
@@ -234,7 +241,7 @@ body{
   border-radius:16px;
   padding:16px;
   background:#fff;
-  box-shadow:0 3px 12px rgba(0,0,0,.05)
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
 }
 
 .product-admin-top,
@@ -243,30 +250,30 @@ body{
   align-items:center;
   justify-content:space-between;
   gap:15px;
-  flex-wrap:wrap
+  flex-wrap:wrap;
 }
 
 .product-info{
-  min-width:0
+  min-width:0;
 }
 
 .product-name{
   font-size:17px;
   font-weight:800;
-  margin-bottom:5px
+  margin-bottom:5px;
 }
 
 .product-id,
 .product-brand{
   color:#777;
   font-size:12px;
-  margin-top:4px
+  margin-top:4px;
 }
 
 .product-category{
   color:#087f46;
   font-size:13px;
-  margin-top:5px
+  margin-top:5px;
 }
 
 .edit-product-btn,
@@ -276,15 +283,15 @@ body{
   padding:10px 14px;
   border-radius:10px;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .edit-product-btn{
-  background:#087f46
+  background:#087f46;
 }
 
 .delete-product-btn{
-  background:#dc3545
+  background:#dc3545;
 }
 
 .product-edit-box{
@@ -293,11 +300,11 @@ body{
   padding:18px;
   border-radius:14px;
   background:#f7faf8;
-  border:1px solid #e0e8e3
+  border:1px solid #e0e8e3;
 }
 
 .product-edit-box.open{
-  display:block
+  display:block;
 }
 
 .featured-option{
@@ -310,14 +317,14 @@ body{
   border-radius:10px;
   color:#765700;
   font-weight:700;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .featured-option input{
   width:18px;
   height:18px;
   accent-color:#087f46;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .featured-status{
@@ -328,7 +335,7 @@ body{
   background:#fff8dc;
   color:#765700;
   font-size:12px;
-  font-weight:800
+  font-weight:800;
 }
 
 .status{
@@ -336,19 +343,19 @@ body{
   border-radius:20px;
   background:#fff3cd;
   font-size:13px;
-  font-weight:bold
+  font-weight:bold;
 }
 
 .customer-info{
   line-height:1.7;
-  color:#444
+  color:#444;
 }
 
 .order-items{
   margin:15px 0;
   padding:15px;
   background:#f7faf8;
-  border-radius:12px
+  border-radius:12px;
 }
 
 .order-item{
@@ -356,18 +363,18 @@ body{
   justify-content:space-between;
   gap:10px;
   padding:7px 0;
-  border-bottom:1px solid #e5e5e5
+  border-bottom:1px solid #e5e5e5;
 }
 
 .order-item:last-child{
-  border-bottom:0
+  border-bottom:0;
 }
 
 .order-total{
   font-size:20px;
   font-weight:bold;
   color:#087f46;
-  margin:15px 0
+  margin:15px 0;
 }
 
 .order-actions button{
@@ -375,27 +382,27 @@ body{
   padding:10px 14px;
   border-radius:9px;
   cursor:pointer;
-  font-weight:bold
+  font-weight:bold;
 }
 
 .confirm-btn{
   background:#087f46;
-  color:#fff
+  color:#fff;
 }
 
 .delivered-btn{
   background:#198754;
-  color:#fff
+  color:#fff;
 }
 
 .cancel-btn{
   background:#dc3545;
-  color:#fff
+  color:#fff;
 }
 
 .delete-btn{
   background:#333;
-  color:#fff
+  color:#fff;
 }
 
 .category-message{
@@ -405,27 +412,25 @@ body{
   border-radius:10px;
   background:#e8f7ee;
   color:#087f46;
-  font-weight:bold
+  font-weight:bold;
 }
 
 .loading-box,
 .empty-box{
   padding:25px;
   text-align:center;
-  color:#777
+  color:#777;
 }
 
 .empty-box{
   background:#fafafa;
-  border-radius:12px
+  border-radius:12px;
 }
 
-/* =========================
-   CATEGORY-WISE PRODUCTS
-========================= */
+/* CATEGORY-WISE PRODUCTS */
 
 .category-group{
-  margin-bottom:28px
+  margin-bottom:28px;
 }
 
 .category-title{
@@ -439,7 +444,7 @@ body{
   background:#e8f7ee;
   color:#087f46;
   font-size:19px;
-  font-weight:800
+  font-weight:800;
 }
 
 .category-count{
@@ -448,60 +453,15 @@ body{
   color:#fff;
   padding:5px 9px;
   border-radius:20px;
-  white-space:nowrap
+  white-space:nowrap;
 }
 
 .category-products{
   display:grid;
-  gap:15px
+  gap:15px;
 }
 
-@media(max-width:700px){
-
-  .admin-stats{
-    grid-template-columns:1fr
-  }
-
-  .admin-section{
-    padding:18px
-  }
-
-  .product-manager-tools{
-    grid-template-columns:1fr
-  }
-
-  .add-grid,
-  .edit-grid{
-    grid-template-columns:1fr
-  }
-
-  .add-field.full,
-  .edit-field.full{
-    grid-column:auto
-  }
-
-  .product-buttons{
-    width:100%
-  }
-
-  .edit-product-btn,
-  .delete-product-btn{
-    flex:1
-  }
-
-  .product-admin-top{
-    align-items:flex-start
-  }
-
-  .category-title{
-    font-size:16px
-  }
-
-}
-
-/* =========================
-   ADMIN LOGIN
-========================= */
+/* LOGIN */
 
 #adminLoginScreen{
   min-height:100vh;
@@ -509,7 +469,7 @@ body{
   align-items:center;
   justify-content:center;
   padding:20px;
-  background:linear-gradient(135deg,#087f46,#12a05a)
+  background:linear-gradient(135deg,#087f46,#12a05a);
 }
 
 .login-box{
@@ -518,29 +478,29 @@ body{
   background:#fff;
   padding:30px;
   border-radius:22px;
-  box-shadow:0 15px 45px rgba(0,0,0,.18)
+  box-shadow:0 15px 45px rgba(0,0,0,.18);
 }
 
 .login-box h2{
   margin:0 0 8px;
   text-align:center;
-  color:#087f46
+  color:#087f46;
 }
 
 .login-box p{
   text-align:center;
   color:#666;
-  margin:0 0 25px
+  margin:0 0 25px;
 }
 
 .login-field{
-  margin-bottom:16px
+  margin-bottom:16px;
 }
 
 .login-field label{
   display:block;
   margin-bottom:7px;
-  font-weight:bold
+  font-weight:bold;
 }
 
 .login-field input{
@@ -549,20 +509,19 @@ body{
   border:1px solid #ddd;
   border-radius:10px;
   font-size:15px;
-  outline:none
+  outline:none;
 }
 
 .login-field input:focus{
   border-color:#087f46;
-  box-shadow:0 0 0 3px rgba(8,127,70,.08)
 }
 
 .password-wrap{
-  position:relative
+  position:relative;
 }
 
 .password-wrap input{
-  padding-right:80px
+  padding-right:80px;
 }
 
 .show-password{
@@ -574,7 +533,7 @@ body{
   background:none;
   color:#087f46;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
 }
 
 .login-btn{
@@ -586,11 +545,7 @@ body{
   color:#fff;
   font-size:16px;
   font-weight:bold;
-  cursor:pointer
-}
-
-.login-btn:hover{
-  opacity:.9
+  cursor:pointer;
 }
 
 .login-error{
@@ -601,11 +556,11 @@ body{
   background:#ffe8e8;
   color:#c62828;
   font-size:14px;
-  text-align:center
+  text-align:center;
 }
 
 #adminDashboard{
-  display:none
+  display:none;
 }
 
 .logout-btn{
@@ -618,28 +573,65 @@ body{
   background:#fff;
   color:#087f46;
   font-weight:bold;
-  cursor:pointer
-}
-
-.admin-header{
-  position:relative
+  cursor:pointer;
 }
 
 @media(max-width:700px){
 
+  .admin-stats{
+    grid-template-columns:1fr;
+  }
+
+  .admin-section{
+    padding:18px;
+  }
+
+  .product-manager-tools{
+    grid-template-columns:1fr;
+  }
+
+  .add-grid,
+  .edit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .add-field.full,
+  .edit-field.full{
+    grid-column:auto;
+  }
+
+  .product-buttons{
+    width:100%;
+  }
+
+  .edit-product-btn,
+  .delete-product-btn{
+    flex:1;
+  }
+
+  .product-admin-top{
+    align-items:flex-start;
+  }
+
+  .category-title{
+    font-size:16px;
+  }
+
   .logout-btn{
     position:static;
-    margin-top:15px
+    margin-top:15px;
   }
 
 }
+
 </style>
+
 </head>
 
 <body>
 
-<!-- =========================
-     ADMIN LOGIN SCREEN
+  <!-- =========================
+     ADMIN LOGIN
 ========================= -->
 
 <div id="adminLoginScreen">
@@ -667,6 +659,7 @@ body{
         >
 
       </div>
+
 
       <div class="login-field">
 
@@ -696,6 +689,7 @@ body{
 
       </div>
 
+
       <button
         type="submit"
         class="login-btn"
@@ -703,6 +697,7 @@ body{
       >
         🔐 Login
       </button>
+
 
       <div
         id="loginError"
@@ -722,237 +717,107 @@ body{
 
 <div id="adminDashboard">
 
-<header class="admin-header">
 
-  <h1>AC Retail Admin</h1>
+  <!-- HEADER -->
 
-  <p>
-    Order &amp; Product Management Dashboard
-  </p>
+  <header class="admin-header">
 
-</header>
+    <h1>
+      AC Retail Admin
+    </h1>
 
+    <p>
+      Order &amp; Product Management Dashboard
+    </p>
 
-<main class="admin-container">
-
-
-<!-- =========================
-     ADMIN STATS
-========================= -->
-
-<div class="admin-stats">
-
-  <div class="stat-card">
-    <h2 id="totalOrders">0</h2>
-    <p>Total Orders</p>
-  </div>
-
-  <div class="stat-card">
-    <h2 id="pendingOrders">0</h2>
-    <p>Pending Orders</p>
-  </div>
-
-  <div class="stat-card">
-    <h2 id="deliveredOrders">0</h2>
-    <p>Delivered</p>
-  </div>
-
-</div>
+  </header>
 
 
-<!-- =========================
-     PRODUCT MANAGER
-========================= -->
-
-<section class="admin-section">
-
-  <h2>🛒 Product Manager</h2>
-
-  <p style="color:#666">
-    Add, edit or delete products from your website catalog.
-  </p>
+  <main class="admin-container">
 
 
-  <div class="product-manager-tools">
+    <!-- =========================
+         ADMIN STATS
+    ========================= -->
 
-    <input
-      type="text"
-      id="productSearch"
-      class="admin-search"
-      placeholder="Search product name..."
-      autocomplete="off"
-    >
+    <div class="admin-stats">
 
-    <select
-      id="productCategoryFilter"
-      class="admin-search"
-    >
-      <option value="">
-        All Categories
-      </option>
-    </select>
+      <div class="stat-card">
 
-  </div>
+        <h2 id="totalOrders">
+          0
+        </h2>
+
+        <p>
+          Total Orders
+        </p>
+
+      </div>
 
 
-  <button
-    id="showAddProduct"
-    class="add-product-button"
-    type="button"
-  >
-    ➕ Add New Product
-  </button>
+      <div class="stat-card">
+
+        <h2 id="pendingOrders">
+          0
+        </h2>
+
+        <p>
+          Pending Orders
+        </p>
+
+      </div>
 
 
-  <!-- =========================
-       ADD PRODUCT
-  ========================= -->
+      <div class="stat-card">
 
-  <div
-    id="addProductBox"
-    class="add-product-box"
-  >
+        <h2 id="deliveredOrders">
+          0
+        </h2>
 
-    <h3>
-      ➕ Add New Product
-    </h3>
+        <p>
+          Delivered
+        </p>
+
+      </div>
+
+    </div>
 
 
-    <div class="add-grid">
+    <!-- =========================
+         PRODUCT MANAGER
+    ========================= -->
 
-      <div class="add-field">
+    <section class="admin-section">
 
-        <label>
-          Product Name
-        </label>
+      <h2>
+        🛒 Product Manager
+      </h2>
+
+      <p style="color:#666">
+        Add, edit or delete products from your website catalog.
+      </p>
+
+
+      <!-- SEARCH + CATEGORY -->
+
+      <div class="product-manager-tools">
 
         <input
-          id="addProductName"
-          class="add-input"
           type="text"
-          placeholder="Enter product name"
+          id="productSearch"
+          class="admin-search"
+          placeholder="Search product name..."
+          autocomplete="off"
         >
 
-      </div>
-
-
-      <div class="add-field">
-
-        <label>
-          Product ID
-        </label>
-
-        <input
-          id="addProductId"
-          class="add-input"
-          type="text"
-          placeholder="Example: 501"
-        >
-
-      </div>
-
-
-      <div class="add-field">
-
-        <label>
-          Brand
-        </label>
-
-        <input
-          id="addProductBrand"
-          class="add-input"
-          type="text"
-          placeholder="Enter brand"
-        >
-
-      </div>
-
-
-      <div class="add-field">
-
-        <label>
-          MRP
-        </label>
-
-        <input
-          id="addProductMrp"
-          class="add-input"
-          type="number"
-          step="0.01"
-          min="0"
-          placeholder="0"
-        >
-
-      </div>
-
-
-      <div class="add-field">
-
-        <label>
-          Online Price
-        </label>
-
-        <input
-          id="addProductPrice"
-          class="add-input"
-          type="number"
-          step="0.01"
-          min="0"
-          placeholder="0"
-        >
-
-      </div>
-
-
-      <div class="add-field">
-
-        <label>
-          Category
-        </label>
 
         <select
-          id="addProductCategory"
-          class="add-select"
+          id="productCategoryFilter"
+          class="admin-search"
         >
 
-          <option value="Spices &amp; Dry fuits">
-            Spices &amp; Dry fuits
-          </option>
-
-          <option value="Rice">
-            Rice
-          </option>
-
-          <option value="Atta maida sooji besan">
-            Atta maida sooji besan
-          </option>
-
-          <option value="Dals and grains">
-            Dals and grains
-          </option>
-
-          <option value="Oil sugar and salt">
-            Oil sugar and salt
-          </option>
-
-          <option value="Snacks and beverages">
-            Snacks and beverages
-          </option>
-
-          <option value="Home care">
-            Home care
-          </option>
-
-          <option value="Personal care">
-            Personal care
-          </option>
-
-          <option value="Dairy">
-            Dairy
-          </option>
-
-          <option value="General Item">
-            General Item
+          <option value="">
+            All Categories
           </option>
 
         </select>
@@ -960,138 +825,329 @@ body{
       </div>
 
 
-      <div class="add-field full">
+      <!-- ADD PRODUCT BUTTON -->
 
-        <label class="featured-option">
+      <button
+        id="showAddProduct"
+        class="add-product-button"
+        type="button"
+      >
+        ➕ Add New Product
+      </button>
 
-          <input
-            type="checkbox"
-            id="addProductFeatured"
+
+      <!-- =========================
+           ADD PRODUCT BOX
+      ========================= -->
+
+      <div
+        id="addProductBox"
+        class="add-product-box"
+      >
+
+        <h3>
+          ➕ Add New Product
+        </h3>
+
+
+        <div class="add-grid">
+
+
+          <!-- PRODUCT NAME -->
+
+          <div class="add-field">
+
+            <label>
+              Product Name
+            </label>
+
+            <input
+              id="addProductName"
+              class="add-input"
+              type="text"
+              placeholder="Enter product name"
+            >
+
+          </div>
+
+
+          <!-- PRODUCT ID -->
+
+          <div class="add-field">
+
+            <label>
+              Product ID
+            </label>
+
+            <input
+              id="addProductId"
+              class="add-input"
+              type="text"
+              placeholder="Example: 501"
+            >
+
+          </div>
+
+
+          <!-- BRAND -->
+
+          <div class="add-field">
+
+            <label>
+              Brand
+            </label>
+
+            <input
+              id="addProductBrand"
+              class="add-input"
+              type="text"
+              placeholder="Enter brand"
+            >
+
+          </div>
+
+
+          <!-- MRP -->
+
+          <div class="add-field">
+
+            <label>
+              MRP
+            </label>
+
+            <input
+              id="addProductMrp"
+              class="add-input"
+              type="number"
+              step="0.01"
+              min="0"
+              placeholder="0"
+            >
+
+          </div>
+
+
+          <!-- ONLINE PRICE -->
+
+          <div class="add-field">
+
+            <label>
+              Online Price
+            </label>
+
+            <input
+              id="addProductPrice"
+              class="add-input"
+              type="number"
+              step="0.01"
+              min="0"
+              placeholder="0"
+            >
+
+          </div>
+
+
+          <!-- CATEGORY -->
+
+          <div class="add-field">
+
+            <label>
+              Category
+            </label>
+
+            <select
+              id="addProductCategory"
+              class="add-select"
+            >
+
+              <option>
+                Spices &amp; Dry fuits
+              </option>
+
+              <option>
+                Rice
+              </option>
+
+              <option>
+                Atta maida sooji besan
+              </option>
+
+              <option>
+                Dals and grains
+              </option>
+
+              <option>
+                Oil sugar and salt
+              </option>
+
+              <option>
+                Snacks and beverages
+              </option>
+
+              <option>
+                Home care
+              </option>
+
+              <option>
+                Personal care
+              </option>
+
+              <option>
+                Dairy
+              </option>
+
+              <option>
+                General Item
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- FEATURED -->
+
+          <div class="add-field full">
+
+            <label class="featured-option">
+
+              <input
+                type="checkbox"
+                id="addProductFeatured"
+              >
+
+              ⭐ Show on Home
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- ADD ACTIONS -->
+
+        <div class="add-actions">
+
+          <button
+            id="createProduct"
+            class="create-product-btn"
+            type="button"
           >
+            ➕ Add Product
+          </button>
 
-          ⭐ Show on Home
 
-        </label>
+          <button
+            id="cancelAddProduct"
+            class="cancel-add-btn"
+            type="button"
+          >
+            Cancel
+          </button>
+
+        </div>
 
       </div>
 
-    </div>
+
+      <!-- MESSAGE -->
+
+      <div
+        id="productMessage"
+        class="category-message"
+      ></div>
 
 
-    <div class="add-actions">
+      <!-- PRODUCT LIST -->
+
+      <div
+        id="productList"
+        class="product-list"
+      >
+
+        <div class="loading-box">
+          Loading products...
+        </div>
+
+      </div>
+
+
+      <!-- EXPORT -->
 
       <button
-        id="createProduct"
-        class="create-product-btn"
+        id="exportProducts"
+        class="manager-button"
         type="button"
       >
-        ➕ Add Product
+        📥 Export Updated products.json
       </button>
 
-      <button
-        id="cancelAddProduct"
-        class="cancel-add-btn"
-        type="button"
+
+      <p style="font-size:13px;color:#777;margin-top:12px">
+
+        After adding, editing or deleting products,
+        download the updated
+        <strong>products.json</strong>
+        and replace the existing
+        <strong>products.json</strong>
+        file on GitHub.
+
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         CUSTOMER ORDERS
+    ========================= -->
+
+    <section class="admin-section">
+
+      <h2>
+        📦 Customer Orders
+      </h2>
+
+
+      <input
+        type="text"
+        id="orderSearch"
+        class="admin-search"
+        placeholder="Search Order ID, customer name or mobile..."
+        autocomplete="off"
       >
-        Cancel
-      </button>
-
-    </div>
-
-  </div>
 
 
-  <div
-    id="productMessage"
-    class="category-message"
-  ></div>
+      <div
+        id="ordersList"
+        class="orders-grid"
+      >
+
+        <div class="loading-box">
+          Loading orders...
+        </div>
+
+      </div>
+
+    </section>
 
 
-  <!-- PRODUCTS WILL APPEAR HERE -->
-
-  <div
-    id="productList"
-    class="product-list"
-  >
-
-    <div class="loading-box">
-      Loading products...
-    </div>
-
-  </div>
+  </main>
 
 
-  <button
-    id="exportProducts"
-    class="manager-button"
-    type="button"
-  >
-    📥 Export Updated products.json
-  </button>
+  <!-- IMPORTANT:
+       Existing admin.js remains connected.
+       Do not remove this.
+  -->
+
+  <script
+    type="module"
+    src="admin.js"
+  ></script>
 
 
-  <p
-    style="font-size:13px;color:#777;margin-top:12px"
-  >
-    After adding, editing or deleting products,
-    download the updated
-    <strong>products.json</strong>
-    and replace the existing
-    <strong>products.json</strong>
-    file on GitHub.
-  </p>
-
-</section>
-
-
-<!-- =========================
-     CUSTOMER ORDERS
-========================= -->
-
-<section class="admin-section">
-
-  <h2>
-    📦 Customer Orders
-  </h2>
-
-  <input
-    type="text"
-    id="orderSearch"
-    class="admin-search"
-    placeholder="Search Order ID, customer name or mobile..."
-    autocomplete="off"
-  >
-
-  <div
-    id="ordersList"
-    class="orders-grid"
-  >
-
-    <div class="loading-box">
-      Loading orders...
-    </div>
-
-  </div>
-
-</section>
-
-
-</main>
-
-
-<!-- EXISTING ORDER SYSTEM -->
-
-<script
-  type="module"
-  src="admin.js"
-></script>
-
-
-<!-- =========================
-     PRODUCT MANAGER SCRIPT
-========================= -->
-
-<script>
+  <script>
 
 let products = [];
 
@@ -1124,7 +1180,7 @@ const createProductBtn =
 
 
 /* =========================
-   CATEGORIES
+   PRODUCT CATEGORIES
 ========================= */
 
 const productCategories = [
@@ -1179,143 +1235,141 @@ function escapeHtml(value){
 
 function showProductMessage(message){
 
-  productMessage.textContent =
-    message;
+  productMessage.textContent = message;
 
-  productMessage.style.display =
-    "block";
+  productMessage.style.display = "block";
 
-  setTimeout(
-    ()=>productMessage.style.display="none",
-    3000
-  );
+  clearTimeout(window.__productMessageTimer);
+
+  window.__productMessageTimer =
+    setTimeout(()=>{
+
+      productMessage.style.display = "none";
+
+    },3000);
 
 }
 
 
 /* =========================
-   LOAD PRODUCTS
+   NORMALIZE CATEGORY
 ========================= */
 
-async function loadProducts(){
+function normalizeCategory(category){
 
-  try{
-
-    const response =
-      await fetch(
-        "products.json?v="+Date.now(),
-        {
-          cache:"no-store"
-        }
-      );
-
-    if(!response.ok){
-
-      throw new Error(
-        "products.json load failed"
-      );
-
-    }
-
-    products =
-      await response.json();
-
-    if(!Array.isArray(products)){
-
-      throw new Error(
-        "products.json format invalid"
-      );
-
-    }
+  const c =
+    String(category || "")
+      .trim()
+      .toLowerCase();
 
 
-    products.forEach(product=>{
+  if(
+    c === "spices & dry fruits" ||
+    c === "spices & dry fuits"
+  ){
 
-      if(
-        typeof product.featured !==
-        "boolean"
-      ){
-
-        product.featured =
-          false;
-
-      }
-
-    });
-
-
-    buildProductCategories();
-
-    renderProducts();
-
-
-  }catch(error){
-
-    console.error(error);
-
-    productList.innerHTML =
-
-      '<div class="empty-box">'+
-
-      '<h3>❌ Products load nahi ho rahe</h3>'+
-
-      '<p>products.json check karein.</p>'+
-
-      '</div>';
+    return "Spices & Dry fuits";
 
   }
 
+
+  if(
+    c === "dals & grains" ||
+    c === "dals and grains"
+  ){
+
+    return "Dals and grains";
+
+  }
+
+
+  if(
+    c === "atta maida sooji besan"
+  ){
+
+    return "Atta maida sooji besan";
+
+  }
+
+
+  if(
+    c === "oil sugar & salt" ||
+    c === "oil sugar and salt"
+  ){
+
+    return "Oil sugar and salt";
+
+  }
+
+
+  if(
+    c === "snacks & beverages" ||
+    c === "snacks and beverages"
+  ){
+
+    return "Snacks and beverages";
+
+  }
+
+
+  if(c === "rice"){
+
+    return "Rice";
+
+  }
+
+
+  if(c === "home care"){
+
+    return "Home care";
+
+  }
+
+
+  if(c === "personal care"){
+
+    return "Personal care";
+
+  }
+
+
+  if(c === "dairy"){
+
+    return "Dairy";
+
+  }
+
+
+  if(c === "general item"){
+
+    return "General Item";
+
+  }
+
+
+  return category || "General Item";
+
 }
 
 
 /* =========================
-   CATEGORY FILTER
+   CATEGORY ORDER
 ========================= */
 
-function buildProductCategories(){
+function getCategoryOrder(category){
 
-  const categories =
-    new Set(productCategories);
+  const index =
+    productCategories.indexOf(category);
 
-
-  products.forEach(product=>{
-
-    if(product.category){
-
-      categories.add(
-        product.category
-      );
-
-    }
-
-  });
-
-
-  productCategoryFilter.innerHTML =
-
-    '<option value="">All Categories</option>'+
-
-    Array.from(categories)
-
-      .sort()
-
-      .map(category=>
-
-        `<option value="${escapeHtml(category)}">
-
-          ${escapeHtml(category)}
-
-        </option>`
-
-      )
-
-      .join("");
+  return index === -1
+    ? 999
+    : index;
 
 }
 
 
 /* =========================
-   CATEGORY OPTIONS FOR EDIT
+   CATEGORY OPTIONS
 ========================= */
 
 function getProductCategoryOptions(selected){
@@ -1334,172 +1388,468 @@ function getProductCategoryOptions(selected){
   }
 
 
-  return categories
+  return categories.map(category =>
 
-    .map(category=>
+    `<option
+      value="${escapeHtml(category)}"
+      ${category === selected ? "selected" : ""}
+    >
+      ${escapeHtml(category)}
+    </option>`
 
-      `<option
-
-        value="${escapeHtml(category)}"
-
-        ${category===selected?"selected":""}
-
-      >
-
-        ${escapeHtml(category)}
-
-      </option>`
-
-    )
-
-    .join("");
+  ).join("");
 
 }
 
 
 /* =========================
-   CATEGORY ORDER
+   BUILD CATEGORY FILTER
 ========================= */
 
-function getCategoryOrder(category){
+function buildProductCategories(){
 
-  const index =
-    productCategories.indexOf(category);
+  const categories =
+    new Set();
 
-  if(index === -1){
 
-    return 999;
+  products.forEach(product => {
 
-  }
+    categories.add(
+      normalizeCategory(product.category)
+    );
 
-  return index;
+  });
+
+
+  productCategoryFilter.innerHTML =
+
+    '<option value="">All Categories</option>' +
+
+    Array.from(categories)
+
+      .sort(
+        (a,b) =>
+          getCategoryOrder(a) -
+          getCategoryOrder(b)
+      )
+
+      .map(category =>
+
+        `<option value="${escapeHtml(category)}">
+          ${escapeHtml(category)}
+        </option>`
+
+      )
+
+      .join("");
+
+}
+
+
+/* =========================
+   SORT PRODUCTS
+========================= */
+
+function sortProducts(){
+
+  products.sort((a,b)=>{
+
+    const aId =
+      Number(a.id);
+
+    const bId =
+      Number(b.id);
+
+
+    if(
+      Number.isFinite(aId) &&
+      Number.isFinite(bId)
+    ){
+
+      return aId - bId;
+
+    }
+
+
+    return String(a.id)
+      .localeCompare(
+        String(b.id)
+      );
+
+  });
+
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+function productCard(product){
+
+  const id =
+    escapeHtml(product.id);
+
+  const category =
+    normalizeCategory(
+      product.category
+    );
+
+  const featured =
+    product.featured === true;
+
+
+  return `
+
+  <div class="product-admin-card">
+
+
+    <div class="product-admin-top">
+
+
+      <div class="product-info">
+
+        <div class="product-name">
+
+          ${escapeHtml(
+            product.name ||
+            "Unnamed Product"
+          )}
+
+        </div>
+
+
+        <div class="product-id">
+
+          ID: ${id}
+
+        </div>
+
+
+        <div class="product-brand">
+
+          Brand:
+          ${escapeHtml(
+            product.brand || "-"
+          )}
+
+        </div>
+
+
+        <div class="product-category">
+
+          Category:
+          ${escapeHtml(category)}
+
+        </div>
+
+
+        ${
+          featured
+
+          ? `
+            <span class="featured-status">
+
+              ⭐ Featured on Home
+
+            </span>
+          `
+
+          : ""
+        }
+
+
+      </div>
+
+
+      <div class="product-buttons">
+
+
+        <button
+          class="edit-product-btn"
+          data-edit-product="${id}"
+          type="button"
+        >
+
+          ✏️ Edit
+
+        </button>
+
+
+        <button
+          class="delete-product-btn"
+          data-delete-product="${id}"
+          type="button"
+        >
+
+          🗑️ Delete
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+
+    <!-- EDIT BOX -->
+
+    <div
+      class="product-edit-box"
+      id="edit-${id}"
+    >
+
+
+      <div class="edit-grid">
+
+
+        <!-- NAME -->
+
+        <div class="edit-field">
+
+          <label>
+            Product Name
+          </label>
+
+          <input
+            class="edit-input"
+            data-field="name"
+            value="${escapeHtml(
+              product.name || ""
+            )}"
+          >
+
+        </div>
+
+
+        <!-- BRAND -->
+
+        <div class="edit-field">
+
+          <label>
+            Brand
+          </label>
+
+          <input
+            class="edit-input"
+            data-field="brand"
+            value="${escapeHtml(
+              product.brand || ""
+            )}"
+          >
+
+        </div>
+
+
+        <!-- MRP -->
+
+        <div class="edit-field">
+
+          <label>
+            MRP
+          </label>
+
+          <input
+            class="edit-input"
+            data-field="mrp"
+            type="number"
+            step="0.01"
+            min="0"
+            value="${
+              product.mrp ?? ""
+            }"
+          >
+
+        </div>
+
+
+        <!-- ONLINE PRICE -->
+
+        <div class="edit-field">
+
+          <label>
+            Online Price
+          </label>
+
+          <input
+            class="edit-input"
+            data-field="price"
+            type="number"
+            step="0.01"
+            min="0"
+            value="${
+              product.price ?? 0
+            }"
+          >
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="edit-field">
+
+          <label>
+            Category
+          </label>
+
+          <select
+            class="edit-select"
+            data-field="category"
+          >
+
+            ${getProductCategoryOptions(category)}
+
+          </select>
+
+        </div>
+
+
+        <!-- FEATURED -->
+
+        <div class="edit-field full">
+
+          <label class="featured-option">
+
+            <input
+              type="checkbox"
+              data-field="featured"
+              ${
+                featured
+                  ? "checked"
+                  : ""
+              }
+            >
+
+            ⭐ Show on Home
+
+          </label>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- SAVE / CANCEL -->
+
+      <div class="edit-actions">
+
+
+        <button
+          class="save-product-btn"
+          data-save-product="${id}"
+          type="button"
+        >
+
+          💾 Save Product
+
+        </button>
+
+
+        <button
+          class="cancel-edit-btn"
+          data-cancel-product="${id}"
+          type="button"
+        >
+
+          Cancel
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  `;
 
 }
 
 
 /* =========================
    RENDER PRODUCTS
-   CATEGORY WISE
 ========================= */
-function normalizeCategory(category){
-
-  const c = String(category || "")
-    .trim()
-    .toLowerCase();
-
-  if(
-    c === "spices & dry fruits" ||
-    c === "spices & dry fuits"
-  ){
-    return "Spices & Dry fuits";
-  }
-
-  if(
-    c === "dals & grains" ||
-    c === "dals and grains"
-  ){
-    return "Dals and grains";
-  }
-
-  if(
-    c === "atta maida sooji besan" ||
-    c === "atta maida sooji besan"
-  ){
-    return "Atta maida sooji besan";
-  }
-
-  if(
-    c === "oil sugar & salt" ||
-    c === "oil sugar and salt"
-  ){
-    return "Oil sugar and salt";
-  }
-
-  if(
-    c === "snacks & beverages" ||
-    c === "snacks and beverages"
-  ){
-    return "Snacks and beverages";
-  }
-
-  if(c === "rice"){
-    return "Rice";
-  }
-
-  if(c === "home care"){
-    return "Home care";
-  }
-
-  if(c === "personal care"){
-    return "Personal care";
-  }
-
-  if(c === "dairy"){
-    return "Dairy";
-  }
-
-  if(c === "general item"){
-    return "General Item";
-  }
-
-  return category || "General Item";
-}
-
 
 function renderProducts(){
 
   const search =
-    String(productSearch.value || "")
-      .toLowerCase()
-      .trim();
+    String(
+      productSearch.value || ""
+    )
+    .toLowerCase()
+    .trim();
+
 
   const selectedCategory =
     productCategoryFilter.value;
 
 
   const filtered =
-    products.filter(product=>{
+    products.filter(product => {
+
 
       const name =
-        String(product.name || "")
-          .toLowerCase();
+        String(
+          product.name || ""
+        )
+        .toLowerCase();
+
 
       const brand =
-        String(product.brand || "")
-          .toLowerCase();
+        String(
+          product.brand || ""
+        )
+        .toLowerCase();
 
-      const normalizedCategory =
+
+      const category =
         normalizeCategory(
           product.category
         );
 
 
+      const matchesSearch =
+
+        !search ||
+
+        name.includes(search) ||
+
+        brand.includes(search);
+
+
+      const matchesCategory =
+
+        !selectedCategory ||
+
+        category === selectedCategory;
+
+
       return (
-
-        (
-          name.includes(search) ||
-          brand.includes(search)
-        )
-
-        &&
-
-        (
-          !selectedCategory ||
-          normalizedCategory === selectedCategory
-        )
-
+        matchesSearch &&
+        matchesCategory
       );
 
     });
 
 
-  if(filtered.length === 0){
+  /* NO PRODUCTS */
+
+  if(!filtered.length){
 
     productList.innerHTML = `
+
       <div class="empty-box">
-        <h3>No products found</h3>
-        <p>Search ya category badalkar dekhein.</p>
+
+        No products found.
+
       </div>
+
     `;
 
     return;
@@ -1507,10 +1857,14 @@ function renderProducts(){
   }
 
 
+  /* =========================
+     GROUP BY CATEGORY
+  ========================= */
+
   const groups = {};
 
 
-  filtered.forEach(product=>{
+  filtered.forEach(product => {
 
     const category =
       normalizeCategory(
@@ -1519,7 +1873,9 @@ function renderProducts(){
 
 
     if(!groups[category]){
+
       groups[category] = [];
+
     }
 
 
@@ -1528,295 +1884,20 @@ function renderProducts(){
   });
 
 
+  /* =========================
+     SORT CATEGORY
+  ========================= */
+
   const sortedCategories =
+
     Object.keys(groups).sort(
-      (a,b)=>
+
+      (a,b) =>
+
         getCategoryOrder(a) -
         getCategoryOrder(b)
+
     );
-
-
-  productList.innerHTML =
-
-    sortedCategories.map(category=>{
-
-      const categoryProducts =
-        groups[category];
-
-
-      const productsHtml =
-        categoryProducts.map(product=>`
-
-          <div
-            class="product-admin-card"
-            data-product-card="${escapeHtml(product.id)}"
-          >
-
-            <div class="product-admin-top">
-
-              <div class="product-info">
-
-                <div class="product-name">
-                  ${escapeHtml(
-                    product.name || "Product"
-                  )}
-                </div>
-
-                <div class="product-id">
-                  ID:
-                  ${escapeHtml(
-                    product.id || "-"
-                  )}
-                </div>
-
-                <div class="product-brand">
-                  Brand:
-                  ${escapeHtml(
-                    product.brand || "-"
-                  )}
-                </div>
-
-                <div class="product-category">
-                  Category:
-                  ${escapeHtml(category)}
-                </div>
-
-                ${
-                  product.featured === true
-                  ?
-                  `
-                  <div class="featured-status">
-                    ⭐ Showing on Home
-                  </div>
-                  `
-                  :
-                  ""
-                }
-
-              </div>
-
-
-              <div class="product-buttons">
-
-                <button
-                  class="edit-product-btn"
-                  data-edit-product="${escapeHtml(product.id)}"
-                  type="button"
-                >
-                  ✏️ Edit
-                </button>
-
-                <button
-                  class="delete-product-btn"
-                  data-delete-product="${escapeHtml(product.id)}"
-                  type="button"
-                >
-                  🗑️ Delete
-                </button>
-
-              </div>
-
-            </div>
-
-
-            <div
-              class="product-edit-box"
-              id="edit-${escapeHtml(product.id)}"
-            >
-
-              <div class="edit-grid">
-
-                <div class="edit-field">
-
-                  <label>
-                    Product Name
-                  </label>
-
-                  <input
-                    class="edit-input"
-                    data-field="name"
-                    value="${escapeHtml(
-                      product.name || ""
-                    )}"
-                  >
-
-                </div>
-
-
-                <div class="edit-field">
-
-                  <label>
-                    Product ID
-                  </label>
-
-                  <input
-                    class="edit-input"
-                    value="${escapeHtml(
-                      product.id || ""
-                    )}"
-                    disabled
-                  >
-
-                </div>
-
-
-                <div class="edit-field">
-
-                  <label>
-                    Brand
-                  </label>
-
-                  <input
-                    class="edit-input"
-                    data-field="brand"
-                    value="${escapeHtml(
-                      product.brand || ""
-                    )}"
-                  >
-
-                </div>
-
-
-                <div class="edit-field">
-
-                  <label>
-                    MRP
-                  </label>
-
-                  <input
-                    class="edit-input"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    data-field="mrp"
-                    value="${product.mrp ?? ""}"
-                  >
-
-                </div>
-
-
-                <div class="edit-field">
-
-                  <label>
-                    Online Price
-                  </label>
-
-                  <input
-                    class="edit-input"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    data-field="price"
-                    value="${product.price ?? ""}"
-                  >
-
-                </div>
-
-
-                <div class="edit-field">
-
-                  <label>
-                    Category
-                  </label>
-
-                  <select
-                    class="edit-select"
-                    data-field="category"
-                  >
-
-                    ${getProductCategoryOptions(
-                      normalizeCategory(
-                        product.category
-                      )
-                    )}
-
-                  </select>
-
-                </div>
-
-
-                <div class="edit-field full">
-
-                  <label class="featured-option">
-
-                    <input
-                      type="checkbox"
-                      data-field="featured"
-                      ${
-                        product.featured === true
-                        ? "checked"
-                        : ""
-                      }
-                    >
-
-                    ⭐ Show on Home
-
-                  </label>
-
-                </div>
-
-              </div>
-
-
-              <div class="edit-actions">
-
-                <button
-                  class="save-product-btn"
-                  data-save-product="${escapeHtml(product.id)}"
-                  type="button"
-                >
-                  💾 Save Product
-                </button>
-
-                <button
-                  class="cancel-edit-btn"
-                  data-cancel-product="${escapeHtml(product.id)}"
-                  type="button"
-                >
-                  Cancel
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        `).join("");
-
-
-      return `
-
-        <div class="category-group">
-
-          <div class="category-title">
-
-            <span>
-              ${escapeHtml(category)}
-            </span>
-
-            <span class="category-count">
-              ${categoryProducts.length} items
-            </span>
-
-          </div>
-
-          <div class="category-products">
-
-            ${productsHtml}
-
-          </div>
-
-        </div>
-
-      `;
-
-    }).join("");
-
-}
-
-
-
 
 
   /* =========================
@@ -1825,236 +1906,142 @@ function renderProducts(){
 
   productList.innerHTML =
 
-    sortedCategories
+    sortedCategories.map(category => {
 
-      .map(category=>{
 
-        const categoryProducts =
-          groups[category];
+      const categoryProducts =
+        groups[category];
 
 
-        const productsHtml =
+      return `
 
-          categoryProducts
+        <div class="category-group">
 
-            .map(product=>`
 
-              <div
-                class="product-admin-card"
-                data-product-card="${escapeHtml(product.id)}"
-              >
+          <div class="category-title">
 
-                <div class="product-admin-top">
+            <span>
 
-                  <div class="product-info">
+              ${escapeHtml(category)}
 
-                    <div class="product-name">
+            </span>
 
-                      ${escapeHtml(
-                        product.name ||
-                        "Product"
-                      )}
 
-                    </div>
+            <span class="category-count">
 
+              ${categoryProducts.length}
+              items
 
-                    <div class="product-id">
+            </span>
 
-                      ID:
-                      ${escapeHtml(
-                        product.id || "-"
-                      )}
+          </div>
 
-                    </div>
 
+          <div class="category-products">
 
-                    <div class="product-brand">
+            ${
+              categoryProducts
+                .map(productCard)
+                .join("")
+            }
 
-                      Brand:
-                      ${escapeHtml(
-                        product.brand || "-"
-                      )}
+          </div>
 
-                    </div>
 
+        </div>
 
-                    <div class="product-category">
+      `;
 
-                      Category:
-                      ${escapeHtml(
-                        product.category ||
-                        "General Item"
-                      )}
 
-                    </div>
+    }).join("");
 
-
-                    ${
-                      product.featured === true
-
-                      ?
-
-                      '<div class="featured-status">'+
-                      '⭐ Showing on Home'+
-                      '</div>'
-
-                      :
-
-                      ''
-                    }
-
-                  </div>
-
-
-                  <div class="product-buttons">
-
-                    <button
-                      class="edit-product-btn"
-                      data-edit-product="${escapeHtml(product.id)}"
-                      type="button"
-                    >
-                      ✏️ Edit
-                    </button>
-
-
-                    <button
-                      class="delete-product-btn"
-                      data-delete-product="${escapeHtml(product.id)}"
-                      type="button"
-                    >
-                      🗑️ Delete
-                    </button>
-
-                  </div>
-
-                </div>
-
-
-                <!-- =========================
-                     EDIT BOX
-                ========================= -->
-
-                <div
-                  class="product-edit-box"
-                  id="edit-${escapeHtml(product.id)}"
-                >
-
-                  <div class="edit-grid">
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        Product Name
-                      </label>
-
-                      <input
-                        class="edit-input"
-                        data-field="name"
-                        value="${escapeHtml(
-                          product.name || ""
-                        )}"
-                      >
-
-                    </div>
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        Product ID
-                      </label>
-
-                      <input
-                        class="edit-input"
-                        value="${escapeHtml(
-                          product.id || ""
-                        )}"
-                        disabled
-                      >
-
-                    </div>
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        Brand
-                      </label>
-
-                      <input
-                        class="edit-input"
-                        data-field="brand"
-                        value="${escapeHtml(
-                          product.brand || ""
-                        )}"
-                      >
-
-                    </div>
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        MRP
-                      </label>
-
-                      <input
-                        class="edit-input"
-                        type="number"
-                        step="0.01"
-                        min="0"
-                        data-field="mrp"
-                        value="${product.mrp ?? ""}"
-                      >
-
-                    </div>
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        Online Price
-                      </label>
-
-                      <input
-                        class="edit-input"
-                        type="number"
-                        step="0.01"
-                        min="0"
-                        data-field="price"
-                        value="${product.price ?? ""}"
-                      >
-
-                    </div>
-
-
-                    <div class="edit-field">
-
-                      <label>
-                        Category
-                      </label>
-
-                      <select
-                        class="edit-select"
-                        data-field="category"
-                      >
-
-                        ${getProductCategoryOptions(
-                          product.category ||
-                          "General Item"
-                        )}
-
-                      </select>
-
-                    </div>
-
-
-
+}
 
 
 /* =========================
-   ADD PRODUCT BOX
+   LOAD PRODUCTS
+========================= */
+
+async function loadProducts(){
+
+  try{
+
+    const response =
+      await fetch(
+        "products.json",
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "products.json load failed"
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    products =
+      Array.isArray(data)
+        ? data
+        : [];
+
+
+    products.forEach(product => {
+
+      product.category =
+        normalizeCategory(
+          product.category
+        );
+
+    });
+
+
+    sortProducts();
+
+    buildProductCategories();
+
+    renderProducts();
+
+
+  }catch(error){
+
+    console.error(
+      "Products Load Error:",
+      error
+    );
+
+
+    productList.innerHTML = `
+
+      <div class="empty-box">
+
+        Products load nahi ho rahe.
+
+        <br><br>
+
+        <small>
+          products.json check karein.
+        </small>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =========================
+   SHOW ADD PRODUCT
 ========================= */
 
 showAddProductBtn.addEventListener(
@@ -2064,6 +2051,7 @@ showAddProductBtn.addEventListener(
     addProductBox.classList.add(
       "open"
     );
+
 
     document
       .getElementById(
@@ -2076,7 +2064,7 @@ showAddProductBtn.addEventListener(
 
 
 /* =========================
-   CANCEL ADD PRODUCT
+   CANCEL ADD
 ========================= */
 
 cancelAddProductBtn.addEventListener(
@@ -2086,6 +2074,7 @@ cancelAddProductBtn.addEventListener(
     addProductBox.classList.remove(
       "open"
     );
+
 
     clearAddProductForm();
 
@@ -2259,14 +2248,14 @@ createProductBtn.addEventListener(
 
     const mrp =
       mrpValue === ""
-      ? null
-      : Number(mrpValue);
+        ? null
+        : Number(mrpValue);
 
 
     const price =
       priceValue === ""
-      ? 0
-      : Number(priceValue);
+        ? 0
+        : Number(priceValue);
 
 
     if(
@@ -2308,7 +2297,8 @@ createProductBtn.addEventListener(
 
       brand:brand,
 
-      category:category,
+      category:
+        normalizeCategory(category),
 
       mrp:mrp,
 
@@ -2319,34 +2309,7 @@ createProductBtn.addEventListener(
     });
 
 
-    products.sort(
-      (a,b)=>{
-
-        const an =
-          Number(a.id);
-
-        const bn =
-          Number(b.id);
-
-
-        if(
-          Number.isFinite(an) &&
-          Number.isFinite(bn)
-        ){
-
-          return an-bn;
-
-        }
-
-
-        return String(a.id)
-          .localeCompare(
-            String(b.id)
-          );
-
-      }
-    );
-
+    sortProducts();
 
     buildProductCategories();
 
@@ -2370,17 +2333,15 @@ createProductBtn.addEventListener(
 
 
 /* =========================
-   EDIT / SAVE / DELETE
+   PRODUCT BUTTONS
 ========================= */
 
 productList.addEventListener(
   "click",
-  event=>{
+  event => {
 
 
-    /* =========================
-       EDIT
-    ========================= */
+    /* EDIT */
 
     const editButton =
       event.target.closest(
@@ -2390,10 +2351,14 @@ productList.addEventListener(
 
     if(editButton){
 
+      const id =
+        editButton.dataset
+          .editProduct;
+
+
       const box =
         document.getElementById(
-          "edit-" +
-          editButton.dataset.editProduct
+          "edit-" + id
         );
 
 
@@ -2411,9 +2376,7 @@ productList.addEventListener(
     }
 
 
-    /* =========================
-       CANCEL EDIT
-    ========================= */
+    /* CANCEL EDIT */
 
     const cancelButton =
       event.target.closest(
@@ -2423,10 +2386,14 @@ productList.addEventListener(
 
     if(cancelButton){
 
+      const id =
+        cancelButton.dataset
+          .cancelProduct;
+
+
       const box =
         document.getElementById(
-          "edit-" +
-          cancelButton.dataset.cancelProduct
+          "edit-" + id
         );
 
 
@@ -2444,9 +2411,7 @@ productList.addEventListener(
     }
 
 
-    /* =========================
-       SAVE PRODUCT
-    ========================= */
+    /* SAVE */
 
     const saveButton =
       event.target.closest(
@@ -2457,7 +2422,8 @@ productList.addEventListener(
     if(saveButton){
 
       const id =
-        saveButton.dataset.saveProduct;
+        saveButton.dataset
+          .saveProduct;
 
 
       const product =
@@ -2474,7 +2440,10 @@ productList.addEventListener(
         );
 
 
-      if(!product || !card){
+      if(
+        !product ||
+        !card
+      ){
 
         alert(
           "Product nahi mila."
@@ -2525,6 +2494,22 @@ productList.addEventListener(
         nameInput.value.trim();
 
 
+      const mrp =
+        mrpInput.value === ""
+          ? null
+          : Number(
+              mrpInput.value
+            );
+
+
+      const price =
+        priceInput.value === ""
+          ? 0
+          : Number(
+              priceInput.value
+            );
+
+
       if(!name){
 
         alert(
@@ -2534,18 +2519,6 @@ productList.addEventListener(
         return;
 
       }
-
-
-      const mrp =
-        mrpInput.value === ""
-        ? null
-        : Number(mrpInput.value);
-
-
-      const price =
-        priceInput.value === ""
-        ? 0
-        : Number(priceInput.value);
 
 
       if(
@@ -2579,7 +2552,7 @@ productList.addEventListener(
       }
 
 
-      /* SAVE DATA */
+      /* UPDATE PRODUCT */
 
       product.name =
         name;
@@ -2598,12 +2571,16 @@ productList.addEventListener(
 
 
       product.category =
-        categoryInput.value;
+        normalizeCategory(
+          categoryInput.value
+        );
 
 
       product.featured =
         featuredInput.checked;
 
+
+      sortProducts();
 
       buildProductCategories();
 
@@ -2620,9 +2597,7 @@ productList.addEventListener(
     }
 
 
-    /* =========================
-       DELETE PRODUCT
-    ========================= */
+    /* DELETE */
 
     const deleteButton =
       event.target.closest(
@@ -2633,7 +2608,8 @@ productList.addEventListener(
     if(deleteButton){
 
       const id =
-        deleteButton.dataset.deleteProduct;
+        deleteButton.dataset
+          .deleteProduct;
 
 
       const product =
@@ -2655,16 +2631,26 @@ productList.addEventListener(
       }
 
 
-      if(
-        !confirm(
+      const confirmed =
+        confirm(
+
           "⚠️ Product Delete karein?\n\n" +
 
           "Product: " +
-          (product.name || "Product") +
+          (
+            product.name ||
+            "Product"
+          ) +
 
-          "\n\nYe action export ke baad products.json mein bhi remove ho jayega."
-        )
-      ){
+          "\n\n" +
+
+          "Ye action export ke baad " +
+          "products.json mein bhi remove hoga."
+
+        );
+
+
+      if(!confirmed){
 
         return;
 
@@ -2715,7 +2701,7 @@ productCategoryFilter.addEventListener(
 
 
 /* =========================
-   DOWNLOAD PRODUCTS.JSON
+   EXPORT PRODUCTS.JSON
 ========================= */
 
 function downloadProducts(data){
@@ -2732,7 +2718,8 @@ function downloadProducts(data){
     new Blob(
       [json],
       {
-        type:"application/json"
+        type:
+          "application/json"
       }
     );
 
@@ -2757,9 +2744,9 @@ function downloadProducts(data){
     "products.json";
 
 
-  document
-    .body
-    .appendChild(link);
+  document.body.appendChild(
+    link
+  );
 
 
   link.click();
@@ -2775,10 +2762,6 @@ function downloadProducts(data){
 }
 
 
-/* =========================
-   EXPORT
-========================= */
-
 exportProductsBtn.addEventListener(
   "click",
   ()=>{
@@ -2790,7 +2773,6 @@ exportProductsBtn.addEventListener(
 
     alert(
       "✅ Updated products.json download ho gaya.\n\n" +
-
       "Ab is file ko GitHub ke products.json se replace karein."
     );
 
@@ -2806,41 +2788,27 @@ loadProducts();
 
 </script>
 
-
-</div>
-
-
-<!-- =========================
-     FIREBASE ADMIN LOGIN
-========================= -->
-
-<script type="module">
+  <script type="module">
 
 import {
-
   getAuth,
-
   onAuthStateChanged,
-
   signInWithEmailAndPassword,
-
   signOut
-
 }
-from
-"https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 
 import {
-
   initializeApp,
-
   getApps
-
 }
-from
-"https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
 
@@ -2873,21 +2841,19 @@ const firebaseConfig = {
 
 const app =
   getApps().length
-
-  ?
-
-  getApps()[0]
-
-  :
-
-  initializeApp(
-    firebaseConfig
-  );
+    ? getApps()[0]
+    : initializeApp(
+        firebaseConfig
+      );
 
 
 const auth =
   getAuth(app);
 
+
+/* =========================
+   LOGIN ELEMENTS
+========================= */
 
 const loginScreen =
   document.getElementById(
@@ -2971,19 +2937,18 @@ showPasswordBtn.addEventListener(
 
 
 /* =========================
-   LOGIN
+   ADMIN LOGIN
 ========================= */
 
 loginForm.addEventListener(
   "submit",
-  async event=>{
+  async event => {
 
     event.preventDefault();
 
 
     loginError.style.display =
       "none";
-
 
     loginError.textContent =
       "";
@@ -3036,6 +3001,7 @@ loginForm.addEventListener(
 
       }
 
+
       else if(
         error.code ===
         "auth/user-not-found"
@@ -3046,6 +3012,7 @@ loginForm.addEventListener(
 
       }
 
+
       else if(
         error.code ===
         "auth/wrong-password"
@@ -3055,6 +3022,7 @@ loginForm.addEventListener(
           "Password galat hai.";
 
       }
+
 
       else if(
         error.code ===
@@ -3094,11 +3062,11 @@ loginForm.addEventListener(
 
 onAuthStateChanged(
   auth,
-  user=>{
+  user => {
 
     if(user){
 
-      /* LOGGED IN */
+      /* USER LOGGED IN */
 
       loginScreen.style.display =
         "none";
@@ -3113,7 +3081,7 @@ onAuthStateChanged(
 
     }else{
 
-      /* LOGGED OUT */
+      /* USER LOGGED OUT */
 
       loginScreen.style.display =
         "flex";
@@ -3186,9 +3154,7 @@ function addLogoutButton(){
 
       try{
 
-        await signOut(
-          auth
-        );
+        await signOut(auth);
 
       }catch(error){
 
@@ -3211,5 +3177,8 @@ function addLogoutButton(){
 
 </script>
 
+
 </body>
 </html>
+
+</div>
