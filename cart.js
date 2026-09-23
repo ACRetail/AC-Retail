@@ -965,78 +965,97 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================================================
      CREATE CASHFREE ORDER
   ========================================================= */
+async function createCashfreeOrder(amount, name, mobile) {
+  try {
+    const response = await fetch(CASHFREE_LAMBDA_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        action: "create",
+        amount: Number(amount.toFixed(2)),
+        customerName: name,
+        customerPhone: mobile,
+        customerEmail: "customer@acretail.in"
+      })
+    });
 
-  async function createCashfreeOrder(
-    amount,
-    name,
-    mobile
-  ) {
+    console.log("Cashfree Lambda HTTP Status:", response.status);
 
-    const response =
-      await fetch(
-        CASHFREE_LAMBDA_URL,
-        {
+    const rawText = await response.text();
 
-          method:
-            "POST",
+    console.log("Cashfree Lambda Raw Response:", rawText);
 
-          headers: {
-            "Content-Type":
-              "application/json"
-          },
+    let result;
 
-          body:
-            JSON.stringify({
+    try {
+      result = JSON.parse(rawText);
+    } catch (parseError) {
+      console.error("Cashfree Response JSON Error:", parseError);
 
-              action:
-                "create",
+      throw new Error("Invalid payment response from server");
+    }
 
-              amount:
-                Number(
-                  amount.toFixed(2)
-                ),
+    // If Lambda response is wrapped inside a body string
+    if (
+      result &&
+      typeof result.body === "string"
+    ) {
+      try {
+        result = JSON.parse(result.body);
+      } catch (e) {
+        console.error(
+          "Unable to parse Lambda body:",
+          result.body
+        );
+      }
+    }
 
-              customerName:
-                name,
-
-              customerPhone:
-                mobile,
-
-              customerEmail:
-                "customer@acretail.in"
-
-            })
-
-        }
-      );
-
-
-    const result =
-      await response.json();
-
+    console.log(
+      "Cashfree Final Result:",
+      result
+    );
 
     if (
       !response.ok ||
-      !result.success
+      !result ||
+      result.success !== true
     ) {
-
       console.error(
         "Cashfree Create Error:",
         result
       );
 
       throw new Error(
-        result.message ||
+        result?.message ||
         "Unable to create payment"
       );
-
     }
 
+    if (!result.paymentSessionId) {
+      console.error(
+        "Payment session missing:",
+        result
+      );
+
+      throw new Error(
+        "Payment session was not received"
+      );
+    }
 
     return result;
 
-  }
+  } catch (error) {
+    console.error(
+      "createCashfreeOrder ERROR:",
+      error
+    );
 
+    throw error;
+  }
+}
+  
 
   /* =========================================================
      VERIFY CASHFREE PAYMENT
