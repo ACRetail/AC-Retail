@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-  const MINIMUM_ORDER_VALUE = 299;
+  const MINIMUM_ORDER_VALUE = 79;
   
   function getTotal(cart) {
 
