@@ -1360,7 +1360,7 @@ async function createCashfreeOrder(amount, name, mobile) {
 
           const cashfree =
             Cashfree({
-              mode: "sandbox"
+              mode: "production"
             });
 
 
