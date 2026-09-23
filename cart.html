@@ -867,12 +867,13 @@
   ></textarea>
 
   <!-- UPI PAYMENT -->
+<!-- CASHFREE PAYMENT -->
 
 <div id="paymentSection"
      class="payment-section"
      style="display:none;">
 
-  <h3>💳 Pay via UPI</h3>
+  <h3>💳 Secure Online Payment</h3>
 
   <p class="payment-total">
     Payable Amount:
@@ -881,43 +882,34 @@
 
   <div class="phonepe-payment-box">
 
-    <div class="phonepe-icon">📱</div>
+    <div class="phonepe-icon">💳</div>
 
     <div class="phonepe-title">
-      Pay to AC Retail
-    </div>
-
-    <div class="phonepe-number">
-      acretail@axl
+      Pay Securely with UPI
     </div>
 
     <p class="payment-help">
-      UPI app से payment करें
-    </p>
-
-    <p class="payment-help">
-      Payee:
-      <strong>AVINASH VINAYAK CHAWARE</strong>
+      Google Pay, PhonePe, Paytm और अन्य UPI apps से payment करें.
     </p>
 
     <button
       id="payNowBtn"
       class="pay-btn"
       type="button">
-      📲 Pay via UPI App
+      💳 Pay Now
     </button>
 
-    <button
-      id="paymentDoneBtn"
-      class="confirm-btn"
-      type="button"
+    <p
+      id="paymentStatus"
+      class="payment-help"
       style="display:none;">
-      ✅ I Have Completed Payment
-    </button>
+      Payment status checking...
+    </p>
 
   </div>
 
 </div>
+
         <div class="whatsapp-note">
           📱 Your selected products, quantities and total amount will be shared on WhatsApp.
         </div>
@@ -994,7 +986,7 @@
 
 </footer>
 
-
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 <script type="module" src="cart.js"></script>
 
 </body>
