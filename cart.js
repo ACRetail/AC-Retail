@@ -809,91 +809,984 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 
-/* ================================
-   PAY VIA UPI APP
-================================ */
+  /* ================================
+     CASHFREE PAYMENT
+  ================================ */
 
-if (payNowBtn) {
+  const CASHFREE_LAMBDA_URL =
+    "https://stwcn5xmfcn5avdreicnjrpzuq0olglq.lambda-url.ap-south-1.on.aws/";
+
+
+  let cashfreeOrderId = null;
+
+
+  /* ================================
+     CREATE CASHFREE ORDER
+  ================================ */
+
+  async function createCashfreeOrder(
+    amount,
+    name,
+    mobile
+  ) {
+
+    const response =
+      await fetch(
+        CASHFREE_LAMBDA_URL,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body:
+            JSON.stringify({
+
+              action: "create",
+
+              amount:
+                Number(
+                  amount.toFixed(2)
+                ),
+
+              customerName:
+                name,
+
+              customerPhone:
+                mobile,
+
+              customerEmail:
+                "customer@acretail.in"
+
+            })
+        }
+      );
+
+
+    const result =
+      await response.json();
+
+
+    if (
+      !response.ok ||
+      !result.success
+    ) {
+
+      console.error(
+        "Cashfree Create Error:",
+        result
+      );
+
+      throw new Error(
+        result.message ||
+        "Unable to create payment"
+      );
+
+    }
+
+
+    cashfreeOrderId =
+      result.orderId;
+
+
+    return result;
+
+  }
+
+
+  /* ================================
+     VERIFY CASHFREE PAYMENT
+  ================================ */
+
+  async function verifyCashfreePayment(
+    orderId
+  ) {
+
+    const response =
+      await fetch(
+        CASHFREE_LAMBDA_URL,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body:
+            JSON.stringify({
+
+              action:
+                "verify",
+
+              orderId:
+                orderId
+
+            })
+        }
+      );
+
+
+    const result =
+      await response.json();
+
+
+    if (
+      !response.ok ||
+      !result.success
+    ) {
+
+      console.error(
+        "Cashfree Verify Error:",
+        result
+      );
+
+      throw new Error(
+        result.message ||
+        "Payment verification failed"
+      );
+
+    }
+
+
+    return result;
+
+  }
+
+
+  /* ================================
+     PAY NOW
+  ================================ */
+
+  if (payNowBtn) {
 
     payNowBtn.addEventListener(
-        "click",
-        function () {
+      "click",
+      async function () {
 
-            const cart = getCart();
-
-            if (!cart.length) {
-
-                alert(
-                    "Your cart is empty."
-                );
-
-                return;
-            }
-
-            const total =
-                getTotal(cart);
-
-            if (total <= 0) {
-
-                alert(
-                    "Invalid order amount."
-                );
-
-                return;
-            }
+        const cart =
+          getCart();
 
 
-            /*
-             * AC RETAIL UPI
-             */
+        if (!cart.length) {
 
-            const upiId =
-                "acretail@axl";
+          alert(
+            "Your cart is empty."
+          );
 
-            const payeeName =
-                "AVINASH VINAYAK CHAWARE";
-
-
-            /*
-             * STANDARD UPI INTENT
-             */
-
-            const upiLink =
-                "upi://pay" +
-                "?pa=" +
-                encodeURIComponent(upiId) +
-                "&pn=" +
-                encodeURIComponent(payeeName) +
-                "&am=" +
-                encodeURIComponent(
-                    total.toFixed(2)
-                ) +
-                "&cu=INR";
-
-
-            /*
-             * Show completed button
-             */
-
-            if (paymentDoneBtn) {
-
-                paymentDoneBtn.style.display =
-                    "block";
-
-            }
-
-
-            /*
-             * OPEN UPI APP
-             */
-
-            window.location.href =
-                upiLink;
+          return;
 
         }
+
+
+        /* CUSTOMER DETAILS */
+
+        const name =
+          document
+            .getElementById(
+              "customerName"
+            )
+            .value
+            .trim();
+
+
+        const mobile =
+          document
+            .getElementById(
+              "customerMobile"
+            )
+            .value
+            .trim();
+
+
+        const address =
+          document
+            .getElementById(
+              "customerAddress"
+            )
+            .value
+            .trim();
+
+
+        const note =
+          document
+            .getElementById(
+              "customerNote"
+            )
+            .value
+            .trim();
+
+
+        /* VALIDATION */
+
+        if (!name) {
+
+          alert(
+            "Please enter your name."
+          );
+
+          document
+            .getElementById(
+              "customerName"
+            )
+            .focus();
+
+          return;
+
+        }
+
+
+        if (
+          !/^[0-9]{10}$/.test(
+            mobile
+          )
+        ) {
+
+          alert(
+            "Please enter a valid 10-digit mobile number."
+          );
+
+          document
+            .getElementById(
+              "customerMobile"
+            )
+            .focus();
+
+          return;
+
+        }
+
+
+        if (!address) {
+
+          alert(
+            "Please enter your delivery address."
+          );
+
+          document
+            .getElementById(
+              "customerAddress"
+            )
+            .focus();
+
+          return;
+
+        }
+
+
+        const grandTotal =
+          getTotal(cart);
+
+
+        if (grandTotal <= 0) {
+
+          alert(
+            "Invalid order amount."
+          );
+
+          return;
+
+        }
+
+
+        /* BUTTON */
+
+        const originalText =
+          payNowBtn.textContent;
+
+
+        payNowBtn.disabled =
+          true;
+
+
+        payNowBtn.textContent =
+          "⏳ Preparing Payment...";
+
+
+        try {
+
+          /* CREATE CASHFREE ORDER */
+
+          const payment =
+            await createCashfreeOrder(
+              grandTotal,
+              name,
+              mobile
+            );
+
+
+          if (
+            !payment.paymentSessionId
+          ) {
+
+            throw new Error(
+              "Payment session was not created."
+            );
+
+          }
+
+
+          /* INITIALIZE CASHFREE */
+
+          if (
+            typeof Cashfree !==
+            "function"
+          ) {
+
+            throw new Error(
+              "Cashfree SDK is not loaded."
+            );
+
+          }
+
+
+          const cashfree =
+            Cashfree({
+              mode: "sandbox"
+            });
+
+
+          payNowBtn.textContent =
+            "💳 Opening Payment...";
+
+
+          /* OPEN CASHFREE CHECKOUT */
+
+          await cashfree.checkout({
+            paymentSessionId:
+              payment.paymentSessionId,
+
+            redirectTarget:
+              "_self"
+          });
+
+
+        } catch (error) {
+
+          console.error(
+            "Cashfree Payment Error:",
+            error
+          );
+
+
+          alert(
+            error.message ||
+            "Unable to start payment."
+          );
+
+
+          payNowBtn.disabled =
+            false;
+
+
+          payNowBtn.textContent =
+            originalText;
+
+        }
+
+      }
     );
 
-}
+  }
+
+
+  /* ================================
+     CASHFREE RETURN / PAYMENT CHECK
+  ================================ */
+
+  async function checkCashfreeReturn() {
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    const returnedOrderId =
+      params.get(
+        "cashfree_order_id"
+      ) ||
+      params.get(
+        "order_id"
+      );
+
+
+    if (!returnedOrderId) {
+
+      return;
+
+    }
+
+
+    cashfreeOrderId =
+      returnedOrderId;
+
+
+    const statusBox =
+      document.getElementById(
+        "paymentStatus"
+      );
+
+
+    if (statusBox) {
+
+      statusBox.style.display =
+        "block";
+
+      statusBox.textContent =
+        "⏳ Verifying payment...";
+
+    }
+
+
+    try {
+
+      const result =
+        await verifyCashfreePayment(
+          returnedOrderId
+        );
+
+
+      if (
+        result.paid === true &&
+        result.paymentStatus ===
+          "SUCCESS"
+      ) {
+
+        if (statusBox) {
+
+          statusBox.textContent =
+            "✅ Payment successful. Placing your order...";
+
+        }
+
+
+        await placeVerifiedOrder(
+          result
+        );
+
+
+      } else {
+
+        if (statusBox) {
+
+          statusBox.textContent =
+            "❌ Payment was not successful yet.";
+
+        }
+
+
+        alert(
+          "Payment is not confirmed yet. Please try again."
+        );
+
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        "Payment Verification Error:",
+        error
+      );
+
+
+      if (statusBox) {
+
+        statusBox.textContent =
+          "⚠️ Payment verification failed.";
+
+      }
+
+
+      alert(
+        "Payment verification failed. Please contact AC Retail."
+      );
+
+    }
+
+  }
+
+
+  /* ================================
+     PLACE VERIFIED ORDER
+  ================================ */
+
+  async function placeVerifiedOrder(
+    paymentResult
+  ) {
+
+    const cart =
+      getCart();
+
+
+    if (!cart.length) {
+
+      alert(
+        "Your cart is empty."
+      );
+
+      return;
+
+    }
+
+
+    const name =
+      document
+        .getElementById(
+          "customerName"
+        )
+        .value
+        .trim();
+
+
+    const mobile =
+      document
+        .getElementById(
+          "customerMobile"
+        )
+        .value
+        .trim();
+
+
+    const address =
+      document
+        .getElementById(
+          "customerAddress"
+        )
+        .value
+        .trim();
+
+
+    const note =
+      document
+        .getElementById(
+          "customerNote"
+        )
+        .value
+        .trim();
+
+
+    const grandTotal =
+      getTotal(cart);
+
+
+    const totalSavings =
+      getTotalSavings(cart);
+
+
+    /* AC RETAIL ORDER ID */
+
+    const orderId =
+      "AC-" +
+      new Date()
+        .toISOString()
+        .slice(0, 10)
+        .replace(/-/g, "") +
+      "-" +
+      Math.floor(
+        1000 +
+        Math.random() * 9000
+      );
+
+
+    /* WHATSAPP MESSAGE */
+
+    let message =
+      "🛒 *AC Retail Order*%0A%0A";
+
+
+    message +=
+      "🆔 *Order ID:* " +
+      encodeURIComponent(
+        orderId
+      ) +
+      "%0A";
+
+
+    message +=
+      "💳 *Payment:* Cashfree UPI%0A";
+
+
+    message +=
+      "🟢 *Payment Status:* Paid & Verified%0A%0A";
+
+
+    message +=
+      "👤 *Customer:* " +
+      encodeURIComponent(
+        name
+      ) +
+      "%0A";
+
+
+    message +=
+      "📱 *Mobile:* " +
+      encodeURIComponent(
+        mobile
+      ) +
+      "%0A";
+
+
+    message +=
+      "📍 *Address:* " +
+      encodeURIComponent(
+        address
+      ) +
+      "%0A";
+
+
+    if (note) {
+
+      message +=
+        "📝 *Note:* " +
+        encodeURIComponent(
+          note
+        ) +
+        "%0A";
+
+    }
+
+
+    message +=
+      "%0A━━━━━━━━━━━━━━%0A";
+
+
+    /* ITEMS */
+
+    cart.forEach(
+      function (item, index) {
+
+        const qty =
+          Number(
+            item.qty || 1
+          );
+
+
+        const price =
+          Number(
+            item.price || 0
+          );
+
+
+        const mrp =
+          Number(
+            item.mrp || price
+          );
+
+
+        const itemTotal =
+          price * qty;
+
+
+        const itemSaving =
+          Math.max(
+            0,
+            (mrp - price) *
+            qty
+          );
+
+
+        message +=
+          `${index + 1}. ` +
+          encodeURIComponent(
+            item.name
+          ) +
+          "%0A";
+
+
+        message +=
+          " Qty: " +
+          qty +
+          "%0A";
+
+
+        message +=
+          " MRP: " +
+          formatPrice(
+            mrp
+          ) +
+          "%0A";
+
+
+        message +=
+          " Online Price: " +
+          formatPrice(
+            price
+          ) +
+          "%0A";
+
+
+        if (itemSaving > 0) {
+
+          message +=
+            " You Save: " +
+            formatPrice(
+              itemSaving
+            ) +
+            "%0A";
+
+        }
+
+
+        message +=
+          " Total: " +
+          formatPrice(
+            itemTotal
+          ) +
+          "%0A%0A";
+
+      }
+    );
+
+
+    message +=
+      "━━━━━━━━━━━━━━%0A";
+
+
+    if (totalSavings > 0) {
+
+      message +=
+        "🏷️ *You Save: " +
+        formatPrice(
+          totalSavings
+        ) +
+        "*%0A";
+
+    }
+
+
+    message +=
+      "💰 *Grand Total: " +
+      formatPrice(
+        grandTotal
+      ) +
+      "*%0A%0A";
+
+
+    message +=
+      "🏪 AC Retail%0A";
+
+
+    message +=
+      "Police Line, Phaltan";
+
+
+    /* WHATSAPP */
+
+    const whatsappNumber =
+      "918830300826";
+
+
+    const url =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      message;
+
+
+    /* ORDER DATA */
+
+    const orderData = {
+
+      orderId:
+        orderId,
+
+      cashfreeOrderId:
+        paymentResult.orderId ||
+        cashfreeOrderId,
+
+      paymentId:
+        paymentResult.paymentId ||
+        null,
+
+      customerName:
+        name,
+
+      customerMobile:
+        mobile,
+
+      customerAddress:
+        address,
+
+      customerNote:
+        note,
+
+      status:
+        "Payment Confirmed - Order Placed",
+
+      paymentMethod:
+        "Cashfree UPI",
+
+      paymentStatus:
+        "Paid & Verified",
+
+      date:
+        new Date()
+          .toLocaleString(
+            "en-IN"
+          ),
+
+      items:
+        cart,
+
+      total:
+        grandTotal,
+
+      totalSavings:
+        totalSavings
+
+    };
+
+
+    /* LOCAL ORDER SAVE */
+
+    let savedOrders =
+      JSON.parse(
+        localStorage.getItem(
+          "acOrders"
+        )
+      ) || [];
+
+
+    savedOrders.push(
+      orderData
+    );
+
+
+    localStorage.setItem(
+      "acOrders",
+      JSON.stringify(
+        savedOrders
+      )
+    );
+
+
+    /* FIREBASE ORDER SAVE */
+
+    try {
+
+      const ordersRef =
+        ref(
+          db,
+          "orders"
+        );
+
+
+      const newOrderRef =
+        push(
+          ordersRef
+        );
+
+
+      await set(
+        newOrderRef,
+        orderData
+      );
+
+
+      console.log(
+        "Firebase Order Saved:",
+        newOrderRef.key
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "Firebase Order Error:",
+        error
+      );
+
+    }
+
+
+    /* AWS ORDER SAVE */
+
+    const AWS_ORDER_URL =
+      "https://xv2pna2ymcg6n3mobbbk57gvey0zupbf.lambda-url.ap-south-1.on.aws/";
+
+
+    try {
+
+      const response =
+        await fetch(
+          AWS_ORDER_URL,
+          {
+
+            method:
+              "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body:
+              JSON.stringify(
+                orderData
+              )
+
+          }
+        );
+
+
+      if (!response.ok) {
+
+        throw new Error(
+          "AWS order save failed"
+        );
+
+      }
+
+
+      const result =
+        await response.json();
+
+
+      console.log(
+        "AWS Order Saved:",
+        result
+      );
+
+
+    } catch (error) {
+
+      console.error(
+        "AWS Order Error:",
+        error
+      );
+
+    }
+
+
+    /* CLEAR CART */
+
+    localStorage.removeItem(
+      CART_KEY
+    );
+
+
+    renderCart();
+
+
+    /* OPEN WHATSAPP */
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  }
+
+
+  /* ================================
+     CHECK CASHFREE RETURN
+  ================================ */
+
+  checkCashfreeReturn();
 
 
   /* ================================
