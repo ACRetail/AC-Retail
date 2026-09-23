@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+  const MINIMUM_ORDER_VALUE = 79;
 
   function getTotal(cart) {
 
@@ -792,17 +793,58 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================================================= */
 
   if (whatsappButton) {
+  whatsappButton.addEventListener(
+    "click",
+    function () {
 
-    whatsappButton.addEventListener(
-      "click",
-      function () {
+      const cart = getCart();
 
-        const cart =
-          getCart();
+      if (!cart.length) {
+        return;
+      }
 
-        if (!cart.length) {
-          return;
-        }
+      const total = getTotal(cart);
+
+      if (total < MINIMUM_ORDER_VALUE) {
+
+        const remaining =
+          MINIMUM_ORDER_VALUE - total;
+
+        alert(
+          "⚠️ Minimum order value is ₹79.\n\n" +
+          "Please add products worth " +
+          formatPrice(remaining) +
+          " more."
+        );
+
+        return;
+      }
+
+      if (checkoutForm) {
+        checkoutForm.style.display =
+          "block";
+      }
+
+      if (paymentSection) {
+        paymentSection.style.display =
+          "block";
+      }
+
+      if (paymentAmount) {
+        paymentAmount.textContent =
+          formatPrice(total);
+      }
+
+      if (checkoutForm) {
+        checkoutForm.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+    }
+  );
+}
 
 
         if (checkoutForm) {
