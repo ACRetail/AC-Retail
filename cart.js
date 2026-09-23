@@ -123,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-  const MINIMUM_ORDER_VALUE = 79;
-
+  const MINIMUM_ORDER_VALUE = 299;
+  
   function getTotal(cart) {
 
     return cart.reduce(
@@ -845,49 +845,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
 }
-
-
-        if (checkoutForm) {
-
-          checkoutForm.style.display =
-            "block";
-
-        }
-
-
-        if (paymentSection) {
-
-          paymentSection.style.display =
-            "block";
-
-        }
-
-
-        const total =
-          getTotal(cart);
-
-
-        if (paymentAmount) {
-
-          paymentAmount.textContent =
-            formatPrice(total);
-
-        }
-
-
-        if (checkoutForm) {
-
-          checkoutForm.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-          });
-
-        }
-
-      }
-    );
-
-  }
 
 
   /* =========================================================
