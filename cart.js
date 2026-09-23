@@ -1061,63 +1061,108 @@ async function createCashfreeOrder(amount, name, mobile) {
      VERIFY CASHFREE PAYMENT
   ========================================================= */
 
-  async function verifyCashfreePayment(
-    orderId
-  ) {
+  async function verifyCashfreePayment(orderId) {
+  try {
+    const response = await fetch(CASHFREE_LAMBDA_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        action: "verify",
+        orderId: orderId
+      })
+    });
 
-    const response =
-      await fetch(
-        CASHFREE_LAMBDA_URL,
-        {
+    console.log(
+      "Cashfree Verify HTTP Status:",
+      response.status
+    );
 
-          method:
-            "POST",
+    const rawText = await response.text();
 
-          headers: {
-            "Content-Type":
-              "application/json"
-          },
+    console.log(
+      "Cashfree Verify Raw Response:",
+      rawText
+    );
 
-          body:
-            JSON.stringify({
+    let result;
 
-              action:
-                "verify",
-
-              orderId:
-                orderId
-
-            })
-
-        }
+    try {
+      result = JSON.parse(rawText);
+    } catch (error) {
+      console.error(
+        "Cashfree Verify JSON Error:",
+        error
       );
 
+      throw new Error(
+        "Invalid verification response from server"
+      );
+    }
 
-    const result =
-      await response.json();
+    // Lambda response wrapper handle karo
+    if (
+      result &&
+      typeof result.body === "string"
+    ) {
+      try {
+        result = JSON.parse(result.body);
+      } catch (error) {
+        console.error(
+          "Unable to parse Lambda verify body:",
+          result.body
+        );
+      }
+    }
 
+    console.log(
+      "Cashfree Verify Final Result:",
+      result
+    );
 
     if (
       !response.ok ||
-      !result.success
+      !result ||
+      result.success !== true
     ) {
-
       console.error(
         "Cashfree Verify Error:",
         result
       );
 
       throw new Error(
-        result.message ||
+        result?.message ||
         "Payment verification failed"
       );
-
     }
 
+    // Payment actually successful hai
+    if (
+      result.paid === true &&
+      result.paymentStatus === "SUCCESS"
+    ) {
+      console.log(
+        "Cashfree Payment VERIFIED SUCCESSFULLY"
+      );
 
-    return result;
+      return result;
+    }
 
+    throw new Error(
+      result.message ||
+      "Payment was not successful"
+    );
+
+  } catch (error) {
+    console.error(
+      "verifyCashfreePayment ERROR:",
+      error
+    );
+
+    throw error;
   }
+}
 
 
   /* =========================================================
