@@ -362,6 +362,66 @@ function normalizeCategory(value) {
         .trim();
 
 }
+// =============================
+// AC RETAIL PRICING RULE
+// =============================
+
+// इन 5 products पर कोई discount नहीं
+const NO_DISCOUNT_IDS = new Set([
+    "86",
+    "87",
+    "276",
+    "293",
+    "294"
+]);
+
+// Actual customer discount = 4%
+const ACTUAL_DISCOUNT = 0.04;
+
+// Website पर दिखने वाला discount
+const DISPLAY_DISCOUNT = 5;
+
+
+// Get MRP
+function getProductMRP(product) {
+
+    return Number(
+        product.mrp ??
+        product.price ??
+        0
+    );
+
+}
+
+
+// Get final online price
+function getOnlinePrice(product) {
+
+    const mrp = getProductMRP(product);
+
+    // Special products = NO DISCOUNT
+    if (
+        NO_DISCOUNT_IDS.has(
+            String(product.id)
+        )
+    ) {
+        return mrp;
+    }
+
+    // बाकी सभी products = actual 4% discount
+    return mrp * (1 - ACTUAL_DISCOUNT);
+
+}
+
+
+// Check whether product has discount
+function hasProductDiscount(product) {
+
+    return !NO_DISCOUNT_IDS.has(
+        String(product.id)
+    );
+
+}
 
 // =============================
 // Levenshtein Distance
@@ -618,11 +678,20 @@ function renderProducts() {
 
 function productCard(product) {
 
+    const mrp = getProductMRP(product);
+
+    const onlinePrice =
+        getOnlinePrice(product);
+
+    const hasDiscount =
+        hasProductDiscount(product);
+
     const hasRealImage =
         product.image &&
         !String(product.image)
             .toLowerCase()
             .endsWith("default.png");
+
 
     const imageHtml = hasRealImage
 
@@ -642,7 +711,8 @@ function productCard(product) {
 
             <div
                 class="no-image"
-                style="display:none;">
+                style="display:none;"
+            >
                 🖼️<br>
                 No Image
             </div>
@@ -655,19 +725,37 @@ function productCard(product) {
             </div>
         `;
 
+
+    const discountHTML = hasDiscount
+
+        ? `
+            <div class="discount-badge">
+                ${DISPLAY_DISCOUNT}% OFF
+            </div>
+
+            <div class="saving">
+                You Save ₹${(
+                    mrp - onlinePrice
+                ).toFixed(2)}
+            </div>
+        `
+
+        : "";
+
+
     return `
 
         <div class="product-card">
 
             <div class="product-image-wrap">
-
                 ${imageHtml}
-
             </div>
+
 
             <h3>
                 ${escapeHtml(product.name)}
             </h3>
+
 
             <p>
                 <strong>Brand:</strong>
@@ -675,6 +763,7 @@ function productCard(product) {
                     product.brand || "General"
                 )}
             </p>
+
 
             <p>
                 <strong>Category:</strong>
@@ -684,55 +773,42 @@ function productCard(product) {
                 )}
             </p>
 
+
             <div class="price-box">
 
                 <div class="mrp">
                     MRP:
                     <span>
-                        ₹${Number(
-                            product.mrp ||
-                            product.price ||
-                            0
-                        ).toFixed(2)}
+                        ₹${mrp.toFixed(2)}
                     </span>
                 </div>
+
 
                 <div class="online-price">
                     Online Price:
                     <strong>
-                        ₹${Number(
-                            product.price || 0
-                        ).toFixed(2)}
+                        ₹${onlinePrice.toFixed(2)}
                     </strong>
                 </div>
 
-                ${
-                    Number(product.mrp || 0) >
-                    Number(product.price || 0)
 
-                    ? `
-                        <div class="saving">
-                            You Save ₹${(
-                                Number(product.mrp) -
-                                Number(product.price)
-                            ).toFixed(2)}
-                        </div>
-                      `
-
-                    : ""
-                }
+                ${discountHTML}
 
             </div>
 
+
             <button
                 class="add-cart-btn"
-                data-id="${product.id}">
+                data-id="${product.id}"
+            >
                 🛒 Add to Cart
             </button>
 
+
             <button
                 class="wa-btn"
-                data-id="${product.id}">
+                data-id="${product.id}"
+            >
                 WhatsApp Order
             </button>
 
@@ -741,6 +817,7 @@ function productCard(product) {
     `;
 
 }
+
 
 // =============================
 // Load More
@@ -861,7 +938,7 @@ function addToCart(id) {
         cart.push({
             id: product.id,
             name: product.name,
-            price: Number(product.price || 0),
+            price: getOnlinePrice(product),
             mrp: Number(product.mrp || product.price || 0),
             image: product.image || "",
             qty: 1
