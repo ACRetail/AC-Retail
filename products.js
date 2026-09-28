@@ -726,36 +726,71 @@ function productCard(product) {
                     Online Price:
                     <strong>
                         ₹${onlinePrice.toFixed(2)}
-                    </strong>
-                </div>
 
 
-                
+function productCard(product) {
+    const productPrice = Number(product.price || 0);
 
+    const hasRealImage =
+        product.image &&
+        !String(product.image)
+            .toLowerCase()
+            .endsWith("default.png");
+
+    const imageHtml = hasRealImage
+        ? `
+            <img
+                class="product-image"
+                src="${escapeHtml(product.image)}"
+                alt="${escapeHtml(product.name)}"
+                loading="lazy"
+                decoding="async"
+                onerror="
+                    this.style.display='none';
+                    this.nextElementSibling.style.display='flex';
+                "
+            >
+            <div class="no-image" style="display:none;">
+                🖼️<br>No Image
+            </div>
+        `
+        : `<div class="no-image">🖼️<br>No Image</div>`;
+
+    return `
+        <div class="product-card">
+            <div class="product-image-wrap">
+                ${imageHtml}
             </div>
 
+            <h3>${escapeHtml(product.name)}</h3>
 
-            <button
-                class="add-cart-btn"
-                data-id="${product.id}"
-            >
+            <p>
+                <strong>Brand:</strong>
+                ${escapeHtml(product.brand || "General")}
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                ${escapeHtml(product.category || "General Item")}
+            </p>
+
+            <div class="price-box">
+                <div class="online-price">
+                    Price:
+                    <strong>₹${productPrice.toFixed(2)}</strong>
+                </div>
+            </div>
+
+            <button class="add-cart-btn" data-id="${product.id}">
                 🛒 Add to Cart
             </button>
 
-
-            <button
-                class="wa-btn"
-                data-id="${product.id}"
-            >
+            <button class="wa-btn" data-id="${product.id}">
                 WhatsApp Order
             </button>
-
         </div>
-
     `;
-
 }
-
 
 // =============================
 // Load More
