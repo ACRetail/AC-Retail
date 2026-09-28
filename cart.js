@@ -70,28 +70,56 @@ document.addEventListener("DOMContentLoaded", function () {
      CART
   ========================================================= */
 
+  const NO_DISCOUNT_IDS = new Set([
+  "86",
+  "87",
+  "276",
+  "293",
+  "294"
+]);
+
+const ACTUAL_DISCOUNT = 0.04;
+
+function getCorrectPrice(item) {
+  const mrp = Number(
+    item.mrp ?? item.price ?? 0
+  );
+
+  if (NO_DISCOUNT_IDS.has(String(item.id))) {
+    return mrp;
+  }
+
+  return Number(
+    (mrp * (1 - ACTUAL_DISCOUNT)).toFixed(2)
+  );
+}
+  
   function getCart() {
 
-    try {
+  try {
 
-      return (
-        JSON.parse(
-          localStorage.getItem(CART_KEY)
-        ) || []
-      );
+    const cart =
+      JSON.parse(
+        localStorage.getItem(CART_KEY)
+      ) || [];
 
-    } catch (error) {
+    return cart.map(item => ({
+      ...item,
+      price: getCorrectPrice(item)
+    }));
 
-      console.error(
-        "Cart read error:",
-        error
-      );
+  } catch (error) {
 
-      return [];
+    console.error(
+      "Cart read error:",
+      error
+    );
 
-    }
+    return [];
 
   }
+
+}
 
 
   function saveCart(cart) {
@@ -301,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
       getCart();
 
     const total =
-      getTotal(cart);
+  getRoundedFinalTotal(cart);
 
     const totalSavings =
       getTotalSavings(cart);
@@ -803,7 +831,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const total = getTotal(cart);
+      const total =
+  getRoundedFinalTotal(cart);
 
       if (total < MINIMUM_ORDER_VALUE) {
 
@@ -1285,7 +1314,7 @@ async function createCashfreeOrder(amount, name, mobile) {
 
 
         const grandTotal =
-          getTotal(cart);
+  getRoundedFinalTotal(cart);
 
 
         if (grandTotal <= 0) {
@@ -1505,7 +1534,7 @@ async function createCashfreeOrder(amount, name, mobile) {
 
 
     const grandTotal =
-      getTotal(cart);
+  getRoundedFinalTotal(cart);
 
     const totalSavings =
       getTotalSavings(cart);
