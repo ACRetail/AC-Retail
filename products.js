@@ -710,23 +710,15 @@ function productCard(product) {
 
 
             <div class="price-box">
-    <div class="online-price">
-        Price:
-        <strong>
-            ₹${productPrice.toFixed(2)}
-        </strong>
-    </div>
-</div>
 
-
-                <div class="online-price">
-                    Online Price:
-                    <strong>
-                        ₹${onlinePrice.toFixed(2)}
-
+// =============================
+// Product Card
+// =============================
 
 function productCard(product) {
-    const productPrice = Number(product.price || 0);
+
+    const productPrice =
+        Number(product.price || 0);
 
     const hasRealImage =
         product.image &&
@@ -735,6 +727,7 @@ function productCard(product) {
             .endsWith("default.png");
 
     const imageHtml = hasRealImage
+
         ? `
             <img
                 class="product-image"
@@ -747,47 +740,83 @@ function productCard(product) {
                     this.nextElementSibling.style.display='flex';
                 "
             >
-            <div class="no-image" style="display:none;">
-                🖼️<br>No Image
+
+            <div
+                class="no-image"
+                style="display:none;"
+            >
+                🖼️<br>
+                No Image
             </div>
         `
-        : `<div class="no-image">🖼️<br>No Image</div>`;
+
+        : `
+            <div class="no-image">
+                🖼️<br>
+                No Image
+            </div>
+        `;
 
     return `
+
         <div class="product-card">
+
             <div class="product-image-wrap">
                 ${imageHtml}
             </div>
 
-            <h3>${escapeHtml(product.name)}</h3>
+            <h3>
+                ${escapeHtml(product.name)}
+            </h3>
 
             <p>
                 <strong>Brand:</strong>
-                ${escapeHtml(product.brand || "General")}
+                ${escapeHtml(
+                    product.brand || "General"
+                )}
             </p>
 
             <p>
                 <strong>Category:</strong>
-                ${escapeHtml(product.category || "General Item")}
+                ${escapeHtml(
+                    product.category ||
+                    "General Item"
+                )}
             </p>
 
             <div class="price-box">
+
                 <div class="online-price">
+
                     Price:
-                    <strong>₹${productPrice.toFixed(2)}</strong>
+
+                    <strong>
+                        ₹${productPrice.toFixed(2)}
+                    </strong>
+
                 </div>
+
             </div>
 
-            <button class="add-cart-btn" data-id="${product.id}">
+            <button
+                class="add-cart-btn"
+                data-id="${product.id}"
+            >
                 🛒 Add to Cart
             </button>
 
-            <button class="wa-btn" data-id="${product.id}">
+            <button
+                class="wa-btn"
+                data-id="${product.id}"
+            >
                 WhatsApp Order
             </button>
+
         </div>
+
     `;
 }
+
 
 // =============================
 // Load More
