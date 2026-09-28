@@ -69,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================================================
      CART
   ========================================================= */
-
-  const NO_DISCOUNT_IDS = new Set([
+const NO_DISCOUNT_IDS = new Set([
   "86",
   "87",
   "276",
@@ -81,11 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
 const ACTUAL_DISCOUNT = 0.04;
 
 function getCorrectPrice(item) {
+
   const mrp = Number(
-    item.mrp ?? item.price ?? 0
+    item.mrp ?? item.originalPrice ?? item.price ?? 0
   );
 
-  if (NO_DISCOUNT_IDS.has(String(item.id))) {
+  if (
+    NO_DISCOUNT_IDS.has(
+      String(item.id)
+    )
+  ) {
     return mrp;
   }
 
@@ -93,8 +97,8 @@ function getCorrectPrice(item) {
     (mrp * (1 - ACTUAL_DISCOUNT)).toFixed(2)
   );
 }
-  
-  function getCart() {
+
+function getCart() {
 
   try {
 
@@ -103,10 +107,7 @@ function getCorrectPrice(item) {
         localStorage.getItem(CART_KEY)
       ) || [];
 
-    return cart.map(item => ({
-      ...item,
-      price: getCorrectPrice(item)
-    }));
+    return cart;
 
   } catch (error) {
 
@@ -121,15 +122,15 @@ function getCorrectPrice(item) {
 
 }
 
+function saveCart(cart) {
 
-  function saveCart(cart) {
+  localStorage.setItem(
+    CART_KEY,
+    JSON.stringify(cart)
+  );
 
-    localStorage.setItem(
-      CART_KEY,
-      JSON.stringify(cart)
-    );
-
-  }
+}
+  
 
 
   /* =========================================================
