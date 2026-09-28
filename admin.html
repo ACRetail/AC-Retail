@@ -204,11 +204,27 @@ function showProductMessage(message){
   },3000);
 }
 
-function normalizeCategory(category){
-  // Preserve the exact category assigned in products.json.
-  return String(category ?? "").trim() || "General Item";
-}
 
+function normalizeCategory(category) {
+  const c = String(category ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+
+  const categories = {
+    "spices & dry fruits": "Spices & Dry fuits",
+    "spices & dry fuits": "Spices & Dry fuits",
+    "dals & grains": "Dals and grains",
+    "dals and grains": "Dals and grains",
+    "atta maida sooji besan": "Atta maida sooji besan",
+    "oil sugar & salt": "Oil sugar and salt",
+    "oil sugar and salt": "Oil sugar and salt",
+    "snacks & beverages": "Snacks and beverages",
+    "snacks and beverages": "Snacks and beverages"
+  };
+
+  return categories[c] || String(category ?? "").trim() || "General Item";
+}
 function getCategoryOrder(category){
   const index = productCategories.indexOf(category);
   return index === -1 ? 999 : index;
