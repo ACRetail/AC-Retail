@@ -362,11 +362,12 @@ function normalizeCategory(value) {
         .trim();
 
 }
+
 // =============================
-// AC RETAIL PRICING RULE
+// AC RETAIL CART DISCOUNT RULE
 // =============================
 
-// इन 5 products पर कोई discount नहीं
+// इन 5 products पर cart discount नहीं लगेगा
 const NO_DISCOUNT_IDS = new Set([
     "86",
     "87",
@@ -375,53 +376,8 @@ const NO_DISCOUNT_IDS = new Set([
     "294"
 ]);
 
-// Actual customer discount = 4%
-const ACTUAL_DISCOUNT = 0.04;
-
-// Website पर दिखने वाला discount
-const DISPLAY_DISCOUNT = 5;
-
-
-// Get MRP
-function getProductMRP(product) {
-
-    return Number(
-        product.mrp ??
-        product.price ??
-        0
-    );
-
-}
-
-
-// Get final online price
-function getOnlinePrice(product) {
-
-    const mrp = getProductMRP(product);
-
-    // Special products = NO DISCOUNT
-    if (
-        NO_DISCOUNT_IDS.has(
-            String(product.id)
-        )
-    ) {
-        return mrp;
-    }
-
-    // बाकी सभी products = actual 4% discount
-    return mrp * (1 - ACTUAL_DISCOUNT);
-
-}
-
-
-// Check whether product has discount
-function hasProductDiscount(product) {
-
-    return !NO_DISCOUNT_IDS.has(
-        String(product.id)
-    );
-
-}
+// Cart में 5% discount
+const CART_DISCOUNT = 0.05;
 
 // =============================
 // Levenshtein Distance
@@ -678,13 +634,8 @@ function renderProducts() {
 
 function productCard(product) {
 
-    const mrp = getProductMRP(product);
-
-    const onlinePrice =
-        getOnlinePrice(product);
-
-    const hasDiscount =
-        hasProductDiscount(product);
+    const productPrice =
+    Number(product.price || 0);
 
     const hasRealImage =
         product.image &&
@@ -728,19 +679,6 @@ function productCard(product) {
 
     const discountHTML = hasDiscount
 
-        ? `
-            <div class="discount-badge">
-                ${DISPLAY_DISCOUNT}% OFF
-            </div>
-
-            <div class="saving">
-                You Save ₹${(
-                    mrp - onlinePrice
-                ).toFixed(2)}
-            </div>
-        `
-
-        : "";
 
 
     return `
@@ -792,7 +730,7 @@ function productCard(product) {
                 </div>
 
 
-                ${discountHTML}
+                
 
             </div>
 
@@ -938,8 +876,8 @@ function addToCart(id) {
         cart.push({
             id: product.id,
             name: product.name,
-            price: getOnlinePrice(product),
-            mrp: Number(product.mrp || product.price || 0),
+            price: Number(product.price || 0),
+            mrp: Number(product.price || 0),
             image: product.image || "",
             qty: 1
         });
