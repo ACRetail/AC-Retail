@@ -280,7 +280,6 @@ function createCategoryFilters() {
             })
             .join("");
 
-
     // =============================
     // CATEGORY BUTTON EVENTS
     // =============================
@@ -300,7 +299,6 @@ function createCategoryFilters() {
                 button.classList.add("active");
             }
 
-
             button.addEventListener(
                 "click",
                 () => {
@@ -313,15 +311,12 @@ function createCategoryFilters() {
                             )
                         );
 
-
                     button.classList.add(
                         "active"
                     );
 
-
                     selectedCategory =
                         button.dataset.category || "";
-
 
                     applyFilters();
 
@@ -376,8 +371,8 @@ const NO_DISCOUNT_IDS = new Set([
     "294"
 ]);
 
-// Cart में 5% discount
-const CART_DISCOUNT = 0.05;
+// Cart में 4% discount
+const CART_DISCOUNT = 0.04;
 
 // =============================
 // Levenshtein Distance
@@ -635,89 +630,6 @@ function renderProducts() {
 function productCard(product) {
 
     const productPrice =
-    Number(product.price || 0);
-
-    const hasRealImage =
-        product.image &&
-        !String(product.image)
-            .toLowerCase()
-            .endsWith("default.png");
-
-
-    const imageHtml = hasRealImage
-
-        ? `
-            <img
-                class="product-image"
-                src="${escapeHtml(product.image)}"
-                alt="${escapeHtml(product.name)}"
-                loading="lazy"
-                decoding="async"
-
-                onerror="
-                    this.style.display='none';
-                    this.nextElementSibling.style.display='flex';
-                "
-            >
-
-            <div
-                class="no-image"
-                style="display:none;"
-            >
-                🖼️<br>
-                No Image
-            </div>
-        `
-
-        : `
-            <div class="no-image">
-                🖼️<br>
-                No Image
-            </div>
-        `;
-
-
-
-    return `
-
-        <div class="product-card">
-
-            <div class="product-image-wrap">
-                ${imageHtml}
-            </div>
-
-
-            <h3>
-                ${escapeHtml(product.name)}
-            </h3>
-
-
-            <p>
-                <strong>Brand:</strong>
-                ${escapeHtml(
-                    product.brand || "General"
-                )}
-            </p>
-
-
-            <p>
-                <strong>Category:</strong>
-                ${escapeHtml(
-                    product.category ||
-                    "General Items"
-                )}
-            </p>
-
-
-            <div class="price-box">
-
-// =============================
-// Product Card
-// =============================
-
-function productCard(product) {
-
-    const productPrice =
         Number(product.price || 0);
 
     const hasRealImage =
@@ -817,7 +729,6 @@ function productCard(product) {
     `;
 }
 
-
 // =============================
 // Load More
 // =============================
@@ -883,7 +794,9 @@ if (productList) {
                     allProducts.find(
                         item =>
                             String(item.id) ===
-String(whatsappButton.dataset.id)
+                            String(
+                                whatsappButton.dataset.id
+                            )
                     );
 
                 if (product) {
@@ -909,11 +822,18 @@ function addToCart(id) {
 
     const product =
         allProducts.find(
-            item => String(item.id) === String(id)
+            item =>
+                String(item.id) ===
+                String(id)
         );
 
     if (!product) {
-        console.error("Product not found:", id);
+
+        console.error(
+            "Product not found:",
+            id
+        );
+
         return;
     }
 
@@ -924,7 +844,9 @@ function addToCart(id) {
 
     const existing =
         cart.find(
-            item => String(item.id) === String(id)
+            item =>
+                String(item.id) ===
+                String(id)
         );
 
     if (existing) {
@@ -935,12 +857,26 @@ function addToCart(id) {
     } else {
 
         cart.push({
+
             id: product.id,
+
             name: product.name,
-            price: Number(product.price || 0),
-            mrp: Number(product.price || 0),
-            image: product.image || "",
+
+            price:
+                Number(
+                    product.price || 0
+                ),
+
+            mrp:
+                Number(
+                    product.price || 0
+                ),
+
+            image:
+                product.image || "",
+
             qty: 1
+
         });
 
     }
