@@ -677,9 +677,6 @@ function productCard(product) {
         `;
 
 
-    const discountHTML = hasDiscount
-
-
 
     return `
 
@@ -713,13 +710,13 @@ function productCard(product) {
 
 
             <div class="price-box">
-
-                <div class="mrp">
-                    MRP:
-                    <span>
-                        ₹${mrp.toFixed(2)}
-                    </span>
-                </div>
+    <div class="online-price">
+        Price:
+        <strong>
+            ₹${productPrice.toFixed(2)}
+        </strong>
+    </div>
+</div>
 
 
                 <div class="online-price">
