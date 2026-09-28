@@ -69,34 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================================================
      CART
   ========================================================= */
-const NO_DISCOUNT_IDS = new Set([
-  "86",
-  "87",
-  "276",
-  "293",
-  "294"
-]);
 
-const ACTUAL_DISCOUNT = 0.04;
-
-function getCorrectPrice(item) {
-
-  const mrp = Number(
-    item.mrp ?? item.originalPrice ?? item.price ?? 0
-  );
-
-  if (
-    NO_DISCOUNT_IDS.has(
-      String(item.id)
-    )
-  ) {
-    return mrp;
-  }
-
-  return Number(
-    (mrp * (1 - ACTUAL_DISCOUNT)).toFixed(2)
-  );
-}
 
 function getCart() {
 
@@ -204,6 +177,59 @@ function saveCart(cart) {
 
   }
 
+  const NO_DISCOUNT_IDS = new Set([
+  "86",
+  "87",
+  "276",
+  "293",
+  "294"
+]);
+  
+  function getCartDiscount(cart) {
+
+  return cart.reduce(
+    function (discount, item) {
+
+      // Special products = no discount
+      if (
+        NO_DISCOUNT_IDS.has(
+          String(item.id)
+        )
+      ) {
+        return discount;
+      }
+
+      const price =
+        Number(item.price || 0);
+
+      const qty =
+        Number(item.qty || 1);
+
+      return (
+        discount +
+        (price * qty * 0.05)
+      );
+
+    },
+    0
+  );
+
+}
+
+
+function getRoundedFinalTotal(cart) {
+
+  const subtotal =
+    getTotal(cart);
+
+  const discount =
+    getCartDiscount(cart);
+
+  return Math.round(
+    subtotal - discount
+  );
+
+}
 
   function getItemCount(cart) {
 
@@ -554,12 +580,14 @@ function saveCart(cart) {
 
                 <div class="cart-price-box">
 
-                  <div class="cart-mrp">
-                    MRP:
-                    <span>
-                      ${formatPrice(mrp)}
-                    </span>
-                  </div>
+  <div class="cart-online-price">
+    Price:
+    <strong>
+      ${formatPrice(price)}
+    </strong>
+  </div>
+
+</div>
 
 
                   <div class="cart-online-price">
